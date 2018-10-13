@@ -1,0 +1,27 @@
+mixin store-comments(data)
+  .m-store-comments
+    each item, i in data
+
+      - var author = item.author || '';
+      - var date = item.date || '';
+      - var thumb = item.thumb || '';
+      - var body = item.body || '';
+      if (item.reply)
+        - var _replyAuthor = item.reply.author;
+        - var _replyBody = item.reply.body;
+      
+      .m-store-comments--item.l-mgn--t-10.l-mgn--b-10
+        .l-columns
+          img.col.thumb.has-corner--50p.l-mgn--r-10(src=paths.img + thumb)
+          .col.l-w--80p
+            p!=author
+            p!=date
+
+        .clearfix
+        .body.l-mgn--t-10.l-mgn--b-10!= body 
+        if (item.reply)
+          .reply.l-pad--t-10.l-pad--b-10
+            .reply-author.
+              来自#{_replyAuthor}的回复：
+            .reply-body.l-mgn--t-10!= _replyBody
+      hr.hr

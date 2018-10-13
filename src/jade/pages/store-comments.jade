@@ -1,0 +1,22 @@
+extends ../partials/_template
+include ../mixins/_store-comments
+block content
+  .c-store--popup--comments.l-pad--20
+    .ic--back--black.l-mgn--b-20
+    h2.l-mgn--b-20 120条评价
+    img.l-mgn--b-20(src=paths.img + "ic-stars-4.png", alt="4星" width="100")
+    ul
+      li
+        span 如实描述
+        img(src=paths.img + "ic-stars-1.png", alt="1星")
+      li
+        span 需求完成率
+        img(src=paths.img + "ic-stars-2.png", alt="2星")
+      li
+        span 准时交稿率
+        img(src=paths.img + "ic-stars-3.png", alt="3星")
+      li
+        span 反馈及时率
+        img(src=paths.img + "ic-stars-5.png", alt="5星")
+    hr.hr
+    +store-comments(store_comments)

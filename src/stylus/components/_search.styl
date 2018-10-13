@@ -1,0 +1,38 @@
+.c-search
+  
+  // box-shadow 1px 1px 10px rgba(130, 130, 130, 0.3)
+  // background $col-wild-sand
+  &--icon
+    width 17px
+    height 17px
+    float left
+    margin 0 10px 0 20px
+  &--form
+    &--input
+      padding 7px 0
+      border-radius 10px
+  input
+    border none
+    line-height 20px
+    width calc(100% - 60px)
+    font-size 20px
+    outline none
+    background inherit
+    font-size 16px
+  &--history
+    &--container
+      width 100%
+      height calc((40px + 12px)*3)
+      overflow hidden
+    &--list
+      &:after
+        clear both
+      &--item
+        float left
+        padding 10px 20px
+        background $col-wild-sand
+        border-radius 5px
+        margin-right 10px
+        margin-bottom 12px
+        
+    

@@ -1,0 +1,56 @@
+mixin display-projects(data)
+  - var title = data.title || '';
+  - var viewMore = data.learn_more ? true : false;
+  - var col = data.col;
+  - var shadow_klass = col == 2 ? '' : 'has-shadow';
+  .m-display-projects.l-mgn--t-20
+    if title
+      .l-columns.l-mgn--b-10
+        .txt--h1.col.l-v--m.l-w--80p!= title
+        .col.l-v--m.l-w--20p
+          if viewMore
+            a.m-display-projects--more(href="#") 查看更多>
+    .l-columns
+      each item, i in data.body
+        - var klass = col == 2 ? 'l-w--50p' : 'l-w--100p l-mgn--b-20';
+        - var space_klass = (i+1)%2 == 0 ? 'l-pad--l-10' : 'l-pad--r-10';
+        - var _price = item.price + '/套';
+        - var _days = '制作周期: ' + item.days + '天';
+        - var _comments = item.comments + '人评价';
+        //- - klass = klass + ' ' + space_klass;
+        - var stars_img = item.stars_image || 'ic-stars-5.png';
+
+        
+        if (col == 2)
+          - klass = klass + ' ' + space_klass;
+
+        .col.m-display-projects--item(class=klass)
+          img.has-corner--5.l-w--100p(src=paths.img + item.image, class=shadow_klass)
+          .m-display-projects--item--name!=item.title
+          if (col == 2)
+            .m-display-projects--item--price!=_price
+            .m-display-projects--item--days!=_days
+            .l-columns
+              .col.l-w--30p
+                img.l-w--100p(src=paths.img + stars_img)
+              .col.l-w--70p.l-pad--l-10.m-display-projects--item--comments!=_comments
+          else
+            .col.l-w--70p
+              .m-display-projects--item--price!=_price
+              .m-display-projects--item--days!=_days
+              .l-columns
+                .col.l-w--30p
+                  img.l-w--100p(src=paths.img + stars_img)
+                .col.l-w--70p.l-pad--l-10.m-display-projects--item--comments!=_comments
+            .col.l-w--30p
+              .m-display-projects--item--author
+                img.has-corner--50p(src=paths.img + item.author)
+
+
+
+
+
+
+
+
+

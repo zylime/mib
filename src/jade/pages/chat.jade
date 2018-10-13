@@ -1,0 +1,79 @@
+extends ../partials/_template
+include ../mixins/_header
+
+block content
+  .c-chat
+    .c-header.pos-absolute.l-columns.l-pad--t-10.has-shadow.l-v--m
+      .c-header--title
+        span.txt--black Sue
+      .col.c-header--back.l-w--50p
+        a.ic--back--black.l-mgn--l-20(href="#")
+      
+      .col.c-header--other.l-w--50p.l-pad--b-10.txt--r
+        .c-header--other--item.c-header--other--notif.l-mgn--r-20
+          .ic--notif.active.l-mgn--auto
+          span.txt--black 重要提醒
+    .c-chat--body.l-pad--t-90.l-pad--b-90.c-content
+      .c-chat--body--notif.
+        为了保障您的付款安全，请始终通过<a href="#">MIB网站</a>或应用进行交流或转账
+      .c-chat--body--me.l-columns.l-mgn--t-20
+        .c-chat--body--msg.col.l-w--90p
+          .c-chat--body--msg--box
+            p.
+              你好，收到新版的设计文件了，关于设计图，我汇总下团队的意见，晚点反馈给你吧。整体感觉还是不错的，多谢啦！
+            span Lina-2月16日 20分钟前
+        .c-chat--body--thumb.col.l-w--10p
+          img.l-w--100p.has-corner--50p(src=paths.img + 'chat-thumb-1.jpg')
+      .c-chat--body--sender.l-columns.l-mgn--t-20
+        .c-chat--body--thumb.col.l-w--10p
+          img.l-w--100p.has-corner--50p(src=paths.img + 'chat-thumb-2.jpg')
+        .c-chat--body--msg.col.l-w--90p
+          .c-chat--body--msg--box
+            p.
+              好的，没问题。有问题尽量提。
+            span Sue-2月16日 18分钟前
+      .c-chat--body--me.l-columns.l-mgn--t-20
+        .c-chat--body--msg.col.l-w--90p
+          .c-chat--body--msg--box
+            p.
+              时间很准时，这点很感谢！我很快给你反馈，稍等，我们现在正在开会讨论呐~
+            span Lina-2月16日 10分钟前
+        .c-chat--body--thumb.col.l-w--10p
+          img.l-w--100p.has-corner--50p(src=paths.img + 'chat-thumb-1.jpg')
+      .c-chat--body--sender.l-columns.l-mgn--t-20
+        .c-chat--body--thumb.col.l-w--10p
+          img.l-w--100p.has-corner--50p(src=paths.img + 'chat-thumb-2.jpg')
+        .c-chat--body--msg.col.l-w--90p
+          .c-chat--body--msg--box
+            p.
+              ok。
+            span Sue-2月16日 18分钟前
+      .c-chat--body--me.l-columns.l-mgn--t-20
+        .c-chat--body--msg.col.l-w--90p
+          .c-chat--body--msg--box
+            p.
+              好啦好啦，我上传到修改意见里了，注意事项中也单独提了，你随时看下。
+            span Lina-2月16日 20分钟前
+        .c-chat--body--thumb.col.l-w--10p
+          img.l-w--100p.has-corner--50p(src=paths.img + 'chat-thumb-1.jpg')
+      .c-chat--body--sender.l-columns.l-mgn--t-20
+        .c-chat--body--thumb.col.l-w--10p
+          img.l-w--100p.has-corner--50p(src=paths.img + 'chat-thumb-2.jpg')
+        .c-chat--body--msg.col.l-w--90p
+          .c-chat--body--msg--box
+            p.
+              好，我这就去看下。
+            span Sue-2月16日 18分钟前
+
+
+    .c-chat--input
+      input.c-chat--input--box(type='text', placeholder="撰写信息")
+      .c-chat--input--insert
+        .c-chat--input--insert--item
+          .ic--img
+            input(type="file", name="photo", accpet="image/*")
+        .c-chat--input--insert--item
+          .ic--camera
+            input(type="file", name="camera", accept="image/*", capture="camera")
+          
+  

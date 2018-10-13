@@ -1,0 +1,25 @@
+mixin header(data)
+  - var title = data.title || '';
+  - var share = data.share || '';
+  - var fav = data.fav || '';
+  - var notif = data.notif || '';
+  .c-header.l-columns.l-pad--t-20
+    if title
+      .c-header--title
+        span!= title
+    .col.c-header--back.l-w--50p.l-pad--b-10
+      a.ic--back.l-mgn--l-20(href="#")
+    
+    .col.c-header--other.l-w--50p.l-pad--b-10.txt--r
+      if share
+        .c-header--other.l-mgn--r-10
+          .ic--share
+          span 分享
+      if fav
+        .c-header--other.l-mgn--r-20
+          .ic--fav
+          span 收藏  
+      if notif
+        .c-header--other.l-mgn--r-20
+          .ic--notif
+          span 重要提醒

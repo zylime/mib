@@ -1,0 +1,191 @@
+{
+  "app":{
+    "name":"browser title",
+    "description": "meta description",
+    "keywords": "meta keywords"
+  },
+  "home_categories": ["美术", "技术", "音频", "本地化", "资质"],
+  "home_display1": {
+    "title": "热门资源",
+    "learn_more": true,
+    "col": "2",
+    "body": [
+      {
+        "title": "著名大师若昕，欧美魔幻画风",
+        "image": "home-thumb-1.jpg",
+        "price": "5000",
+        "days": "45",
+        "comments": "26",
+        "stars_image": "ic-stars-1.png"
+      },
+      {
+        "title": "大师zhangji曾服务世界顶级项目",
+        "image": "home-thumb-2.jpg",
+        "price": "5000",
+        "days": "45",
+        "comments": "26",
+        "stars_image": "ic-stars-2.png"
+      }
+    ]
+  },
+  "home_display2": {
+    "title": "热门推荐",
+    "learn_more": true,
+    "col": "2",
+    "body": [
+      {
+        "title": "现代风格3D角色，韩国作者",
+        "image": "home-thumb-3.jpg",
+        "price": "12000",
+        "days": "45",
+        "comments": "54",
+        "stars_image": "ic-stars-3.png"
+      },
+      {
+        "title": "大师zhangji曾服务世界顶级项目",
+        "image": "home-thumb-4.jpg",
+        "price": "5000",
+        "days": "45",
+        "comments": "26",
+        "stars_image": "ic-stars-4.png"
+      }
+    ]
+  },
+  "home_display3": {
+    "title": "猜你喜欢",
+    "learn_more": true,
+    "col": "1",
+    "body": [
+      {
+        "title": "水墨风格/国产武侠原画，超高精度，包满意",
+        "image": "home-thumb-5.jpg",
+        "price": "¥30000-50000",
+        "days": "45",
+        "comments": "1012",
+        "author": "home-author-thumb-1.jpg"
+      },
+      {
+        "title": "游戏美术风格的归类与划分",
+        "image": "home-thumb-6.jpg",
+        "price": "¥30000-50000",
+        "days": "45",
+        "comments": "2091",
+        "author": "home-author-thumb-2.jpg"
+      },
+      {
+        "title": "游戏美术风格的归类与划分",
+        "image": "home-thumb-7.jpg",
+        "price": "¥ 30000-50000",
+        "days": "45",
+        "comments": "2091",
+        "author": "home-author-thumb-3.jpg"
+      }
+    ]
+  },
+  "list_display1": {
+    "title": "",
+    "learn_more": false,
+    "col": "1",
+    "body": [
+      {
+        "title": "蒸汽朋克风格场景设计，多款成功项目经验，顶级水平",
+        "image": "list-thumb-1.jpg",
+        "price": "¥599",
+        "days": "1",
+        "comments": "1001",
+        "author": "list-author-thumb-1.jpg",
+        "stars_image": "ic-stars-4.png"
+      },
+      {
+        "title": "中国水墨风格/国产武侠原画，超高精度，包满意",
+        "image": "home-thumb-5.jpg",
+        "price": "¥599",
+        "days": "1",
+        "comments": "2091",
+        "author": "home-author-thumb-1.jpg",
+        "stars_image": "ic-stars-3.png"
+      },
+      {
+        "title": "3D/支持虚幻4引擎/欧美竞速，模型设计，全球顶级制作水准",
+        "image": "list-thumb-2.jpg",
+        "price": "¥599",
+        "days": "1",
+        "comments": "2091",
+        "author": "list-author-thumb-2.jpg",
+        "stars_image": "ic-stars-2.png"
+      },
+      {
+        "title": "3D/支持虚幻4引擎/欧美竞速，模型设计，全球顶级制作水准",
+        "image": "home-thumb-6.jpg",
+        "price": "¥599",
+        "days": "1",
+        "comments": "2091",
+        "author": "home-author-thumb-3.jpg",
+        "stars_image": "ic-stars-1.png"
+      },
+      {
+        "title": "3D/支持虚幻4引擎/欧美竞速，模型设计，全球顶级制作水准",
+        "image": "list-thumb-3.jpg",
+        "price": "¥599",
+        "days": "1",
+        "comments": "2091",
+        "author": "list-author-thumb-3.jpg"
+      }
+    ]
+  },
+  "search_history": ["美术外包", "3D游戏", "仙侠", "二次元", "配音", "程序外包", "角色外包", "场景设计", "UI外包", "游戏图标", "更多记录", "更多记录", "更多记录", "更多记录", "更多记录", "更多记录"],
+  "main_menu": [
+    {
+      "icon": "ic--menu--search",
+      "name": "搜索",
+      "link": "./search.html"
+    },
+    {
+      "icon": "ic--menu--share",
+      "name": "分享",
+      "link": "#"
+    },
+    {
+      "icon": "ic--menu--selected",
+      "name": "精选",
+      "link": "#"
+    },
+    {
+      "icon": "ic--menu--msg",
+      "name": "消息",
+      "link": "#"
+    },
+    {
+      "icon": "ic--menu--me",
+      "name": "我的",
+      "link": "#"
+    }
+  ],
+  "filter_menu": ["筛选条件", "筛选条件", "筛选条件", "筛选条件", "筛选条件"],
+  "store_body": "水墨动漫成立于2016年（前身米卡工作室成立于2012年），座落与福州橘园洲创意广场，主营游戏美术外包设计，公司坚持以人为本的管理理念，以追求卓越为目标，以技术力量为核心，以市场需求为导向，以高质高效为基础，大力倡导提升内部制作团队和管理团队的综合实力与技术实力，团队设计师行业经验均在6年以上，专注于国内外游戏美术外包（cocos2d、android安卓、unity3D等游戏美术整包设计），与国内外多家游戏开发公司成功合作过多款大型网络游戏、网页游戏和手机游戏的开发制作，并在多年的游戏外包服务中整理出一套完整的服务管控体系。以量身定做为服务理念，为客户提供更专业、更高效、更严谨的服务，以诚信为本，向客户提供长期、稳定和优质的游戏美术服务，已完成100余款页游、手游整套美术设计，是国内游戏开发公司的优质合作服务商，欢迎长期定制与合作。",
+  "store_comments": [
+    {
+      "author": "西西",
+      "date": "1月 2017年",
+      "thumb": "chat-thumb-1.jpg",
+      "body": "最和气的服务商很多修改都积极配合，感谢感谢！"
+    },
+    {
+      "author": "冰天雪地",
+      "date": "2月 2017年",
+      "thumb": "chat-thumb-2.jpg",
+      "body": "最和气的服务商很多修改都积极配合，感谢感谢！",
+      "reply": {
+        "author": "千代",
+        "body": "水准很高的团队，虽然时间上有点纠结，比原计划晚了5天，感谢您的喜欢！"
+      }
+    },
+    {
+      "author": "西西",
+      "date": "1月 2017年",
+      "thumb": "chat-thumb-1.jpg",
+      "body": "团队设计师行业经验均在6年以上，专注于国内外游戏美术外包（cocos2d、android安卓、unity3D等游戏美术整包设计），与国内外多家游戏开发公司成功合作过多款大型网络游戏、网页游戏和手机游戏的开发制作，并在多年的游戏外包服务中整理出一套完整的服务管控体系。以量身定做为服务理念，为客户提供更专业、更高效、更严谨的服务，以诚信为本，向客户提供长期、稳定和优质的游戏美术服务，已完成100余款页游、手游整套美术设计，是国内游戏开发公司的优质合作服务商，很满意。"
+    }
+  ]
+  
+}

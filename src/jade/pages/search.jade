@@ -1,0 +1,21 @@
+extends ../partials/_template
+include ../mixins/_display-projects
+include ../mixins/_menu
+include ../mixins/_search-bar
+
+block content
+  .c-content
+    +search-bar(1)
+  hr.hr.l-mgn--t-10.l-mgn--b-10
+  .c-content.l-pad--t-20
+    .c-search--history
+      h1 历史记录
+      .c-search--history--container.l-mgn--t-20.js-history-box
+        .c-search-history--list.js-history-list.clearfix
+          each item in search_history
+            .c-search--history--list--item!=item
+      a.c-search--history--more.js-history-view-more.hide(href="javascript:void(0);") 更多
+
+
+    
+

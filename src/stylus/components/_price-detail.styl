@@ -1,0 +1,41 @@
+.c-price-detail
+  h3
+    font-size 28px
+  h4
+    font-size 20px
+    line-height 30px
+  p.smaller
+    font-size 14px
+  &--section
+    margin 20px 0 40px
+    border 1px solid $col-tiara
+    border-radius 5px
+    padding 20px
+    ul
+      li
+        list-style-type none
+        position relative
+        padding-left 30px
+        margin-bottom 20px
+        &:before
+          content ""
+          background url(../img/ic-bullet.png)
+          background-size 100%
+          width 20px
+          height 20px
+          display block
+          position absolute
+          left 0
+          top 0
+        &:after
+          content ""
+          display block
+          width 1px
+          height calc(100% - 10px)
+          position absolute
+          top 25px
+          left 10px
+          background $col-persian-green
+        &:nth-last-of-type(1)
+          &:after
+            display none
