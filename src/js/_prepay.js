@@ -12,7 +12,7 @@ $.fn.PrePay = function(opts){
 
   function checkbox(){
     _checkbox.on('click touch', function(){
-      console.log($(this).attr('data-checked') == '');
+      // console.log($(this).attr('data-checked') == '');
       var checkStatus = $(this).attr('data-checked') == '' ? 'checked' : '';
       $(this).toggleClass('active');
       $(this).attr('data-checked', checkStatus);

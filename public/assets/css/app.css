@@ -374,6 +374,13 @@ input:-ms-input-placeholder {
   width: 70px;
   height: 70px;
 }
+.ic--wechat-2 {
+  background-image: url("../img/ic-wechat-2.png");
+  background-size: 100%;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+}
 .ic--qq {
   background-image: url("../img/ic-qq.png");
   background-repeat: no-repeat;
@@ -387,6 +394,20 @@ input:-ms-input-placeholder {
   background-size: 100%;
   width: 30px;
   height: 30px;
+  background-position: center;
+}
+.ic--card {
+  background-image: url("../img/ic-card.png");
+  background-size: 100%;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+}
+.ic--add {
+  background-image: url("../img/ic-add.png");
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
   background-position: center;
 }
 html,
@@ -1150,6 +1171,21 @@ input {
 .l-pad--b-100 {
   padding-bottom: 100px !important;
 }
+.c-add-card label {
+  display: block;
+}
+.c-add-card input {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0 5px;
+  width: 90%;
+}
+.c-add-card input.account {
+  font-size: 22px;
+  line-height: 28px;
+  padding: 0 10px;
+  width: 100%;
+}
 .c-categories {
   justify-content: space-between;
 }
@@ -1462,6 +1498,15 @@ input {
 .c-order-detail .c-menu .link {
   color: #00a5a5;
   font-size: 14px;
+}
+.c-pay-success {
+  text-align: center;
+}
+.c-pay-success h2 {
+  font-size: 20px;
+}
+.c-pay-success img {
+  width: 60px;
 }
 .c-popup {
   position: fixed;

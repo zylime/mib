@@ -1,0 +1,29 @@
+extends ../partials/_template
+
+block content
+  .l-pad--20.c-payment-method(data-js-payment-method)
+    .ic--back--black.l-mgn--b-20
+    h2.l-mgn--b-10 付款方式
+    .c-order-detail--item.l-columns
+      .col.l-w--60p
+        .ic--alipay.l-inl-b.l-v--m.l-mgn--r-10
+        span 支付宝
+      .col.l-w--40p
+        input(type="hidden", name="alipay", value="")
+        .ic--checkbox-2.l-f--r.l-mgn--r-10.js-checkbox(data-checked='')
+    .c-order-detail--item.l-columns
+      .col.l-w--60p
+        .ic--wechat-2.l-inl-b.l-v--m.l-mgn--r-10
+        span 微信支付
+      .col.l-w--40p
+        input(type="hidden", name="alipay", value="")
+        .ic--checkbox-2.l-f--r.l-mgn--r-10.js-checkbox(data-checked='')
+    .c-order-detail--item.l-columns
+      .col.l-w--60p
+        .ic--card.l-inl-b.l-v--m.l-mgn--r-10
+        span 信用卡或借记卡
+      .col.l-w--40p
+        a.ic--add.l-f--r(href="add-card.html")
+        
+
+    

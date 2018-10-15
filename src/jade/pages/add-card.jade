@@ -1,0 +1,27 @@
+extends ../partials/_template
+
+block content
+  .l-pad--20.c-add-card(data-js-add-card)
+    .ic--back--black.l-mgn--b-20
+    h2.l-mgn--b-10 输入银行卡信息
+    form.l-columns.l-mgn--t-40
+      .col.l-w--100p.l-mgn--b-40
+        label.l-mgn--b-10 卡号
+        input.account.border-bottom(type="number", name="accountNumber")
+      .col.l-w--40p
+        label.l-mgn--b-10 有效期
+        input.border-bottom(type="text", name="expiredDate")
+      .col.l-w--30p
+        label.l-mgn--b-10 安全码
+        input.border-bottom(type="number", name="secureCode")
+      .col.l-w--30p
+        label.l-mgn--b-10 邮政编码
+        input.border-bottom(type="number", name="postCode")
+      .col.l-w--100p.l-mgn--t-40
+        a.btn-type-2 确定
+
+
+
+        
+
+    

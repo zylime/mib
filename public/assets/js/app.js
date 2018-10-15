@@ -72,6 +72,7 @@ $(document).ready(function () {
   $('[data-js-register]').Register();
   $('[data-js-order-detail]').OrderDetail();
   $('[data-js-prepay]').PrePay();
+  $('[data-js-payment-method]').PaymentMethod();
 
   function slider() {
     $('.js-categories-slider').slick({
@@ -168,6 +169,37 @@ $.fn.OrderDetail = function (opts) {
 };
 'use strict';
 
+$.fn.PaymentMethod = function (opts) {
+
+  var container = $(this);
+  var _checkbox = $(this).find('.js-checkbox');
+
+  events();
+
+  function events() {
+    checkbox();
+  }
+
+  function checkbox() {
+    _checkbox.each(function () {
+      $(this).on('click touch', function () {
+        resetAllInput();
+
+        $(this).addClass('active');
+        $(this).attr('data-checked', 'checked');
+        $(this).prev().val('checked');
+      });
+    });
+  }
+  function resetAllInput() {
+    _checkbox.each(function () {
+      $(this).attr('data-checked', '').removeClass('active');
+      $(this).prev().val('');
+    });
+  }
+};
+'use strict';
+
 $.fn.Popups = function (opts) {
 
   var container = $(this);
@@ -247,7 +279,7 @@ $.fn.PrePay = function (opts) {
 
   function checkbox() {
     _checkbox.on('click touch', function () {
-      console.log($(this).attr('data-checked') == '');
+      // console.log($(this).attr('data-checked') == '');
       var checkStatus = $(this).attr('data-checked') == '' ? 'checked' : '';
       $(this).toggleClass('active');
       $(this).attr('data-checked', checkStatus);
