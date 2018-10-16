@@ -6,15 +6,18 @@
       text-overflow ellipsis
       overflow hidden
       white-space nowrap
-      font-size 17px
-      margin-bottom 5px
+      font-size 21px
+      padding 0 10px
+
     &--price
       color $col-flamenco
     &--price
     &--days
-      font-size 13px
+      font-size 16px
+      line-height 22px
+      padding 0 10px
     &--comments
-      font-size 12px
+      font-size 15px
     &--author
       height 52px
       float right
@@ -23,5 +26,17 @@
   &--more
     color $col-persian-green
     font-size 15px
+    vertical-align middle
+    &:after
+      content ""
+      background url(../img/ic-right-arrow-2.png)
+      width 5px
+      height 17px
+      background-size 100%
+      background-repeat no-repeat
+      background-position center
+      display inline-block
+      vertical-align middle
+      margin-left 4px
   .col
     box-sizing border-box
