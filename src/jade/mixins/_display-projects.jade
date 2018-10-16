@@ -45,6 +45,8 @@ mixin display-projects(data)
             .col.l-w--30p.l-pad--r-10
               .m-display-projects--item--author
                 img.has-corner--50p(src=paths.img + item.author)
+      if (data.other)
+        a.btn-type-1.l-mgn--t-30.l-w--40p.other.txt--500(href="#")!=data.other
 
 
 

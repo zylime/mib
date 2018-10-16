@@ -6,6 +6,7 @@ body {
   position: relative;
   font-size: 16px;
   font-family: "PingFang SC", "Helvetica Neue", Helvetica, "Microsoft YaHei";
+  color: #484848;
 }
 footer {
   max-width: 580px;
@@ -25,7 +26,8 @@ h6,
 p,
 a,
 li,
-span {
+span,
+div {
   color: #484848;
 }
 a {
@@ -143,6 +145,7 @@ input:-ms-input-placeholder {
   background-image: url("../img/ic-search.png");
   background-size: 100%;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .ic--menu {
   background-image: url("../img/ic-main-menu.png");
@@ -403,6 +406,7 @@ body {
   position: relative;
   font-size: 16px;
   font-family: "PingFang SC", "Helvetica Neue", Helvetica, "Microsoft YaHei";
+  color: #484848;
 }
 footer {
   max-width: 580px;
@@ -422,7 +426,8 @@ h6,
 p,
 a,
 li,
-span {
+span,
+div {
   color: #484848;
 }
 a {
@@ -1181,12 +1186,12 @@ input {
 .c-categories--btn {
   background: #fff;
   border: 1px solid #c7c7c7;
-  color: #000;
+  color: #484848;
   text-align: center;
   border-radius: 5px;
   padding: 10px 0;
-  font-size: 14px;
-  margin-right: 2%;
+  font-size: 18px;
+  margin-right: 20px;
 }
 .c-categories--btn.active {
   background: #00a5a5;
@@ -1722,8 +1727,8 @@ input {
   bottom: 20px;
 }
 .c-search--icon {
-  width: 17px;
-  height: 17px;
+  width: 18px;
+  height: 24px;
   float: left;
   margin: 0 10px 0 20px;
 }
@@ -1733,12 +1738,13 @@ input {
 }
 .c-search input {
   border: none;
-  line-height: 20px;
+  line-height: 24px;
   width: calc(100% - 60px);
   font-size: 20px;
   outline: none;
   background: inherit;
-  font-size: 16px;
+  font-size: 19px;
+  color: #484848;
 }
 .c-search--history--container {
   width: 100%;
@@ -2053,6 +2059,7 @@ input {
   white-space: nowrap;
   font-size: 21px;
   padding: 0 10px;
+  margin-top: 7px;
 }
 .m-display-projects--item--price {
   color: #ff8605;
@@ -2091,6 +2098,13 @@ input {
   margin-left: 4px;
 }
 .m-display-projects .col {
+  box-sizing: border-box;
+}
+.m-display-projects .other {
+  font-size: 18px;
+  height: 40px;
+  line-height: 40px;
+  border: 2px solid #00a5a5;
   box-sizing: border-box;
 }
 .m-store-comments--item .thumb {
