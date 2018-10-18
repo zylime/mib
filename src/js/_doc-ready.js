@@ -1,6 +1,6 @@
 $(document).ready(function(){
   slider();
-  historyEllipsis();
+
   $(document).Popups();
 
   $('[data-js-register]').Register();
@@ -24,6 +24,7 @@ $(document).ready(function(){
     text: true
   });
   $('[data-js-carousel').Carousel();
+  $('[data-js-search]').Search();
   
   // lightbox on store
   lightbox.option({
@@ -32,37 +33,14 @@ $(document).ready(function(){
   })
 
   // datepicker on order detail
-  $('.js-datepicker').dateRangePicker({
-    language:'cn'
-  });
+  // $('.js-datepicker').dateRangePicker({
+  //   language:'cn'
+  // });
 
 
 
 
-  function historyEllipsis(){
-    var defHeight = 52 * 3; //3 lines of search history
-    var slideHeight = $('.js-history-list').height();
-    var toggleHeight;
-    var label;
-    // init history height
-    if(defHeight < slideHeight){
-      label = '更多';
-      $('.js-history-view-more').html(label);
-      $('.js-history-view-more').removeClass('hide');
-      toggleHeight = slideHeight;
-      
-    }
-    // toggle height
-    $('.js-history-view-more').on('click', function(){
-      $('.js-history-box').animate({
-        'height': toggleHeight + 'px'
-      });
-      
-      toggleHeight = toggleHeight == defHeight? slideHeight : defHeight;
-      label = label == '更多' ? '收起' : '更多';
-      $('.js-history-view-more').html(label);
-    })
-  }
+  
 
   
 

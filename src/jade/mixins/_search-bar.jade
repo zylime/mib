@@ -1,11 +1,11 @@
 mixin search-bar(a)
   - var ifCancel = a == 0 ? false : true;
-  - var input_klass = a == 0 ? 'has-shadow' : 'bg--wild-sand col l-w--80p';
+  - var input_klass = a == 0 ? 'has-shadow' : 'bg--wild-sand col l-w--80p has-corner--5';
   .c-search.l-mgn--t-10.l-columns
     form.c-search--form#sf
       .c-search--form--input(class=input_klass)
         .c-search--icon.ic--search
         input(type='text', name='sf_wd', placeholder="点击搜索各类资源")
       if (ifCancel)
-        .c-search--form--cancel.col.l-w--20p.txt--c
+        .c-search--form--cancel.col.l-w--20p.txt--c.l-pad--l-20
           a(href="#") 取消

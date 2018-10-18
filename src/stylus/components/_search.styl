@@ -1,16 +1,19 @@
 .c-search
+  font-size 17px
+  h1
+    font-size 22px
   
-  // box-shadow 1px 1px 10px rgba(130, 130, 130, 0.3)
-  // background $col-wild-sand
   &--icon
     width 18px
     height 24px
     float left
     margin 0 10px 0 20px
   &--form
+    font-size 17px
     &--input
       padding 14px 0
-      border-radius 0
+
+      
   input
     border none
     line-height 24px
@@ -21,6 +24,37 @@
     font-size 19px
     color $col-tundora
   &--history
+    position relative
+    h1
+      font-size 22px
+      font-weight 500
+    &--bin
+      position absolute
+      top 0
+      right 0
+    &--more
+      color $col-persian-green
+      position relative
+      &:before
+      &:after
+        content ""
+        width 9px
+        height 2px
+        position absolute
+        top 10px
+        right -13px
+        background $col-persian-green
+      &:before
+        transform rotate(-45deg)
+        right -19px
+      &:after
+        transform rotate(45deg)
+      &[data-expanded="true"]
+        &:before
+          transform rotate(45deg)
+          right -19px
+        &:after
+          transform rotate(-45deg)
     &--container
       width 100%
       height calc((40px + 12px)*3)

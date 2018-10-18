@@ -8,13 +8,14 @@ block content
     +search-bar(1)
   hr.hr.l-mgn--t-10.l-mgn--b-10
   .c-content.l-pad--t-20
-    .c-search--history
+    .c-search--history(data-js-search)
       h1 历史记录
+      .c-search--history--bin.ic--bin.js-clear-btn
       .c-search--history--container.l-mgn--t-20.js-history-box
-        .c-search-history--list.js-history-list.clearfix
+        .c-search-history--list.js-history-list.clearfix.js-result-container
           each item in search_history
             .c-search--history--list--item!=item
-      a.c-search--history--more.js-history-view-more.hide(href="javascript:void(0);") 更多
+      a.c-search--history--more.js-history-view-more.hide(href="javascript:void(0);", data-expanded="false") 更多
 
 
     
