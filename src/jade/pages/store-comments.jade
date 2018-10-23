@@ -1,22 +1,27 @@
+//- 评价
 extends ../partials/_template
 include ../mixins/_store-comments
 block content
-  .c-store--popup--comments.l-pad--20
-    .ic--back--black.l-mgn--b-20
-    h2.l-mgn--b-20 120条评价
-    img.l-mgn--b-20(src=paths.img + "ic-stars-4.png", alt="4星" width="100")
-    ul
+  .c-store--popup--comments.c-process.l-pad--20
+    a.ic--back--black.l-mgn--b-20(href="store.html")
+    h2.l-mgn--b-15 120条评价
+    img.l-mgn--b-15(src=paths.img + "ic-stars-4.png", alt="4星" width="115")
+    ul.l-columns.l-mgn--b-20
       li
-        span 如实描述
-        img(src=paths.img + "ic-stars-1.png", alt="1星")
+        span.col.l-w--50p 如实描述
+        .col.l-w--50p
+          img(src=paths.img + "ic-stars-1.png", alt="1星")
       li
-        span 需求完成率
-        img(src=paths.img + "ic-stars-2.png", alt="2星")
+        span.col.l-w--50p 需求完成率
+        .col.l-w--50p
+          img(src=paths.img + "ic-stars-2.png", alt="2星")
       li
-        span 准时交稿率
-        img(src=paths.img + "ic-stars-3.png", alt="3星")
+        span.col.l-w--50p 准时交稿率
+        .col.l-w--50p
+          img(src=paths.img + "ic-stars-3.png", alt="3星")
       li
-        span 反馈及时率
-        img(src=paths.img + "ic-stars-5.png", alt="5星")
+        span.col.l-w--50p 反馈及时率
+        .col.l-w--50p
+          img(src=paths.img + "ic-stars-5.png", alt="5星")
     hr.hr
     +store-comments(store_comments)

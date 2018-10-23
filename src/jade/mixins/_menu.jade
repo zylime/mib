@@ -2,7 +2,8 @@ mixin menu(n)
   .c-menu.l-columns
     each item, i in main_menu
       - var _klass = i == n ? 'active' : '';
+      - var icon_klass = item.icon + ' ' + _klass;
       a.c-menu--item.col.l-w--20p(class = _klass, href=item.link)
-        .c-menu--item--icon.ic--menu(class=item.icon)
+        .c-menu--item--icon.ic--menu(class=icon_klass)
         span.c-menu--item--name!=item.name
 

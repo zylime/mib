@@ -4,30 +4,45 @@
     font-size 22px
   
   &--icon
-    width 18px
+    width 14px
     height 24px
     float left
-    margin 0 10px 0 20px
+    margin 0 10px 0 16px
   &--form
-    font-size 17px
     &--input
-      padding 14px 0
-
-      
+      padding 8px 0
+    &--cancel
+      font-size 13px
+      width 50px
+      display inline-block
+      padding-left 20px
   input
     border none
-    line-height 24px
+    line-height 20px
     width calc(100% - 60px)
-    font-size 20px
     outline none
     background inherit
-    font-size 19px
+    font-size 15px
     color $col-tundora
+    font-weight 500
+  &--result
+      input
+        font-size 14px
+        font-weight normal
+        line-height 18px
+      .c-search--form--input
+        padding 5px 0
+        width calc(100% - 50px)
+        display inline-block
+      .c-search--icon
+        margin 0 10px
+        width 12px
+
   &--history
     position relative
     h1
-      font-size 22px
-      font-weight 500
+      font-size 18px
+      font-weight bold
     &--bin
       position absolute
       top 0
@@ -35,39 +50,42 @@
     &--more
       color $col-persian-green
       position relative
+      font-size 13px
+      padding-right 12px
       &:before
       &:after
         content ""
-        width 9px
-        height 2px
+        width 6px
+        height 1px
         position absolute
-        top 10px
-        right -13px
+        top 9px
+        right 4px
         background $col-persian-green
       &:before
         transform rotate(-45deg)
-        right -19px
+        right 0
       &:after
         transform rotate(45deg)
       &[data-expanded="true"]
         &:before
           transform rotate(45deg)
-          right -19px
+          right 0
         &:after
           transform rotate(-45deg)
     &--container
       width 100%
-      height calc((40px + 12px)*3)
+      height calc((28px + 12px)*3)
       overflow hidden
     &--list
       &:after
         clear both
       &--item
         float left
-        padding 10px 20px
+        padding 7px 20px
         background $col-wild-sand
         border-radius 5px
         margin-right 10px
         margin-bottom 12px
+        font-size 13px
         
     

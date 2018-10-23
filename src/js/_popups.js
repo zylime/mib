@@ -24,7 +24,39 @@ $.fn.Popups = function(opts){
       closePopup($('.js-popup-code'));
     });
 
+    enterCode();
+
   }
+
+  function enterCode(){
+    $('.js-popup-code').find('input').each(function(index){
+      var i = index;
+      $(this).on('keydown', function(){
+        if($(this).val().length == 1 && $($('.js-popup-code').find('input')[i+1]).length > 0){
+          $($('.js-popup-code').find('input')[i+1]).focus();
+        }
+      });
+      $(this).on('input', function(){
+        updateButton();
+      })
+    })
+  }
+
+  function updateButton(){
+    var _length = $('.js-popup-code').find('input').length;
+    for(let i = 0; i < _length; i++){
+      if($($('.js-popup-code').find('input')[i]).val().length == 0){
+        break;
+      }
+      else{
+        if(i == _length - 1){
+          $('.js-popup-code').find('.js-btn').removeClass('disabled');
+        }
+      }
+    }
+
+  }
+
   function registerPopup(){
     $(document).on('click touch', '.js-popup-cover, .js-close-register', function(e){
       e.stopPropagation();

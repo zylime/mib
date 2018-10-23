@@ -1,3 +1,4 @@
+//- 新用户注册
 extends ../partials/_template
 include ../mixins/_popup
 
@@ -10,17 +11,17 @@ block content
         .c-sign-in--main
           form
             .c-sign-in--form--rol.border-bottom
-              .ic--user
+              .ic--user.l-mgn--r-5
               input(type="text", name="uid", autocomplete="on", placeholder="请输入昵称")
             .c-sign-in--form--rol.border-bottom
-              .ic--email
-              input.input-email(type="text", name="uid", autocomplete="on", placeholder="请输入邮箱地址")
+              .ic--email.l-mgn--r-5
+              input.input-email(type="text", name="uid", autocomplete="on", placeholder="请输入邮箱地址或手机号码")
             .c-sign-in--form--rol.border-bottom
-              .ic--psw
+              .ic--psw.l-mgn--r-5
               input(type="password", name="psw", placeholder="请填写登陆密码")
               //- .ic--eye
             div.c-sign-in--form--link.txt--r
-              a(href="sign-in-code.html") 用短信验证码登录
+              a.js-register-btn(href="javascript:void(0);") 用短信验证码登录
             a.button.btn-type-2.l-mgn--t-20.js-register-btn.disabled(href="javascript:void(0);") 注册
 
 

@@ -7,7 +7,7 @@ block content
         a.ic--back.l-mgn--l-20(href="#")
     
     .col.c-header--other.l-w--50p.l-pad--b-10.txt--r
-      .c-header--other--item.c-header--other--share.l-mgn--r-10
+      a.c-header--other--item.c-header--other--share.l-mgn--r-10(href="share.html")
         .ic--share
         span 分享
       .c-header--other--item.c-header--other--fav.l-mgn--r-20
@@ -27,19 +27,21 @@ block content
         img.l-w--100p(src=paths.img + 'store-image-2.jpg', data-lightbox)
     .c-content
       .c-store--main
-        .c-store--main--subtitle.l-mgn--t-20 美术整包
-        h1.c-store--main--title.l-mgn--t-10.l-mgn--b-10 中国水墨风格/国产武侠原画，超高精度，包满意
+        .c-store--main--subtitle.l-mgn--t-10 美术整包
+        h1.c-store--main--title 中国水墨风格/国产武侠原画，超高精度，包满意
         .c-store--main--info.l-columns
           ul.col.l-w--70p
             li
-              i.ic--art1
-              span 专业美术团队
+              a(href="#")
+                i.ic--art1
+                span 专业美术团队
             li
               i.ic--art2 
               span 顶级国风原画
             li
-              i.ic--book 
-              span 项目履历展示
+              a(href="project-profile.html")
+                i.ic--book 
+                span 项目履历展示
             li
               i.ic--coop 
               span 接受分成合作
@@ -47,12 +49,12 @@ block content
             img.has-corner--50p(src=paths.img + "home-author-thumb-1.jpg")
             .c-store--main--info--contact
               i.ic--chat
-              span 联系店主
+              a(href="chat.html") 联系店主
       .c-store--detail.l-mgn--t-20.l-pad--b-30(data-js-collapse)
         .l-columns
           h2.col.l-w--50p 产品详情
           .c-store--detail--translate.col.l-w--50p.txt--r 
-            span.js-translate 查看翻译
+            span.js-translate.txt--persian-green 查看翻译
         hr.hr.l-mgn--t-10.l-mgn--b-10
         .c-store--detail--body.js-collapse-container
           .c-store--detail--body--content.js-collapse-content
@@ -64,42 +66,58 @@ block content
       //- 用户评论
       .c-store--comments
         h2.l-mgn--t-20.l-mgn--b-10 用户评论
-        .c-store--comments--item
-          .clearfix
-            a.c-store--comments--item--author(href="#")
-              img.has-corner--50p(src=paths.img + "home-author-thumb-1.jpg")
-              div
-                span.id 兵天雪滴
-                span.time 两天前
-          .c-store--comments--item--body.js-collapse-container.l-mgn--t-10
-            .js-collapse-content.
-              水准很高的团队，虽然时间上有点纠结，比原计划周期晚了5天，不过最终品质还是非常满意的，给好评 不过最终品质还是非常满意的，给好评
-          .btn-expand.js-collapse-btn.hide(data-expanded="false")
-            span 阅读更多
+        .m-store-comments(data-js-store-comments)
+          .m-store-comments--item.l-mgn--t-10.l-mgn--b-10
+            .l-columns.pos-relative
+              img.col.thumb.has-corner--50p.l-mgn--r-10(src=paths.img + "home-author-thumb-1.jpg")
+              .col.l-w--80p
+                p 兵天雪滴
+                p 两天前
+
+            .clearfix
+            .body.l-mgn--t-10.l-mgn--b-10.js-translate-body.js-comments-body
+              p.
+                水准很高的团队，虽然时间上有点纠结，比原计划周期晚了5天，不过最终品质还是非常满意的，给好评 不过最终品质还是非常满意的，给好评 
+        //- .c-store--comments--item
+        //-   .clearfix
+        //-     a.c-store--comments--item--author(href="#")
+        //-       img.has-corner--50p(src=paths.img + "home-author-thumb-1.jpg")
+        //-       div
+        //-         span.id 兵天雪滴
+        //-         span.time 两天前
+        //-   .c-store--comments--item--body.js-collapse-container.l-mgn--t-10
+        //-     .js-collapse-content.
+        //-       水准很高的团队，虽然时间上有点纠结，比原计划周期晚了5天，不过最终品质还是非常满意的，给好评 不过最终品质还是非常满意的，给好评
         .l-columns.l-mgn--t-20
-          .col.l-w--50p
-            a.c-store--comments--read-all(href="#") 阅读全部520条评价
-          .col.l-w--50p.txt--r
-            img.c-store--comments--stars.l-mgn--r-10(src=paths.img + 'ic-stars-4.png')
+          .col.l-w--50p.l-v--m
+            a.c-store--comments--read-all(href="store-comments.html") 阅读全部520条评价
+          .col.l-w--50p.txt--r.l-v--m
+            img.c-store--comments--stars.l-mgn--r-5(src=paths.img + 'ic-stars-4.png')
             span 2091人评价
       hr.hr.l-mgn--t-30.l-mgn--b-10
-      ul.c-store--links
-        li 价格明细
-        li 支付流程
-        li 提交详细需求
-        li 退订政策
-        li 联系店主
-        li 查看是否可预定
-        li.ps 为了保护您的资金安全，请绝对不要在MIB站外或应用外转账或交流。
+      ul.c-store--links.c-list
+        li.c-list--item.has-right-arrow.has-right-arrow--porcelain
+          a(href="price-detail.html")价格明细
+        li.c-list--item.has-right-arrow.has-right-arrow--porcelain 
+          a(href="price-detail.html") 支付流程
+        li.c-list--item.has-right-arrow.has-right-arrow--porcelain 
+          a(href="javascript:void(0);") 提交详细需求
+        li.c-list--item.has-right-arrow.has-right-arrow--porcelain 
+          a(href="refund.html") 退订政策
+        li.c-list--item.has-right-arrow.has-right-arrow--porcelain 
+          a(href="chat.html") 联系店主
+        li.c-list--item.has-right-arrow.has-right-arrow--porcelain
+         a(href="calendar.html") 查看是否可预定
+        li.c-list--item.ps 为了保护您的资金安全，请绝对不要在MIB站外或应用外转账或交流。
 
     .c-menu.c-store--footer
       p 美术整包
       p.price 30000-50000/张
       div
-        img.c-store--footer--stars.l-mgn--r-10(src=paths.img + 'ic-stars-4.png')
+        img.c-store--footer--stars.l-mgn--r-5(src=paths.img + 'ic-stars-4.png')
         span 2091条评价
       span 优质商户 98%客户推荐
-      a.c-store--footer--btn(href="#") 查看是否可预定
+      a.c-store--footer--btn(href="javascript:void(0);") 查看是否可预定
 
  
 

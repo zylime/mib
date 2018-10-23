@@ -2,6 +2,7 @@
   box-shadow 1px 1px 10px rgba(130, 130, 130, 0.3)
 .hr
   border-top 1px solid $col-iron
+  border-bottom 0
 .hide
   display none
 .clearfix:after
@@ -13,7 +14,8 @@
 .has-corner--50p
   border-radius 50%
 .has-menu
-  margin-bottom 78px
+  // margin-bottom 78px
+  padding-bottom 78px !important
 .has-right-arrow--b
   position relative
   &:after
@@ -25,6 +27,25 @@
     height 18px
     position absolute
     right 0
+.has-right-arrow
+  position relative
+  &:before
+  &:after
+    content ""
+    width 10px
+    height 2px
+    position absolute
+    right 0
+  &:before
+    transform rotate(45deg) translateY(-50%)
+    top calc(50% - 2.5px)
+  &:after
+    transform rotate(135deg) translateY(-50%)
+    top calc(50% + 2.5px)
+  &--porcelain 
+    &:before
+    &:after
+      background-color $col-porcelain
 
 .border-bottom
   border-bottom 1px solid $col-iron

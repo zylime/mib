@@ -3,12 +3,13 @@ html, body
   max-width $mobile-break
   margin auto
   position relative
-  font-size 16px
+  font-size 14px
   font-family $font
   color $col-tundora
+  background $col-white
 
   // font-family $font-apple
-  
+
 footer
   max-width $mobile-break
   margin auto
@@ -34,12 +35,18 @@ a
   text-decoration none
   color initial
 p
-  font-size 16px
-  line-height 24px
+  font-size 14px
+  line-height 22px
 
 textarea
   resize none
 
 input
   border none
-  
+
+input::-webkit-outer-spin-button
+input::-webkit-inner-spin-button
+  -webkit-appearance none
+
+input[type="number"]
+  -moz-appearance textfield

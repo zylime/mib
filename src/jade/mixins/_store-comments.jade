@@ -1,5 +1,5 @@
 mixin store-comments(data)
-  .m-store-comments
+  .m-store-comments(data-js-store-comments)
     each item, i in data
 
       - var author = item.author || '';
@@ -10,18 +10,21 @@ mixin store-comments(data)
         - var _replyAuthor = item.reply.author;
         - var _replyBody = item.reply.body;
       
-      .m-store-comments--item.l-mgn--t-10.l-mgn--b-10
-        .l-columns
+      .m-store-comments--item.l-mgn--t-20.l-mgn--b-20(data-js-translation)
+        .l-columns.pos-relative
           img.col.thumb.has-corner--50p.l-mgn--r-10(src=paths.img + thumb)
           .col.l-w--80p
-            p!=author
-            p!=date
+            p.name!=author
+            p.date!=date
+          .translate.txt--persian-green.js-translate 翻译
 
         .clearfix
-        .body.l-mgn--t-10.l-mgn--b-10!= body 
+        .body.l-mgn--t-15.l-mgn--b-15.js-translate-body.js-comments-body
+          p!= body 
         if (item.reply)
           .reply.l-pad--t-10.l-pad--b-10
             .reply-author.
               来自#{_replyAuthor}的回复：
-            .reply-body.l-mgn--t-10!= _replyBody
+            .reply-body.l-mgn--t-10.js-translate.js-comments-body
+              p!= _replyBody
       hr.hr

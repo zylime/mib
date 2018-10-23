@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  slider();
+
 
   $(document).Popups();
 
@@ -7,23 +7,22 @@ $(document).ready(function(){
   $('[data-js-order-detail]').OrderDetail();
   $('[data-js-prepay]').PrePay();
   $('[data-js-payment-method]').PaymentMethod();
+  $('[data-js-home]').Home();
+  $('[data-js-project-list]').ProjectList();
+  $('[data-js-carousel]').Carousel();
+  $('[data-js-store-comments]').StoreComments();
+  $('[data-js-password]').TogglePsw();
+  $('[data-js-calendar]').Calender();
 
 
 
 
-  function slider(){
-    $('.js-categories-slider').slick({
-      dots: false,
-      infinite: false,
-      slidesToShow: 4,
-      arrows: false
-    })
-  }
+  
   
   $('[data-js-collapse]').Collapse({
     text: true
   });
-  $('[data-js-carousel').Carousel();
+
   $('[data-js-search]').Search();
   
   // lightbox on store
@@ -32,10 +31,6 @@ $(document).ready(function(){
     'wrapAround': true
   })
 
-  // datepicker on order detail
-  // $('.js-datepicker').dateRangePicker({
-  //   language:'cn'
-  // });
 
 
 

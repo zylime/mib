@@ -1,0 +1,27 @@
+//- 忘记密码
+extends ../partials/_template
+
+
+block content
+  .c-forget-psw
+    .c-header
+      a.l-mgn--l-20(href="sign-in.html")
+        .ic--back.l-inl-b.l-v--m
+        span.l-inl-b.l-v--m 忘记密码
+
+    .c-sign-in--main.c-content
+      form.c-sign-in--form
+        .c-sign-in--form--rol.border-bottom
+          .ic--user
+          input(type="text", name="uid", autocomplete="on", placeholder="请输入用户名")
+        .c-sign-in--form--rol.border-bottom
+          .ic--psw
+          input(type="text", name="psw", placeholder="请输入验证码")
+          .btn-type-1 获取验证码
+
+
+        button.c-sign-in--form--submit 提交
+
+
+
+

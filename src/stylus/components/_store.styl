@@ -1,6 +1,15 @@
 .c-store
-  margin-bottom 120px
+  margin-bottom 90px
+  h2
+    font-size 18px
+    font-weight normal
   &--main
+    &--subtitle
+      font-size 11px
+    &--title
+      font-size 22px
+      line-height 28px
+      margin 7px 0 14px 
     &--info
       ul
         padding 0
@@ -14,21 +23,22 @@
           color $col-white
           text-align center
           vertical-align middle
-          padding 5px 10px
-          height 50px
+          padding 5px
+          height 38px
           border-radius 5px
           box-sizing border-box
           position relative
           i
-            margin-right 5px
+            margin-right 2px
             width 15px
             vertical-align middle
             height 100%
+          
           span
             display inline-block
-            line-height 40px
+            line-height 30px
             // width 104px
-            font-size 14px
+            font-size 12px
             color $col-white
       &--author
         text-align center
@@ -36,49 +46,62 @@
         box-sizing border-box
         vertical-align top
         img
-          width 65px
+          width 50px
       &--contact
         background $col-bittersweet
         border-radius 5px
-        padding 5px 10px
-        margin-top 3px
+        padding 5px
+        // margin-top 3px
+        width 70px
+        line-height 14px
+        margin auto
+        a
         span
           color $col-white
+          font-size 10px
+          line-height 14px
         i
-          margin-right 5px
+          margin-right 2px
           vertical-align middle
   &--detail
     position relative
+    
     &--translate
       color $col-persian-green
+      font-size 14px
+      span
+        padding-right 10px
+        position relative
+        &:before
+        &:after
+          content ""
+          width 7px
+          height 2px
+          position absolute
+          background $col-persian-green
+          right 0
+          top 5px
+          display block
+        &:before
+          transform rotate(45deg)
+          
+        &:after
+          transform rotate(145deg)
+          top 9px
+          
+          
     &--body
-      height 142px
+      height 134px
       overflow hidden
   .btn-expand
     position absolute
-    color $col-persian-green
-    right 15px
+    right 0
     bottom 0
-    &:before
-    &:after
-      content ""
-      width 10px
-      height 2px
-      position absolute
-      background $col-persian-green
-      right -12px
-      top 8px
-      transition transform .5s
-    &:before
-      transform rotate(-60deg)
-    &:after
-      transform rotate(60deg)
-      right -16px
-    &[data-expanded="false"]
-      &:before
-        transform rotate(60deg)
-      &:after
-        transform rotate(-60deg)
+    
+    span
+      color $col-persian-green
+
+  
   
   &--comments
     &--item
@@ -95,7 +118,7 @@
           font-size 12px
           color $col-silver-sand
       &--body
-        height 40px
+        height 36px
         overflow hidden
     &--read-all
       color $col-persian-green
@@ -104,51 +127,57 @@
       border-radius 5px
       font-weight bold
     &--stars
-      width 100px
+      width calc(100% - 85px)
     &--stars
     &--stars + span
       vertical-align middle
   
   &--links
     li
-      list-style-type none
-      position relative
-      color $col-tundora
-      font-size 23px
-      border-bottom 1px solid $col-iron
-      padding 20px 0
-      &:after
-        content ""
-        background url(../img/ic-right-arrow.png)
-        background-size 100%
-        background-repeat no-repeat
-        width 12px
-        height 25px
-        position absolute
-        right 0
+      font-size 17px
+      a
+        display block
+      // list-style-type none
+      // position relative
+      // color $col-tundora
+      // font-size 23px
+      // border-bottom 1px solid $col-iron
+      // padding 20px 0
+      // &:after
+      //   content ""
+      //   background url(../img/ic-right-arrow.png)
+      //   background-size 100%
+      //   background-repeat no-repeat
+      //   width 12px
+      //   height 25px
+      //   position absolute
+      //   right 0
       &.ps
-        font-size 20px
-        &:after
-          background none
+        font-size 14px
+        
         
   &--footer
     padding 10px 20px
     box-sizing border-box
-    font-size 18px
+    line-height 14px
+    p
+      line-height 18px
     &--stars
-      width 76px
+      width 52px
       & + span
-        font-size 15px
+        font-size 11px
+        line-height 14px
     & > span
       color $col-persian-green
-      font-size 14px
-    .price
-      font-size 20px
+      font-size 11px
+      line-height 14px
+    // .price
+    //   font-size 20px
     &--btn
       position absolute
       width 150px
-      height 50px
-      line-height 50px
+      height 46px
+      line-height 46px
       color $col-white
       background $col-bittersweet
       border-radius 5px
@@ -163,9 +192,16 @@
       ul
         li
           list-style-type none
+          line-height 32px
           img
-            width 65px
+            width 70px
             float right
+      .name
+      .date
+        line-height 24px
+      .name
+      .reply-author
+        font-size 16px
       
         
       

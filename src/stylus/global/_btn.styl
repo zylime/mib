@@ -1,0 +1,22 @@
+.btn-expand
+  padding-right 15px
+  &:before
+  &:after
+    content ""
+    width 7px
+    height 2px
+    position absolute
+    background $col-persian-green
+    right 0
+    top 8px
+    transition transform .5s
+  &:before
+    transform rotate(-45deg)
+    right 4px
+  &:after
+    transform rotate(45deg)
+  &[data-expanded="false"]
+    &:before
+      transform rotate(45deg)
+    &:after
+      transform rotate(-45deg)

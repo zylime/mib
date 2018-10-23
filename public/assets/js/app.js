@@ -1,3 +1,44 @@
+'use strict';
+
+$.fn.Calender = function (opts) {
+
+  var _calendarContainer = $(this).find('.js-calendar-container');
+  var onSelect = true;
+
+  events();
+
+  function events() {
+    initCalendar();
+  }
+
+  function initCalendar() {
+    for (var i = 0; i < 12; i++) {
+      var _date = new Date();
+      var _selector = '.js-calendar-' + (i + 1);
+      console.log(_selector);
+      _date.setDate(1);
+      _date.setMonth(_date.getMonth() - 6 + i);
+      // console.log(_date);
+      _calendarContainer.append('<div class="c-calendar--block js-calendar js-calendar-' + (i + 1) + '" data-time="' + _date + '"></div>');
+
+      $(_selector).calendar({
+        date: _date,
+        daysMin: ['日', '一', '二', '三', '四', '五', '六']
+      });
+    }
+    _calendarContainer.append('<input type="hidden" name="selectDate" class="js-calendar-select-date">');
+    selectDate();
+  }
+
+  function selectDate() {
+    $('.js-calendar .day').on('click touch', function () {
+      if (!onSelect) {
+        $(this).addClass('active');
+      }
+    });
+    $('.js-calendar-select-date').val('a');
+  }
+};
 "use strict";
 
 $.fn.Carousel = function (opts) {
@@ -65,7 +106,6 @@ $.fn.Collapse = function (opts) {
 'use strict';
 
 $(document).ready(function () {
-  slider();
 
   $(document).Popups();
 
@@ -73,20 +113,17 @@ $(document).ready(function () {
   $('[data-js-order-detail]').OrderDetail();
   $('[data-js-prepay]').PrePay();
   $('[data-js-payment-method]').PaymentMethod();
-
-  function slider() {
-    $('.js-categories-slider').slick({
-      dots: false,
-      infinite: false,
-      slidesToShow: 4,
-      arrows: false
-    });
-  }
+  $('[data-js-home]').Home();
+  $('[data-js-project-list]').ProjectList();
+  $('[data-js-carousel]').Carousel();
+  $('[data-js-store-comments]').StoreComments();
+  $('[data-js-password]').TogglePsw();
+  $('[data-js-calendar]').Calender();
 
   $('[data-js-collapse]').Collapse({
     text: true
   });
-  $('[data-js-carousel').Carousel();
+
   $('[data-js-search]').Search();
 
   // lightbox on store
@@ -94,13 +131,28 @@ $(document).ready(function () {
     'resizeDuration': 200,
     'wrapAround': true
   });
-
-  // datepicker on order detail
-  // $('.js-datepicker').dateRangePicker({
-  //   language:'cn'
-  // });
-
 });
+'use strict';
+
+$.fn.Home = function (opts) {
+
+  var sliderContainer = $(this).find('.js-categories-slider');
+
+  events();
+
+  function events() {
+    slider();
+  }
+
+  function slider() {
+    sliderContainer.slick({
+      dots: false,
+      infinite: false,
+      slidesToShow: 4,
+      arrows: false
+    });
+  }
+};
 'use strict';
 
 $.fn.OrderDetail = function (opts) {
@@ -116,6 +168,7 @@ $.fn.OrderDetail = function (opts) {
   function events() {
     toggleCheckbox();
     updateUserInfo();
+    datePicker();
   }
 
   function toggleCheckbox() {
@@ -143,6 +196,15 @@ $.fn.OrderDetail = function (opts) {
   function syncUserInfo() {
     var _html = _inputUserName.val() + ' ' + _inputUserId.val();
     _userInfo.html(_html);
+  }
+
+  function datePicker() {
+    // console.log($('.js-datepicker').length);
+    if ($('.js-datepicker').length > 0) {
+      $('.js-datepicker').dateRangePicker({
+        language: 'cn'
+      });
+    }
   }
 };
 'use strict';
@@ -201,7 +263,37 @@ $.fn.Popups = function (opts) {
       e.stopPropagation();
       closePopup($('.js-popup-code'));
     });
+
+    enterCode();
   }
+
+  function enterCode() {
+    $('.js-popup-code').find('input').each(function (index) {
+      var i = index;
+      $(this).on('keydown', function () {
+        if ($(this).val().length == 1 && $($('.js-popup-code').find('input')[i + 1]).length > 0) {
+          $($('.js-popup-code').find('input')[i + 1]).focus();
+        }
+      });
+      $(this).on('input', function () {
+        updateButton();
+      });
+    });
+  }
+
+  function updateButton() {
+    var _length = $('.js-popup-code').find('input').length;
+    for (var i = 0; i < _length; i++) {
+      if ($($('.js-popup-code').find('input')[i]).val().length == 0) {
+        break;
+      } else {
+        if (i == _length - 1) {
+          $('.js-popup-code').find('.js-btn').removeClass('disabled');
+        }
+      }
+    }
+  }
+
   function registerPopup() {
     $(document).on('click touch', '.js-popup-cover, .js-close-register', function (e) {
       e.stopPropagation();
@@ -248,11 +340,15 @@ $.fn.PrePay = function (opts) {
 
   var container = $(this);
   var _checkbox = $(this).find('.js-checkbox');
+  var _priceItems = $(this).find('.js-price');
+  var _totalPrice = $(this).find('.js-total');
+  var _currencySymbol = '¥';
 
   events();
 
   function events() {
     checkbox();
+    calcPrice();
   }
 
   function checkbox() {
@@ -262,6 +358,38 @@ $.fn.PrePay = function (opts) {
       $(this).toggleClass('active');
       $(this).attr('data-checked', checkStatus);
       $(this).prev().val(checkStatus);
+    });
+  }
+
+  function calcPrice() {
+    var _price = 0;
+    _priceItems.each(function () {
+      var _itemPrice = parseInt($(this).attr('data-price'));
+
+      _price += _itemPrice;
+      console.log('itemprice: ' + _itemPrice + '; total: ' + _price);
+    });
+    _totalPrice.attr('data-price', _price).html(_currencySymbol + _price);
+  }
+};
+'use strict';
+
+$.fn.ProjectList = function (opts) {
+
+  var sliderContainer = $(this).find('.js-categories-slider');
+
+  events();
+
+  function events() {
+    slider();
+  }
+
+  function slider() {
+    sliderContainer.slick({
+      dots: false,
+      infinite: false,
+      slidesToShow: 3,
+      arrows: false
     });
   }
 };
@@ -335,5 +463,66 @@ $.fn.Search = function (opts) {
 
   function resetViewMore() {
     $('.js-history-view-more').attr('data-expanded', 'false').html('更多');
+  }
+};
+'use strict';
+
+$.fn.StoreComments = function (opts) {
+
+  var commentsBody = $(this).find('.js-comments-body');
+
+  events();
+
+  function events() {
+    initComments();
+  }
+
+  function initComments() {
+    commentsBody.each(function () {
+
+      var containerHeight = $(this).children('p').height();
+      var bodyHeight = $(this).height();
+      var needViewMore = containerHeight > bodyHeight;
+      if (needViewMore) {
+        $(this).append('<div class="btn-expand js-view-more" data-expanded="false"><span>阅读更多</span></div>');
+        viewMore();
+      }
+    });
+  }
+
+  function viewMore() {
+    commentsBody.each(function () {
+      var container = $(this);
+
+      var containerHeight = $(this).height();
+      var bodyHeight = $(this).find('p').height();
+      $(this).find('.js-view-more').unbind('click touch').on('click touch', function () {
+        if ($(this).attr('data-expanded') == 'false') {
+          container.css('max-height', bodyHeight);
+          $(this).attr('data-expanded', 'true');
+        } else {
+          container.css('max-height', containerHeight);
+          $(this).attr('data-expanded', 'false');
+        }
+      });
+    });
+  }
+};
+'use strict';
+
+$.fn.TogglePsw = function (opts) {
+
+  var _input = $(this).find('.js-psw-input');
+  var _eye = $(this).find('.js-psw-eye');
+
+  events();
+
+  function events() {
+    _eye.on('click touch', function () {
+      var _type = _input.attr('type') == 'password' ? 'text' : 'password';
+
+      _eye.toggleClass('close');
+      _input.attr('type', _type);
+    });
   }
 };

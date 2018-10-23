@@ -1,10 +1,11 @@
+//- 资源列表
 extends ../partials/_template
 include ../mixins/_display-projects
 include ../mixins/_menu
 include ../mixins/_search-bar
 
 block content
-  .c-content.c-content--bottom
+  .c-content.c-content--bottom.has-menu.c-project-list(data-js-project-list)
     +search-bar(0)
 
     .c-categories.l-mgn--t-20.js-categories-slider
@@ -12,11 +13,12 @@ block content
         - var _klass = index == 0 ? 'active' : '';
           a.c-categories--btn(href="javascript:void(0);", class=_klass)!=item
     .l-columns.l-mgn--t-20
-      .col.l-w--80p 
-        p 仅剩余6%的优质资源符合条件并可接受预定，建议您尽快预订！
-      .col.l-w--20p
-        .ic--reservation.l-mgn--auto
-    +display-projects(list_display1)
+      .col.l-w--75p 
+        p.c-project-list--note 仅剩余6%的优质资源符合条件并可接受预定，建议您尽快预订！
+      .col.l-w--25p
+        .ic--reservation
+    .l-mgn--t-20
+      +display-projects(list_display1)
 
-  +menu()
+    +menu(0)
 

@@ -2,12 +2,15 @@ $.fn.PrePay = function(opts){
 
   var container = $(this);
   var _checkbox = $(this).find('.js-checkbox');
- 
+  var _priceItems = $(this).find('.js-price');
+  var _totalPrice = $(this).find('.js-total');
+  var _currencySymbol = '¥';
   
   events();
 
   function events(){
-    checkbox()
+    checkbox();
+    calcPrice();
   }
 
   function checkbox(){
@@ -18,6 +21,19 @@ $.fn.PrePay = function(opts){
       $(this).attr('data-checked', checkStatus);
       $(this).prev().val(checkStatus);
     })
+  }
+
+  function calcPrice(){
+    var _price = 0;
+    _priceItems.each(function(){
+      var _itemPrice = parseInt($(this).attr('data-price'));
+
+      _price += _itemPrice;
+      console.log('itemprice: ' + _itemPrice + '; total: '+_price);
+
+    });
+    _totalPrice.attr('data-price', _price).html(_currencySymbol + _price);
+
   }
 
 }

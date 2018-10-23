@@ -1,8 +1,29 @@
 .m-store-comments
   &--item
+    position relative
     .thumb
       width 50px
     .col
       vertical-align middle
     .reply
       padding-left 20px
+    .body
+    .reply-body
+      max-height 36px
+      overflow hidden
+      transition all 0.2s
+    p
+      line-height 18px
+    .btn-expand
+      position absolute
+      background $col-white
+      right 0
+      bottom 0
+      padding-left 2px
+      span
+        color $col-persian-green
+  .translate
+    position absolute
+    top 50%
+    transform translateY(-50%)
+    right 0

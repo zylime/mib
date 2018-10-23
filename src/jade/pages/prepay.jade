@@ -1,44 +1,44 @@
-//- 预定详情
+//- 检查并支付
 extends ../partials/_template
 
 block content
-  form.c-order-detail.c-prepay(data-js-prepay)
+  form.c-order-detail.c-prepay.c-process(data-js-prepay)
     .ic--back--black.l-mgn--b-20
     h2.l-mgn--b-10 检查并支付
     .c-order-detail--item.l-columns
-      .col.l-w--70p
-        h4 中国水墨风/国产武侠原画，超高精度
-      .col.l-w--30p
+      .col.l-w--70p.l-v--t
+        .project-title 中国水墨风/国产武侠原画，超高精度
+      .col.l-w--30p.l-v--t
         img.l-w--100p(src=paths.img + 'order-detail-thumb.jpg', alt="产品图片")
     .c-
-    a.c-order-detail--item.l-columns.has-right-arrow--b(href="pay-mathod.html")
+    a.c-order-detail--item.l-columns.has-right-arrow--b(href="payment-mathod.html")
       .col.l-w--100p
         .ic--alipay.l-inl-b.l-v--m.l-mgn--r-10
-        span 支付宝
+        .title.l-inl-b.l-v--m 支付宝
 
     .c-order-detail--item.l-columns
-      .col.l-w--50p.l-mgn--b-10
-        ¥2500/天 <i class="ic--mutiply"></i> 30天
-      .col.l-w--50p.txt--r.l-mgn--b-10 ¥60000.00
-      .col.l-w--50p.l-mgn--b-10.
+      .col.l-w--50p.l-mgn--b-15.title.
+        <span>¥2500/天</span><i class="ic--mutiply"></i><span>30天</span>
+      .col.l-w--50p.txt--r.l-mgn--b-15.title.js-price(data-price='60000') ¥60000.00
+      .col.l-w--50p.l-mgn--b-15.
         首付款 <span class="txt--burnt-sienna">30%</span>
-      .col.l-w--50p.txt--r.l-mgn--b-10 ¥2000.00
-      .col.l-w--50p.l-mgn--b-10.
+      .col.l-w--50p.txt--r.l-mgn--b-15.title.js-price(data-price='2000') ¥2000.00
+      .col.l-w--50p.l-mgn--b-15.
         服务费 <span class="txt--burnt-sienna">5%</span>
-      .col.l-w--50p.txt--r.l-mgn--b-10 ¥2000.00
-      .col.l-w--50p.l-mgn--b-10.
+      .col.l-w--50p.txt--r.l-mgn--b-15.title.js-price(data-price='2000') ¥2000.00
+      .col.l-w--50p.l-mgn--b-15.
         增值税 <span class="txt--burnt-sienna">6%</span>
-      .col.l-w--50p.txt--r.l-mgn--b-10 ¥2000.00
+      .col.l-w--50p.txt--r.l-mgn--b-15.title.js-price(data-price='2000') ¥2000.00
       .col.l-w--100p.txt--r
-        a.txt--persian-green(href="add-gift-card.html") 添加礼金券     
+        a.txt--persian-green(href="gift-card.html") 添加礼金券     
     .c-order-detail--item.l-columns
-      .col.l-w--50p.
+      .col.l-w--50p.title.
         总额 (CNY)  
       .col.l-w--50p.txt--r
-        span.txt--persian-green ¥26000.00
+        span.txt--persian-green.total.js-total(data-price) ¥26000.00
 
     .c-order-detail--item.l-columns
-      .col.l-w--100p 退订政策
+      .col.l-w--100p.title.l-mgn--b-10 退订政策
       .col.l-w--100p
         p.
           距离项目启动时间至少5天取消预订才可全额退款（服务费除外）。距离启动日期5议案内取消预订，扣除预付款的30%，剩余的款项全额退还。尚未入驻，且在预订确认后48小时内取消的预订，将退还服务费。 
@@ -51,7 +51,7 @@ block content
         
     .c-order-detail--item.l-columns
       .col.l-w--100p
-        .btn-type-3 确认预定 ¥26000.00
+        a.btn-type-3(href="pay-success.html") 确认预定 ¥26000.00
 
         
 

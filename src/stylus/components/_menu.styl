@@ -6,7 +6,9 @@
   background $col-white
   border-top 1px solid $col-silver
   box-shadow 0 0 5px rgba(130, 130, 130, 0.3)
-  padding 10px 0
+  padding 10px 0 5px
+  left 50%
+  transform translateX(-50%)
   &--item
     text-align center
     span
@@ -16,15 +18,6 @@
     &.active
       span
         color $col-cinnabar
-      .ic--menu--search
-        background-position -4px 37px
-      .ic--menu--share
-        background-position -35px 37px
-      .ic--menu--selected
-        background-position -80px 37px
-      .ic--menu--msg
-        background-position -127px 37px
-      .ic--menu--me
-        background-position 37px 37px
+
     &--name
-      font-size 12px
+      font-size 10px

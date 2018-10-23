@@ -14,6 +14,7 @@ $.fn.OrderDetail = function(opts){
   function events(){
     toggleCheckbox();
     updateUserInfo();
+    datePicker();
   }
 
   function toggleCheckbox(){
@@ -38,12 +39,22 @@ $.fn.OrderDetail = function(opts){
       syncUserInfo();
     });
 
-
   }
 
   function syncUserInfo(){
     var _html = _inputUserName.val() + ' ' + _inputUserId.val();
     _userInfo.html(_html);
+  }
+
+  function datePicker(){
+    // console.log($('.js-datepicker').length);
+    if($('.js-datepicker').length > 0){
+      $('.js-datepicker').dateRangePicker({
+        language:'cn'
+      });
+    }
+    
+
   }
   
 

@@ -1,49 +1,85 @@
 .m-display-projects
+  margin-bottom 20px
   .txt--h1
     color $col-tundora
+    font-weight bold
   &--item
+    margin-bottom 20px
     &--name
       text-overflow ellipsis
       overflow hidden
       white-space nowrap
-      font-size 21px
-      padding 0 10px
-      margin-top 7px
-
+      font-size 14px
+      font-weight bold
+      
+      margin 5px 0 3px
+      line-height 16px
     &--price
       color $col-flamenco
     &--price
     &--days
-      font-size 16px
-      line-height 22px
-      padding 0 10px
     &--comments
-      font-size 15px
+      font-size 11px
+      line-height 14px
     &--author
-      height 52px
+      height 46px
       float right
       img
         height 100%
+    .l-columns
+      line-height 0
+    &.col-1
+      .m-display-projects--item--name
+        font-size 16px
+        padding 0 5px
+        line-height 22px
+      .m-display-projects--item--price
+      .m-display-projects--item--days
+        padding 0 5px
+        font-size 14px
+        line-height 20px
+      .m-display-projects--item--comments
+        font-size 14px
+        line-height 20px
   &--more
     color $col-persian-green
-    font-size 15px
+    font-size 12px
     vertical-align middle
+    position relative
+    padding 0 8px 0 0
+    line-height 18px
+    
     &:after
+    &:before
       content ""
-      background url(../img/ic-right-arrow-2.png)
       width 5px
-      height 17px
-      background-size 100%
-      background-repeat no-repeat
-      background-position center
-      display inline-block
-      vertical-align middle
-      margin-left 4px
+      height 1px
+      position absolute
+      top 2px
+      background $col-persian-green
+      right 1px
+      display block
+    &:before
+      transform rotate(45deg)
+      top 4px
+    &:after
+      transform rotate(-45deg)
+      top 7px
+      // content ""
+      // background url(../img/ic-right-arrow-2.png)
+      // width 5px
+      // height 12px
+      // background-size 100%
+      // background-repeat no-repeat
+      // background-position center
+      // position absolute
+      // right 0
+      // top 2px
   .col
     box-sizing border-box
   .other
-    font-size 18px
-    height 40px
-    line-height 40px
+    font-size 14px
+    height 36px
+    line-height 32px
     border 2px solid $col-persian-green
     box-sizing border-box
