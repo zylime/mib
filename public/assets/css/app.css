@@ -534,6 +534,46 @@ input:-ms-input-placeholder {
 .ic--share-to--more {
   background-image: url("../img/ic-share-more.png");
 }
+.ic--favorite {
+  background-image: url("../img/ic-favorite.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+}
+.ic--favorite.active {
+  background-image: url("../img/ic-favorite-active.png");
+}
+.ic--triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #00a5a5;
+}
+.ic--remove {
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+.ic--remove:before,
+.ic--remove:after {
+  width: 10px;
+  height: 1px;
+  background: #00a5a5;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+.ic--remove:before {
+  transform: rotate(45deg);
+}
+.ic--remove:after {
+  transform: rotate(135deg);
+}
 html,
 body {
   height: 100%;
@@ -1582,30 +1622,36 @@ input[type="number"] {
   position: absolute;
   right: 0;
   padding: 0 10px;
-  height: 38px;
-  line-height: 38px;
-  top: -2px;
+  height: 32px;
+  line-height: 32px;
+  top: 2px;
 }
 .c-forget-psw .c-header {
-  padding: 10px 0;
+  padding: 20px 0;
   background: #00a5a5;
   position: relative;
 }
+.c-forget-psw .c-header a {
+  font-size: 16px;
+}
 .c-forget-psw .c-header .ic--back {
   background-position: center;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .c-forget-psw .c-sign-in--main {
   margin: 0;
+}
+.c-gift-card.c-process h2 {
+  font-size: 30px;
 }
 .c-gift-card form label {
   font-size: 13px;
   color: #484848;
 }
 .c-gift-card form input {
-  font-size: 20px;
+  font-size: 28px;
   width: 100%;
-  margin: 20px 0 40px;
+  margin: 30px 0 40px;
 }
 .c-gift-card form a,
 .c-gift-card form button {
@@ -1820,6 +1866,13 @@ input[type="number"] {
 .c-popup--code .login-btn.disabled {
   background: #dde0e3;
 }
+.c-popup--reset-psw img {
+  width: 80px;
+}
+.c-popup--reset-psw h2 {
+  font-size: 18px;
+  font-weight: normal;
+}
 .c-popup--register img {
   width: 80px;
 }
@@ -1915,12 +1968,24 @@ input[type="number"] {
 .c-price-detail h3 {
   font-size: 22px;
 }
+.c-price-detail h3 sup {
+  font-size: 14px;
+}
 .c-price-detail h4 {
   font-size: 20px;
   line-height: 30px;
 }
 .c-price-detail p.smaller {
   font-size: 14px;
+}
+.c-price-detail .title {
+  font-size: 18px;
+}
+.c-price-detail .c-list--item {
+  padding: 25px 0;
+}
+.c-price-detail .c-list--item .price {
+  font-size: 16px;
 }
 .c-price-detail--section {
   margin: 20px 0 40px;
@@ -1976,6 +2041,13 @@ input[type="number"] {
 }
 .c-project-list .m-display-projects--item {
   margin-bottom: 30px;
+  position: relative;
+}
+.c-project-list .m-display-projects--item .ic--favorite {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
 }
 .c-project-profile h2 {
   font-size: 28px;
@@ -2210,9 +2282,35 @@ input[type="number"] {
 .c-sign-in--main {
   margin-top: 50px;
 }
+.c-sign-in--form--dropdown {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0px 4px 15px rgba(130,130,130,0.3);
+  padding: 20px;
+  top: 48px;
+  z-index: 1;
+  display: none;
+}
+.c-sign-in--form--dropdown li {
+  list-style-type: none;
+  line-height: 32px;
+  position: relative;
+}
+.c-sign-in--form--dropdown li span {
+  display: block;
+}
+.c-sign-in--form--dropdown li .ic--remove {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  z-index: 2;
+}
 .c-sign-in--form--rol {
   padding: 10px 0;
   margin-top: 25px;
+  position: relative;
 }
 .c-sign-in--form--rol .ic--user,
 .c-sign-in--form--rol .ic--psw,
@@ -2228,6 +2326,11 @@ input[type="number"] {
 }
 .c-sign-in--form--rol input.input-phone {
   width: calc(100% - 100px);
+}
+.c-sign-in--form--rol .ic--triangle-down {
+  position: absolute;
+  right: 10px;
+  top: 50%;
 }
 .c-sign-in--form--link {
   margin-top: 10px;
@@ -2276,6 +2379,11 @@ input[type="number"] {
   color: #00a5a5;
   line-height: 50px;
   border-radius: 5px;
+}
+.c-sign-in--bottom {
+  position: absolute;
+  width: 90%;
+  bottom: 20px;
 }
 .slick-list {
   padding: 0;
@@ -2473,12 +2581,15 @@ input[type="number"] {
 .c-store--popup--comments {
   box-sizing: border-box;
 }
+.c-store--popup--comments ul {
+  margin-bottom: 50px;
+}
 .c-store--popup--comments ul li {
   list-style-type: none;
-  line-height: 32px;
+  line-height: 38px;
 }
 .c-store--popup--comments ul li img {
-  width: 70px;
+  width: 80px;
   float: right;
 }
 .c-store--popup--comments .name,
@@ -2591,26 +2702,20 @@ input[type="number"] {
 .m-store-comments--item .reply {
   padding-left: 20px;
 }
-.m-store-comments--item .body,
-.m-store-comments--item .reply-body {
-  max-height: 36px;
-  overflow: hidden;
-  transition: all 0.2s;
-}
-.m-store-comments--item p {
+.m-store-comments p {
   line-height: 18px;
 }
-.m-store-comments--item .btn-expand {
+.m-store-comments .btn-expand {
   position: absolute;
   background: #fff;
   right: 0;
   bottom: 0;
   padding-left: 2px;
 }
-.m-store-comments--item .btn-expand span {
+.m-store-comments .btn-expand span {
   color: #00a5a5;
 }
-.m-store-comments .translate {
+.translate {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

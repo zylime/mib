@@ -2,7 +2,7 @@ extends ../partials/_template
 
 
 block content
-  .c-content.c-sign-in--bg
+  .c-content.c-sign-in--bg(data-js-sign-in)
     .c-sign-in
       h1 欢迎使用MIB
       h2 (Mega Icebreaker)
@@ -11,6 +11,19 @@ block content
           .c-sign-in--form--rol.border-bottom
             .ic--user
             input(type="text", name="uid", autocomplete="on", placeholder="请输入用户名")
+            .ic--triangle-down.js-dropdown-btn
+            .c-sign-in--form--dropdown.js-dropdown-body
+              ul
+                li
+                  span 122203921
+                  .ic--remove.js-remove
+                li
+                  span 12345@qq.com
+                  .ic--remove.js-remove
+                li
+                  span 199092819
+                  .ic--remove.js-remove
+
           .c-sign-in--form--rol.border-bottom(data-js-password)
             .ic--psw
             input(type="password", name="psw", placeholder="请输入密码").js-psw-input

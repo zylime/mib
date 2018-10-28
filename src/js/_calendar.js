@@ -16,7 +16,7 @@ $.fn.Calender = function(opts){
     for (var i = 0; i < 12; i++){
       var _date = new Date();
       var _selector = '.js-calendar-' + (i+1);
-      console.log(_selector);
+      // console.log(_selector);
       _date.setDate(1);
       _date.setMonth(_date.getMonth() - 6 + i); 
       // console.log(_date);
@@ -29,7 +29,7 @@ $.fn.Calender = function(opts){
 
     }
     _calendarContainer.append('<input type="hidden" name="selectDate" class="js-calendar-select-date">');
-    selectDate();
+    // selectDate();
   }
 
   function selectDate(){

@@ -3,6 +3,8 @@ $(document).ready(function(){
 
   $(document).Popups();
 
+  $('[data-js-sign-in]').SignIn();
+
   $('[data-js-register]').Register();
   $('[data-js-order-detail]').OrderDetail();
   $('[data-js-prepay]').PrePay();
@@ -30,13 +32,8 @@ $(document).ready(function(){
     'resizeDuration': 200,
     'wrapAround': true
   })
-
-
-
-
-
-  
-
-  
-
 });
+
+// $(window).onload(function(){
+//   $('[data-js-sign-in]').SignIn();
+// })

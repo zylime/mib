@@ -20,9 +20,31 @@
   &--main
     margin-top 50px
   &--form
+    &--dropdown
+      position absolute
+      background $col-white
+      width 100%
+      box-shadow 0px 4px 15px rgba(130, 130, 130, 0.3)
+      padding 20px
+      top 48px
+      z-index 1
+      display none
+      li
+        list-style-type none
+        line-height 32px
+        position relative
+        span
+          display block
+        .ic--remove
+          position absolute
+          top 50%
+          transform translateY(-50%)
+          right 0
+          z-index 2
     &--rol
       padding 10px 0
       margin-top 25px
+      position relative
       .ic--user
       .ic--psw
       .ic--eye
@@ -37,6 +59,10 @@
         padding 0 5px
         &.input-phone
           width calc(100% - 100px)
+      .ic--triangle-down
+        position absolute
+        right 10px
+        top 50%
     &--link
       margin-top 10px
       a
@@ -80,5 +106,10 @@
       color $col-persian-green
       line-height 50px
       border-radius 5px
+  &--bottom
+    position absolute
+    width 90%
+    bottom 20px
+  
       
   

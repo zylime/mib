@@ -8,7 +8,8 @@ $.fn.StoreComments = function(opts){
   events();
 
   function events(){
-    initComments();
+    // removed, no longer in use
+    // initComments();
    }
 
    function initComments(){

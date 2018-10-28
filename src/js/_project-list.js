@@ -1,6 +1,7 @@
 $.fn.ProjectList = function(opts){
 
   var sliderContainer = $(this).find('.js-categories-slider');
+  var favoriteIcons = $(this).find('.js-favorite');
 
 
  
@@ -9,6 +10,7 @@ $.fn.ProjectList = function(opts){
 
   function events(){
     slider();
+    toggleFavorite();
    }
 
   function slider(){
@@ -17,6 +19,16 @@ $.fn.ProjectList = function(opts){
       infinite: false,
       slidesToShow: 3,
       arrows: false
+    })
+  }
+
+  function toggleFavorite(){
+    favoriteIcons.each(function(){
+      $(this).on('click touch', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).toggleClass('active');
+      })
     })
   }
 

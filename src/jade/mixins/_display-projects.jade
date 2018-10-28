@@ -3,6 +3,8 @@ mixin display-projects(data)
   - var viewMore = data.learn_more ? true : false;
   - var col = data.col;
   - var shadow_klass = col == 2 ? '' : 'has-shadow';
+  - var hasFavorite = data.hasFavorite ? true : false;
+
   .m-display-projects
     if title
       .l-columns.l-mgn--b-10
@@ -24,7 +26,9 @@ mixin display-projects(data)
         if (col == 2)
           - klass = klass + ' ' + space_klass;
 
-        a.col.m-display-projects--item(class=klass)(href="store.html")
+        a.col.m-display-projects--item(class=klass, href="store.html")
+          if (data.hasFavorite)
+            .ic--favorite.js-favorite
           img.has-corner--5.l-w--100p(src=paths.img + item.image, class=shadow_klass)
           .m-display-projects--item--name!=item.title
           if (col == 2)

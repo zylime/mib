@@ -15,7 +15,7 @@ $.fn.Calender = function (opts) {
     for (var i = 0; i < 12; i++) {
       var _date = new Date();
       var _selector = '.js-calendar-' + (i + 1);
-      console.log(_selector);
+      // console.log(_selector);
       _date.setDate(1);
       _date.setMonth(_date.getMonth() - 6 + i);
       // console.log(_date);
@@ -27,7 +27,7 @@ $.fn.Calender = function (opts) {
       });
     }
     _calendarContainer.append('<input type="hidden" name="selectDate" class="js-calendar-select-date">');
-    selectDate();
+    // selectDate();
   }
 
   function selectDate() {
@@ -109,6 +109,8 @@ $(document).ready(function () {
 
   $(document).Popups();
 
+  $('[data-js-sign-in]').SignIn();
+
   $('[data-js-register]').Register();
   $('[data-js-order-detail]').OrderDetail();
   $('[data-js-prepay]').PrePay();
@@ -132,6 +134,10 @@ $(document).ready(function () {
     'wrapAround': true
   });
 });
+
+// $(window).onload(function(){
+//   $('[data-js-sign-in]').SignIn();
+// })
 'use strict';
 
 $.fn.Home = function (opts) {
@@ -367,8 +373,9 @@ $.fn.PrePay = function (opts) {
       var _itemPrice = parseInt($(this).attr('data-price'));
 
       _price += _itemPrice;
-      console.log('itemprice: ' + _itemPrice + '; total: ' + _price);
+      // console.log('itemprice: ' + _itemPrice + '; total: '+_price);
     });
+    _price = Number(_price).toFixed(2);
     _totalPrice.attr('data-price', _price).html(_currencySymbol + _price);
   }
 };
@@ -377,11 +384,13 @@ $.fn.PrePay = function (opts) {
 $.fn.ProjectList = function (opts) {
 
   var sliderContainer = $(this).find('.js-categories-slider');
+  var favoriteIcons = $(this).find('.js-favorite');
 
   events();
 
   function events() {
     slider();
+    toggleFavorite();
   }
 
   function slider() {
@@ -390,6 +399,16 @@ $.fn.ProjectList = function (opts) {
       infinite: false,
       slidesToShow: 3,
       arrows: false
+    });
+  }
+
+  function toggleFavorite() {
+    favoriteIcons.each(function () {
+      $(this).on('click touch', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).toggleClass('active');
+      });
     });
   }
 };
@@ -467,6 +486,57 @@ $.fn.Search = function (opts) {
 };
 'use strict';
 
+$.fn.SignIn = function (opts) {
+
+  var container = $(this);
+  var dropdownContainer = $(this).find('.js-dropdown-body');
+  var removeBtn = $(this).find('.js-dropdown-body .js-remove');
+  var dropdownBtn = $(this).find('.js-dropdown-btn');
+  // var 
+
+
+  events();
+
+  function events() {
+    toggleDropdown();
+    dropdown();
+    selectFromList();
+  }
+  function toggleDropdown() {
+    dropdownBtn.on('click touch', function () {
+      if (!dropdownContainer.find('li').length == 0) {
+        dropdownContainer.slideToggle();
+      }
+    });
+    $(document).on('click touch', function (e) {
+      e.stopPropagation();
+      if ($(e.target).parents('.c-sign-in--form').length <= 0) {
+        dropdownContainer.slideUp();
+      }
+    });
+  }
+  function dropdown() {
+    removeBtn.each(function () {
+      $(this).on('click touch', function (e) {
+        $(this).parents('li').remove();
+        checkList();
+      });
+    });
+  }
+  function checkList() {
+    if (dropdownContainer.find('li').length == 0) {
+      dropdownContainer.slideToggle();
+    }
+  }
+  function selectFromList() {
+    dropdownContainer.find('span').on('click touch', function () {
+      var _val = $(this).html();
+      dropdownContainer.siblings('input').val(_val);
+    });
+  }
+};
+'use strict';
+
 $.fn.StoreComments = function (opts) {
 
   var commentsBody = $(this).find('.js-comments-body');
@@ -474,7 +544,8 @@ $.fn.StoreComments = function (opts) {
   events();
 
   function events() {
-    initComments();
+    // removed, no longer in use
+    // initComments();
   }
 
   function initComments() {

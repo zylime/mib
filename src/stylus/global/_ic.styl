@@ -314,6 +314,41 @@
       background-image url(../img/ic-share-email.png)
     &--more
       background-image url(../img/ic-share-more.png)
+  &--favorite
+    background-image url(../img/ic-favorite.png)
+    background-size 100%
+    background-position center
+    background-repeat no-repeat
+    width 25px
+    height 25px
+    &.active
+      background-image url(../img/ic-favorite-active.png)
+  &--triangle-down
+    width 0
+    height 0
+    border-left 10px solid transparent
+    border-right 10px solid transparent
+    border-top 10px solid $col-persian-green
+  &--remove
+    position relative
+    width 10px
+    height 10px
+    &:before
+    &:after
+      width 10px
+      height 1px
+      background $col-persian-green
+      content ""
+      display block
+      position absolute
+      top 5px
+      right 0
+    &:before
+      transform rotate(45deg)
+    &:after
+      transform rotate(135deg)
+  
+    
   
     
 

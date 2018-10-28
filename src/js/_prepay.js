@@ -29,9 +29,10 @@ $.fn.PrePay = function(opts){
       var _itemPrice = parseInt($(this).attr('data-price'));
 
       _price += _itemPrice;
-      console.log('itemprice: ' + _itemPrice + '; total: '+_price);
+      // console.log('itemprice: ' + _itemPrice + '; total: '+_price);
 
     });
+    _price = Number(_price).toFixed(2);
     _totalPrice.attr('data-price', _price).html(_currencySymbol + _price);
 
   }
