@@ -777,6 +777,28 @@ $.fn.Search = function (opts) {
     $('.js-history-view-more').attr('data-expanded', 'false').html('更多');
   }
 };
+"use strict";
+
+$.fn.serializeJson = function () {
+        var serializeObj = {};
+        var array = this.serializeArray();
+        // var str=this.serialize(); 
+        $(array).each(function () {
+                // 遍历数组的每个元素 
+                if (serializeObj[this.name]) {
+                        // 判断对象中是否已经存在 name，如果存在name 
+                        if ($.isArray(serializeObj[this.name])) {
+                                serializeObj[this.name].push(this.value); // 追加一个值 hobby : ['音乐','体育'] 
+                        } else {
+                                // 将元素变为 数组 ，hobby : ['音乐','体育'] 
+                                serializeObj[this.name] = [serializeObj[this.name], this.value];
+                        }
+                } else {
+                        serializeObj[this.name] = this.value; // 如果元素name不存在，添加一个属性 name:value 
+                }
+        });
+        return serializeObj;
+};
 'use strict';
 
 $.fn.SignIn = function (opts) {
@@ -834,21 +856,25 @@ $.fn.SignIn = function (opts) {
   function formSubmit() {
     signInSubmitBtn.on('click touch', function (e) {
       e.preventDefault();
-      var _data = form.serialize();
-      var _url = './json/signin.json';
+      var _data = form.serializeJson();
+
+      var _url = 'http://mib.zengpan.org:8000/register?';
+      _data['_response'] = 100;
+      _data = JSON.stringify(_data);
+      _url = _url + _data;
 
       /*form submit*/
       $.ajax({
-        type: 'GET',
-        dataType: 'json',
+        type: 'POST',
+        dataType: 'JSON',
         url: _url,
         data: _data,
         success: function success(response) {
-          if (response.code == 100) {
-            console.log(response.message);
+          if (response == 100) {
+            console.log(response);
             window.location.href = './index.html';
           } else {
-            console.log(response.message);
+            console.log(response);
           }
         },
         error: function error(_error) {
