@@ -491,6 +491,7 @@ $.fn.ProjectList = function (opts) {
 
   function events() {
     slider();
+    // getData();
     toggleFavorite();
   }
 
@@ -502,7 +503,9 @@ $.fn.ProjectList = function (opts) {
       arrows: false
     });
   }
-
+  // function getData(){
+  //   var 
+  // }
   function toggleFavorite() {
     favoriteIcons.each(function () {
       $(this).on('click touch', function (e) {
@@ -832,14 +835,25 @@ $.fn.SignIn = function (opts) {
     signInSubmitBtn.on('click touch', function (e) {
       e.preventDefault();
       var _data = form.serialize();
-      var _url = '';
+      var _url = './json/signin.json';
+
       /*form submit*/
       $.ajax({
-        type: 'POST',
-        dataType: 'text',
+        type: 'GET',
+        dataType: 'json',
         url: _url,
         data: _data,
-        success: function success(msg) {}
+        success: function success(response) {
+          if (response.code == 100) {
+            console.log(response.message);
+            window.location.href = './index.html';
+          } else {
+            console.log(response.message);
+          }
+        },
+        error: function error(_error) {
+          console.log(_error);
+        }
       });
     });
   }

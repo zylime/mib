@@ -10,6 +10,7 @@ $.fn.ProjectList = function(opts){
 
   function events(){
     slider();
+    // getData();
     toggleFavorite();
    }
 
@@ -21,7 +22,9 @@ $.fn.ProjectList = function(opts){
       arrows: false
     })
   }
-
+  // function getData(){
+  //   var 
+  // }
   function toggleFavorite(){
     favoriteIcons.each(function(){
       $(this).on('click touch', function(e){

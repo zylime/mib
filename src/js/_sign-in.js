@@ -58,15 +58,27 @@ $.fn.SignIn = function(opts){
     signInSubmitBtn.on('click touch', function(e){
       e.preventDefault();
       var _data = form.serialize();
-      var _url = '';
+      var _url = './json/signin.json';
+      
       /*form submit*/
       $.ajax({
-        type: 'POST',
-        dataType: 'text',
+        type: 'GET',
+        dataType: 'json',
         url: _url,
         data: _data,
-        success: function(msg){
+        success: function(response){
+          if(response.code == 100){
+            console.log(response.message);
+            window.location.href='./index.html';
+          }
+          else{
+            console.log(response.message);
+          }
+          
 
+        },
+        error: function(error){
+          console.log(error);
         }
       })
     })
