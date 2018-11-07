@@ -7,7 +7,7 @@ block content
       h1 欢迎使用MIB
       h2 (Mega Icebreaker)
       .c-sign-in--main
-        form.c-sign-in--form(data-js-password)
+        form.c-sign-in--form.js-sign-in-form(data-js-password)
           .c-sign-in--form--rol.border-bottom
             .ic--user
             input(type="text", name="uid", autocomplete="on", placeholder="请输入用户名")
@@ -30,7 +30,7 @@ block content
             .ic--eye.js-psw-eye
           div.c-sign-in--form--link.txt--r
             a(href="sign-in-code.html") 用短信验证码登录
-          button.c-sign-in--form--submit 登陆
+          a.c-sign-in--form--submit.js-sign-in-submit 登陆
           div.c-sign-in--form--link.txt--c
             a(href="forget-psw.html") 忘记密码？点击获取帮助
 

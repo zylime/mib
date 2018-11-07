@@ -10,7 +10,10 @@
     font-size 18px
   textarea
     border none
-    border-bottom 1px solid $col-iron
+    &::-webkit-input-placeholder
+      color $col-black
+        
+    // border-bottom 1px solid $col-iron
   &--item
     list-style-type none
     display block

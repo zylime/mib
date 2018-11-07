@@ -3,21 +3,22 @@ include ../mixins/_popup
 
 
 block content
-  .c-forget-psw.c-reset-psw
-    .c-header
+  .c-header.c-header--sign-in
       a.l-mgn--l-20(href="sign-in.html")
         .ic--back.l-inl-b.l-v--m
         span.l-inl-b.l-v--m 设置新密码
-    form.c-reset-psw--form.l-pad--20
-      p 新密码：
+  .c-forget-psw.c-reset-psw(data-js-reset-psw)
+    form.c-reset-psw--form.l-pad--20.js-reset-psw-form
+      //- p 新密码：
       .c-reset-psw--form--rol.border-bottom
-        input(type="text", placeholder="xxx@xxx.com", value="xxx@xxx.com" disabled)
+        input(type="text", placeholder="xxx@xxx.com", value="xxx@xxx.com", disabled)
+        input(type="hidden", placeholder="xxx@xxx.com", value="xxx@xxx.com", name="userEmail")
       .c-reset-psw--form--rol.border-bottom
-        input.l-w--100p(type="password", placeholder="输入新密码")
+        input.js-input-psw1.l-w--100p(type="password", name="newPsw", placeholder="输入新密码")
       .c-reset-psw--form--rol.border-bottom
-        input.l-w--100p(type="password", placeholder="再次输入新密码")
-
-      button.btn-type-2 确定
+        input.js-input-psw2.l-w--100p(type="password", name="repeatPsw",placeholder="再次输入新密码")
+      .warning.js-warning
+      a.btn-type-2.js-submit(href="javascript:void(0)") 确定
   +popup('resetPsw')
     
 

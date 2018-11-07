@@ -178,6 +178,9 @@ input:-ms-input-placeholder {
   text-align: center;
   display: block;
 }
+.btn-type-1.disabled {
+  color: #dde0e3;
+}
 .btn-type-2 {
   height: 50px;
   line-height: 50px;
@@ -300,8 +303,8 @@ input:-ms-input-placeholder {
   background-repeat: no-repeat;
   background-size: 100%;
   display: block;
-  width: 15px;
-  height: 15px;
+  width: 11px;
+  height: 11px;
 }
 .ic--share {
   background-image: url("../img/ic-share.png");
@@ -751,6 +754,9 @@ input[type="number"] {
 }
 .l-mgn--auto {
   margin: auto;
+}
+.l-flex {
+  display: flex;
 }
 .l-mgn--0 {
   margin: 0px !important;
@@ -1401,6 +1407,9 @@ input[type="number"] {
   padding: 0 10px;
   width: 100%;
 }
+.c-add-card .btn-type-2 {
+  font-size: 12px;
+}
 .c-calendar--main--top {
   margin-bottom: 30px;
 }
@@ -1703,6 +1712,18 @@ input[type="number"] {
 .c-header--title span {
   font-size: 16px;
 }
+.c-header--sign-in {
+  padding: 20px 0;
+  background: #00a5a5;
+  position: relative;
+}
+.c-header--sign-in a {
+  font-size: 16px;
+}
+.c-header--sign-in .ic--back {
+  background-position: center;
+  margin-right: 10px;
+}
 .lb-data .lb-details {
   width: 100%;
 }
@@ -1759,7 +1780,9 @@ input[type="number"] {
 }
 .c-order-detail textarea {
   border: none;
-  border-bottom: 1px solid #dde0e3;
+}
+.c-order-detail textarea::-webkit-input-placeholder {
+  color: #000;
 }
 .c-order-detail--item {
   list-style-type: none;
@@ -1817,6 +1840,7 @@ input[type="number"] {
   border-radius: 5px;
 }
 .c-popup--cover {
+  display: none;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1824,6 +1848,12 @@ input[type="number"] {
   z-index: 10;
   top: 0;
   left: 0;
+}
+.c-popup--code {
+  display: none;
+}
+.c-popup--code .l-flex {
+  justify-content: space-between;
 }
 .c-popup--code .warning {
   font-size: 14px;
@@ -1841,8 +1871,8 @@ input[type="number"] {
 .c-popup--code input {
   display: inline-block;
   font-size: 26px;
-  line-height: 30px;
-  width: 30px;
+  line-height: 10vw;
+  width: 15%;
   margin: 0 5px;
   border: 1px solid #00a5a5;
   border-radius: 5px;
@@ -1851,8 +1881,12 @@ input[type="number"] {
   width: 150px;
   margin: auto;
   display: block;
-  height: 40px;
-  line-height: 38px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 12px;
+}
+.c-popup--code .btn-type-1.disabled {
+  color: #dde0e3;
 }
 .c-popup--code .login-btn {
   background: #00a5a5;
@@ -1872,6 +1906,9 @@ input[type="number"] {
 .c-popup--reset-psw h2 {
   font-size: 18px;
   font-weight: normal;
+}
+.c-popup--register {
+  display: none;
 }
 .c-popup--register img {
   width: 80px;
@@ -2087,6 +2124,20 @@ input[type="number"] {
 .c-register .button.disabled {
   background: #dde0e3;
   color: #fff;
+}
+.c-register .c-sign-in--main {
+  margin-top: 70px;
+}
+.c-register .btn-type-2 {
+  font-size: 16px;
+}
+.c-register .c-sign-in--other {
+  margin-top: 80px;
+}
+.c-reset-psw .warning {
+  display: none;
+  color: #ee4746;
+  margin-top: 10px;
 }
 .c-reset-psw--form {
   margin-top: 20px;
@@ -2338,6 +2389,7 @@ input[type="number"] {
 .c-sign-in--form--link a {
   color: #00a5a5;
 }
+.c-sign-in--form--submit,
 .c-sign-in--form .button,
 .c-sign-in--form button {
   width: 100%;

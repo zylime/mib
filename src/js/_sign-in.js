@@ -1,9 +1,11 @@
 $.fn.SignIn = function(opts){
 
   var container = $(this);
+  var form = $(this).find('.js-sign-in-form');
   var dropdownContainer = $(this).find('.js-dropdown-body')
   var removeBtn = $(this).find('.js-dropdown-body .js-remove');
   var dropdownBtn = $(this).find('.js-dropdown-btn');
+  var signInSubmitBtn = $(this).find('.js-sign-in-submit');
   // var 
 
  
@@ -14,6 +16,7 @@ $.fn.SignIn = function(opts){
     toggleDropdown();
     dropdown();
     selectFromList();
+    formSubmit();
 
   }
   function toggleDropdown(){
@@ -48,6 +51,24 @@ $.fn.SignIn = function(opts){
     dropdownContainer.find('span').on('click touch', function(){
       var _val = $(this).html();
       dropdownContainer.siblings('input').val(_val);
+    })
+  }
+
+  function formSubmit(){
+    signInSubmitBtn.on('click touch', function(e){
+      e.preventDefault();
+      var _data = form.serialize();
+      var _url = '';
+      /*form submit*/
+      $.ajax({
+        type: 'POST',
+        dataType: 'text',
+        url: _url,
+        data: _data,
+        success: function(msg){
+
+        }
+      })
     })
   }
 

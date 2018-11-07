@@ -16,6 +16,9 @@ $(document).ready(function(){
   $('[data-js-password]').TogglePsw();
   $('[data-js-calendar]').Calender();
 
+  $('[data-js-forget-psw]').forgetPsw();
+  $('[data-js-reset-psw]').resetPsw();
+
 
 
 

@@ -122,6 +122,9 @@ $(document).ready(function () {
   $('[data-js-password]').TogglePsw();
   $('[data-js-calendar]').Calender();
 
+  $('[data-js-forget-psw]').forgetPsw();
+  $('[data-js-reset-psw]').resetPsw();
+
   $('[data-js-collapse]').Collapse({
     text: true
   });
@@ -138,6 +141,59 @@ $(document).ready(function () {
 // $(window).onload(function(){
 //   $('[data-js-sign-in]').SignIn();
 // })
+'use strict';
+
+$.fn.forgetPsw = function (opts) {
+
+  var container = $(this);
+  var codeBtn = $(this).find('.js-code');
+  var submitBtn = $(this).find('.js-submit');
+  var form = $(this).find('.js-forget-psw-form');
+
+  events();
+
+  function events() {
+    getCode();
+    submit();
+  }
+
+  function getCode() {
+    codeBtn.on('click touch', function () {
+      if (!$(this).hasClass('disabled')) {
+        var _time = 60;
+        var _this = this;
+        $(this).addClass('disabled');
+
+        var countTime = setInterval(function () {
+          _time = _time - 1;
+
+          $(_this).html('重新发送 (' + _time + ')');
+          if (_time == 0) {
+            clearInterval(countTime);
+            $(_this).html('发送验证码');
+            $(_this).removeClass('disabled');
+          }
+        }, 1000);
+      }
+    });
+  }
+
+  function submit() {
+    submitBtn.on('click touch', function () {
+      var _data = form.serialize();
+      var _url = '';
+
+      /*form submit*/
+      $.ajax({
+        type: 'POST',
+        dataType: 'text',
+        url: _url,
+        data: _data,
+        success: function success(msg) {}
+      });
+    });
+  }
+};
 'use strict';
 
 $.fn.Home = function (opts) {
@@ -255,10 +311,11 @@ $.fn.Popups = function (opts) {
   function events() {
     txtMsgPopup();
     registerPopup();
-    verifyEmailPopup();
+    // verifyEmailPopup(); //moved to register.js
     resetPswPopup();
   }
 
+  // 手机短信验证
   function txtMsgPopup() {
     $(document).on('click touch', '.js-open-popup-code', function (e) {
       e.stopPropagation();
@@ -269,11 +326,30 @@ $.fn.Popups = function (opts) {
       e.stopPropagation();
       closePopup($('.js-popup-code'));
     });
-
-    enterCode();
+    sendVerificationCode();
+    inputCode();
   }
+  function sendVerificationCode() {
+    $('.js-popup-code-verification-btn').on('click touch', function () {
+      if (!$(this).hasClass('disabled')) {
+        var _time = 60;
+        var _this = this;
+        $(this).addClass('disabled');
 
-  function enterCode() {
+        var countTime = setInterval(function () {
+          _time = _time - 1;
+
+          $(_this).html('重新发送 (' + _time + ')');
+          if (_time == 0) {
+            clearInterval(countTime);
+            $(_this).html('发送验证码');
+            $(_this).removeClass('disabled');
+          }
+        }, 1000);
+      }
+    });
+  }
+  function inputCode() {
     $('.js-popup-code').find('input').each(function (index) {
       var i = index;
       $(this).on('keydown', function () {
@@ -295,9 +371,31 @@ $.fn.Popups = function (opts) {
       } else {
         if (i == _length - 1) {
           $('.js-popup-code').find('.js-btn').removeClass('disabled');
+          submitCode();
         }
       }
     }
+  }
+
+  function submitCode() {
+    $('.js-popup-code-submit').on('click touch', function () {
+      if (!$(this).hasClass('disabled')) {
+        var _code = '';
+        var _url = '';
+        $('.js-popup-code-inputs input').each(function () {
+          _code += $(this).val();
+        });
+        // console.log(_code);
+        /* form submit */
+        $.ajax({
+          type: 'POST',
+          dataType: 'text',
+          url: _url,
+          data: _code,
+          success: function success(msg) {}
+        });
+      }
+    });
   }
 
   function registerPopup() {
@@ -306,18 +404,21 @@ $.fn.Popups = function (opts) {
       closePopup($('.js-popup-register'));
     });
   }
+  // moved to register.js
+  // function verifyEmailPopup(){
+  //   $(document).on('click touch', '.js-register-btn', function(e){
+  //     e.stopPropagation()
+  //     // $('.js-popup-code').show();
+  //     if(!$(this).hasClass('disabled')){
+  //       showPopup($('.js-popup-verify-email'));
+  //     }
 
-  function verifyEmailPopup() {
-    $(document).on('click touch', '.js-register-btn', function (e) {
-      e.stopPropagation();
-      // $('.js-popup-code').show();
-      showPopup($('.js-popup-verify-email'));
-    });
-    $(document).on('click touch', '.js-popup-cover, .js-close-verify-email', function (e) {
-      e.stopPropagation();
-      closePopup($('.js-popup-verify-email'));
-    });
-  }
+  //   });
+  //   $(document).on('click touch', '.js-popup-cover, .js-close-verify-email', function(e){
+  //     e.stopPropagation();
+  //     closePopup($('.js-popup-verify-email'));
+  //   });
+  // }
 
   function resetPswPopup() {
     $(document).on('click touch', '.js-popup-cover', function (e) {
@@ -418,16 +519,205 @@ $.fn.Register = function (opts) {
 
   var container = $(this);
   var _checkbox = $(this).find('.js-checkbox');
+  var form = $(this).find('.js-register-form');
+  var registerBtn = $(this).find('.js-register-btn');
 
+  var verifyEmailPopupContainer = $('.js-popup-verify-email');
+  var verifyBtn = verifyEmailPopupContainer.find('.js-verify-btn');
+  var resendBtn = verifyEmailPopupContainer.find('.js-resend-btn');
+
+  var verifyMobilePopupContainer = $('.js-popup-code');
+
+  var successPopup = $('.js-popup-register');
   events();
 
   function events() {
     checkbox();
+    checkInputs();
+
+    register();
   }
 
   function checkbox() {
     _checkbox.on('click touch', function () {
+      var _status = $(this).hasClass('checked') ? 'true' : 'false';
       $(this).toggleClass('checked');
+      $(this).find('input').val(_status);
+    });
+  }
+  function checkInputs() {
+    var inputStatus = false;
+    form.find('input').on('keydown', function () {
+      var _length = form.find('input').length;
+      // console.log(_length);
+      for (var i = 0; i < _length; i++) {
+
+        if ($(form.find('input')[i]).val() == '') {
+
+          inputStatus = false;
+          break;
+        } else {
+          inputStatus = true;
+        }
+      }
+
+      if (inputStatus) {
+        updateButton();
+      }
+    });
+  }
+  function updateButton() {
+    registerBtn.removeClass('disabled');
+  }
+
+  function register() {
+    registerBtn.on('click touch', function (e) {
+      e.stopPropagation();
+      // $('.js-popup-code').show();
+      if (!$(this).hasClass('disabled')) {
+        // temporary use
+        verifyEmailPopup();
+        // verifyMobilePopup();
+        // temporary use end
+
+        var _data = form.serialize();
+        var _url = '';
+        /*form submit*/
+        $.ajax({
+          type: 'POST',
+          dataType: 'text',
+          url: _url,
+          data: _data,
+          success: function success(msg) {
+            verifyEmailPopup();
+            // verifyMobilePopup();
+          }
+        });
+      }
+    });
+  }
+  function verifyEmailPopup() {
+    showPopup(verifyEmailPopupContainer);
+    $(document).on('click touch', '.js-popup-cover, .js-close-verify-email', function (e) {
+      e.stopPropagation();
+      closePopup(verifyEmailPopupContainer);
+    });
+  }
+
+  function verifyMobilePopup() {
+    showPopup(verifyMobilePopupContainer);
+  }
+
+  function showPopup(ele) {
+    var ele = ele;
+    ele.show();
+    $('.js-popup-cover').show();
+    checkVerification();
+  }
+
+  function closePopup(ele) {
+    var ele = ele;
+    ele.hide();
+    $('.js-popup-cover').hide();
+  }
+  function checkVerification() {
+    countDown();
+    resendBtn.on('click touch', function (e) {
+      e.preventDefault();
+      if (!$(this).hasClass('disabled')) {
+        countDown();
+      }
+    });
+
+    verifyBtn.on('click touch', function (e) {
+      e.preventDefault();
+
+      // temporary use
+      registerSuccess();
+      // temporary use end
+
+      var _url = '';
+      var _data = verifyEmailPopupContainer.serialize();
+
+      _data = _data + '&' + _checkbox.find('input').attr('name') + '=' + _checkbox.find('input').val();
+      $.ajax({
+        type: 'POST',
+        dataType: 'text',
+        url: _url,
+        data: _data,
+        success: function success(msg) {
+          registerSuccess();
+        }
+      });
+    });
+  }
+  function countDown() {
+    var _time = 60;
+    resendBtn.addClass('disabled');
+    var countTime = setInterval(function () {
+      _time = _time - 1;
+
+      resendBtn.html('重新发送 (' + _time + ')');
+      if (_time == 0) {
+        clearInterval(countTime);
+        resendBtn.html('发送验证码');
+        resendBtn.removeClass('disabled');
+      }
+    }, 1000);
+  }
+  function registerSuccess() {
+    closePopup(verifyEmailPopupContainer);
+    showPopup(successPopup);
+  }
+};
+'use strict';
+
+$.fn.resetPsw = function (opts) {
+
+  var container = $(this);
+
+  var submitBtn = $(this).find('.js-submit');
+  var form = $(this).find('.js-reset-psw-form');
+  var psw1 = $(this).find('.js-input-psw1');
+  var psw2 = $(this).find('.js-input-psw2');
+  var warning = $(this).find('.js-warning');
+
+  events();
+
+  function events() {
+
+    submit();
+  }
+
+  function submit() {
+    submitBtn.on('click', function (e) {
+      e.preventDefault();
+      var _psw1 = psw1.val();
+      var _psw2 = psw2.val();
+      // console.log(_psw1);
+      // console.log(_psw2);
+      if (_psw1 == '' || _psw2 == '') {
+        warning.html('请输入密码');
+        warning.show();
+      } else {
+        if (_psw1 !== _psw2) {
+          warning.html('密码不匹配');
+          warning.show();
+        } else {
+          warning.hide();
+          var _data = form.serialize();
+          var _url = '';
+          console.log(_data);
+          /*form submit*/
+          $.ajax({
+            type: 'POST',
+            dataType: 'text',
+            url: _url,
+            data: _data,
+            success: function success(msg) {}
+          });
+        }
+      }
     });
   }
 };
@@ -489,9 +779,11 @@ $.fn.Search = function (opts) {
 $.fn.SignIn = function (opts) {
 
   var container = $(this);
+  var form = $(this).find('.js-sign-in-form');
   var dropdownContainer = $(this).find('.js-dropdown-body');
   var removeBtn = $(this).find('.js-dropdown-body .js-remove');
   var dropdownBtn = $(this).find('.js-dropdown-btn');
+  var signInSubmitBtn = $(this).find('.js-sign-in-submit');
   // var 
 
 
@@ -501,6 +793,7 @@ $.fn.SignIn = function (opts) {
     toggleDropdown();
     dropdown();
     selectFromList();
+    formSubmit();
   }
   function toggleDropdown() {
     dropdownBtn.on('click touch', function () {
@@ -532,6 +825,22 @@ $.fn.SignIn = function (opts) {
     dropdownContainer.find('span').on('click touch', function () {
       var _val = $(this).html();
       dropdownContainer.siblings('input').val(_val);
+    });
+  }
+
+  function formSubmit() {
+    signInSubmitBtn.on('click touch', function (e) {
+      e.preventDefault();
+      var _data = form.serialize();
+      var _url = '';
+      /*form submit*/
+      $.ajax({
+        type: 'POST',
+        dataType: 'text',
+        url: _url,
+        data: _data,
+        success: function success(msg) {}
+      });
     });
   }
 };

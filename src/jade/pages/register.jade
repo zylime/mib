@@ -4,18 +4,23 @@ include ../mixins/_popup
 
 block content
   div(data-js-register)
+    .c-header.c-header--sign-in
+      a.l-mgn--l-20(href="sign-in.html")
+        .ic--back.l-inl-b.l-v--m
+        span.l-inl-b.l-v--m 新用户注册
     .c-content.c-sign-in--bg
+      
       .c-sign-in.c-register
         h1 欢迎使用MIB
         h2 (Mega Icebreaker)
         .c-sign-in--main
-          form
+          form.js-register-form
             .c-sign-in--form--rol.border-bottom
               .ic--user.l-mgn--r-5
-              input(type="text", name="uid", autocomplete="on", placeholder="请输入昵称")
+              input(type="text", name="userName", autocomplete="on", placeholder="请输入昵称")
             .c-sign-in--form--rol.border-bottom
               .ic--email.l-mgn--r-5
-              input.input-email(type="text", name="uid", autocomplete="on", placeholder="请输入邮箱地址或手机号码")
+              input.input-email(type="text", name="userId", autocomplete="on", placeholder="请输入邮箱地址或手机号码")
             .c-sign-in--form--rol.border-bottom
               .ic--psw.l-mgn--r-5
               input(type="password", name="psw", placeholder="请填写登陆密码")
@@ -33,6 +38,7 @@ block content
 
     +popup('register')
     +popup('verifyEmail')
+    +popup('signIn')
 
 
 
