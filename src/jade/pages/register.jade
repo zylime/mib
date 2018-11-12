@@ -17,17 +17,18 @@ block content
           form.js-register-form
             .c-sign-in--form--rol.border-bottom
               .ic--user.l-mgn--r-5
-              input(type="text", name="userName", autocomplete="on", placeholder="请输入昵称")
+              input(type="text", name="name", autocomplete="on", placeholder="请输入昵称", required)
             .c-sign-in--form--rol.border-bottom
               .ic--email.l-mgn--r-5
-              input.input-email(type="text", name="userId", autocomplete="on", placeholder="请输入邮箱地址或手机号码")
+              input.input-email(type="text", name="email_mobile", autocomplete="on", placeholder="请输入邮箱地址或手机号码", required)
             .c-sign-in--form--rol.border-bottom
               .ic--psw.l-mgn--r-5
-              input(type="password", name="psw", placeholder="请填写登陆密码")
+              input(type="password", name="pwd", placeholder="请填写登陆密码", required)
               //- .ic--eye
             div.c-sign-in--form--link.txt--r
-              a.js-register-btn(href="javascript:void(0);") 用短信验证码登录
-            a.button.btn-type-2.l-mgn--t-20.js-register-btn.disabled(href="javascript:void(0);") 注册
+              a(href="sign-in-code.html") 用短信验证码登录
+            .error.js-error
+            button.button.btn-type-2.l-mgn--t-20.js-register-btn(disabled) 注册
 
 
           .c-sign-in--other

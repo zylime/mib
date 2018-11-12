@@ -110,7 +110,7 @@ $(document).ready(function () {
   $(document).Popups();
 
   $('[data-js-sign-in]').SignIn();
-
+  $('[data-js-sign-in-by-mobile]').MobileVerification();
   $('[data-js-register]').Register();
   $('[data-js-order-detail]').OrderDetail();
   $('[data-js-prepay]').PrePay();
@@ -212,6 +212,81 @@ $.fn.Home = function (opts) {
       infinite: false,
       slidesToShow: 4,
       arrows: false
+    });
+  }
+};
+'use strict';
+
+$.fn.MobileVerification = function () {
+  var number = $(this).find('.js-mobile-number');
+  var verifyMobilePopupContainer = $('.js-popup-code');
+  var mobileForm = verifyMobilePopupContainer.find('.js-popup-code-form');
+  var mobileVerifyBtn = verifyMobilePopupContainer.find('.js-popup-code-submit');
+  var mobileError = verifyMobilePopupContainer.find('.js-error');
+  events();
+  function events() {
+    checkMobileVerification();
+  }
+  function checkMobileVerification() {
+    mobileVerifyBtn.on('click touch', function () {
+      var _code = '';
+
+      verifyMobilePopupContainer.find('input[name="phone"]').val(number.val());
+      verifyMobilePopupContainer.find('input.js-code').each(function () {
+        _code += $(this).val().toString();
+      });
+      verifyMobilePopupContainer.find('input[name="code"]').val(_code);
+
+      var _data = mobileForm.serializeJson();
+      var _url = 'http://mib.zengpan.org:8000/register?';
+      var q = mobileForm.serializeJson();
+      var response = { "status": 100, "message": "success" };
+      q['_response'] = response;
+      q = JSON.stringify(q);
+      _url = _url + q;
+
+      var r = new XMLHttpRequest();
+      r.open("GET", encodeURI(_url), true);
+      r.onerror = r.onabort = r.ontimeout = function (e) {
+        console.log(e);
+      };
+      r.send();
+      r.onreadystatechange = function () {
+        if (r.readyState == r.DONE) {
+          if (r.status == 200) {
+            var _status = $.parseJSON(r.response).status;
+            var _msg = $.parseJSON(r.response).message;
+            if (_status == 100) {
+              mobileError.hide();
+              window.location.href = './index.html';
+            } else {
+              mobileError.html(_msg);
+              mobileError.show();
+            }
+          }
+        }
+      };
+
+      // email
+      // $.ajax({
+      //   type: 'POST',
+      //   dataType: 'JSON',
+      //   url: _url,
+      //   data: _data,
+      //   success: function(response){
+      //     if(response == 100){
+      //       mobileError.hide();
+      //       registerSuccess();
+      //     }
+      //     else{
+      //       mobileError.html(response.message);
+      //       mobileError.show();
+      //     }
+      //   },
+      //   error: function(error){
+      //     console.log(error);
+      //   }
+      // })
     });
   }
 };
@@ -331,72 +406,73 @@ $.fn.Popups = function (opts) {
   }
   function sendVerificationCode() {
     $('.js-popup-code-verification-btn').on('click touch', function () {
-      if (!$(this).hasClass('disabled')) {
-        var _time = 60;
-        var _this = this;
-        $(this).addClass('disabled');
 
-        var countTime = setInterval(function () {
-          _time = _time - 1;
+      var _time = 60;
+      var _this = this;
+      $(this).attr('disabled', 'disabled');
 
-          $(_this).html('重新发送 (' + _time + ')');
-          if (_time == 0) {
-            clearInterval(countTime);
-            $(_this).html('发送验证码');
-            $(_this).removeClass('disabled');
-          }
-        }, 1000);
-      }
+      var countTime = setInterval(function () {
+        _time = _time - 1;
+
+        $(_this).html('重新发送 (' + _time + ')');
+        if (_time == 0) {
+          clearInterval(countTime);
+          $(_this).html('发送验证码');
+          $(_this).removeAttr('disabled');
+        }
+      }, 1000);
     });
   }
   function inputCode() {
-    $('.js-popup-code').find('input').each(function (index) {
+    $('.js-popup-code').find('input.js-code').each(function (index) {
       var i = index;
       $(this).on('keydown', function () {
-        if ($(this).val().length == 1 && $($('.js-popup-code').find('input')[i + 1]).length > 0) {
+        if ($(this).val().length == 1 && $($('.js-popup-code').find('input.js-code')[i + 1]).length > 0) {
           $($('.js-popup-code').find('input')[i + 1]).focus();
         }
       });
-      $(this).on('input', function () {
+      $(this).on('input.js-code', function () {
         updateButton();
       });
     });
   }
 
   function updateButton() {
-    var _length = $('.js-popup-code').find('input').length;
+    var _length = $('.js-popup-code').find('input.js-code').length;
     for (var i = 0; i < _length; i++) {
-      if ($($('.js-popup-code').find('input')[i]).val().length == 0) {
+      if ($($('.js-popup-code').find('input.js-code')[i]).val().length == 0) {
         break;
       } else {
         if (i == _length - 1) {
           $('.js-popup-code').find('.js-btn').removeClass('disabled');
-          submitCode();
+          // submitCode();
         }
       }
     }
   }
 
-  function submitCode() {
-    $('.js-popup-code-submit').on('click touch', function () {
-      if (!$(this).hasClass('disabled')) {
-        var _code = '';
-        var _url = '';
-        $('.js-popup-code-inputs input').each(function () {
-          _code += $(this).val();
-        });
-        // console.log(_code);
-        /* form submit */
-        $.ajax({
-          type: 'POST',
-          dataType: 'text',
-          url: _url,
-          data: _code,
-          success: function success(msg) {}
-        });
-      }
-    });
-  }
+  // function submitCode(){
+  //   $('.js-popup-code-submit').on('click touch', function(){
+  //     if(!$(this).hasClass('disabled')){
+  //       var _code = '';
+  //       var _url = '';
+  //       $('.js-popup-code-inputs input').each(function(){
+  //         _code += $(this).val();
+  //       });
+  //       // console.log(_code);
+  //       /* form submit */
+  //       $.ajax({
+  //         type: 'POST',
+  //         dataType: 'text',
+  //         url: _url,
+  //         data: _code,
+  //         success: function(msg){
+
+  //         }
+  //       })
+  //     }
+  //   })
+  // }
 
   function registerPopup() {
     $(document).on('click touch', '.js-popup-cover, .js-close-register', function (e) {
@@ -524,12 +600,18 @@ $.fn.Register = function (opts) {
   var _checkbox = $(this).find('.js-checkbox');
   var form = $(this).find('.js-register-form');
   var registerBtn = $(this).find('.js-register-btn');
+  var error = $(this).find('.js-error');
 
   var verifyEmailPopupContainer = $('.js-popup-verify-email');
   var verifyBtn = verifyEmailPopupContainer.find('.js-verify-btn');
   var resendBtn = verifyEmailPopupContainer.find('.js-resend-btn');
+  var emailForm = verifyEmailPopupContainer;
+  var emailError = verifyEmailPopupContainer.find('.js-error');
 
   var verifyMobilePopupContainer = $('.js-popup-code');
+  var mobileForm = verifyMobilePopupContainer.find('.js-popup-code-form');
+  var mobileVerifyBtn = verifyMobilePopupContainer.find('.js-popup-code-submit');
+  var mobileError = verifyMobilePopupContainer.find('.js-error');
 
   var successPopup = $('.js-popup-register');
   events();
@@ -537,13 +619,12 @@ $.fn.Register = function (opts) {
   function events() {
     checkbox();
     checkInputs();
-
-    register();
+    registerValidation();
   }
 
   function checkbox() {
     _checkbox.on('click touch', function () {
-      var _status = $(this).hasClass('checked') ? 'true' : 'false';
+      var _status = $(this).hasClass('checked') ? 'false' : 'true';
       $(this).toggleClass('checked');
       $(this).find('input').val(_status);
     });
@@ -570,93 +651,250 @@ $.fn.Register = function (opts) {
     });
   }
   function updateButton() {
-    registerBtn.removeClass('disabled');
+    registerBtn.removeAttr('disabled');
   }
-
-  function register() {
+  function registerValidation() {
     registerBtn.on('click touch', function (e) {
-      e.stopPropagation();
-      // $('.js-popup-code').show();
-      if (!$(this).hasClass('disabled')) {
-        // temporary use
-        verifyEmailPopup();
-        // verifyMobilePopup();
-        // temporary use end
+      form.validate({
+        rules: {
+          name: 'required',
+          email_mobile: 'required',
+          pwd: 'required'
+        },
+        messages: {
+          user: '请输入昵称',
+          email_mobile: '请输入邮箱或手机号',
+          pwd: '请输入密码'
+        },
+        submitHandler: function submitHandler(e) {
 
-        var _data = form.serialize();
-        var _url = '';
-        /*form submit*/
-        $.ajax({
-          type: 'POST',
-          dataType: 'text',
-          url: _url,
-          data: _data,
-          success: function success(msg) {
-            verifyEmailPopup();
-            // verifyMobilePopup();
-          }
-        });
-      }
+          var uid = form.find('input[name="email_mobile"]').val();
+          submitRegisterForm(uid);
+        }
+      });
     });
   }
-  function verifyEmailPopup() {
+  function submitRegisterForm(uid) {
+    var uid = uid;
+    var _data = form.serializeJson();
+    var _url = 'http://mib.zengpan.org:8000/register?';
+    var q = form.serializeJson();
+    var response = { "status": 100, "message": "succeed" };
+    q['_response'] = response;
+    q = JSON.stringify(q);
+    _url = _url + q;
+
+    var r = new XMLHttpRequest();
+    r.open("GET", encodeURI(_url), true);
+    r.onerror = r.onabort = r.ontimeout = function (e) {
+      console.log(e);
+    };
+    r.send();
+    r.onreadystatechange = function () {
+      if (r.readyState == r.DONE) {
+        if (r.status == 200) {
+          var _status = $.parseJSON(r.response).status;
+          var _msg = $.parseJSON(r.response).message;
+          if (_status == 100) {
+            error.hide();
+            // email
+            if (uid.indexOf('@') > 0) {
+              verifyEmailPopup(uid);
+            }
+            // mobile
+            else {
+                verifyMobilePopup(uid);
+              }
+          } else {
+            // console.log(_msg);
+            error.html(_msg);
+            error.show();
+          }
+        }
+      }
+    };
+
+    // $.ajax({
+    //   type: 'POST',
+    //   dataType: 'JSON',
+    //   url: _url,
+    //   data: _data,
+    //   success: function(response){
+    //     if(response == 100){
+    //       error.hide();
+    //       // email
+    //       if(uid.indexOf('@') > 0){
+    //         verifyEmailPopup(uid);
+    //       }
+    //       // mobile
+    //       else{
+    //         verifyMobilePopup(uid);
+    //       }
+    //     }
+    //     else{
+    //       error.html(response.message);
+    //       error.show();
+    //     }
+    //   },
+    //   error: function(error){
+    //     console.log(error);
+    //   }
+    // })
+  }
+
+  function verifyEmailPopup(email) {
+    var email = email;
+    verifyEmailPopupContainer.find('.js-display-email').html(email);
+    verifyEmailPopupContainer.find('input[name="userEmail"]').val(email);
+
     showPopup(verifyEmailPopupContainer);
+    checkEmailVerification();
+
     $(document).on('click touch', '.js-popup-cover, .js-close-verify-email', function (e) {
       e.stopPropagation();
       closePopup(verifyEmailPopupContainer);
     });
   }
 
-  function verifyMobilePopup() {
-    showPopup(verifyMobilePopupContainer);
-  }
-
-  function showPopup(ele) {
-    var ele = ele;
-    ele.show();
-    $('.js-popup-cover').show();
-    checkVerification();
-  }
-
-  function closePopup(ele) {
-    var ele = ele;
-    ele.hide();
-    $('.js-popup-cover').hide();
-  }
-  function checkVerification() {
+  // email verification
+  function checkEmailVerification() {
     countDown();
+
     resendBtn.on('click touch', function (e) {
       e.preventDefault();
-      if (!$(this).hasClass('disabled')) {
-        countDown();
-      }
+      countDown();
     });
 
     verifyBtn.on('click touch', function (e) {
       e.preventDefault();
 
-      // temporary use
-      registerSuccess();
-      // temporary use end
+      var _data = emailForm.serializeJson();
+      var q = emailForm.serializeJson();
+      var _url = 'http://mib.zengpan.org:8000/register?';
+      var response = { "status": 100, "message": "success" };
+      q['_response'] = response;
+      q = JSON.stringify(q);
+      _url = _url + q;
 
-      var _url = '';
-      var _data = verifyEmailPopupContainer.serialize();
-
-      _data = _data + '&' + _checkbox.find('input').attr('name') + '=' + _checkbox.find('input').val();
-      $.ajax({
-        type: 'POST',
-        dataType: 'text',
-        url: _url,
-        data: _data,
-        success: function success(msg) {
-          registerSuccess();
+      var r = new XMLHttpRequest();
+      r.open("GET", encodeURI(_url), true);
+      r.onerror = r.onabort = r.ontimeout = function (e) {
+        console.log(e);
+      };
+      r.send();
+      r.onreadystatechange = function () {
+        if (r.readyState == r.DONE) {
+          if (r.status == 200) {
+            var _status = $.parseJSON(r.response).status;
+            var _msg = $.parseJSON(r.response).message;
+            if (_status == 100) {
+              emailError.hide();
+              registerSuccess();
+            } else {
+              emailError.html(_msg);
+              emailError.show();
+            }
+          }
         }
-      });
+      };
+
+      // email
+      // $.ajax({
+      //   type: 'POST',
+      //   dataType: 'JSON',
+      //   url: _url,
+      //   data: _data,
+      //   success: function(response){
+      //     if(response == 100){
+      //       emailError.hide();
+      //       registerSuccess();
+      //     }
+      //     else{
+      //       emailError.html(response.message);
+      //       emailError.show();
+      //     }
+      //   },
+      //   error: function(error){
+      //     console.log(error);
+      //   }
+      // })
     });
   }
+
+  function verifyMobilePopup(number) {
+    var number = number;
+    verifyMobilePopupContainer.find('input[name="phone"]').val(number);
+    showPopup(verifyMobilePopupContainer);
+    checkMobileVerification();
+  }
+
+  function checkMobileVerification() {
+    mobileVerifyBtn.on('click touch', function () {
+      var _code = '';
+
+      verifyMobilePopupContainer.find('input.js-code').each(function () {
+        _code += $(this).val().toString();
+      });
+      verifyMobilePopupContainer.find('input[name="code"]').val(_code);
+
+      var _data = mobileForm.serializeJson();
+      var _url = 'http://mib.zengpan.org:8000/register?';
+      var q = mobileForm.serializeJson();
+      var response = { "status": 100, "message": "success" };
+      q['_response'] = response;
+      q = JSON.stringify(q);
+      _url = _url + q;
+
+      var r = new XMLHttpRequest();
+      r.open("GET", encodeURI(_url), true);
+      r.onerror = r.onabort = r.ontimeout = function (e) {
+        console.log(e);
+      };
+      r.send();
+      r.onreadystatechange = function () {
+        if (r.readyState == r.DONE) {
+          if (r.status == 200) {
+            console.log(r);
+            var _status = $.parseJSON(r.response).status;
+            var _msg = $.parseJSON(r.response).message;
+            if (_status == 100) {
+              mobileError.hide();
+              registerSuccess();
+            } else {
+              mobileError.html(_msg);
+              mobileError.show();
+            }
+          }
+        }
+      };
+
+      // email
+      // $.ajax({
+      //   type: 'POST',
+      //   dataType: 'JSON',
+      //   url: _url,
+      //   data: _data,
+      //   success: function(response){
+      //     if(response == 100){
+      //       mobileError.hide();
+      //       registerSuccess();
+      //     }
+      //     else{
+      //       mobileError.html(response.message);
+      //       mobileError.show();
+      //     }
+      //   },
+      //   error: function(error){
+      //     console.log(error);
+      //   }
+      // })
+    });
+  }
+
   function countDown() {
     var _time = 60;
-    resendBtn.addClass('disabled');
+
+    resendBtn.attr('disabled', 'disabled');
     var countTime = setInterval(function () {
       _time = _time - 1;
 
@@ -664,13 +902,30 @@ $.fn.Register = function (opts) {
       if (_time == 0) {
         clearInterval(countTime);
         resendBtn.html('发送验证码');
-        resendBtn.removeClass('disabled');
+        resendBtn.removeAttr('disabled');
       }
     }, 1000);
   }
+
+  function showPopup(ele) {
+    var ele = ele;
+    ele.show();
+    $('.js-popup-cover').show();
+  }
+
+  function closePopup(ele) {
+    var ele = ele;
+    ele.hide();
+    $('.js-popup-cover').hide();
+  }
+
   function registerSuccess() {
     closePopup(verifyEmailPopupContainer);
+    closePopup(verifyMobilePopupContainer);
     showPopup(successPopup);
+    successPopup.find('a').on('click touch', function () {
+      window.location.href = './index.html';
+    });
   }
 };
 'use strict';
@@ -809,6 +1064,7 @@ $.fn.SignIn = function (opts) {
   var removeBtn = $(this).find('.js-dropdown-body .js-remove');
   var dropdownBtn = $(this).find('.js-dropdown-btn');
   var signInSubmitBtn = $(this).find('.js-sign-in-submit');
+  var error = form.find('.js-error');
   // var 
 
 
@@ -818,7 +1074,7 @@ $.fn.SignIn = function (opts) {
     toggleDropdown();
     dropdown();
     selectFromList();
-    formSubmit();
+    formValidation();
   }
   function toggleDropdown() {
     dropdownBtn.on('click touch', function () {
@@ -853,35 +1109,77 @@ $.fn.SignIn = function (opts) {
     });
   }
 
-  function formSubmit() {
+  function formValidation() {
     signInSubmitBtn.on('click touch', function (e) {
-      e.preventDefault();
-      var _data = form.serializeJson();
-
-      var _url = 'http://mib.zengpan.org:8000/register?';
-      _data['_response'] = 100;
-      _data = JSON.stringify(_data);
-      _url = _url + _data;
-
-      /*form submit*/
-      $.ajax({
-        type: 'POST',
-        dataType: 'JSON',
-        url: _url,
-        data: _data,
-        success: function success(response) {
-          if (response == 100) {
-            console.log(response);
-            window.location.href = './index.html';
-          } else {
-            console.log(response);
-          }
+      form.validate({
+        rules: {
+          user: 'required',
+          pwd: 'required'
         },
-        error: function error(_error) {
-          console.log(_error);
+        messages: {
+          user: '请输入用户名',
+          pwd: '请输入密码'
+        },
+        submitHandler: function submitHandler() {
+          submitForm();
         }
       });
     });
+  }
+
+  function submitForm() {
+    var _data = form.serializeJson();
+    var _url = 'http://mib.zengpan.org:8000/register?';
+    var q = form.serializeJson();
+    var response = { "status": 100, "message": "success" };
+    q['_response'] = response;
+    q = JSON.stringify(q);
+    _url = _url + q;
+
+    var r = new XMLHttpRequest();
+    r.open("GET", encodeURI(_url), true);
+    r.onerror = r.onabort = r.ontimeout = function (e) {
+      console.log(e);
+    };
+    r.send();
+    r.onreadystatechange = function () {
+      if (r.readyState == r.DONE) {
+        if (r.status == 200) {
+          var _status = $.parseJSON(r.response).status;
+          var _msg = $.parseJSON(r.response).message;
+          if (_status == 100) {
+            error.hide();
+            window.location.href = './index.html';
+          } else {
+            error.html(_msg);
+            error.show();
+          }
+        }
+      }
+    };
+
+    // $.ajax({
+    //   type: 'POST',
+    //   dataType: 'JSON',
+    //   url: _url,
+    //   data: _data,
+    //   success: function(response){
+    //     if(response == 100){
+    //       error.hide();
+    //       window.location.href='./index.html';
+
+    //     }
+    //     else{
+    //       error.html(response.message);
+    //       error.show();
+    //     }
+
+
+    //   },
+    //   error: function(error){
+    //     console.log(error);
+    //   }
+    // })
   }
 };
 'use strict';

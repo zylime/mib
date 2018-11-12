@@ -14,16 +14,19 @@ mixin popup(page)
       a(href="javascript:void(0);").js-close-popup-code.ic--close--black.l-f--r
 
       h2 请输入短信验证码
-      span.warning.l-mgn--t-10 验证码错误
+      span.error.l-mgn--t-10.js-error 验证码错误
       .l-mgn--t-10.l-mgn--b-20.l-flex.js-popup-code-inputs
-        input.txt--c(type="text", maxlength="1")
-        input.txt--c(type="text", maxlength="1")
-        input.txt--c(type="text", maxlength="1")
-        input.txt--c(type="text", maxlength="1")
-        input.txt--c(type="text", maxlength="1")
-        input.txt--c(type="text", maxlength="1")
+        input.js-code.txt--c(type="text", maxlength="1")
+        input.js-code.txt--c(type="text", maxlength="1")
+        input.js-code.txt--c(type="text", maxlength="1")
+        input.js-code.txt--c(type="text", maxlength="1")
+        input.js-code.txt--c(type="text", maxlength="1")
+        input.js-code.txt--c(type="text", maxlength="1")
       a.btn-type-1.js-popup-code-verification-btn(href="javascript:void(0);") 发送验证码
-      a.login-btn.disabled.l-mgn--t-10.js-btn.js-popup-code-submit(href="javascript:void(0);") 登陆
+      form.js-popup-code-form
+        input(type="hidden", name="code", value="")
+        input(type='hidden', name="phone", value="")
+        a.login-btn.disabled.l-mgn--t-10.js-btn.js-popup-code-submit(href="javascript:void(0);") 登陆
   else if (page == 'verifyEmail')
     form.c-popup.c-popup--verify-email.js-popup-verify-email
       a(href="javascript:void(0);").js-close-verify-email.ic--close--black.l-f--r
@@ -32,12 +35,13 @@ mixin popup(page)
       p.txt--l.txt--edwardapprox 验证邮件已发送至
       p.txt--l.txt--edwardapprox.js-display-email xxxxx@xxx.com
       input.js-input-email(type="hidden", name="userEmail", value="xxxxx@xxx.com")
+      .error.js-error
       a.btn-type-2.l-mgn--t-20(href="javascript:void(0);").js-verify-btn 已验证
-      a.btn-type-2.l-mgn--t-20(href="javascript:void(0);").js-resend-btn 重新验证()
+      a.btn-type-2.l-mgn--t-20(href="javascript:void(0);").js-resend-btn 重新验证 (60)
       .l-mgn--t-20.l-columns.c-popup--verify-email--subscription.txt--l
         p.txt--edwardapprox 我想通过电子邮件，短信和颠换收到来自MIB的推广信息，包括折扣优惠，调查和灵感和爱。
         .checkbox.js-checkbox.checked
-          input.subscription.js-subscription(name="subscription", type="checkbox", value="true")
+          input.subscription.js-subscription(name="subscription", type="text", value="true")
           .icon
 
   else if (page == 'resetPsw')

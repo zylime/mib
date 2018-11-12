@@ -6,6 +6,7 @@ $.fn.SignIn = function(opts){
   var removeBtn = $(this).find('.js-dropdown-body .js-remove');
   var dropdownBtn = $(this).find('.js-dropdown-btn');
   var signInSubmitBtn = $(this).find('.js-sign-in-submit');
+  var error = form.find('.js-error');
   // var 
 
  
@@ -16,7 +17,7 @@ $.fn.SignIn = function(opts){
     toggleDropdown();
     dropdown();
     selectFromList();
-    formSubmit();
+    formValidation();
 
   }
   function toggleDropdown(){
@@ -54,38 +55,78 @@ $.fn.SignIn = function(opts){
     })
   }
 
-  function formSubmit(){
+  function formValidation(){
     signInSubmitBtn.on('click touch', function(e){
-      e.preventDefault();
-      var _data = form.serializeJson();
-      
-      var _url = 'http://mib.zengpan.org:8000/register?';
-      _data['_response'] = 100;
-      _data = JSON.stringify(_data);
-      _url = _url + _data;   
-  
-      /*form submit*/
-      $.ajax({
-        type: 'POST',
-        dataType: 'JSON',
-        url: _url,
-        data: _data,
-        success: function(response){
-          if(response == 100){
-            console.log(response);
+      form.validate({
+        rules: {
+          user: 'required',
+          pwd: 'required'
+        },
+        messages: {
+          user: '请输入用户名',
+          pwd: '请输入密码'
+        },
+        submitHandler: function(){
+          submitForm()
+        }
+      });
+
+    })
+  }
+
+  function submitForm(){
+    var _data = form.serializeJson();
+    var _url = 'http://mib.zengpan.org:8000/register?';
+    var q = form.serializeJson();
+    var response = { "status" : 100, "message" : "success" } ;
+    q['_response'] = response;
+    q = JSON.stringify(q);
+    _url = _url + q;   
+
+    var r = new XMLHttpRequest();
+    r.open("GET", encodeURI(_url), true);
+    r.onerror = r.onabort = r.ontimeout = function(e) { console.log(e); }
+    r.send();
+    r.onreadystatechange = function() {
+      if (r.readyState == r.DONE) {
+        if (r.status == 200) {
+          var _status = $.parseJSON(r.response).status;
+          var _msg = $.parseJSON(r.response).message;
+          if(_status == 100){
+            error.hide();
             window.location.href='./index.html';
           }
           else{
-            console.log(response);
+            error.html(_msg);
+            error.show();
           }
           
-
-        },
-        error: function(error){
-          console.log(error);
         }
-      })
-    })
+      }
+    }
+
+    // $.ajax({
+    //   type: 'POST',
+    //   dataType: 'JSON',
+    //   url: _url,
+    //   data: _data,
+    //   success: function(response){
+    //     if(response == 100){
+    //       error.hide();
+    //       window.location.href='./index.html';
+
+    //     }
+    //     else{
+    //       error.html(response.message);
+    //       error.show();
+    //     }
+        
+
+    //   },
+    //   error: function(error){
+    //     console.log(error);
+    //   }
+    // })
   }
 
 }

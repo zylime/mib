@@ -10,7 +10,7 @@ block content
         form.c-sign-in--form.js-sign-in-form(data-js-password)
           .c-sign-in--form--rol.border-bottom
             .ic--user
-            input(type="text", name="uid", autocomplete="on", placeholder="请输入用户名")
+            input(type="text", name="user", autocomplete="on", placeholder="请输入用户名", required)
             .ic--triangle-down.js-dropdown-btn
             .c-sign-in--form--dropdown.js-dropdown-body
               ul
@@ -26,11 +26,15 @@ block content
 
           .c-sign-in--form--rol.border-bottom(data-js-password)
             .ic--psw
-            input(type="password", name="psw", placeholder="请输入密码").js-psw-input
-            .ic--eye.js-psw-eye
+            input(type="password", name="pwd", placeholder="请输入密码", required)
+            .ic--eye.js-pwd-eye
           div.c-sign-in--form--link.txt--r
             a(href="sign-in-code.html") 用短信验证码登录
-          a.c-sign-in--form--submit.js-sign-in-submit 登陆
+          .error.js-error
+          label#user-error.error(for='user')
+          br
+          label#pwd-error.error(for="pwd")
+          button.c-sign-in--form--submit.js-sign-in-submit 登陆
           div.c-sign-in--form--link.txt--c
             a(href="forget-psw.html") 忘记密码？点击获取帮助
 

@@ -2,7 +2,7 @@ extends ../partials/_template
 include ../mixins/_popup
 
 block content
-  .c-content.c-sign-in--bg
+  .c-content.c-sign-in--bg(data-js-sign-in-by-mobile)
     .c-sign-in
       h1 欢迎使用MIB
       h2 (Mega Icebreaker)
@@ -10,7 +10,7 @@ block content
         form.c-sign-in--form
           .c-sign-in--form--rol.border-bottom
             span CN+86
-            input.input-phone(type="text", name="uid", autocomplete="on", placeholder="请输入手机号码")
+            input.input-phone.js-mobile-number(type="text", name="uid", autocomplete="on", placeholder="请输入手机号码")
 
           a.button.c-sign-in--form--submit.js-open-popup-code(href="javascript:void(0);") 获取验证码
           div.c-sign-in--form--link.txt--c

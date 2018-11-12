@@ -88,6 +88,40 @@ input[type="number"] {
 .btn-expand[data-expanded="false"]:after {
   transform: rotate(-45deg);
 }
+.btn-type-1 {
+  height: 50px;
+  line-height: 50px;
+  color: #00a5a5;
+  border: 1px solid #00a5a5;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+}
+.btn-type-1.disabled {
+  color: #dde0e3;
+}
+.btn-type-2 {
+  height: 50px;
+  line-height: 50px;
+  background: #00a5a5;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  border: none;
+}
+button.btn-type-2 {
+  width: 100%;
+}
+.btn-type-3 {
+  height: 50px;
+  line-height: 50px;
+  background: #fd6160;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+}
 @font-face {
   font-family 'appleFont' {
     src: url("../fonts/pingfang-medium-webfont.eot");
@@ -168,36 +202,6 @@ input:-ms-input-placeholder {
 }
 .border-bottom {
   border-bottom: 1px solid #dde0e3;
-}
-.btn-type-1 {
-  height: 50px;
-  line-height: 50px;
-  color: #00a5a5;
-  border: 1px solid #00a5a5;
-  border-radius: 5px;
-  text-align: center;
-  display: block;
-}
-.btn-type-1.disabled {
-  color: #dde0e3;
-}
-.btn-type-2 {
-  height: 50px;
-  line-height: 50px;
-  background: #00a5a5;
-  color: #fff;
-  border-radius: 5px;
-  text-align: center;
-  display: block;
-}
-.btn-type-3 {
-  height: 50px;
-  line-height: 50px;
-  background: #fd6160;
-  color: #fff;
-  border-radius: 5px;
-  text-align: center;
-  display: block;
 }
 .ic--stars--4 {
   background-image: url("../img/ic-stars-4.png");
@@ -663,6 +667,12 @@ input[type="number"] {
 }
 .txt--l {
   text-align: left;
+}
+.error {
+  display: none;
+  color: #ee4746;
+  margin-top: 10px;
+  font-size: 14px;
 }
 .l-columns:after {
   clear: both;
@@ -1885,6 +1895,7 @@ input[type="number"] {
   line-height: 35px;
   font-size: 12px;
 }
+.c-popup--code .btn-type-1[disabled],
 .c-popup--code .btn-type-1.disabled {
   color: #dde0e3;
 }
@@ -1897,6 +1908,7 @@ input[type="number"] {
   line-height: 50px;
   border-radius: 5px;
 }
+.c-popup--code .login-btn[disabled],
 .c-popup--code .login-btn.disabled {
   background: #dde0e3;
 }
@@ -1930,6 +1942,7 @@ input[type="number"] {
 .c-popup--verify-email a.btn-type-2:nth-of-type(3) {
   margin-left: 2%;
 }
+.c-popup--verify-email a.btn-type-2[disabled],
 .c-popup--verify-email a.btn-type-2.disabled {
   background: #dde0e3;
   color: #fff;
@@ -2121,7 +2134,7 @@ input[type="number"] {
 .c-register .c-sign-in--form--rol .input-email {
   width: calc(100% - 40px);
 }
-.c-register .button.disabled {
+.c-register .button[disabled] {
   background: #dde0e3;
   color: #fff;
 }
