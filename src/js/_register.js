@@ -89,7 +89,7 @@ $.fn.Register = function(opts){
     var _data = form.serializeJson();
     var _url = 'http://mib.zengpan.org:8000/register?';
     var q = form.serializeJson();
-    var response = { "status" : 100, "message" : "succeed" } ;
+    var response = { "status" : 213, "message" : "手机号不可用" } ;
     q['_response'] = response;
     q = JSON.stringify(q);
     _url = _url + q;  
@@ -116,7 +116,49 @@ $.fn.Register = function(opts){
             }
           }
           else{
-            // console.log(_msg);
+            var _errorHtml;
+            if(_status == 210){
+              _errorHtml = $('input[name="register-210"]').val();
+            }
+            else if(_status == 211){
+              _errorHtml = $('input[name="register-211"]').val();
+            }
+            else if(_status == 212){
+              _errorHtml = $('input[name="register-212"]').val();
+            }
+            else if(_status == 213){
+              _errorHtml = $('input[name="register-213"]').val();
+            }
+            else if(_status == 214){
+              _errorHtml = $('input[name="register-214"]').val();
+            }
+            else if(_status == 215){
+              _errorHtml = $('input[name="register-215"]').val();
+            }
+            else if(_status == 220){
+              _errorHtml = $('input[name="register-220"]').val();
+            }
+            else if(_status == 221){
+              _errorHtml = $('input[name="siregistergnin-221"]').val();
+            }
+            else if(_status == 222){
+              _errorHtml = $('input[name="register-222"]').val();
+            }
+            else if(_status == 223){
+              _errorHtml = $('input[name="register-223"]').val();
+            }
+            else if(_status == 230){
+              _errorHtml = $('input[name="register-230"]').val();
+            }
+            else if(_status == 231){
+              _errorHtml = $('input[name="register-231"]').val();
+            }
+            else if(_status == 232){
+              _errorHtml = $('input[name="register-232"]').val();
+            }
+            else if(_status == 233){
+              _errorHtml = $('input[name="register-233"]').val();
+            }
             error.html(_msg);
             error.show();
           }
@@ -185,7 +227,7 @@ $.fn.Register = function(opts){
       var _data = emailForm.serializeJson();
       var q = emailForm.serializeJson();
       var _url = 'http://mib.zengpan.org:8000/register?';
-      var response = { "status" : 100, "message" : "success" } ;
+      var response = { "status" : 100, "message" : "验证成功" } ;
       q['_response'] = response;
       q = JSON.stringify(q);
       _url = _url + q;   
@@ -204,7 +246,12 @@ $.fn.Register = function(opts){
               registerSuccess();
             }
             else{
-              emailError.html(_msg);
+              var _errorHtml;
+              if(_status == 200){
+                _errorHtml = $('input[name="register-email-200"]').val();
+              }
+
+              emailError.html(_errorHtml);
               emailError.show();
             }
             
@@ -256,7 +303,7 @@ $.fn.Register = function(opts){
       var _data = mobileForm.serializeJson();
       var _url = 'http://mib.zengpan.org:8000/register?';
       var q = mobileForm.serializeJson();
-      var response = { "status" : 100, "message" : "success" } ;
+      var response = { "status" : 100, "message" : "验证成功" } ;
       q['_response'] = response;
       q = JSON.stringify(q);
       _url = _url + q;   
@@ -268,7 +315,7 @@ $.fn.Register = function(opts){
       r.onreadystatechange = function() {
         if (r.readyState == r.DONE) {
           if (r.status == 200) {
-            console.log(r);
+            // console.log(r);
             var _status = $.parseJSON(r.response).status;
             var _msg = $.parseJSON(r.response).message;
             if(_status == 100){
@@ -276,7 +323,11 @@ $.fn.Register = function(opts){
               registerSuccess();
             }
             else{
-              mobileError.html(_msg);
+              var _errorHtml;
+              if(_status == 200){
+                _errorHtml = $('input[name="register-mobile-200"]').val();
+              }
+              mobileError.html(_errorHtml);
               mobileError.show();
             }
             

@@ -1,9 +1,10 @@
-
+include ../mixins/_error-inputs
 doctype html
 html
   include _head
   
   body
+    +error-inputs()
     block content
 
   include _foot
