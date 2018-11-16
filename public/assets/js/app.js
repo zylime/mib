@@ -149,49 +149,158 @@ $.fn.forgetPsw = function (opts) {
   var codeBtn = $(this).find('.js-code');
   var submitBtn = $(this).find('.js-submit');
   var form = $(this).find('.js-forget-psw-form');
+  var error = $(this).find('.js-error');
 
   events();
 
   function events() {
     getCode();
     submit();
+    checkInput();
   }
+  function checkInput() {
+    var inputStatus = false;
+    container.find('input').on('keydown', function () {
+      var _length = container.find('input').length;
+      // console.log(_length);
+      for (var i = 0; i < _length; i++) {
 
-  function getCode() {
-    codeBtn.on('click touch', function () {
-      if (!$(this).hasClass('disabled')) {
-        var _time = 60;
-        var _this = this;
-        $(this).addClass('disabled');
+        if ($(container.find('input')[i]).val() == '') {
 
-        var countTime = setInterval(function () {
-          _time = _time - 1;
+          inputStatus = false;
+          break;
+        } else {
+          inputStatus = true;
+        }
+      }
 
-          $(_this).html('重新发送 (' + _time + ')');
-          if (_time == 0) {
-            clearInterval(countTime);
-            $(_this).html('发送验证码');
-            $(_this).removeClass('disabled');
-          }
-        }, 1000);
+      if (inputStatus) {
+        updateSubmitBtn();
       }
     });
+  }
+  function updateSubmitBtn() {
+
+    submitBtn.removeAttr('disabled');
+  }
+  function getCode() {
+    codeBtn.on('click touch', function () {
+      form.validate({
+        rules: {
+          uid: 'required'
+        },
+        messages: {
+          uid: $('input[name="forget-psw-500"]').val()
+        },
+        submitHandler: function submitHandler(e) {
+
+          var _data = form.serializeJson();
+          var _url = 'http://mib.zengpan.org:8000/forget-psw?';
+          var q = form.serializeJson();
+          var response = { "status": 100, "message": "有效用户名" };
+          q['_response'] = response;
+          q = JSON.stringify(q);
+          _url = _url + q;
+
+          var r = new XMLHttpRequest();
+          r.open("GET", encodeURI(_url), true);
+          r.onerror = r.onabort = r.ontimeout = function (e) {
+            console.log(e);
+          };
+          r.send();
+          r.onreadystatechange = function () {
+            if (r.readyState == r.DONE) {
+              if (r.status == 200) {
+                var _status = $.parseJSON(r.response).status;
+                var _msg = $.parseJSON(r.response).message;
+                if (_status == 100) {
+                  error.hide();
+                  getCodeCountDown();
+                } else {
+                  var _errorHtml;
+                  if (_status == 200) {
+                    _errorHtml = $('input[name="forget-psw-200"]').val();
+                  }
+
+                  error.html(_errorHtml);
+                  error.show();
+                }
+              }
+            }
+          };
+        }
+      });
+    });
+  }
+  function getCodeCountDown() {
+
+    var _time = 60;
+    codeBtn.attr('disabled', 'disabled');
+
+    var countTime = setInterval(function () {
+      _time = _time - 1;
+
+      codeBtn.html('重新发送 (' + _time + ')');
+      if (_time == 0) {
+        clearInterval(countTime);
+        codeBtn.html('发送验证码');
+        codeBtn.removeAttr('disabled');
+      }
+    }, 1000);
   }
 
   function submit() {
     submitBtn.on('click touch', function () {
-      var _data = form.serialize();
-      var _url = '';
-
-      /*form submit*/
-      $.ajax({
-        type: 'POST',
-        dataType: 'text',
-        url: _url,
-        data: _data,
-        success: function success(msg) {}
+      form.validate({
+        rules: {
+          uid: 'required',
+          secureCode: 'required'
+        },
+        messages: {
+          uid: $('input[name="forget-psw-500"]').val(),
+          secureCode: $('input[name="forget-psw-600"]').val()
+        },
+        submitHandler: function submitHandler(e) {
+          submitData();
+        }
       });
     });
+  }
+
+  function submitData() {
+    var _data = form.serializeJson();
+    var _url = 'http://mib.zengpan.org:8000/forget-psw?';
+    var q = form.serializeJson();
+    var response = { "status": 300, "message": "验证成功" };
+    q['_response'] = response;
+    q = JSON.stringify(q);
+    _url = _url + q;
+
+    var r = new XMLHttpRequest();
+    r.open("GET", encodeURI(_url), true);
+    r.onerror = r.onabort = r.ontimeout = function (e) {
+      console.log(e);
+    };
+    r.send();
+    r.onreadystatechange = function () {
+      if (r.readyState == r.DONE) {
+        if (r.status == 200) {
+          var _status = $.parseJSON(r.response).status;
+          var _msg = $.parseJSON(r.response).message;
+          if (_status == 300) {
+            error.hide();
+            window.location.href = './reset-psw.html';
+          } else {
+            var _errorHtml;
+            if (_status == 400) {
+              _errorHtml = $('input[name="forget-psw-400"]').val();
+            }
+            error.html(_errorHtml);
+            error.show();
+          }
+        }
+      }
+    };
   }
 };
 'use strict';
@@ -659,12 +768,20 @@ $.fn.Register = function (opts) {
         rules: {
           name: 'required',
           email_mobile: 'required',
-          pwd: 'required'
+          pwd: {
+            required: true,
+            minlength: 6,
+            maxlength: 18
+          }
         },
         messages: {
-          user: '请输入昵称',
-          email_mobile: '请输入邮箱或手机号',
-          pwd: '请输入密码'
+          user: $('input[name="register-230"]').val(),
+          email_mobile: $('input[name="register-210"]').val(),
+          pwd: {
+            required: $('input[name="register-220"]').val(),
+            minlength: $('input[name="register-221"]').val(),
+            maxlength: $('input[name="register-222"]').val()
+          }
         },
         submitHandler: function submitHandler(e) {
 
@@ -722,7 +839,7 @@ $.fn.Register = function (opts) {
             } else if (_status == 220) {
               _errorHtml = $('input[name="register-220"]').val();
             } else if (_status == 221) {
-              _errorHtml = $('input[name="siregistergnin-221"]').val();
+              _errorHtml = $('input[name="register-221"]').val();
             } else if (_status == 222) {
               _errorHtml = $('input[name="register-222"]').val();
             } else if (_status == 223) {
@@ -976,45 +1093,90 @@ $.fn.resetPsw = function (opts) {
   var form = $(this).find('.js-reset-psw-form');
   var psw1 = $(this).find('.js-input-psw1');
   var psw2 = $(this).find('.js-input-psw2');
-  var warning = $(this).find('.js-warning');
+  var error = $(this).find('.js-error');
+  var popup = $('.js-popup-reset-psw');
 
   events();
 
   function events() {
 
-    submit();
+    validateForm();
   }
 
-  function submit() {
+  function validateForm() {
     submitBtn.on('click', function (e) {
-      e.preventDefault();
-      var _psw1 = psw1.val();
-      var _psw2 = psw2.val();
-      // console.log(_psw1);
-      // console.log(_psw2);
-      if (_psw1 == '' || _psw2 == '') {
-        warning.html('请输入密码');
-        warning.show();
-      } else {
-        if (_psw1 !== _psw2) {
-          warning.html('密码不匹配');
-          warning.show();
-        } else {
-          warning.hide();
-          var _data = form.serialize();
-          var _url = '';
-          console.log(_data);
-          /*form submit*/
-          $.ajax({
-            type: 'POST',
-            dataType: 'text',
-            url: _url,
-            data: _data,
-            success: function success(msg) {}
-          });
+      // e.preventDefault();
+      form.validate({
+        rules: {
+          newPsw: {
+            required: true,
+            minlength: 6,
+            maxlength: 18
+          },
+          repeatPsw: {
+            equalTo: "#newPsw"
+          }
+        },
+        messages: {
+          newPsw: {
+            required: $('input[name="reset-psw-200"]').val(),
+            minlength: $('input[name="reset-psw-221"]').val(),
+            maxlength: $('input[name="reset-psw-222"]').val()
+          },
+          repeatPsw: {
+            equalTo: $('input[name="reset-psw-210"]').val()
+          }
+        },
+        submitHandler: function submitHandler(e) {
+          // submitData();
+          showPopup(popup);
+        }
+      });
+    });
+  }
+
+  function submitData() {
+    var _data = form.serializeJson();
+    var _url = 'http://mib.zengpan.org:8000/reset-psw?';
+    var q = form.serializeJson();
+    var response = { "status": 100, "message": "修改成功" };
+    q['_response'] = response;
+    q = JSON.stringify(q);
+    _url = _url + q;
+
+    var r = new XMLHttpRequest();
+    r.open("GET", encodeURI(_url), true);
+    r.onerror = r.onabort = r.ontimeout = function (e) {
+      console.log(e);
+    };
+    r.send();
+    r.onreadystatechange = function () {
+      if (r.readyState == r.DONE) {
+        if (r.status == 200) {
+          var _status = $.parseJSON(r.response).status;
+          var _msg = $.parseJSON(r.response).message;
+          if (_status == 300) {
+            error.hide();
+            showPopup(popup);
+          } else {
+            var _errorHtml;
+            if (_status == 300) {
+              _errorHtml = $('input[name="reset-psw-300"]').val();
+            } else if (_status == 223) {
+              _errorHtml = $('input[name="reset-psw-223"]').val();
+            }
+            error.html(_errorHtml);
+            error.show();
+          }
         }
       }
-    });
+    };
+  }
+
+  function showPopup(ele) {
+    var ele = ele;
+    ele.show();
+    $('.js-popup-cover').show();
   }
 };
 'use strict';
@@ -1155,8 +1317,8 @@ $.fn.SignIn = function (opts) {
           pwd: 'required'
         },
         messages: {
-          user: '请输入用户名',
-          pwd: '请输入密码'
+          user: $('input[name="signin-200"]').val(),
+          pwd: $('input[name="signin-202"]').val()
         },
         submitHandler: function submitHandler() {
           submitForm();
@@ -1194,6 +1356,8 @@ $.fn.SignIn = function (opts) {
               _errorHtml = $('input[name="signin-200"]').val();
             } else if (_status == 201) {
               _errorHtml = $('input[name="signin-201"]').val();
+            } else if (_status == 202) {
+              _errorHtml = $('input[name="signin-202"]').val();
             }
             error.html(_errorHtml);
             error.show();

@@ -63,8 +63,8 @@ $.fn.SignIn = function(opts){
           pwd: 'required'
         },
         messages: {
-          user: '请输入用户名',
-          pwd: '请输入密码'
+          user: $('input[name="signin-200"]').val(),
+          pwd: $('input[name="signin-202"]').val()
         },
         submitHandler: function(){
           submitForm()
@@ -103,6 +103,9 @@ $.fn.SignIn = function(opts){
             }
             else if(_status == 201){
               _errorHtml = $('input[name="signin-201"]').val();
+            }
+            else if(_status == 202){
+              _errorHtml = $('input[name="signin-202"]').val();
             }
             error.html(_errorHtml);
             error.show();

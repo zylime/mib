@@ -3,6 +3,13 @@ include ../mixins/_popup
 
 
 block content
+  input(type="hidden", name="reset-psw-220", value="密码不能为空")
+  input(type="hidden", name="reset-psw-210", value="密码不匹配")
+  input(type="hidden", name="reset-psw-221", value="密码不足6位")
+  input(type="hidden", name="reset-psw-222", value="密码超过18位")
+  input(type="hidden", name="reset-psw-223", value="密码不能包含特殊字符")
+  input(type="hidden", name="reset-psw-300", value="修改失败")
+
   .c-header.c-header--sign-in
       a.l-mgn--l-20(href="sign-in.html")
         .ic--back.l-inl-b.l-v--m
@@ -14,11 +21,16 @@ block content
         input(type="text", placeholder="xxx@xxx.com", value="xxx@xxx.com", disabled)
         input(type="hidden", placeholder="xxx@xxx.com", value="xxx@xxx.com", name="userEmail")
       .c-reset-psw--form--rol.border-bottom
-        input.js-input-psw1.l-w--100p(type="password", name="newPsw", placeholder="输入新密码")
+        input#newPsw.js-input-psw1.l-w--100p(type="password", name="newPsw", placeholder="输入新密码")
       .c-reset-psw--form--rol.border-bottom
         input.js-input-psw2.l-w--100p(type="password", name="repeatPsw",placeholder="再次输入新密码")
-      .warning.js-warning
-      a.btn-type-2.js-submit(href="javascript:void(0)") 确定
+      br
+      label#newPsw-error.error(for="newPsw")
+      br
+      label#repeatPsw-error.error(for="repeatPsw")
+      .error.js-error
+
+      button.btn-type-2.js-submit(href="javascript:void(0)") 确定
   +popup('resetPsw')
     
 

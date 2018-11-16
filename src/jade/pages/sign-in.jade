@@ -2,6 +2,9 @@ extends ../partials/_template
 
 
 block content
+  input(type="hidden", name="signin-200", value="用户名未填写")
+  input(type="hidden", name="signin-202", value="密码未填写")
+  input(type="hidden", name="signin-201", value="用户名或密码错误")
   .c-content.c-sign-in--bg(data-js-sign-in)
     .c-sign-in
       h1 欢迎使用MIB
@@ -10,7 +13,7 @@ block content
         form.c-sign-in--form.js-sign-in-form(data-js-password)
           .c-sign-in--form--rol.border-bottom
             .ic--user
-            input(type="text", name="user", autocomplete="on", placeholder="请输入用户名", required)
+            input(type="text", name="user", autocomplete="on", placeholder="请输入邮箱或手机号", required)
             .ic--triangle-down.js-dropdown-btn
             .c-sign-in--form--dropdown.js-dropdown-body
               ul

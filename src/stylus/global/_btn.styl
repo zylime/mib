@@ -28,7 +28,7 @@
   border-radius 5px
   text-align center
   display block
-  &.disabled
+  &[disabled]
     color $col-iron
 .btn-type-2
   height 50px
@@ -39,6 +39,9 @@
   text-align center
   display block
   border none
+  &[disabled]
+    background $col-iron
+    
 button.btn-type-2
   width 100%
 .btn-type-3
@@ -49,5 +52,7 @@ button.btn-type-2
   border-radius 5px
   text-align center
   display block
+button[disabled]
+  opacity 1
 
 

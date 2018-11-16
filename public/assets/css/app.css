@@ -97,7 +97,7 @@ input[type="number"] {
   text-align: center;
   display: block;
 }
-.btn-type-1.disabled {
+.btn-type-1[disabled] {
   color: #dde0e3;
 }
 .btn-type-2 {
@@ -110,6 +110,9 @@ input[type="number"] {
   display: block;
   border: none;
 }
+.btn-type-2[disabled] {
+  background: #dde0e3;
+}
 button.btn-type-2 {
   width: 100%;
 }
@@ -121,6 +124,9 @@ button.btn-type-2 {
   border-radius: 5px;
   text-align: center;
   display: block;
+}
+button[disabled] {
+  opacity: 1;
 }
 @font-face {
   font-family 'appleFont' {
@@ -1644,6 +1650,14 @@ input[type="number"] {
   height: 32px;
   line-height: 32px;
   top: 2px;
+  margin: 0;
+  width: auto;
+  color: #00a5a5;
+  border: 1px solid #00a5a5;
+  background: transparent;
+}
+.c-forget-psw .btn-type-1[disabled] {
+  color: #dde0e3;
 }
 .c-forget-psw .c-header {
   padding: 20px 0;
@@ -1912,6 +1926,9 @@ input[type="number"] {
 .c-popup--code .login-btn.disabled {
   background: #dde0e3;
 }
+.c-popup--reset-psw {
+  display: none;
+}
 .c-popup--reset-psw img {
   width: 80px;
 }
@@ -2162,6 +2179,8 @@ input[type="number"] {
 .c-reset-psw--form--rol input {
   width: 100%;
   background: #fff;
+  display: block;
+  margin: 0;
 }
 .c-reset-psw--form--rol input.input-psw {
   width: calc(100% - 100px);

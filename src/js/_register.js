@@ -67,12 +67,20 @@ $.fn.Register = function(opts){
         rules: {
           name: 'required',
           email_mobile: 'required',
-          pwd: 'required'
+          pwd: {
+            required: true,
+            minlength: 6,
+            maxlength: 18
+          }
         },
         messages: {
-          user: '请输入昵称',
-          email_mobile: '请输入邮箱或手机号',
-          pwd: '请输入密码'
+          user: $('input[name="register-230"]').val(),
+          email_mobile: $('input[name="register-210"]').val(),
+          pwd: {
+            required: $('input[name="register-220"]').val(),
+            minlength: $('input[name="register-221"]').val(),
+            maxlength: $('input[name="register-222"]').val()
+          }
         },
         submitHandler: function(e){
 
@@ -139,7 +147,7 @@ $.fn.Register = function(opts){
               _errorHtml = $('input[name="register-220"]').val();
             }
             else if(_status == 221){
-              _errorHtml = $('input[name="siregistergnin-221"]').val();
+              _errorHtml = $('input[name="register-221"]').val();
             }
             else if(_status == 222){
               _errorHtml = $('input[name="register-222"]').val();
