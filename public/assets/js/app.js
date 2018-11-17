@@ -197,8 +197,9 @@ $.fn.forgetPsw = function (opts) {
           var _data = form.serializeJson();
           var _url = 'http://mib.zengpan.org:8000/forget-psw?';
           var q = form.serializeJson();
-          var response = { "status": 100, "message": "有效用户名" };
+          var response = { "status": 203, "message": "有效用户名" };
           q['_response'] = response;
+          q['btn'] = "getCAPTCHA"; //按钮
           q = JSON.stringify(q);
           _url = _url + q;
 
