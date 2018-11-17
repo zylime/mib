@@ -123,7 +123,6 @@ $(document).ready(function () {
   $('[data-js-calendar]').Calender();
 
   $('[data-js-forget-psw]').forgetPsw();
-  $('[data-js-reset-psw]').resetPsw();
 
   $('[data-js-collapse]').Collapse({
     text: true
@@ -150,6 +149,7 @@ $.fn.forgetPsw = function (opts) {
   var submitBtn = $(this).find('.js-submit');
   var form = $(this).find('.js-forget-psw-form');
   var error = $(this).find('.js-error');
+  var popup = $('.js-popup-reset-psw');
 
   events();
 
@@ -190,7 +190,7 @@ $.fn.forgetPsw = function (opts) {
           uid: 'required'
         },
         messages: {
-          uid: $('input[name="forget-psw-500"]').val()
+          uid: $('input[name="forget-psw-201"]').val()
         },
         submitHandler: function submitHandler(e) {
 
@@ -220,6 +220,8 @@ $.fn.forgetPsw = function (opts) {
                   var _errorHtml;
                   if (_status == 200) {
                     _errorHtml = $('input[name="forget-psw-200"]').val();
+                  } else if (_status == 202) {
+                    _errorHtml = $('input[name="forget-psw-202"]').val();
                   }
 
                   error.html(_errorHtml);
@@ -254,11 +256,27 @@ $.fn.forgetPsw = function (opts) {
       form.validate({
         rules: {
           uid: 'required',
-          secureCode: 'required'
+          secureCode: 'required',
+          newPsw: {
+            required: true,
+            minlength: 6,
+            maxlength: 18
+          },
+          repeatPsw: {
+            equalTo: "#newPsw"
+          }
         },
         messages: {
-          uid: $('input[name="forget-psw-500"]').val(),
-          secureCode: $('input[name="forget-psw-600"]').val()
+          uid: $('input[name="forget-psw-201"]').val(),
+          secureCode: $('input[name="forget-psw-210"]').val(),
+          newPsw: {
+            required: $('input[name="forget-psw-220"]').val(),
+            minlength: $('input[name="forget-psw-222"]').val(),
+            maxlength: $('input[name="forget-psw-223"]').val()
+          },
+          repeatPsw: {
+            equalTo: $('input[name="forget-psw-221"]').val()
+          }
         },
         submitHandler: function submitHandler(e) {
           submitData();
@@ -268,10 +286,11 @@ $.fn.forgetPsw = function (opts) {
   }
 
   function submitData() {
+    showPopup(popup);
     var _data = form.serializeJson();
     var _url = 'http://mib.zengpan.org:8000/forget-psw?';
     var q = form.serializeJson();
-    var response = { "status": 300, "message": "验证成功" };
+    var response = { "status": 100, "message": "修改成功" };
     q['_response'] = response;
     q = JSON.stringify(q);
     _url = _url + q;
@@ -289,11 +308,13 @@ $.fn.forgetPsw = function (opts) {
           var _msg = $.parseJSON(r.response).message;
           if (_status == 300) {
             error.hide();
-            window.location.href = './reset-psw.html';
+            showPopup(popup);
           } else {
             var _errorHtml;
-            if (_status == 400) {
-              _errorHtml = $('input[name="forget-psw-400"]').val();
+            if (_status == 211) {
+              _errorHtml = $('input[name="forget-psw-211"]').val();
+            } else if (_status == 224) {
+              _errorHtml = $('input[name="forget-psw-211"]').val();
             }
             error.html(_errorHtml);
             error.show();
@@ -301,6 +322,12 @@ $.fn.forgetPsw = function (opts) {
         }
       }
     };
+  }
+
+  function showPopup(ele) {
+    var ele = ele;
+    ele.show();
+    $('.js-popup-cover').show();
   }
 };
 'use strict';
@@ -1083,102 +1110,105 @@ $.fn.Register = function (opts) {
     });
   }
 };
-'use strict';
+// $.fn.resetPsw = function(opts){
 
-$.fn.resetPsw = function (opts) {
+//   var container = $(this);
 
-  var container = $(this);
+//   var submitBtn = $(this).find('.js-submit');
+//   var form = $(this).find('.js-reset-psw-form');
+//   var psw1 = $(this).find('.js-input-psw1');
+//   var psw2 = $(this).find('.js-input-psw2');
+//   var error = $(this).find('.js-error');
+//   var popup = $('.js-popup-reset-psw');
 
-  var submitBtn = $(this).find('.js-submit');
-  var form = $(this).find('.js-reset-psw-form');
-  var psw1 = $(this).find('.js-input-psw1');
-  var psw2 = $(this).find('.js-input-psw2');
-  var error = $(this).find('.js-error');
-  var popup = $('.js-popup-reset-psw');
+//   events();
 
-  events();
+//   function events(){
 
-  function events() {
+//     validateForm();
+//   }
 
-    validateForm();
-  }
+//   function validateForm(){
+//     submitBtn.on('click', function(e){
+//       // e.preventDefault();
+//       form.validate({
+//         rules: {
+//           newPsw: {
+//             required: true,
+//             minlength: 6,
+//             maxlength: 18
+//           },
+//           repeatPsw: {
+//             equalTo: "#newPsw"
+//           }
+//         },
+//         messages: {
+//           newPsw: {
+//             required: $('input[name="reset-psw-200"]').val(),
+//             minlength: $('input[name="reset-psw-221"]').val(),
+//             maxlength: $('input[name="reset-psw-222"]').val()
+//           },
+//           repeatPsw: {
+//             equalTo: $('input[name="reset-psw-210"]').val()
+//           }
+//         },
+//         submitHandler: function(e){
+//           // submitData();
+//           showPopup(popup);
+//         }
+//       })
 
-  function validateForm() {
-    submitBtn.on('click', function (e) {
-      // e.preventDefault();
-      form.validate({
-        rules: {
-          newPsw: {
-            required: true,
-            minlength: 6,
-            maxlength: 18
-          },
-          repeatPsw: {
-            equalTo: "#newPsw"
-          }
-        },
-        messages: {
-          newPsw: {
-            required: $('input[name="reset-psw-200"]').val(),
-            minlength: $('input[name="reset-psw-221"]').val(),
-            maxlength: $('input[name="reset-psw-222"]').val()
-          },
-          repeatPsw: {
-            equalTo: $('input[name="reset-psw-210"]').val()
-          }
-        },
-        submitHandler: function submitHandler(e) {
-          // submitData();
-          showPopup(popup);
-        }
-      });
-    });
-  }
+//     })
+//   }
 
-  function submitData() {
-    var _data = form.serializeJson();
-    var _url = 'http://mib.zengpan.org:8000/reset-psw?';
-    var q = form.serializeJson();
-    var response = { "status": 100, "message": "修改成功" };
-    q['_response'] = response;
-    q = JSON.stringify(q);
-    _url = _url + q;
+//   function submitData(){
+//     var _data = form.serializeJson();
+//     var _url = 'http://mib.zengpan.org:8000/reset-psw?';
+//     var q = form.serializeJson();
+//     var response = { "status" : 100, "message" : "修改成功" } ;
+//     q['_response'] = response;
+//     q = JSON.stringify(q);
+//     _url = _url + q;   
 
-    var r = new XMLHttpRequest();
-    r.open("GET", encodeURI(_url), true);
-    r.onerror = r.onabort = r.ontimeout = function (e) {
-      console.log(e);
-    };
-    r.send();
-    r.onreadystatechange = function () {
-      if (r.readyState == r.DONE) {
-        if (r.status == 200) {
-          var _status = $.parseJSON(r.response).status;
-          var _msg = $.parseJSON(r.response).message;
-          if (_status == 300) {
-            error.hide();
-            showPopup(popup);
-          } else {
-            var _errorHtml;
-            if (_status == 300) {
-              _errorHtml = $('input[name="reset-psw-300"]').val();
-            } else if (_status == 223) {
-              _errorHtml = $('input[name="reset-psw-223"]').val();
-            }
-            error.html(_errorHtml);
-            error.show();
-          }
-        }
-      }
-    };
-  }
+//     var r = new XMLHttpRequest();
+//     r.open("GET", encodeURI(_url), true);
+//     r.onerror = r.onabort = r.ontimeout = function(e) { console.log(e); }
+//     r.send();
+//     r.onreadystatechange = function() {
+//       if (r.readyState == r.DONE) {
+//         if (r.status == 200) {
+//           var _status = $.parseJSON(r.response).status;
+//           var _msg = $.parseJSON(r.response).message;
+//           if(_status == 300){
+//             error.hide();
+//             showPopup(popup);
+//           }
+//           else{
+//             var _errorHtml;
+//             if(_status == 300){
+//               _errorHtml = $('input[name="reset-psw-300"]').val();
+//             }
+//             else if(_status == 223){
+//               _errorHtml = $('input[name="reset-psw-223"]').val();
+//             }
+//             error.html(_errorHtml);
+//             error.show();
+//           }
 
-  function showPopup(ele) {
-    var ele = ele;
-    ele.show();
-    $('.js-popup-cover').show();
-  }
-};
+//         }
+//       }
+//     }
+//   }
+
+//   function showPopup(ele){
+//     var ele = ele;
+//     ele.show();
+//     $('.js-popup-cover').show();
+//   }
+
+// }
+//   
+"use strict";
 'use strict';
 
 $.fn.Search = function (opts) {

@@ -17,7 +17,7 @@ $(document).ready(function(){
   $('[data-js-calendar]').Calender();
 
   $('[data-js-forget-psw]').forgetPsw();
-  $('[data-js-reset-psw]').resetPsw();
+ 
 
 
 

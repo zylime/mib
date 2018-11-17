@@ -2164,38 +2164,6 @@ input[type="number"] {
 .c-register .c-sign-in--other {
   margin-top: 80px;
 }
-.c-reset-psw .warning {
-  display: none;
-  color: #ee4746;
-  margin-top: 10px;
-}
-.c-reset-psw--form {
-  margin-top: 20px;
-}
-.c-reset-psw--form--rol {
-  margin-top: 15px;
-  padding: 10px 0;
-}
-.c-reset-psw--form--rol input {
-  width: 100%;
-  background: #fff;
-  display: block;
-  margin: 0;
-}
-.c-reset-psw--form--rol input.input-psw {
-  width: calc(100% - 100px);
-}
-.c-reset-psw--form--rol .btn-type-1 {
-  display: inline-block;
-  height: 40px;
-  line-height: 40px;
-  width: 100px;
-}
-.c-reset-psw--form .btn-type-2 {
-  width: 100%;
-  margin-top: 40px;
-  border: none;
-}
 .c-rules {
   position: relative;
   height: 100%;

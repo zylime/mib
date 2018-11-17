@@ -5,6 +5,7 @@ $.fn.forgetPsw = function(opts){
   var submitBtn = $(this).find('.js-submit');
   var form = $(this).find('.js-forget-psw-form');
   var error = $(this).find('.js-error');
+  var popup = $('.js-popup-reset-psw');
 
  
   
@@ -49,7 +50,7 @@ $.fn.forgetPsw = function(opts){
           uid: 'required'
         },
         messages: {
-          uid: $('input[name="forget-psw-500"]').val()
+          uid: $('input[name="forget-psw-201"]').val()
         },
         submitHandler: function(e){
 
@@ -78,6 +79,9 @@ $.fn.forgetPsw = function(opts){
                   var _errorHtml;
                   if(_status == 200){
                     _errorHtml = $('input[name="forget-psw-200"]').val();
+                  }
+                  else if(_status == 202){
+                    _errorHtml = $('input[name="forget-psw-202"]').val();
                   }
                   
                   error.html(_errorHtml);
@@ -115,11 +119,27 @@ $.fn.forgetPsw = function(opts){
       form.validate({
         rules: {
           uid: 'required',
-          secureCode: 'required'
+          secureCode: 'required',
+          newPsw: {
+            required: true,
+            minlength: 6,
+            maxlength: 18
+          },
+          repeatPsw: {
+            equalTo: "#newPsw"
+          }
         },
         messages: {
-          uid: $('input[name="forget-psw-500"]').val(),
-          secureCode: $('input[name="forget-psw-600"]').val()
+          uid: $('input[name="forget-psw-201"]').val(),
+          secureCode: $('input[name="forget-psw-210"]').val(),
+          newPsw: {
+            required: $('input[name="forget-psw-220"]').val(),
+            minlength: $('input[name="forget-psw-222"]').val(),
+            maxlength: $('input[name="forget-psw-223"]').val()
+          },
+          repeatPsw: {
+            equalTo: $('input[name="forget-psw-221"]').val()
+          }
         },
         submitHandler: function(e){
           submitData();
@@ -130,10 +150,11 @@ $.fn.forgetPsw = function(opts){
   }
 
   function submitData(){
+    showPopup(popup);
     var _data = form.serializeJson();
     var _url = 'http://mib.zengpan.org:8000/forget-psw?';
     var q = form.serializeJson();
-    var response = { "status" : 300, "message" : "验证成功" } ;
+    var response = { "status" : 100, "message" : "修改成功" } ;
     q['_response'] = response;
     q = JSON.stringify(q);
     _url = _url + q;   
@@ -149,12 +170,15 @@ $.fn.forgetPsw = function(opts){
           var _msg = $.parseJSON(r.response).message;
           if(_status == 300){
             error.hide();
-            window.location.href='./reset-psw.html';
+            showPopup(popup);
           }
           else{
             var _errorHtml;
-            if(_status == 400){
-              _errorHtml = $('input[name="forget-psw-400"]').val();
+            if(_status == 211){
+              _errorHtml = $('input[name="forget-psw-211"]').val();
+            }
+            else if(_status == 224){
+              _errorHtml = $('input[name="forget-psw-211"]').val();
             }
             error.html(_errorHtml);
             error.show();
@@ -163,6 +187,12 @@ $.fn.forgetPsw = function(opts){
         }
       }
     }
+  }
+
+  function showPopup(ele){
+    var ele = ele;
+    ele.show();
+    $('.js-popup-cover').show();
   }
 
 }
