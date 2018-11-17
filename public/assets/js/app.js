@@ -185,54 +185,104 @@ $.fn.forgetPsw = function (opts) {
   }
   function getCode() {
     codeBtn.on('click touch', function () {
-      form.validate({
-        rules: {
-          uid: 'required'
-        },
-        messages: {
-          uid: $('input[name="forget-psw-201"]').val()
-        },
-        submitHandler: function submitHandler(e) {
+      console.log(form.find('input[name="uid"]').val() == "");
+      if (form.find('input[name="uid"]').val() !== "") {
+        var _data = form.serializeJson();
+        // console.log(_data);
+        var _url = 'http://mib.zengpan.org:8000/forget-psw?';
+        var q = form.serializeJson();
+        var response = { "status": 203, "message": "有效用户名" };
+        q['uid'] = form.find('input[name="uid"]').val();
+        q['_response'] = response;
+        q['btn'] = "getCAPTCHA"; //按钮
+        q = JSON.stringify(q);
+        _url = _url + q;
+        console.log(q);
 
-          var _data = form.serializeJson();
-          var _url = 'http://mib.zengpan.org:8000/forget-psw?';
-          var q = form.serializeJson();
-          var response = { "status": 203, "message": "有效用户名" };
-          q['_response'] = response;
-          q['btn'] = "getCAPTCHA"; //按钮
-          q = JSON.stringify(q);
-          _url = _url + q;
-
-          var r = new XMLHttpRequest();
-          r.open("GET", encodeURI(_url), true);
-          r.onerror = r.onabort = r.ontimeout = function (e) {
-            console.log(e);
-          };
-          r.send();
-          r.onreadystatechange = function () {
-            if (r.readyState == r.DONE) {
-              if (r.status == 200) {
-                var _status = $.parseJSON(r.response).status;
-                var _msg = $.parseJSON(r.response).message;
-                if (_status == 100) {
-                  error.hide();
-                  getCodeCountDown();
-                } else {
-                  var _errorHtml;
-                  if (_status == 200) {
-                    _errorHtml = $('input[name="forget-psw-200"]').val();
-                  } else if (_status == 202) {
-                    _errorHtml = $('input[name="forget-psw-202"]').val();
-                  }
-
-                  error.html(_errorHtml);
-                  error.show();
+        var r = new XMLHttpRequest();
+        r.open("GET", encodeURI(_url), true);
+        r.onerror = r.onabort = r.ontimeout = function (e) {
+          console.log(e);
+        };
+        r.send();
+        r.onreadystatechange = function () {
+          if (r.readyState == r.DONE) {
+            if (r.status == 200) {
+              var _status = $.parseJSON(r.response).status;
+              var _msg = $.parseJSON(r.response).message;
+              if (_status == 100) {
+                error.hide();
+                getCodeCountDown();
+              } else {
+                var _errorHtml;
+                if (_status == 200) {
+                  _errorHtml = $('input[name="forget-psw-200"]').val();
+                } else if (_status == 202) {
+                  _errorHtml = $('input[name="forget-psw-202"]').val();
                 }
+
+                error.html(_errorHtml);
+                error.show();
               }
             }
-          };
-        }
-      });
+          }
+        };
+      } else {
+        error.html($('input[name="forget-psw-201"]').val());
+        error.show();
+      }
+      // form.validate({
+      //   rules: {
+      //     uid: 'required'
+      //   },
+      //   messages: {
+      //     uid: $('input[name="forget-psw-201"]').val()
+      //   },
+      //   submitHandler: function(e){
+
+      //     var _data = form.serializeJson();
+      //     // console.log(_data);
+      //     var _url = 'http://mib.zengpan.org:8000/forget-psw?';
+      //     var q = form.serializeJson();
+      //     var response = { "status" : 203, "message" : "有效用户名" } ;
+      //     q['uid'] = form.find('input[name="uid"]').val();
+      //     q['_response'] = response;
+      //     q['btn'] = "getCAPTCHA"; //按钮
+      //     q = JSON.stringify(q);
+      //     _url = _url + q;
+      //     console.log(q);
+
+      //     var r = new XMLHttpRequest();
+      //     r.open("GET", encodeURI(_url), true);
+      //     r.onerror = r.onabort = r.ontimeout = function(e) { console.log(e); }
+      //     r.send();
+      //     r.onreadystatechange = function() {
+      //       if (r.readyState == r.DONE) {
+      //         if (r.status == 200) {
+      //           var _status = $.parseJSON(r.response).status;
+      //           var _msg = $.parseJSON(r.response).message;
+      //           if(_status == 100){
+      //             error.hide();
+      //             getCodeCountDown();
+      //           }
+      //           else{
+      //             var _errorHtml;
+      //             if(_status == 200){
+      //               _errorHtml = $('input[name="forget-psw-200"]').val();
+      //             }
+      //             else if(_status == 202){
+      //               _errorHtml = $('input[name="forget-psw-202"]').val();
+      //             }
+
+      //             error.html(_errorHtml);
+      //             error.show();
+      //           }
+
+      //         }
+      //       }
+      //     }
+      //   }
+      // });
     });
   }
   function getCodeCountDown() {
@@ -291,10 +341,12 @@ $.fn.forgetPsw = function (opts) {
     var _data = form.serializeJson();
     var _url = 'http://mib.zengpan.org:8000/forget-psw?';
     var q = form.serializeJson();
+    console.log(q);
     var response = { "status": 100, "message": "修改成功" };
     q['_response'] = response;
     q = JSON.stringify(q);
     _url = _url + q;
+    console.log(q);
 
     var r = new XMLHttpRequest();
     r.open("GET", encodeURI(_url), true);

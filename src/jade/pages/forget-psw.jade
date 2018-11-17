@@ -30,18 +30,15 @@ block content
         .c-sign-in--form--rol.border-bottom
           //- .ic--psw
           input(type="text", name="secureCode", placeholder="请输入验证码")
-          button.btn-type-1.js-code 获取验证码
+          a.btn-type-1.js-code 获取验证码
         .c-sign-in--form--rol.border-bottom
           input#newPsw(type="password", name="newPsw", placeholder="输入新密码")
         .c-sign-in--form--rol.border-bottom
           input.js-input-psw2.l-w--100p(type="password", name="repeatPsw",placeholder="再次输入新密码")
         br
         label#uid-error.error(for="uid")
-        br
         label#secureCode-error.error(for="secureCode")
-        br
         label#newPsw-error.error(for="newPsw")
-        br
         label#repeatPsw-error.error(for="repeatPsw")
         .error.js-error
 
