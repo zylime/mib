@@ -368,8 +368,10 @@ $.fn.forgetPsw = function (opts) {
             var _errorHtml;
             if (_status == 211) {
               _errorHtml = $('input[name="forget-psw-211"]').val();
+            } else if (_status == 200) {
+              _errorHtml = $('input[name="forget-psw-200"]').val();
             } else if (_status == 224) {
-              _errorHtml = $('input[name="forget-psw-211"]').val();
+              _errorHtml = $('input[name="forget-psw-224"]').val();
             }
             error.html(_errorHtml);
             error.show();
