@@ -150,8 +150,7 @@ input:-ms-input-placeholder {
   box-shadow: 1px 1px 10px rgba(130,130,130,0.3);
 }
 .hr {
-  border-top: 1px solid #dde0e3;
-  border-bottom: 0;
+  border: none;
 }
 .hide {
   display: none;
@@ -586,6 +585,16 @@ input:-ms-input-placeholder {
 }
 .ic--remove:after {
   transform: rotate(135deg);
+}
+.ic--secure {
+  background-image: url("../img/ic-secure.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 10px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
 }
 html,
 body {
@@ -1585,6 +1594,24 @@ input[type="number"] {
   height: 100%;
   opacity: 0;
 }
+.c-collapse {
+  position: relative;
+}
+.c-collapse--container {
+  overflow: hidden;
+}
+.c-collapse--expand-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.c-collapse--expand-btn span {
+  color: #00a5a5;
+  background: #fff;
+}
+.c-collapse--expand-btn[data-expanded="true"] {
+  bottom: -15px;
+}
 .c-content {
   padding: 0 20px;
 }
@@ -2580,6 +2607,7 @@ input[type="number"] {
   border: 2px solid #00a5a5;
   border-radius: 5px;
   font-weight: bold;
+  font-size: 14px;
 }
 .c-store--comments--stars {
   width: calc(100% - 85px);
@@ -2651,6 +2679,49 @@ input[type="number"] {
 .c-store--popup--comments .name,
 .c-store--popup--comments .reply-author {
   font-size: 16px;
+}
+.c-tab-panel--menu {
+  border-bottom: 1px solid #dde0e3;
+}
+.c-tab-panel--menu:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.c-tab-panel--menu--item {
+  cursor: pointer;
+  float: left;
+  padding: 5px 0;
+  margin-right: 10px;
+}
+.c-tab-panel--menu--item span {
+  font-weight: bold;
+}
+.c-tab-panel--menu--item.active {
+  border-bottom: 4px solid #00a5a5;
+}
+.c-tab-panel--content {
+  padding: 30px 0 40px;
+  border-bottom: 1px solid #dde0e3;
+}
+.c-tab-panel--content--item {
+  display: none;
+}
+.c-tab-panel--content--item.active {
+  display: block;
+}
+.c-user .c-collapse--container {
+  height: 64px;
+}
+.c-user .c-store--comments--read-all {
+  display: block;
+  width: 150px;
+}
+.c-user .ic--secure {
+  margin-right: 3px;
+}
+.c-user .c-list--item {
+  line-height: 24px;
 }
 .m-display-projects {
   margin-bottom: 20px;

@@ -202,7 +202,7 @@ $.fn.forgetPsw = function(opts){
   }
 
   function submitData(){
-    showPopup(popup);
+    // showPopup(popup);
     var _data = form.serializeJson();
     var _url = 'http://mib.zengpan.org:8000/forget-psw?';
     var q = form.serializeJson();

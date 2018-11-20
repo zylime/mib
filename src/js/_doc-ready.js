@@ -17,12 +17,14 @@ $(document).ready(function(){
   $('[data-js-calendar]').Calender();
 
   $('[data-js-forget-psw]').forgetPsw();
+
+
  
 
 
 
 
-  
+  $('[data-js-tab-panel]').TabPanel();
   
   $('[data-js-collapse]').Collapse({
     text: true

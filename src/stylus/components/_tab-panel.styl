@@ -1,0 +1,26 @@
+.c-tab-panel
+  
+  &--menu
+    border-bottom 1px solid $col-iron
+    &:after
+      content ""
+      display block
+      clear both
+    &--item
+      cursor pointer
+      float left
+      padding 5px 0
+      margin-right 10px
+      span
+        font-weight bold
+      &.active
+        border-bottom 4px solid $col-persian-green
+  &--content
+    padding 30px 0 40px
+    border-bottom 1px solid $col-iron
+    &--item
+      display none
+      
+      &.active
+        display block
+  

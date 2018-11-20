@@ -124,6 +124,8 @@ $(document).ready(function () {
 
   $('[data-js-forget-psw]').forgetPsw();
 
+  $('[data-js-tab-panel]').TabPanel();
+
   $('[data-js-collapse]').Collapse({
     text: true
   });
@@ -337,7 +339,7 @@ $.fn.forgetPsw = function (opts) {
   }
 
   function submitData() {
-    showPopup(popup);
+    // showPopup(popup);
     var _data = form.serializeJson();
     var _url = 'http://mib.zengpan.org:8000/forget-psw?';
     var q = form.serializeJson();
@@ -1514,6 +1516,27 @@ $.fn.StoreComments = function (opts) {
           $(this).attr('data-expanded', 'false');
         }
       });
+    });
+  }
+};
+'use strict';
+
+$.fn.TabPanel = function (opts) {
+
+  var container = $(this);
+  var tabMenu = $(this).find('.js-tab-menu');
+  var tabPanel = $(this).find('.js-tab-panel');
+
+  events();
+
+  function events() {
+    tabMenu.on('click touch', function (e) {
+      e.stopPropagation();
+      var index = $(this).attr('data-tab-index');
+      tabMenu.removeClass('active');
+      tabPanel.removeClass('active');
+      $(this).addClass('active');
+      container.find('.js-tab-panel[data-panel-index=' + index + ']').addClass('active');
     });
   }
 };
