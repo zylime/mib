@@ -44,7 +44,8 @@ $.fn.forgetPsw = function(opts){
   
   }
   function getCode(){
-    codeBtn.on('click touch', function(){
+    codeBtn.on('click touch', function(e){
+      // e.preventDefult();
       if(!$(this).hasClass('disabled')){
         if(form.find('input[name="uid"]').val() !== ""){
           var _data = form.serializeJson();
@@ -145,16 +146,18 @@ $.fn.forgetPsw = function(opts){
             equalTo: $('input[name="forget-psw-221"]').val()
           }
         },
-        submitHandler: function(e){
+        submitHandler: function(){
           submitData();
+          
         }
       })
+
       
     })
   }
 
   function submitData(){
-    // showPopup(popup);
+
     var _data = form.serializeJson();
     var _url = 'http://mib.zengpan.org:8000/forget-psw?';
     var q = form.serializeJson();
@@ -170,11 +173,12 @@ $.fn.forgetPsw = function(opts){
     r.onerror = r.onabort = r.ontimeout = function(e) { console.log(e); }
     r.send();
     r.onreadystatechange = function() {
+      console.log('run onreadystatechange' );
       if (r.readyState == r.DONE) {
         if (r.status == 200) {
           var _status = $.parseJSON(r.response).status;
           var _msg = $.parseJSON(r.response).message;
-          if(_status == 300){
+          if(_status == 100){
             error.hide();
             showPopup(popup);
           }
