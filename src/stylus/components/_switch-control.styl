@@ -1,0 +1,29 @@
+.c-switch-control
+  background $col-white
+  .checkbox
+    // background $col-persian-green
+    background $col-porcelain
+    height 30px
+    position relative
+    width 60px
+    margin-left 37px
+    border-radius 50px
+    cursor pointer
+    
+    &.checked
+      background $col-persian-green
+      .icon
+        left 0
+        
+    .icon
+      width 30px
+      height 30px
+      border 2px solid $col-persian-green
+      position absolute
+      background $col-white
+      left 30px
+      top 0
+      border-radius 50%
+      box-sizing border-box
+      transition all .3s
+      z-index 1

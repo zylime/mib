@@ -41,7 +41,17 @@ $.fn.MobileVerification = function(){
               window.location.href='./index.html';
             }
             else{
-              mobileError.html(_msg);
+              var _errorHtml;
+              if(_status == 200){
+                _errorHtml = $('input[name="mobile-signin-200"]').val();
+              }
+              else if(_status == 201){
+                _errorHtml = $('input[name="mobile-signin-201"]').val();
+              }
+              else if(_status == 210){
+                _errorHtml = $('input[name="mobile-signin-210"]').val();
+              }
+              mobileError.html(_errorHtml);
               mobileError.show();
               
             }

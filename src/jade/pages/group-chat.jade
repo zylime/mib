@@ -1,0 +1,40 @@
+
+extends ../partials/_template
+include ../mixins/_header
+
+block content
+  .c-chat
+    .c-header.pos-absolute.l-columns.l-pad--t-10.has-shadow.l-v--m
+      .c-header--title
+        span.txt--black Sue
+      .col.c-header--back.l-w--50p
+        a.ic--back--black.l-mgn--l-20(href="store.html")
+      
+      .col.c-header--other.l-w--50p.l-pad--b-10.txt--r
+        .c-header--other--item.c-header--other--notif.l-mgn--r-20
+          .ic--notif.active.l-mgn--auto
+          span.txt--black 重要提醒
+
+
+
+    .c-chat--body.l-pad--t-70.l-pad--b-90.c-content
+      .txt--c
+        .c-chat--body--notif.group.
+          2月28日
+      .txt--c
+        .c-chat--body--notif.group.
+          你邀请杉杉、小雨加入了群聊
+      .txt--c
+        .c-chat--body--notif.group.
+          你邀请<a href="#">嘻嘻哈哈</a> 加入了群聊&nbsp;<a href="#">撤销</a>
+
+    .c-chat--input
+      input.c-chat--input--box(type='text', placeholder="撰写信息")
+      .c-chat--input--insert
+        .c-chat--input--insert--item
+          .ic--img
+            input(type="file", name="photo", accpet="image/*")
+        .c-chat--input--insert--item
+          .ic--camera
+            input(type="file", name="camera", accept="image/*", capture="camera")
+     

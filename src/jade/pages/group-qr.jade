@@ -1,0 +1,27 @@
+
+extends ../partials/_template
+include ../mixins/_header
+
+block content
+  .c-group--qr
+    .c-header.pos-relative.l-columns.l-pad--20.has-shadow.l-v--m
+      .c-header--title
+        span.txt--black 二维码名片
+      .col.c-header--back.l-w--50p
+        a(href="store.html").
+          <span class="ic--back--black"></span> <span>聊天信息(12)</span>
+  
+    .c-group--qr--body
+      .c-group--qr--body--thumb 
+        img.l-w--100p(src=paths.img + 'group-thumb.jpg', alt="")
+      .c-group--qr--body--name cute项目美术外包组
+      .c-group--qr--body--image
+        img.l-w--100p(src=paths.img + 'group-qr.jpg')
+      .c-group--qr--body--date 该二维码7天内(2月28日)前有效
+
+      
+
+ 
+
+          
+  

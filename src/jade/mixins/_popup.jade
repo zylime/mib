@@ -32,8 +32,9 @@ mixin popup(page)
       a(href="javascript:void(0);").js-close-verify-email.ic--close--black.l-f--r
       h2.l-mgn--b-20 邮箱验证
       //- a.btn-type-2(href="javascript:void(0)") 确认
-      p.txt--l.txt--edwardapprox 验证邮件已发送至
-      p.txt--l.txt--edwardapprox.js-display-email xxxxx@xxx.com
+      p.txt--l.txt--edwardapprox.
+        验证邮件已发送至<span class="js-display-email">xxxxx@xxx.com</span>,请前往邮箱验证
+      //- p.txt--l.txt--edwardapprox.js-display-email xxxxx@xxx.com
       input.js-input-email(type="hidden", name="userEmail", value="xxxxx@xxx.com")
       .error.js-error
       a.btn-type-2.l-mgn--t-20(href="javascript:void(0);").js-verify-btn 已验证

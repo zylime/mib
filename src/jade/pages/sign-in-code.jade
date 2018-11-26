@@ -2,6 +2,9 @@ extends ../partials/_template
 include ../mixins/_popup
 
 block content
+  input(type="hidden", name="mobile-signin-200", value="手机号无效")
+  input(type="hidden", name="mobile-signin-201", value="手机号为空")
+  input(type="hidden", name="mobile-signin-210", value="验证失败")
   .c-content.c-sign-in--bg(data-js-sign-in-by-mobile)
     .c-sign-in
       h1 欢迎使用MIB

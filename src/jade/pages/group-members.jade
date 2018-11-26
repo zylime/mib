@@ -1,0 +1,25 @@
+extends ../partials/_template
+include ../mixins/_search-bar
+
+block content
+  .c-friends
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 群聊成员
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+    +search-bar-2
+    ul.c-chat-detail--group.l-flex.l-pad--l-20.l-pad--r-20
+      - for (var i = 0; i < 12; i++)
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+            span 雨衣人
+
+      li.txt--c
+        a(href="javascript:void(0);")
+          img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-default-thumb.jpg', alt="")
+  
+
+
+

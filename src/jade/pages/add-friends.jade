@@ -1,0 +1,48 @@
+extends ../partials/_template
+include ../mixins/_search-bar
+
+block content
+  .c-friends
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 添加好友
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+    +search-bar-2
+    .c-friends--subtitle 近期添加好友
+    ul.c-list.l-columns.c-friends--people
+      li.c-list--item
+        .col.l-w--70p
+          img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+          .c-friends--people--info
+            p.name 雨衣人
+            p.note 可加为好友，一键添加
+        .col.l-w--30p.txt--r
+          a.btn-type-2(href="javascript:void(0);") 接受
+      li.c-list--item
+        .col.l-w--70p
+          img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+          .c-friends--people--info
+            p.name 雨衣
+            p.note 可加为好友，一键添加
+        .col.l-w--30p.txt--r
+          span.txt--persian-green 等待验证
+      li.c-list--item
+        .col.l-w--70p
+          img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+          .c-friends--people--info
+            p.name 雨
+            p.note 可加为好友，一键添加
+        .col.l-w--30p.txt--r
+          span.txt--tiara 已添加
+      li.c-list--item
+        .col.l-w--70p
+          img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+          .c-friends--people--info
+            p.name 雨衣人
+            p.note 可加为好友，一键添加
+        .col.l-w--30p.txt--r
+          span.txt--tiara 已添加
+
+
+

@@ -11,27 +11,6 @@
     background-position center
   
   &--menu
-    // background-image url(../img/ic-main-menu.png)
-    // &--search
-    //   background-position -4px 0
-    //   width 32px
-    //   height 37px
-    // &--share
-    //   background-position -35px 0
-    //   width 44px
-    //   height 36px
-    // &--selected
-    //   background-position -80px 0
-    //   width 44px
-    //   height 36px
-    // &--msg
-    //   background-position -127px 0
-    //   width 38px
-    //   height 37px
-    // &--me
-    //   background-position 37px 0
-    //   width 34px
-    //   height 36px
     &--me
       background-image url(../img/ic-menu-user.png)
       background-size 100%
@@ -116,6 +95,24 @@
       display block
       width 11px
       height 11px
+    &--green
+      position relative
+      width 20px
+      height 20px
+      &:before
+      &:after
+        content ""
+        width 20px
+        height 2px
+        position absolute
+        display block
+        top 10px
+        left 0
+        background $col-paradiso
+      &:before
+        transform rotate(45deg)
+      &:after
+        transform rotate(135deg)
       
   &--share
     background-image url(../img/ic-share.png)
@@ -182,6 +179,20 @@
     height 24px
     &.active
       background-image url(../img/ic-ring-active.png)
+  &--clock
+    background-image url(../img/ic-clock.png)
+    background-repeat no-repeat
+    background-size 100%
+    display block
+    width 20px
+    height 24px
+  &--more
+    background-image url(../img/ic-more.png)
+    background-repeat no-repeat
+    background-size 100%
+    display block
+    width 20px
+    height 20px
   &--img
     background-image url(../img/ic-img.png)
     background-repeat no-repeat
@@ -218,6 +229,14 @@
       height 18px
       &.active
         background-image url(../img/ic-checkbox-2-active.png)
+    &-3
+      background-image url(../img/ic-checkbox-3.jpg)
+      background-repeat no-repeat
+      background-size 100%
+      width 18px
+      height 18px
+      &.active
+        background-image url(../img/ic-checkbox-3-active.jpg)
   &--user
     background-image url(../img/ic-user.png)
     background-repeat no-repeat
@@ -356,6 +375,14 @@
     height 15px
     display inline-block
     vertical-align middle
+  &--loading
+    width 30px
+    height 30px
+    border-radius 50%
+    border 5px solid $col-iron
+    border-left 5px solid $col-black
+    animation loading 1s linear infinite
+    -webkit-animation loading 1s linear infinite
     
   
     

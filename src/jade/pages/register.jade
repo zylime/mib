@@ -1,6 +1,7 @@
 //- 新用户注册
 extends ../partials/_template
 include ../mixins/_popup
+include ../mixins/_loading
 
 block content
   input(type="hidden", name="register-210", value="邮箱或手机不能为空")
@@ -33,7 +34,7 @@ block content
           form.js-register-form
             .c-sign-in--form--rol.border-bottom
               .ic--user.l-mgn--r-5
-              input(type="text", name="name", autocomplete="on", placeholder="请输入昵称", required)
+              input(type="text", name="name", autocomplete="on", placeholder="请输入昵称，1-18位中英文、字母组合", required)
             .c-sign-in--form--rol.border-bottom
               .ic--email.l-mgn--r-5
               input.input-email(type="text", name="email_mobile", autocomplete="on", placeholder="请输入邮箱地址或手机号码", required)
@@ -56,6 +57,7 @@ block content
     +popup('register')
     +popup('verifyEmail')
     +popup('signIn')
+    +loading
 
 
 

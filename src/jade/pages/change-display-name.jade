@@ -1,0 +1,21 @@
+extends ../partials/_template
+include ../mixins/_search-bar
+
+block content
+  .c-change-display-name
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 修改群昵称
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+    .c-content
+      form.js-change-display-name
+        .rol.border-bottom
+          input(type="text", value="我的昵称", name="displayName")
+          .ic--close--green
+        p.ps 在这里可以设置你在这个群里的昵称，这个昵称只会在此群内显示。
+        br
+        button.btn-type-2(type="submit") 确定
+      
+
+

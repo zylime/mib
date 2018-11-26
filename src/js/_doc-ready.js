@@ -18,6 +18,8 @@ $(document).ready(function(){
 
   $('[data-js-forget-psw]').forgetPsw();
 
+  $('[data-js-switch-control]').SwitchControl();
+  $('[data-js-delete-friends]').DeleteFriends();
 
  
 

@@ -10,3 +10,10 @@ mixin search-bar(a)
       if (ifCancel)
         .c-search--form--cancel.txt--c
           a(href="#") 取消
+
+mixin search-bar-2()
+  .c-search.c-search--grey
+    form.c-search--form#sf
+      .c-search--form--input
+        .c-search--icon.ic--search
+        input(type='text', name='sf_wd', placeholder="点击搜索")

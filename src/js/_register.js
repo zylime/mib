@@ -70,7 +70,7 @@ $.fn.Register = function(opts){
           pwd: {
             required: true,
             minlength: 6,
-            maxlength: 18
+ 
           }
         },
         messages: {
@@ -79,13 +79,16 @@ $.fn.Register = function(opts){
           pwd: {
             required: $('input[name="register-220"]').val(),
             minlength: $('input[name="register-221"]').val(),
-            maxlength: $('input[name="register-222"]').val()
+           
           }
         },
         submitHandler: function(e){
 
           var uid = form.find('input[name="email_mobile"]').val();
+          registerBtn.attr('disabled');
+          $('.js-loading').show();
           submitRegisterForm(uid);
+
         }
       });
                 
@@ -109,6 +112,7 @@ $.fn.Register = function(opts){
     r.send();
     r.onreadystatechange = function() {
       if (r.readyState == r.DONE) {
+        $('.js-loading').hide();
         if (r.status == 200) {
           var _status = $.parseJSON(r.response).status;
           var _msg = $.parseJSON(r.response).message;
@@ -402,7 +406,10 @@ $.fn.Register = function(opts){
     showPopup(successPopup);
     successPopup.find('a').on('click touch', function(){
       window.location.href='./index.html';
-    })
+    });
+    setTimeout(function(){
+      window.location.href='./index.html';
+    }, 5000)
 
   }
 

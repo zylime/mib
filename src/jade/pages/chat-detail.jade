@@ -1,0 +1,54 @@
+extends ../partials/_template
+
+block content
+  .c-chat-detail
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 聊天详情
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+    
+    ul.c-chat-detail--group.l-flex.l-pad--l-20.l-pad--r-20
+      li.txt--c
+        a(href="javascript:void(0);")
+          img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+          span 雨衣人
+      li.txt--c
+        a(href="javascript:void(0);")
+          img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-default-thumb.jpg', alt="")
+
+    .c-list.l-columns.l-mgn--t-20
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .col.l-w--70p.l-v--m
+          .title 消息免打扰
+        .col.l-w--30p.l-v--m
+          .c-switch-control(data-js-switch-control)
+            .checkbox.js-checkbox.checked
+              input.subscription.js-subscription(name="subscription", type="hidden", value="true")
+              .icon
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .col.l-w--70p.l-v--m
+          .title 置顶聊天
+        .col.l-w--30p.l-v--m
+          .c-switch-control(data-js-switch-control)
+            .checkbox.js-checkbox.checked
+              input.subscription.js-subscription(name="subscription", type="hidden", value="true")
+              .icon
+
+    .c-list.l-columns.l-pad--l-20.l-pad--r-20.l-mgn--t-20
+      .c-list--item
+        a(href="javascript:void(0);")
+          .col.l-w--70p.l-v--m
+            .title 清除聊天记录
+          .col.l-w--30p.l-v--m.txt--r
+            .title.txt--persian-green 28.0M
+
+    .c-list.l-columns.l-pad--l-20.l-pad--r-20.l-mgn--t-20
+      .c-list--item
+        a(href="javascript:void(0);")
+          .col.l-w--100p
+            .title.has-right-arrow--b 投诉
+          
+          
+
+
