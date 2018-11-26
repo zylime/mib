@@ -15,11 +15,11 @@ $.fn.Popups = function(opts){
 
   // 手机短信验证
   function txtMsgPopup(){
-    $(document).on('click touch', '.js-open-popup-code', function(e){
-      e.stopPropagation()
-      // $('.js-popup-code').show();
-      showPopup($('.js-popup-code'));
-    });
+    // $(document).on('click touch', '.js-open-popup-code', function(e){
+    //   e.stopPropagation()
+
+    //   showPopup($('.js-popup-code'));
+    // });
     $(document).on('click touch', '.js-popup-cover, .js-close-popup-code', function(e){
       e.stopPropagation();
       closePopup($('.js-popup-code'));

@@ -4,6 +4,7 @@ $(document).ready(function(){
   $(document).Popups();
 
   $('[data-js-sign-in]').SignIn();
+  $('[data-js-sign-in-by-mobile]').SignInByMobile();
   $('[data-js-sign-in-by-mobile]').MobileVerification();
   $('[data-js-register]').Register();
   $('[data-js-order-detail]').OrderDetail();

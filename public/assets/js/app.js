@@ -151,6 +151,7 @@ $(document).ready(function () {
   $(document).Popups();
 
   $('[data-js-sign-in]').SignIn();
+  $('[data-js-sign-in-by-mobile]').SignInByMobile();
   $('[data-js-sign-in-by-mobile]').MobileVerification();
   $('[data-js-register]').Register();
   $('[data-js-order-detail]').OrderDetail();
@@ -590,11 +591,11 @@ $.fn.Popups = function (opts) {
 
   // 手机短信验证
   function txtMsgPopup() {
-    $(document).on('click touch', '.js-open-popup-code', function (e) {
-      e.stopPropagation();
-      // $('.js-popup-code').show();
-      showPopup($('.js-popup-code'));
-    });
+    // $(document).on('click touch', '.js-open-popup-code', function(e){
+    //   e.stopPropagation()
+
+    //   showPopup($('.js-popup-code'));
+    // });
     $(document).on('click touch', '.js-popup-cover, .js-close-popup-code', function (e) {
       e.stopPropagation();
       closePopup($('.js-popup-code'));
@@ -1351,6 +1352,41 @@ $.fn.serializeJson = function () {
                 }
         });
         return serializeObj;
+};
+'use strict';
+
+$.fn.SignInByMobile = function (opts) {
+
+  var signInSubmitBtn = $(this).find('.js-open-popup-code');
+
+  var form = $(this).find('.js-form');
+  var error = form.find('.js-error');
+  // var 
+
+
+  events();
+
+  function events() {
+    signInSubmitBtn.on('click touch', function () {
+      form.validate({
+        rules: {
+          uid: 'required'
+        },
+        messages: {
+          uid: $('input[name="mobile-signin-201"]').val()
+        },
+        submitHandler: function submitHandler(e) {
+          showPopup($('.js-popup-code'));
+        }
+      });
+    });
+  }
+
+  function showPopup(ele) {
+    var ele = ele;
+    ele.show();
+    $('.js-popup-cover').show();
+  }
 };
 'use strict';
 
