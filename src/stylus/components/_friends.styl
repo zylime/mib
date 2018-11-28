@@ -1,10 +1,11 @@
 .c-friends
   &--subtitle
     background $col-cornflower-blue
-    padding 20px 20px
+    color $col-tundora
+    padding 15px 20px
   &--people
     img
-      width 50px
+      width 45px
       display inline-block
       vertical-align middle
       margin-right 10px
@@ -13,16 +14,23 @@
       vertical-align middle
       .note
         color $col-tundora
+        font-weight 200
   .c-list--item
     padding 20px
     .btn-type-2
-      width 100px
-      line-height 40px
-      height 40px
+      width 60px
+      line-height 30px
+      height 30px
       display inline-block
     .ic--checkbox-3
       display inline-block
       margin-top 3px
-    
-      
+  &--delete
+    display none
+    .c-chat-detail--group
+      li
+        width 13%
+        margin 0 2% 20px
+        &:nth-of-type(6n+1)
+          margin-left 0
     

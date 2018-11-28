@@ -190,6 +190,7 @@ input[type="number"] {
   text-align: center;
   display: block;
   border: none;
+  font-size: initial;
 }
 .btn-type-2[disabled] {
   background: #dde0e3;
@@ -232,6 +233,7 @@ input:-ms-input-placeholder {
 }
 .hr {
   border: none;
+  border-top: 1px solid #dde0e3;
 }
 .hide {
   display: none;
@@ -398,14 +400,14 @@ input:-ms-input-placeholder {
 }
 .ic--close--green {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 .ic--close--green:before,
 .ic--close--green:after {
   content: "";
-  width: 20px;
-  height: 2px;
+  width: 14px;
+  height: 1px;
   position: absolute;
   display: block;
   top: 10px;
@@ -1651,15 +1653,15 @@ input[type="number"] {
 }
 .c-chat-detail--group {
   background-color: #fff;
-  padding: 20px 0;
+  padding: 20px 0 0;
 }
 .c-chat-detail--group.l-flex {
   flex-wrap: wrap;
 }
 .c-chat-detail--group li {
   list-style-type: none;
-  width: 16%;
-  margin: 0 2% 20px;
+  width: 14%;
+  margin: 0 3% 20px;
 }
 .c-chat-detail--group li a {
   display: block;
@@ -1676,6 +1678,12 @@ input[type="number"] {
 }
 .c-chat-detail .c-list .title {
   font-size: 18px;
+  font-weight: 300;
+}
+.c-chat-detail .c-list .has-right-arrow--b:after {
+  width: 7px;
+  height: 23px;
+  background-position: center;
 }
 .c-chat--body--notif {
   background: #f7f7f7;
@@ -1912,10 +1920,11 @@ input[type="number"] {
 }
 .c-friends--subtitle {
   background: #f2f9f8;
-  padding: 20px 20px;
+  color: #484848;
+  padding: 15px 20px;
 }
 .c-friends--people img {
-  width: 50px;
+  width: 45px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
@@ -1926,19 +1935,30 @@ input[type="number"] {
 }
 .c-friends--people--info .note {
   color: #484848;
+  font-weight: 200;
 }
 .c-friends .c-list--item {
   padding: 20px;
 }
 .c-friends .c-list--item .btn-type-2 {
-  width: 100px;
-  line-height: 40px;
-  height: 40px;
+  width: 60px;
+  line-height: 30px;
+  height: 30px;
   display: inline-block;
 }
 .c-friends .c-list--item .ic--checkbox-3 {
   display: inline-block;
   margin-top: 3px;
+}
+.c-friends--delete {
+  display: none;
+}
+.c-friends--delete .c-chat-detail--group li {
+  width: 13%;
+  margin: 0 2% 20px;
+}
+.c-friends--delete .c-chat-detail--group li:nth-of-type(6n+1) {
+  margin-left: 0;
 }
 .c-gift-card.c-process h2 {
   font-size: 30px;
@@ -1984,21 +2004,21 @@ input[type="number"] {
 .c-group--qr--body--thumb {
   display: inline-block;
   vertical-align: middle;
-  width: 70px;
-  margin-right: 10px;
+  width: 50px;
+  margin-right: 8px;
 }
 .c-group--qr--body--name {
   display: inline-block;
   vertical-align: middle;
 }
 .c-group--qr--body--image {
-  width: 80%;
+  width: 240px;
   margin: 20px auto 0;
 }
 .c-group--qr--body--date {
   text-align: center;
   margin-top: 30px;
-  font-size: 12px;
+  font-size: 11px;
   color: #8c8c8c;
 }
 .c-group--notification--body {
@@ -3017,11 +3037,12 @@ input[type="number"] {
 }
 .c-switch-control .checkbox.checked .icon {
   left: 0;
+  border: 2px solid #00a5a5;
 }
 .c-switch-control .checkbox .icon {
   width: 30px;
   height: 30px;
-  border: 2px solid #00a5a5;
+  border: 2px solid #edf1f1;
   position: absolute;
   background: #fff;
   left: 30px;
@@ -3049,11 +3070,10 @@ input[type="number"] {
   font-weight: bold;
 }
 .c-tab-panel--menu--item.active {
-  border-bottom: 4px solid #00a5a5;
+  border-bottom: 2px solid #00a5a5;
 }
 .c-tab-panel--content {
   padding: 30px 0 40px;
-  border-bottom: 1px solid #dde0e3;
 }
 .c-tab-panel--content--item {
   display: none;
@@ -3072,7 +3092,10 @@ input[type="number"] {
   margin-right: 3px;
 }
 .c-user .c-list--item {
-  line-height: 24px;
+  line-height: 28px;
+}
+.c-user .h3 {
+  font-size: 20px;
 }
 .m-display-projects {
   margin-bottom: 20px;
