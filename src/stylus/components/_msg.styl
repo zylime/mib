@@ -1,0 +1,95 @@
+.c-msg
+  &--header
+    text-align right
+    &--item
+      text-align center
+      display inline-block
+      vertical-align middle
+      margin-left 20px
+      .ic--contacts
+        margin auto
+      span
+        font-size 10px
+        line-height 10px
+  &--main
+    &--item
+      padding 20px 0
+      .left
+        width 50px
+        margin-right 10px
+        display inline-block
+        vertical-align top
+        img
+          width 100%
+        .btn-type-1
+          width 100%
+          line-height 18px
+          height 20px
+          font-size 10px
+          border-radius 0
+          margin-top 5px
+      &--info
+        width calc(100% - 60px)
+        display inline-block
+        .name
+          display inline-block
+          width calc(100% - 80px)
+        .time
+          width 80px
+          display inline-block
+          text-align right
+        .brief
+          width calc(100% - 40px)
+          display inline-block
+          font-weight 300
+        .number
+          width 40px
+          display inline-block
+          vertical-align top
+          margin-top 5px
+          text-align right
+          span
+            background $col-flamingo
+            border-radius 50%
+            color $col-white
+            font-size 12px
+            line-height 15px
+            display inline-block
+            width 15px
+            height 15px
+            text-align center
+        .order-detail
+          font-size 13px
+          span
+            color inherit
+          .ic--order
+            background-image url(../img/ic-order.png)
+            background-size 100%
+            background-position center
+            background-repeat no-repeat
+            width 11px
+            height 15px
+            display inline-block
+            margin-right 2px
+            vertical-align middle
+          .ic--timer
+            background-image url(../img/ic-timer.png)
+            background-size 100%
+            background-position center
+            background-repeat no-repeat
+            width 12px
+            height 15px
+            display inline-block
+            margin-right 2px
+            vertical-align middle
+            margin-left 20px
+              
+      &.active
+        .order-detail
+          color $col-persian-green
+          .ic--order
+            background-image url(../img/ic-order-active.png)
+          .ic--timer
+            background-image url(../img/ic-timer-active.png)
+            
+            

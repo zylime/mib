@@ -22,6 +22,8 @@ $(document).ready(function(){
   $('[data-js-switch-control]').SwitchControl();
   $('[data-js-delete-friends]').DeleteFriends();
 
+  $('[data-js-more-menu').MoreMenu();
+
  
 
 

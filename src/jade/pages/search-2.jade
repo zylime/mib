@@ -1,0 +1,46 @@
+extends ../partials/_template
+include ../mixins/_display-projects
+include ../mixins/_menu
+include ../mixins/_search-bar
+
+block content
+  .c-content.l-pad--t-20
+    a.ic--back--black.l-mgn--b-20(href="#")
+    +search-bar-no-cancel
+
+  .c-content.l-pad--t-20
+    .c-search--history(data-js-search)
+      h1 最近对话
+      ul.c-chat-detail--group.l-flex
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+            span 雨衣人
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+            span 雨衣人
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+            span 雨衣人
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+            span 雨衣人
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+            span 雨衣人
+      .pos-relative
+        h1 历史记录
+        .c-search--history--bin.ic--bin.js-clear-btn
+        .c-search--history--container.l-mgn--t-10.js-history-box
+          .c-search-history--list.js-history-list.clearfix.js-result-container
+            each item in search_history
+              .c-search--history--list--item!=item
+        a.c-search--history--more.js-history-view-more.hide(href="javascript:void(0);", data-expanded="false") 更多
+
+
+    
+

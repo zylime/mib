@@ -1,0 +1,21 @@
+extends ../partials/_template
+
+include ../mixins/_display-projects
+include ../mixins/_menu
+include ../mixins/_search-bar
+
+block content
+  .c-content.has-menu(data-js-home)
+    +search-bar(0)
+
+    .c-categories.l-mgn--t-15.js-categories-slider
+      each item in home_categories
+        a.c-categories--btn(href="project-list.html")!=item
+    .l-mgn--t-40
+      +display-projects(home_display1)
+      +display-projects(home_display2)
+    .l-mgn--t-30
+      +display-projects(home_display3)
+
+  +menu(0)
+

@@ -1,21 +1,78 @@
 extends ../partials/_template
-
-include ../mixins/_display-projects
-include ../mixins/_menu
-include ../mixins/_search-bar
-
 block content
-  .c-content.has-menu(data-js-home)
-    +search-bar(0)
+  .l-pad--20
+    h1 MIB FE Site Map
+    ul.l-mgn--l-30
+      li
+        a(href="./register.html") 注册
+      li
+        a(href="./sign-in.html") 登陆
+      li
+        a(href="./sign-in-code.html") 用手机号登录
+      li
+        a(href="./foget-psw.html") 设置新密码
+      li
+        a(href="./homepage.html") 资源
+      li
+        a(href="./project-list.html") 资源列表
+      li
+        a(href="./store.html") 店铺
+      li
+        a(href="./share.html") 分享
+      li
+        a(href="./store-comments.html") 评价
+      li
+        a(href="./rules.html") 合作守则
+      li
+        a(href="./project-profile.html") 项目履历
+      li
+        a(href="./refund.html") 退款
+      li
+        a(href="./price-detail.html") 价格详情
+      li
+        a(href="./order-detail.html") 订单详情
+      li
+        a(href="./prepay.html") 检查并支付
+      li
+        a(href="./payment-method.html") 支付方式
+      li
+        a(href="./add-card.html") 添加银行卡
+      li
+        a(href="./gift-card.html") 兑换礼金券
+      li
+        a(href="./pay-detail.html") 支付详情
+      li
+        a(href="./pay-success.html") 支付成功
+      li
+        a(href="./search.html") 搜索1
+      li
+        a(href="./search-2.html") 搜索2
+      li
+        a(href="./search-3.html") 搜索3
+      li
+        a(href="./msg.html") 消息
+      li
+        a(href="./group-chat.html") 群聊
+      li
+        a(href="./group-management.html") 群管理
+      li
+        a(href="./group-members.html") 群成员
+      li
+        a(href="./group-notification.html") 群通知
+      li
+        a(href="./group-qr.html") 群二维码
+      li
+        a(href="./add-friends.html") 添加好友
+      li
+        a(href="./delete-friends.html") 删除好友
+      li
+        a(href="./change-display-name.html") 修改群昵称
+      li
+        a(href="./chat.html") 聊天
+      li
+        a(href="./chat-detail.html") 聊天详情
 
-    .c-categories.l-mgn--t-15.js-categories-slider
-      each item in home_categories
-        a.c-categories--btn(href="project-list.html")!=item
-    .l-mgn--t-40
-      +display-projects(home_display1)
-      +display-projects(home_display2)
-    .l-mgn--t-30
-      +display-projects(home_display3)
+      li
+        a(href="./user.html") 我的
 
-  +menu(0)
 

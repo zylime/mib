@@ -1,0 +1,74 @@
+extends ../partials/_template
+
+
+include ../mixins/_menu
+include ../mixins/_search-bar
+
+block content
+  .has-menu.l-pad--t-10.c-msg(data-js-msg)
+    header.c-msg--header.c-content
+      a.c-msg--header--item(href="#")
+        .ic--contacts.active
+        span 通讯录
+      .c-msg--header--item.pos-relative.c-more-menu(data-js-more-menu)
+        a(href="javascript:void(0)").js-open-menu.l-block
+          .ic--more-2
+        .c-more-menu--dropdown.js-menu-dropdown
+          .ic--triangle
+          a.c-more-menu--dropdown--item
+            .ic--more-menu.ic--more-menu--chat
+            span 发起聊天
+          a.c-more-menu--dropdown--item(href="add-friends.html")
+            .ic--more-menu.ic--more-menu--add
+            span 添加好友
+          a.c-more-menu--dropdown--item
+            .ic--more-menu.ic--more-menu--scan
+            span 扫一扫
+    .c-msg--main
+      .c-content
+        h1 我的消息
+        .small.l-mgn--b-10.
+          您有<span>3</span>条未读消息。
+      +search-bar-2()
+      .c-content
+        .c-msg--main--item
+          .left
+            img(src=paths.img + 'group-thumb.jpg', alt="")
+            //- a.btn-type-1(href="#") 撰写评价
+          .c-msg--main--item--info
+            .l-w--100p
+              .name 美术外包组
+              .time 10分钟前
+            .l-w--100p
+              .brief 有问题随时提问有问题随时提问有问题随时提问有问题随时提问
+              .number 
+                span 1
+            .l-w--100p
+              .order-detail
+                .ic--order
+                span 订单已确认
+                .ic--timer
+                span 18/02/15 - 18/02/30
+        .c-msg--main--item.active
+          .left
+            img(src=paths.img + 'group-thumb.jpg', alt="")
+            a.btn-type-1(href="#") 撰写评价
+          .c-msg--main--item--info
+            .l-w--100p
+              .name 美术外包组
+              .time 10分钟前
+            .l-w--100p
+              .brief 有问题随时提问有问题随时提问有问题随时提问有问题随时提问
+              .number 
+                //- span 1
+            .l-w--100p
+              .order-detail
+                .ic--order
+                span 订单进行中
+                .ic--timer
+                span 18/02/15 - 18/02/30
+
+
+
+  +menu(3)
+

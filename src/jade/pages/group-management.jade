@@ -1,0 +1,36 @@
+
+extends ../partials/_template
+include ../mixins/_header
+
+block content
+  .c-group--management
+    .c-header.pos-relative.l-columns.l-pad--20.has-shadow.l-v--m
+      .c-header--title
+        span.txt--black 群管理
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+
+    .c-group--notification--body.c-list.l-columns
+      .c-list--item
+        .l-w--100p
+          .col.l-w--60p.l-v--m
+            .title 群聊邀请确认
+          .col.l-w--40p.l-v--m.txt--r
+            .c-switch-control.l-inl-b(data-js-switch-control)
+              .checkbox.js-checkbox.checked
+                input.subscription.js-subscription(name="subscription", type="hidden", value="true")
+                .icon
+        .l-w--100p.l-mgn--t-5
+          span 启用后，群成员需群主确认才能邀请朋友进群。扫描二维码进群将同时停用
+      .c-list--item.has-right-arrow--b
+        .l-w--100p
+          .title 群主管理权转让
+
+
+
+      
+
+ 
+
+          
+  

@@ -142,6 +142,9 @@ input[type="number"] {
 .bg--wild-sand {
   background: #f5f5f5;
 }
+.bg--catskill-white {
+  background: #f1f8f8;
+}
 .btn-expand {
   padding-right: 15px;
 }
@@ -246,6 +249,9 @@ input:-ms-input-placeholder {
 .has-corner--5 {
   border-radius: 5px;
 }
+.has-corner--25 {
+  border-radius: 25px;
+}
 .has-corner--50p {
   border-radius: 50%;
 }
@@ -264,6 +270,11 @@ input:-ms-input-placeholder {
   height: 18px;
   position: absolute;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
 }
 .has-right-arrow {
   position: relative;
@@ -736,6 +747,49 @@ input:-ms-input-placeholder {
   animation: loading 1s linear infinite;
   -webkit-animation: loading 1s linear infinite;
 }
+.ic--contacts {
+  background-image: url("../img/ic-contacts.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 24px;
+}
+.ic--contacts.active {
+  background-image: url("../img/ic-contacts-active.png");
+}
+.ic--more-2 {
+  background-image: url("../img/ic-more-2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+}
+.ic--more-menu--chat {
+  background-image: url("../img/ic-more-menu-chat.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 17px;
+  height: 18px;
+}
+.ic--more-menu--add {
+  background-image: url("../img/ic-more-menu-add-friend.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 17px;
+  height: 18px;
+}
+.ic--more-menu--scan {
+  background-image: url("../img/ic-more-menu-scan.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 17px;
+  height: 18px;
+}
 html,
 body {
   height: 100%;
@@ -902,6 +956,9 @@ input[type="number"] {
 }
 .l-w--100p {
   width: 100% !important;
+}
+.l-block {
+  display: block;
 }
 .l-inl-b {
   display: inline-block;
@@ -2031,6 +2088,9 @@ input[type="number"] {
   border-bottom: 1px dashed #000;
   font-size: initial;
 }
+.c-group--management .c-list .title {
+  font-size: 18px;
+}
 .c-header {
   position: absolute;
   width: 100%;
@@ -2142,6 +2202,160 @@ input[type="number"] {
 }
 .c-menu--item--name {
   font-size: 10px;
+}
+.c-more-menu.active .ic--more-2 {
+  background-image: url("../img/ic-more-2-active.png");
+}
+.c-more-menu--dropdown {
+  display: none;
+  background: #31b3b1;
+  width: 130px;
+  position: absolute;
+  right: -10px;
+  top: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 10px rgba(95,100,118,0.3);
+  padding: 10px 20px;
+  text-align: left;
+  box-sizing: border-box;
+}
+.c-more-menu--dropdown .ic--triangle {
+  display: block;
+  border-left: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #31b3b1;
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 10px;
+  top: -15px;
+}
+.c-more-menu--dropdown .ic--more-menu {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.c-more-menu--dropdown--item {
+  display: block;
+  color: #fff;
+  padding: 10px 0;
+}
+.c-more-menu--dropdown--item span {
+  color: inherit;
+  font-size: 16px !important;
+  vertical-align: middle;
+  font-weight: 400;
+}
+.c-msg--header {
+  text-align: right;
+}
+.c-msg--header--item {
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+.c-msg--header--item .ic--contacts {
+  margin: auto;
+}
+.c-msg--header--item span {
+  font-size: 10px;
+  line-height: 10px;
+}
+.c-msg--main--item {
+  padding: 20px 0;
+}
+.c-msg--main--item .left {
+  width: 50px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+.c-msg--main--item .left img {
+  width: 100%;
+}
+.c-msg--main--item .left .btn-type-1 {
+  width: 100%;
+  line-height: 18px;
+  height: 20px;
+  font-size: 10px;
+  border-radius: 0;
+  margin-top: 5px;
+}
+.c-msg--main--item--info {
+  width: calc(100% - 60px);
+  display: inline-block;
+}
+.c-msg--main--item--info .name {
+  display: inline-block;
+  width: calc(100% - 80px);
+}
+.c-msg--main--item--info .time {
+  width: 80px;
+  display: inline-block;
+  text-align: right;
+}
+.c-msg--main--item--info .brief {
+  width: calc(100% - 40px);
+  display: inline-block;
+  font-weight: 300;
+}
+.c-msg--main--item--info .number {
+  width: 40px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+  text-align: right;
+}
+.c-msg--main--item--info .number span {
+  background: #ef4746;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 12px;
+  line-height: 15px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+}
+.c-msg--main--item--info .order-detail {
+  font-size: 13px;
+}
+.c-msg--main--item--info .order-detail span {
+  color: inherit;
+}
+.c-msg--main--item--info .order-detail .ic--order {
+  background-image: url("../img/ic-order.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 11px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+.c-msg--main--item--info .order-detail .ic--timer {
+  background-image: url("../img/ic-timer.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 2px;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+.c-msg--main--item.active .order-detail {
+  color: #00a5a5;
+}
+.c-msg--main--item.active .order-detail .ic--order {
+  background-image: url("../img/ic-order-active.png");
+}
+.c-msg--main--item.active .order-detail .ic--timer {
+  background-image: url("../img/ic-timer-active.png");
 }
 .c-order-detail {
   padding: 20px 20px 70px 20px;
@@ -2364,10 +2578,6 @@ input[type="number"] {
 }
 .c-prepay .title {
   font-size: 18px;
-}
-.c-prepay .has-right-arrow--b:after {
-  top: 50%;
-  margin-top: -9px;
 }
 .c-prepay .c-order-detail--item {
   font-size: 16px;
@@ -2644,6 +2854,37 @@ input[type="number"] {
   width: 100%;
   margin: auto;
   border-radius: 25px;
+}
+.c-search--3 .c-friends--people {
+  margin-top: 10px;
+}
+.c-search--3 .c-friends--people .c-list--item {
+  border: none;
+  padding: 10px 0;
+}
+.c-search--3--group-chat .c-list--item img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  margin-right: 10px;
+}
+.c-search--3--group-chat .c-list--item .c-search--3--group-chat--info {
+  vertical-align: middle;
+  display: inline-block;
+  width: calc(100% - 60px);
+}
+.c-search--3--group-chat .c-list--item .c-search--3--group-chat--info .title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 26px;
+}
+.c-search--3--group-chat .c-list--item .c-search--3--group-chat--info .brief {
+  color: #5e5e5e;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 300;
+  font-size: 12px;
 }
 .c-share--hero {
   position: relative;

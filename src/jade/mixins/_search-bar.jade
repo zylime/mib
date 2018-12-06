@@ -13,7 +13,15 @@ mixin search-bar(a)
 
 mixin search-bar-2()
   .c-search.c-search--grey
-    form.c-search--form#sf
+    form.c-search--form#sf2
       .c-search--form--input
         .c-search--icon.ic--search
-        input(type='text', name='sf_wd', placeholder="点击搜索")
+        input(type='text', name='sf2_wd', placeholder="点击搜索")
+mixin search-bar-no-cancel()
+  .c-search.l-mgn--t-10
+    form.c-search--form#sf3
+      .c-search--form--input.bg--catskill-white.has-corner--25
+        .c-search--icon.ic--search
+        input(type="text", name='sf3__wd', placeholder="点击搜索各类资源")
+
+

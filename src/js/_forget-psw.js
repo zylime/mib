@@ -139,8 +139,7 @@ $.fn.forgetPsw = function(opts){
           secureCode: $('input[name="forget-psw-210"]').val(),
           newPsw: {
             required: $('input[name="forget-psw-220"]').val(),
-            minlength: $('input[name="forget-psw-222"]').val(),
-            maxlength: $('input[name="forget-psw-223"]').val()
+            minlength: $('input[name="forget-psw-222"]').val()
           },
           repeatPsw: {
             equalTo: $('input[name="forget-psw-221"]').val()
@@ -190,9 +189,7 @@ $.fn.forgetPsw = function(opts){
             else if(_status == 200){
               _errorHtml = $('input[name="forget-psw-200"]').val();
             }
-            else if(_status == 224){
-              _errorHtml = $('input[name="forget-psw-224"]').val();
-            }
+
             error.html(_errorHtml);
             error.show();
           }
