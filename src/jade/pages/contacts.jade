@@ -1,0 +1,107 @@
+extends ../partials/_template
+include ../mixins/_search-bar
+
+block content
+  .c-contacts
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 通讯录
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+      .col.l-w--50p
+        .pos-relative.c-more-menu(data-js-more-menu)
+          a(href="javascript:void(0)").js-open-menu.l-block.l-f--r
+            .ic--more-2
+          .c-more-menu--dropdown.js-menu-dropdown
+            .ic--triangle
+            a.c-more-menu--dropdown--item
+              .ic--more-menu.ic--more-menu--chat
+              span 发起聊天
+            a.c-more-menu--dropdown--item(href="add-friends.html")
+              .ic--more-menu.ic--more-menu--add
+              span 添加好友
+            a.c-more-menu--dropdown--item
+              .ic--more-menu.ic--more-menu--scan
+              span 扫一扫
+    +search-bar-2
+    .c-list
+      a.c-list--item.l-pad--l-20.l-pad--r-20(href="javascript:void(0);")
+        .col.l-w--100p.has-right-arrow--b
+          .ic--contacts--phone.l-inl-b.l-v--m.l-mgn--r-5
+          span 手机联系人
+      a.c-list--item.l-pad--l-20.l-pad--r-20(href="group-chat-list.html")
+        .col.l-w--100p.has-right-arrow--b
+          .ic--contacts--group.l-inl-b.l-v--m.l-mgn--r-5
+          span 群聊
+      a.c-list--item.l-pad--l-20.l-pad--r-20(href="add-friends.html")
+        .col.l-w--100p.has-right-arrow--b
+          .ic--contacts--new.l-inl-b.l-v--m.l-mgn--r-5
+          span 新的好友
+      a.c-list--item.l-pad--l-20.l-pad--r-20(href="javascript:void(0);")
+        .col.l-w--100p.has-right-arrow--b
+          .ic--contacts--special.l-inl-b.l-v--m.l-mgn--r-5
+          span 我的关注
+
+
+    .c-friends--subtitle.l-columns
+      .col.l-w--70p 
+        .ic--exclamation.l-inl-b.l-v--m.l-mgn--r-5
+        span 以下联系人已注册MIB
+      .col.l-w--30p.txt--r
+        a.txt--persian-green(href="javascript:void(0)").
+          查看更多 <i class="ic--arrow--r--s--green l-inl-b l-v--m"></i>
+    ul.c-list.l-columns.c-friends--people.c-content
+      li.c-list--item
+        .col.l-w--70p
+          img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+          .c-friends--people--info
+            p.name 雨衣人
+            p.note 可加为好友，一键添加
+        .col.l-w--30p.txt--r
+          a.ic--add-2.l-inl-b.l-v--m(href="javascript:void(0);")
+          //- a.btn-type-2(href="javascript:void(0);") 接受
+    .c-contacts--main
+      .c-friends--subtitle A   
+      ul.c-list.l-columns.c-friends--people.c-content
+        li.c-list--item
+          .col.l-w--100p
+            img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+            .c-friends--people--info
+              p.name 雨衣人
+              p.note 可加为好友，一键添加
+
+        li.c-list--item
+          .col.l-w--100p
+            img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+            .c-friends--people--info
+              p.name 雨衣
+              p.note 可加为好友，一键添加
+
+
+        li.c-list--item
+          .col.l-w--100p
+            img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+            .c-friends--people--info
+              p.name 雨衣人
+              p.note 可加为好友，一键添加
+
+      .c-friends--subtitle B
+      ul.c-list.l-columns.c-friends--people.c-content
+        li.c-list--item
+          .col.l-w--100p
+            img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+            .c-friends--people--info
+              p.name 雨衣人
+              p.note 可加为好友，一键添加
+        li.c-list--item
+          .col.l-w--100p
+            img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+            .c-friends--people--info
+              p.name 雨
+              p.note 可加为好友，一键添加
+      .c-contacts--main--vertical.
+        A<br/>B<br/>C<br/>D<br/>E
+
+
+
+

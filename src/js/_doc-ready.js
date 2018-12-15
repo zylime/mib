@@ -18,9 +18,15 @@ $(document).ready(function(){
   $('[data-js-calendar]').Calender();
 
   $('[data-js-forget-psw]').forgetPsw();
+  // $('[data-js-scan').Scan();
+  $('[data-js-add-friends-2]').AddFriends2();
 
   $('[data-js-switch-control]').SwitchControl();
+
+  $('[data-js-select-friends]').SelectFriends();
   $('[data-js-delete-friends]').DeleteFriends();
+  
+  $('[data-js-group-owner]').GroupOwner();
 
   $('[data-js-more-menu').MoreMenu();
 

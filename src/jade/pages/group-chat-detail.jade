@@ -1,0 +1,98 @@
+extends ../partials/_template
+
+block content
+  .c-chat-detail.c-chat-detail--group
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 聊天详情 (8)
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+    .bg--white.l-pad--b-10
+      ul.c-chat-detail--group--members.l-flex.l-pad--l-20.l-pad--r-20
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+            span 雨衣人
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+            span 雨衣人
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+            span 雨衣人
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+            span 雨衣人
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+            span 雨衣人
+        li.txt--c
+          a(href="javascript:void(0);")
+            img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-default-thumb.jpg', alt="")
+      a.l-block.txt--c.txt--persian-green(href="group-members.html") 查看更多群成员 >
+
+    .c-list.l-columns.l-mgn--t-10
+      a.c-list--item.l-pad--l-20.l-pad--r-20(href="change-group-name.html")
+        .col.l-w--30p.l-v--m
+          .title 群聊名称
+        .col.l-w--70p.l-v--m.txt--r 未命名
+      a.c-list--item.l-pad--l-20.l-pad--r-20(href="group-qr.html")
+        .col.l-w--70p.l-v--m
+          .title 群二维码
+        .col.l-w--30p.l-v--m.txt--r
+          img.l-v--m(src=paths.img + 'qr-thumb.png', alt="", width="25")
+      a.c-list--item.l-pad--l-20.l-pad--r-20(href="group-notification.html")
+        .col.l-w--70p.l-v--m
+          .title 群公告
+        .col.l-w--30p.l-v--m.txt--r 未设置
+      a.c-list--item.l-pad--l-20.l-pad--r-20(href="group-management.html")
+        .col.l-w--100p
+          .title.has-right-arrow--b 群管理
+
+    .c-list.l-columns.l-mgn--t-10
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .col.l-w--70p.l-v--m
+          .title 消息免打扰
+        .col.l-w--30p.l-v--m.txt--r
+          .c-switch-control.l-inl-b(data-js-switch-control)
+            .checkbox.js-checkbox.checked
+              input.subscription.js-subscription(name="subscription", type="hidden", value="true")
+              .icon
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .col.l-w--70p.l-v--m
+          .title 置顶聊天
+        .col.l-w--30p.l-v--m.txt--r
+          .c-switch-control.l-inl-b(data-js-switch-control)
+            .checkbox.js-checkbox.checked
+              input.subscription.js-subscription(name="subscription", type="hidden", value="true")
+              .icon
+
+    .c-list.l-columns.l-mgn--t-10
+      a.c-list--item.l-pad--l-20.l-pad--r-20(href="change-display-name.html")
+        .col.l-w--50p.l-v--m
+          .title 我在本群的昵称
+        .col.l-w--50p.l-v--m.txt--r 我的昵称
+          //- input.txt--r(type="text" value="我的昵称")
+
+    .c-list.l-columns.l-pad--l-20.l-pad--r-20.l-mgn--t-10
+      .c-list--item
+        a(href="javascript:void(0);")
+          .col.l-w--70p.l-v--m
+            .title 清除聊天记录
+          .col.l-w--30p.l-v--m.txt--r
+            .title.txt--persian-green 28.0M
+
+    .c-list.l-columns.l-pad--l-20.l-pad--r-20.l-mgn--t-10
+      .c-list--item
+        a(href="javascript:void(0);")
+          .col.l-w--100p
+            .title.has-right-arrow--b 投诉
+    .l-pad--l-20.l-pad--r-20.l-mgn--t-30
+      a.btn-type-3 删除并退出
+          
+          
+
+

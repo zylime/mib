@@ -1,0 +1,34 @@
+//- 群聊
+extends ../partials/_template
+include ../mixins/_header
+
+block content
+  .c-chat
+    .c-header.pos-absolute.l-columns.l-pad--20.has-shadow.l-v--m
+      .c-header--title
+        span.txt--black 群聊
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+    .l-pad--t-80.c-content
+      .c-chat--group-list.c-list
+        .c-list--item
+          a.c-msg--main--item(href="./group-chat.html")
+            .left.l-v--m
+              img(src=paths.img + "group-thumb.jpg", alt="")
+            .c-msg--main--item--info.l-v--m
+              .name cute项目美术外包组 (14)
+        .c-list--item
+          a.c-msg--main--item(href="./group-chat.html")
+            .left.l-v--m
+              img(src=paths.img + "group-thumb.jpg", alt="")
+            .c-msg--main--item--info.l-v--m
+              .name cute项目组 (6)
+        .c-list--item
+          a.c-msg--main--item(href="./group-chat.html")
+            .left.l-v--m
+              img(src=paths.img + "group-thumb.jpg", alt="")
+            .c-msg--main--item--info.l-v--m
+              .name 阿凡达项目组 (10)
+        .txt--c.txt--edwardapprox.l-pad--t-10 5个群聊
+
+      

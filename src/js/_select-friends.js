@@ -1,9 +1,9 @@
-$.fn.DeleteFriends = function(opts){
+$.fn.SelectFriends = function(opts){
 
   var container = $(this);
   var submitBtn = $(this).find('.js-submit');
   var checkbox = $(this).find('.js-checkbox');
-  var deleteGroup = $(this).find('.js-delete-group');
+  var selectGroup = $(this).find('.js-select-group');
 
 
  
@@ -27,7 +27,7 @@ $.fn.DeleteFriends = function(opts){
 
       $(this).find('input').val(_value);
       updateSubmitBtn();
-      updateDeleteGroup();
+      updateSelectGroup();
     })
   }
   function updateSubmitBtn(){
@@ -41,23 +41,23 @@ $.fn.DeleteFriends = function(opts){
     submitBtn.html('完成 ('+ num +')');
   }
 
-  function updateDeleteGroup(){
+  function updateSelectGroup(){
     var html = '';
     checkbox.each(function(){
       if($(this).hasClass('active')){
         var img = $(this).attr('data-img');
         var name = $(this).attr('data-name');
-        html += '<li class="txt--c"><img class="l-w--100p has-corner--50p" src="' + img + '" alt="' + name + '"/></li>';
+        html += '<li class="txt--c"><img class="l-w--100p has-corner--50p" src="' + img + '" alt="' + name + '"/></li>'
         // html += '<li class="txt--c"><img class="l-w--100p has-corner--50p" src="' + img + '" alt="' + name + '"/><span>' + name + '</span></li>'
-        container.find('.js-delete-group ul').html(html);
+        container.find('.js-select-group ul').html(html);
       }
     });
     if(container.find('.js-checkbox.active').length > 0){
-      deleteGroup.show();
+      selectGroup.show();
     }
     else{
-      container.find('.js-delete-group ul').html('');
-      deleteGroup.hide();
+      container.find('.js-select-group ul').html('');
+      selectGroup.hide();
     }
     
     

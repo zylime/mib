@@ -1,0 +1,79 @@
+extends ../partials/_template
+include ../mixins/_search-bar
+include ../mixins/_popup
+
+block content
+  .c-friends(data-js-add-friends-2)
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 添加好友
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+      .col.l-w--50p
+        .pos-relative.c-more-menu(data-js-more-menu)
+          a(href="javascript:void(0)").js-open-menu.l-block.l-f--r
+            .ic--more-2
+          .c-more-menu--dropdown.js-menu-dropdown
+            .ic--triangle
+            a.c-more-menu--dropdown--item
+              .ic--more-menu.ic--more-menu--chat
+              span 发起聊天
+            a.c-more-menu--dropdown--item(href="add-friends.html")
+              .ic--more-menu.ic--more-menu--add
+              span 添加好友
+            a.c-more-menu--dropdown--item
+              .ic--more-menu.ic--more-menu--scan
+              span 扫一扫
+    +search-bar-2
+
+    .c-friends--subtitle.l-columns
+      .col.l-w--70p 
+        .ic--exclamation.l-inl-b.l-v--m.l-mgn--r-5
+        span 以下联系人已注册MIB
+      .col.l-w--30p.txt--r
+        span.l-mgn--r-5 全选
+        .ic--checkbox-3.l-f--r.js-checkbox(data-img=paths.img + 'chat-detail-thumb.jpg', data-name="all")
+            input(type="hidden", name="all")
+    form.js-form
+      ul.c-list.l-columns.c-friends--people
+        li.c-list--item
+          .col.l-w--70p
+            img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+            .c-friends--people--info
+              p.name 雨衣人
+              p.note 可加为好友，一键添加
+          .col.l-w--30p.txt--r
+            .ic--checkbox-3.js-checkbox(data-img=paths.img + 'chat-detail-thumb.jpg', data-name="雨衣人")
+              input(type="hidden", name="userId1")
+        li.c-list--item
+          .col.l-w--70p
+            img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+            .c-friends--people--info
+              p.name 雨衣
+              p.note 可加为好友，一键添加
+          .col.l-w--30p.txt--r
+            .ic--checkbox-3.js-checkbox(data-img=paths.img + 'chat-detail-thumb.jpg', data-name="雨衣人")
+              input(type="hidden", name="userId2")
+        li.c-list--item
+          .col.l-w--70p
+            img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+            .c-friends--people--info
+              p.name 雨
+              p.note 可加为好友，一键添加
+          .col.l-w--30p.txt--r
+            .ic--checkbox-3.js-checkbox(data-img=paths.img + 'chat-detail-thumb.jpg', data-name="雨衣人")
+              input(type="hidden", name="userId3")
+        li.c-list--item
+          .col.l-w--70p
+            img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+            .c-friends--people--info
+              p.name 雨衣人
+              p.note 可加为好友，一键添加
+          .col.l-w--30p.txt--r
+            .ic--checkbox-3.js-checkbox(data-img=paths.img + 'chat-detail-thumb.jpg', data-name="雨衣人")
+              input(type="hidden", name="userId4")
+      .c-content
+        a.btn.btn-type-2.l-mgn--t-20.js-submit.disabled(href="javascript:void(0);") 添加已选好有
+  +popup('addFriends')
+
+

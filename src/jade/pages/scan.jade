@@ -1,0 +1,25 @@
+
+extends ../partials/_template
+include ../mixins/_header
+
+block content
+  .c-scan(data-js-scan)
+    .c-header.pos-relative.l-columns.l-pad--20.has-shadow.l-v--m
+      .c-header--title
+        span.txt--black 二维码
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+      .col.c-header--other.l-w--50p.txt--r
+        a(href="javascript:void(0);") 相册
+  
+    .c-scan--body
+      .c-scan--body--window
+        video.video#video(autoplay)
+        canvas.canvas#canvas
+
+      
+
+ 
+
+          
+  

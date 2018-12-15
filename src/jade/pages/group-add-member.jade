@@ -1,0 +1,58 @@
+//- 选择联系人
+extends ../partials/_template
+include ../mixins/_search-bar
+
+block content
+  .c-friends(data-js-select-friends)
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 选择联系人
+      .col.c-header--back.l-w--50p
+        a(href="#") 取消
+      .col.c-header--other.l-w--50p.txt--r
+        a.js-submit.txt--persian-green(href="javascript:void(0);") 完成
+    +search-bar-2
+    .c-friends--select.js-select-group
+      ul.c-chat-detail--group.l-flex.l-pad--l-20.l-pad--r-20
+        //- li.txt--c
+        //-   img.l-w--100p.has-corner--50p(src=paths.img + 'chat-detail-thumb.jpg', alt="雨衣人")
+        //-   span 雨衣人
+    .c-friends--category A
+    ul.c-list.l-columns.c-friends--people
+      li.c-list--item
+        .col.l-w--70p.l-v--m
+          img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+          .c-friends--people--info
+            p.name 雨衣人
+        .col.l-w--30p.txt--r.l-v--m
+          .ic--checkbox-3.js-checkbox(data-img=paths.img + 'chat-detail-thumb.jpg', data-name="雨衣人")
+            input(type="hidden", name="userId1")
+      li.c-list--item
+        .col.l-w--70p
+          img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+          .c-friends--people--info
+            p.name 雨衣人2
+        .col.l-w--30p.txt--r
+          .ic--checkbox-3.js-checkbox(data-img=paths.img + 'chat-detail-thumb.jpg', data-name="雨衣人2")
+            input(type="hidden", name="userId2")
+    .c-friends--category B
+    ul.c-list.l-columns.c-friends--people
+      li.c-list--item
+        .col.l-w--70p
+          img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+          .c-friends--people--info
+            p.name 雨衣人3
+        .col.l-w--30p.txt--r
+          .ic--checkbox-3.js-checkbox(data-img=paths.img + 'chat-detail-thumb.jpg', data-name="雨衣人3")
+            input(type="hidden", name="userId3")
+      li.c-list--item
+        .col.l-w--70p
+          img(src=paths.img + 'chat-detail-thumb.jpg', alt="")
+          .c-friends--people--info
+            p.name 雨衣人4
+        .col.l-w--30p.txt--r
+          .ic--checkbox-3.js-checkbox(data-img=paths.img + 'chat-detail-thumb.jpg', data-name="雨衣人4")
+            input(type="hidden", name="userId4")
+
+
+
