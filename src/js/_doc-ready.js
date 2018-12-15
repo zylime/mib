@@ -25,6 +25,7 @@ $(document).ready(function(){
 
   $('[data-js-select-friends]').SelectFriends();
   $('[data-js-delete-friends]').DeleteFriends();
+  $('[data-js-group-members]').GroupMembers();
   
   $('[data-js-group-owner]').GroupOwner();
 

@@ -2194,7 +2194,7 @@ input[type="number"] {
   width: 100%;
   resize: none;
   border: none;
-  border-bottom: 1px dashed #000;
+  border-bottom: 1px dashed rgba(0,0,0,0.6);
   font-size: initial;
 }
 .c-group--management .c-list .title {

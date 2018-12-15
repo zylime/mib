@@ -280,6 +280,7 @@ $(document).ready(function () {
 
   $('[data-js-select-friends]').SelectFriends();
   $('[data-js-delete-friends]').DeleteFriends();
+  $('[data-js-group-members]').GroupMembers();
 
   $('[data-js-group-owner]').GroupOwner();
 
@@ -497,6 +498,26 @@ $.fn.forgetPsw = function (opts) {
     var ele = ele;
     ele.show();
     $('.js-popup-cover').show();
+  }
+};
+'use strict';
+
+$.fn.GroupMembers = function (opts) {
+
+  var container = $(this);
+  var title = $(this).find('.js-title');
+  var list = $(this).find('.js-list');
+
+  events();
+
+  function events() {
+    updateTitle();
+  }
+
+  function updateTitle() {
+    var number = list.find('li').length - 1;
+    title.html(title.html() + '(' + number + ')');
+    // console.log(number);
   }
 };
 'use strict';
