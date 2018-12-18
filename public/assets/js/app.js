@@ -284,7 +284,7 @@ $(document).ready(function () {
 
   $('[data-js-group-owner]').GroupOwner();
 
-  $('[data-js-more-menu').MoreMenu();
+  $('[data-js-more-menu]').MoreMenu();
 
   $('[data-js-tab-panel]').TabPanel();
 
