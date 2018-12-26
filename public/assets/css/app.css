@@ -2834,6 +2834,9 @@ input[type="number"] {
 .c-popup--add-friends {
   display: none;
 }
+.c-popup--add-friends h2 {
+  font-weight: 400;
+}
 .c-popup--add-friends input {
   margin-top: 40px;
   font-size: 24px;
@@ -2843,6 +2846,7 @@ input[type="number"] {
   line-height: 50px;
   border: 1px solid #00a5a5;
   border-radius: 5px;
+  font-size: 18px;
 }
 .c-popup--add-friends .l-flex {
   justify-content: space-between;
@@ -2850,6 +2854,7 @@ input[type="number"] {
 }
 .c-popup--add-friends .btn-type-2 {
   width: 48%;
+  font-size: 16px;
 }
 .c-prepay {
   padding: 20px 20px 0 20px;
