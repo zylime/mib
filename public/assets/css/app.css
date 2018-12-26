@@ -41,6 +41,7 @@ p {
 }
 textarea {
   resize: none;
+  font-size: initial;
 }
 input {
   border: none;
@@ -540,6 +541,21 @@ input:-ms-input-placeholder {
   width: 25px;
   height: 25px;
 }
+.ic--camera--white {
+  background-image: url("../img/ic-camera-white.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+}
+.ic--emoji {
+  background-image: url("../img/ic-chat-emoji.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 25px;
+  height: 25px;
+}
 .ic--mutiply {
   background-image: url("../img/ic-mutiply.png");
   background-repeat: no-repeat;
@@ -866,6 +882,78 @@ input:-ms-input-placeholder {
   width: 20px;
   height: 20px;
 }
+.ic--add-3 {
+  background-image: url("../img/ic-add-3.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+}
+.ic--setting--1 {
+  background-image: url("../img/ic-setting-1.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+.ic--setting--2 {
+  background-image: url("../img/ic-setting-2.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+.ic--setting--3 {
+  background-image: url("../img/ic-setting-3.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+.ic--setting--4 {
+  background-image: url("../img/ic-setting-4.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+.ic--setting--5 {
+  background-image: url("../img/ic-setting-5.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+.ic--setting--6 {
+  background-image: url("../img/ic-setting-6.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+.ic--setting--7 {
+  background-image: url("../img/ic-setting-7.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+.ic--setting--8 {
+  background-image: url("../img/ic-setting-8.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
 html,
 body {
   height: 100%;
@@ -909,6 +997,7 @@ p {
 }
 textarea {
   resize: none;
+  font-size: initial;
 }
 input {
   border: none;
@@ -1696,6 +1785,17 @@ input[type="number"] {
 .pos-relative {
   position: relative !important;
 }
+.c-about-me p {
+  font-size: 16px;
+}
+.c-about-me textarea {
+  height: 160px;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #00a5a5;
+}
 .c-add-card label {
   display: block;
 }
@@ -1714,6 +1814,15 @@ input[type="number"] {
 }
 .c-add-card .btn-type-2 {
   font-size: 12px;
+}
+.c-business textarea {
+  border: none;
+}
+.c-business textarea.large {
+  height: 80px;
+}
+.c-business .note {
+  font-weight: 300;
 }
 .c-calendar--main--top {
   margin-bottom: 30px;
@@ -1940,6 +2049,10 @@ input[type="number"] {
   width: 50%;
   text-align: center;
 }
+.c-chat--input--insert--item .ic--add-2 {
+  width: 25px;
+  height: 25px;
+}
 .c-chat--input--insert--item>div {
   margin: 5px auto;
   float: right;
@@ -1950,6 +2063,41 @@ input[type="number"] {
   width: 100%;
   height: 100%;
   opacity: 0;
+}
+.c-chat--input--popup--group {
+  display: none;
+  padding-top: 10px;
+}
+.c-chat--input--popup--group .item {
+  position: relative;
+  margin-right: 30px;
+  display: inline-block;
+}
+.c-chat--input--popup--group .item input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.c-chat--input--popup--group .item--top {
+  background: #efefef;
+  border-radius: 5px;
+  padding: 15px;
+  display: inline-block;
+}
+.c-chat--input--popup--group.active {
+  display: block;
+}
+.c-chat--input--popup--group .emoji {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+.c-chat--input--popup--group .emoji img {
+  width: 50px;
+  height: 100%;
 }
 .c-chat--group-list .c-list--item {
   padding: 10px 0;
@@ -2793,6 +2941,75 @@ input[type="number"] {
 .c-process .smaller {
   font-size: 14px;
 }
+.c-product-info .input-file {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.c-product-info--form textarea {
+  border: none;
+  font-size: inherit;
+  height: 60px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.c-product-info--form input,
+.c-product-info--form textarea,
+.c-product-info--form span {
+  font-size: 16px;
+  line-height: 20px;
+}
+.c-product-info--form--media {
+  display: flex;
+  flex-wrap: wrap;
+}
+.c-product-info--form--media .item {
+  background: #f2f9f8;
+  color: #00a5a5;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 20px 20px 0;
+}
+.c-product-info--form--media .item.uploaded {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #dde0e3;
+}
+.c-product-info--form--media .item.uploaded img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.c-product-info--form--media .item.uploaded .item--content {
+  display: none;
+}
+.c-product-info--form--media .item--content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+.c-product-info--form--media .item--content span {
+  color: #00a5a5;
+  font-size: 12px;
+}
+.c-product-info--form--media .item--content .ic--add-3 {
+  margin: auto;
+}
+.c-product-info--form #comments {
+  margin-bottom: 0;
+  height: 20px;
+}
 .c-project-list--note {
   font-size: 16px;
   line-height: 20px;
@@ -2837,6 +3054,57 @@ input[type="number"] {
 }
 .c-project-profile .c-price-detail--section {
   padding: 20px 5px;
+}
+.c-publish input {
+  width: 100%;
+  font-size: 18px;
+  line-height: 24px;
+}
+.c-publish textarea {
+  width: 100%;
+  font-size: 18px;
+  line-height: 24px;
+  border: none;
+}
+.c-publish .title {
+  font-size: 18px;
+  line-height: 24px;
+}
+.c-publish .light {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+}
+.c-publish .note {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+}
+.c-publish .ic--add-3.large {
+  width: 25px;
+  height: 25px;
+}
+.c-publish--categories .heading {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.c-publish--categories ul {
+  border-bottom: 1px solid #dde0e3;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.c-publish--categories ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 15px 20px 15px 0;
+  box-sizing: border-box;
+}
+.c-publish--categories ul li span {
+  padding: 8px 15px;
+  font-size: 16px;
+  line-height: 24px;
+  background: #f2f9f8;
+  border-radius: 5px;
 }
 .c-register .c-sign-in--form--rol {
   margin-top: 30px;
@@ -3015,6 +3283,66 @@ input[type="number"] {
   white-space: nowrap;
   font-weight: 300;
   font-size: 12px;
+}
+.c-setting--top {
+  background: url("../img/setting-img-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 140px;
+}
+.c-setting--top h1,
+.c-setting--top p {
+  color: #fff;
+}
+.c-setting--top img {
+  border: 2px solid #fff;
+}
+.c-setting .c-list .title {
+  font-size: 18px;
+}
+.c-setting--user--thumb {
+  background: #f2f2f2;
+  height: 260px;
+  text-align: center;
+}
+.c-setting--user--thumb--img {
+  height: 100%;
+  margin: auto;
+  display: inline-block;
+  position: relative;
+}
+.c-setting--user--thumb--img img {
+  height: 100%;
+  width: auto;
+}
+.c-setting--user--thumb--img .ic {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.c-setting--user--thumb--img .input-file {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1;
+  opacity: 0;
+}
+.c-setting--user .c-list p,
+.c-setting--user .c-list input,
+.c-setting--user .c-list select,
+.c-setting--user .c-list textarea {
+  font-size: 16px;
+  line-height: 24px;
+}
+.c-setting--user .c-list select {
+  margin-left: -5px;
+}
+.c-setting--user .c-list p {
+  margin-bottom: 10px;
 }
 .c-share--hero {
   position: relative;

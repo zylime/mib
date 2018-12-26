@@ -145,6 +145,35 @@ $.fn.Carousel = function (opts) {
 };
 'use strict';
 
+$.fn.Chat = function (opts) {
+
+  var container = $(this);
+  var insertBtn = container.find('.js-insert-btn');
+  var inputPopup = container.find('.js-input-popup');
+
+  events();
+
+  function events() {
+    toggleInputPopup();
+  }
+
+  function toggleInputPopup() {
+    insertBtn.on('click touch', function () {
+      var popup = $(this).attr('data-open');
+      if ($(this).hasClass('active')) {
+        inputPopup.removeClass('active');
+        insertBtn.removeClass('active');
+      } else {
+        insertBtn.removeClass('active');
+        $(this).addClass('active');
+        inputPopup.removeClass('active');
+        $('.js-input-popup[data-popup="' + popup + '"]').addClass('active');
+      }
+    });
+  }
+};
+'use strict';
+
 $.fn.Collapse = function (opts) {
   var defaults = {
     text: false
@@ -283,6 +312,14 @@ $(document).ready(function () {
   $('[data-js-group-members]').GroupMembers();
 
   $('[data-js-group-owner]').GroupOwner();
+
+  $('[data-js-setting-user]').SettingUser();
+
+  $('[data-js-publish]').Publish();
+
+  $('[data-js-product-info]').ProductInfo();
+
+  $('[data-js-chat]').Chat();
 
   $('[data-js-more-menu]').MoreMenu();
 
@@ -945,6 +982,61 @@ $.fn.PrePay = function (opts) {
 };
 'use strict';
 
+$.fn.ProductInfo = function (opts) {
+
+  var container = $(this);
+
+  var mediaHtml = container.find('.js-media').html();
+  var maxMedia = 6;
+  events();
+
+  function events() {
+    addMedia();
+  }
+
+  function addMedia() {
+
+    updateMedia();
+    container.find('.js-media input[type="file"]').on('change', function () {
+      var file = this.files[0];
+      var _this = this;
+      var reader = new FileReader();
+      var replaceImg = $(this).parent().hasClass('uploaded');
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        if (!replaceImg) {
+          if (container.find('.js-media input[type="file"]').length < maxMedia) {
+            container.find('.js-media').append(mediaHtml);
+            addMedia();
+          }
+        }
+        $(_this).parent().addClass('uploaded');
+        $(_this).parent().find('.media-img').remove();
+        $(_this).parent().append('<img class="media-img" src="' + this.result + '" alt="" />');
+      };
+    });
+  }
+
+  function updateMedia() {
+    if (isIOSDevice) {
+      container.find('.js-media input[type="file"]').removeAttr("capture");
+    }
+  }
+
+  function isIOSDevice() {
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+    var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    if (isAndroid) {
+      return false;
+    }
+    if (isIOS) {
+      return true;
+    }
+  }
+};
+'use strict';
+
 $.fn.ProjectList = function (opts) {
 
   var sliderContainer = $(this).find('.js-categories-slider');
@@ -976,6 +1068,51 @@ $.fn.ProjectList = function (opts) {
         e.stopPropagation();
         $(this).toggleClass('active');
       });
+    });
+  }
+};
+'use strict';
+
+$.fn.Publish = function (opts) {
+
+  var container = $(this);
+  var checkbox = container.find('.js-checkbox');
+  var projectExperience = container.find('.js-project-experience');
+
+  events();
+
+  function events() {
+    initCheckbox();
+    if (projectExperience.length > 0) {
+      addProjectExperience();
+    }
+  }
+
+  function initCheckbox() {
+    checkbox.each(function () {
+      $(this).on('click touch', function () {
+        resetAllInput();
+
+        $(this).addClass('active');
+        $(this).attr('data-checked', 'checked');
+        $(this).next().val('checked');
+      });
+    });
+  }
+
+  function resetAllInput() {
+    checkbox.each(function () {
+      $(this).removeClass('active');
+      $(this).attr('data-checked', '');
+      $(this).next().val('');
+    });
+  }
+
+  function addProjectExperience() {
+    var html = projectExperience.html();
+    $(document).on('click', '.js-project-experience .js-add', function () {
+      $('.js-project-experience .js-add').removeClass('js-add').hide();
+      projectExperience.append(html);
     });
   }
 };
@@ -1679,6 +1816,37 @@ $.fn.serializeJson = function () {
                 }
         });
         return serializeObj;
+};
+'use strict';
+
+$.fn.SettingUser = function (opts) {
+
+  var container = $(this);
+  var fileInput = container.find('.js-input-file');
+
+  events();
+
+  function events() {
+    updateUserPic();
+  }
+
+  function updateUserPic() {
+    if (isIOSDevice) {
+      fileInput.removeAttr("capture");
+    }
+  }
+
+  function isIOSDevice() {
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+    var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    if (isAndroid) {
+      return false;
+    }
+    if (isIOS) {
+      return true;
+    }
+  }
 };
 'use strict';
 

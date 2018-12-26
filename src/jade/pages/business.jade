@@ -1,0 +1,40 @@
+//- 商务合作信息页
+extends ../partials/_template
+
+block content
+  .c-business
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+    .l-pad--20
+      h1 添加商务合作信息
+    form.l-columns.c-business--form
+
+      .l-w--100p.border-bottom.l-pad--20
+        span 项目开发所在国家
+        input.l-w--100p.l-mgn--t-5(type="text", placeholder="请填写国家名%")
+      .l-w--100p.border-bottom.l-pad--20
+        span 项目开发所在城市
+        input.l-w--100p.l-mgn--t-5(type="text", placeholder="请填写城市名")
+      .l-w--100p.border-bottom.l-pad--20
+        span 已上线区域
+        textarea.l-w--100p.l-mgn--t-5(placeholder="请填写目前拥有的语言版本，中间用逗号隔开")
+
+      .l-w--100p.border-bottom.l-pad--20
+        span 可授权区域
+        textarea.l-w--100p.l-mgn--t-5(placeholder="提示信息")
+      .l-w--100p.border-bottom.l-pad--20
+        span 产品代理须知
+        .note 此信息对合作至关重要，请您谨慎选择并填写
+        textarea.l-w--100p.l-mgn--t-20.large(placeholder="请填写产品代理的基础条件或您认为非常重要的合作条件（最多22个字符）")
+      .l-pad--20
+        a.btn-type-3(href="#") 下一步
+
+
+
+
+
+
+        
+
+    

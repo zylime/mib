@@ -234,6 +234,100 @@
         "stars_image": "ic-stars-4.png"
       }
     ]
-  }
+  },
+  "setting_list":[
+    {
+      "title": "我的游戏",
+      "icon": "ic--setting--1",
+      "link": "javascipt:void(0);"
+    },
+    {
+      "title": "我的订单",
+      "icon": "ic--setting--2",
+      "link": "javascipt:void(0);"
+    },
+    {
+      "title": "通知",
+      "icon": "ic--setting--3",
+      "link": "javascipt:void(0);"
+    },
+    {
+      "title": "获取帮助",
+      "icon": "ic--setting--4",
+      "link": "javascipt:void(0);"
+    },
+    {
+      "title": "邀请好友",
+      "icon": "ic--setting--5",
+      "link": "javascipt:void(0);"
+    },
+    {
+      "title": "发布商品",
+      "icon": "ic--setting--6",
+      "link": "./publish-1.html"
+    },
+    {
+      "title": "成为游戏开发者",
+      "icon": "ic--setting--7",
+      "link": "javascipt:void(0);"
+    },
+    {
+      "title": "设置",
+      "icon": "ic--setting--8",
+      "link": "javascipt:void(0);"
+    }
+  ],
+  "project_categories":[
+    "游戏产品授权",
+    "游戏设计",
+    "宣传素材",
+    "音频制作",
+    "本地化",
+    "资质申请",
+    "技术外包",
+    "运营相关",
+    "其他"
+  ],
+  "publish_catgories": [
+    {
+      "name": "游戏设计",
+      "options": [
+        "美术设计", "美术制作", "美术整包", "游戏策划"
+      ]
+    },
+    {
+      "name": "宣传素材",
+      "options":[
+        "原画", "平面广告", "视频制作"
+      ]
+    },
+    {
+      "name": "音频制作",
+      "options":[
+        "音乐", "音效", "配音", "主题曲"
+      ]
+    },
+    {
+      "name": "本地化",
+      "options":[
+        "翻译", "运营外包", "技术对接"
+      ]
+    },
+    {
+      "name": "技术外包",
+      "options":[
+        "APP开发", "网站开发", "运维相关"
+      ]
+    },
+    {
+      "name": "运营相关",
+      "options":[
+        "客服外包", "测试外包"
+      ]
+    },
+    {
+      "name": "其他"
+    }
+  ]
   
 }

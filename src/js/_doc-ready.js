@@ -29,6 +29,14 @@ $(document).ready(function(){
   
   $('[data-js-group-owner]').GroupOwner();
 
+  $('[data-js-setting-user]').SettingUser();
+
+  $('[data-js-publish]').Publish();
+
+  $('[data-js-product-info]').ProductInfo();
+
+  $('[data-js-chat]').Chat();
+
   $('[data-js-more-menu]').MoreMenu();
 
  

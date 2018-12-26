@@ -3,7 +3,7 @@ extends ../partials/_template
 include ../mixins/_header
 
 block content
-  .c-chat
+  .c-chat(data-js-chat)
     .c-header.pos-absolute.l-columns.l-pad--t-10.has-shadow.l-v--m
       .c-header--title
         span.txt--black Sue
@@ -81,10 +81,33 @@ block content
       input.c-chat--input--box(type='text', placeholder="撰写信息")
       .c-chat--input--insert
         .c-chat--input--insert--item
-          .ic--img
-            input(type="file", name="photo", accpet="image/*")
+          .ic--emoji.js-insert-btn(data-open="emoji")
+
         .c-chat--input--insert--item
-          .ic--camera
+          .ic--add-2.js-insert-btn(data-open="file")
+ 
+      .c-chat--input--popup
+        .c-chat--input--popup--group.js-input-popup(data-popup="emoji")
+          i.emoji(data-emoji="001")
+            //- img tag: remove in real case
+            img(src=paths.img + 'emoji-1.png', alt="")
+          i.emoji(data-emoji="002")
+            //- img tag: remove in real case
+            img(src=paths.img + 'emoji-1.png', alt="")
+        .c-chat--input--popup--group.js-input-popup(data-popup="file")
+          .item
             input(type="file", name="camera", accept="image/*", capture="camera")
+            .item--top
+              .ic--camera
+            p.txt--c 拍照
+          .item
+            input(type="file", name="photo", accpet="image/*")
+            .item--top
+              .ic--img
+            p.txt--c 相册
+
+              
+
+              
           
   

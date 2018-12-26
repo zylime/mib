@@ -1,0 +1,26 @@
+//- 类目
+extends ../partials/_template
+
+block content
+  .c-publish
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 类目
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+
+    .c-list
+      each item in project_categories
+        a.c-list--item.l-pad--l-20.l-pad--r-20(href="javascript:void(0)")
+          .title!= item
+    hr.hr
+
+
+    
+    
+
+
+
+        
+
+    

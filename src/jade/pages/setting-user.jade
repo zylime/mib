@@ -1,0 +1,71 @@
+//- 编辑个人资料页
+extends ../partials/_template
+
+block content
+  .c-setting--user(data-js-setting-user)
+    .l-pad--20
+      a.ic--back--black.l-mgn--b-20(href="setting.html")
+    .c-setting--user--thumb
+      .c-setting--user--thumb--img
+        img(src=paths.img + "setting-user-thumb.jpg", alt="")
+        input.input-file.js-input-file(type="file", name="userPic", accept="image/*" capture="camera")
+        .ic.ic--camera--white.js-camera
+    .c-list.l-columns
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        p 名字
+        input(type="text", placeholder="Lina")
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        p 姓氏
+        input(type="text", placeholder="李")
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .col.l-w--80p
+          p.light 关于我
+        .col.l-w--20p.txt--r
+          .txt--persian-green 编辑
+    h2.bg--cornflower-blue.l-pad--20 私人信息
+    .c-list.l-columns
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        p 性别
+        select(name="gender")
+          option(value="") 选择性别
+          option(value="男") 男
+          option(value="女") 女
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        p 身份证
+        input(type="text", name="", placeholder="输入身份证号码")
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .col.l-w--80p.l-v--m
+          p 邮箱
+          input(type="text", name="", placeholder="输入邮箱")
+        .col.l-w--20p.txt--r.l-v--m
+          .txt--persian-green 验证
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .col.l-w--80p.l-v--m
+          p 电话号码
+          input(type="text", name="", placeholder="输入电话")
+        .col.l-w--20p.txt--r.l-v--m
+          .txt--persian-green 验证
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        p 语言
+        select(name="language")
+          option(value="") 选择语言
+          option(value="cn") 中文
+          option(value="en") English
+    h2.bg--cornflower-blue.l-pad--20 选填内容
+    .c-list
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        p 所在城市
+        input(type="text", name="", placeholder="输入地点")
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        p 工作单位
+        input(type="text", name="", placeholder="输入工作单位名称")
+    hr.hr
+    .l-pad--20
+      a.btn-type-2(href="javascript:void(0)") 保存     
+
+
+    
+            
+
+
+

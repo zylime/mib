@@ -1,0 +1,51 @@
+//- 发布商品类型选择页
+extends ../partials/_template
+
+block content
+  .c-publish(data-js-publish)
+    .l-pad--20
+      a.ic--back--black.l-mgn--b-20(href="setting.html")
+    h1.l-pad--l-20.l-pad--r-20.l-pad--b-20 请选择你要发布商品的类型
+    hr.hr
+    .c-list.c-content
+      a.c-list--item.has-right-arrow--b(href="javascript:void(0)")
+        p.light 商品类型
+    hr.hr
+    .c-list.c-content
+      .c-list--item
+        .title.l-mgn--b-10 在该类别下提供什么具体服务
+        input(type="text", placeholder="请选择具体类型"
+        )
+      .c-list--item.l-columns
+        .title.l-mgn--b-10 您是个人供应商还是代表公司提供服务？
+        .note.l-mgn--b-20 此信息将会显示给用户，请您根据实际情况选择
+        .col.l-w--80p.l-v--t
+          p.light 我是个人供应商，我个人来为客户提供服务
+        .col.l-w--20p.l-v--t.l-pad--t-5
+          .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+          input(type="hidden", name="checkbox1", value="")
+        .l-mgn--t-10
+        .col.l-w--80p.l-v--t
+          p.light 我们是个团队，我和我的小伙伴一起提供服务
+        .col.l-w--20p.l-v--t.l-pad--t-5
+          .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+          input(type="hidden", name="checkbox2", value="")
+        .l-mgn--t-10
+        .col.l-w--80p.l-v--t
+          p.light 我代表公司，我负责管理一家供应商企业
+        .col.l-w--20p.l-v--t.l-pad--t-5
+          .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+          input(type="hidden", name="checkbox3", value="")
+    hr.hr.l-mgn--t-20
+    .l-pad--20
+      a.btn-type-3(href="javascript:void(0)") 下一步
+
+
+    
+    
+
+
+
+        
+
+    
