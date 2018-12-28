@@ -2,7 +2,7 @@ extends ../partials/_template
 include ../mixins/_store-comments
 
 block content
-  .c-header.l-columns.l-pad--t-10
+  .c-header.l-columns.l-pad--t-10(data-js-favorite)
     .col.c-header--back.l-w--50p
         a.ic--back.l-mgn--l-20(href="#")
     
@@ -10,7 +10,7 @@ block content
       a.c-header--other--item.c-header--other--share.l-mgn--r-10(href="share.html")
         .ic--share
         span 分享
-      .c-header--other--item.c-header--other--fav.l-mgn--r-20
+      .c-header--other--item.c-header--other--fav.l-mgn--r-20.js-fav
         .ic--fav
         span 收藏  
 

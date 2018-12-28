@@ -54,9 +54,29 @@
     &:before
     &:after
       background-color $col-porcelain
+.has-arrow-green
+  position relative
+  padding-right 10px
+  &:before
+  &:after
+    content ""
+    width 7px
+    height 2px
+    position absolute
+    background $col-persian-green
+    right 0
+    top 7px
+    display block
+  &:before
+    transform rotate(45deg)
+  &:after
+    transform rotate(135deg)
+    top 11px
+  
 
 .border-bottom
   border-bottom 1px solid $col-iron
+
 
 
 

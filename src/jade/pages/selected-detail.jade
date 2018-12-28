@@ -1,0 +1,108 @@
+//- 精选项目详情
+extends ../partials/_template
+include ../mixins/_store-comments
+
+block content
+  .c-selected-detail(data-js-favorite)
+    .c-header.l-columns.l-pad--t-10
+      .col.c-header--back.l-w--50p
+          a.ic--back.l-mgn--l-20(href="#")
+      
+      .col.c-header--other.l-w--50p.l-pad--b-10.txt--r
+        a.c-header--other--item.c-header--other--share.l-mgn--r-10(href="share.html")
+          .ic--share
+          span 分享
+        .c-header--other--item.c-header--other--fav.l-mgn--r-20.js-fav
+          .ic--fav
+          span 收藏  
+
+
+  
+    .c-selected-detail--banner
+      img.l-w--100p(src=paths.img + "selected-detail-1.jpg", alt="")
+      a.overlay(href="#")
+        .ic--img--2
+        span 查看更多图片
+    .l-pad--20
+      .c-store--main--subtitle 游戏名称：九州天空城3D
+      h1.c-store--main--title 次时代3D飞行东方幻想手游，电影及震撼画质自由空战
+      p.type 游戏类型: MMO
+      .description.l-mgn--t-10.js-translate-content.
+        《九州天空城3D》由中国著名游戏公司祖龙娱乐匠心巨制，是一款东方幻想次世代唯美飞行MMO手游。游戏以九州系列精致宏大的世界观为蓝本，描述了一个跨越三种族的史诗般动人传说。依靠祖龙娱乐的全明星研发团队，游戏将呈现电影级的高清远景、无缝连接大地图、360度全景展现等次世代画面，为玩家呈现一个全景无死角超清的九州世界。
+
+      .js-translate.txt--persian-green.l-mgn--t-20 查看翻译
+
+      .l-mgn--t-20
+        span.txt--persian-green.has-arrow-green 浏览全部的视频和照片
+    .bg--cornflower-blue.l-pad--t-40.l-pad--b-40.c-content.c-selected-detail--content
+      h2.c-selected-detail--content--title 公司名称
+      .c-selected-detail--content--body 祖龙科技有限公司
+      h2.l-mgn--b-20 公司规模
+      .c-selected-detail--content--body 大型公司，人员500人+
+      h2.l-mgn--b-20 项目履历
+      .c-selected-detail--content--body
+        ul
+          li.
+            六龙争霸，中国国内首月月流水2亿+，突破了港澳台历史记录、上线首月1200万美金
+          li.
+            梦幻诛仙，中国国内上线首月月流水4.5亿+
+          li.
+            九州天空城3D，2018年中国最成功的项目之一，最高月流水1.5亿+
+    .c-content.c-selected-detail--content.l-pad--t-40.l-pad--b-40
+      h2.c-selected-detail--content--title 游戏的语言版本
+      .c-selected-detail--content--body 中文，繁体中文，英文，马来语
+      h2.c-selected-detail--content--title 开发所在国家和城市
+      .c-selected-detail--content--body 中国，北京
+    .c-content.c-selected-detail--content.bg--cornflower-blue.l-pad--t-40.l-pad--b-40
+      h2.c-selected-detail--content--title 项目已上线区域
+      .c-selected-detail--content--body 中欧大陆，港澳台，韩国，东南亚，勾选了全球的google，苹果商店
+      h2.c-selected-detail--content--title 可授权区域
+      .c-selected-detail--content--body 除中国大陆、港澳台、韩国、东南亚之外的其他区域，或没有上线过的渠道都可以
+      h2.c-selected-detail--content--title 产品代理须知
+      .c-selected-detail--content--body 保底分成款不低于流水的30%。任何合作方请先认真填写合作意向资料及您所擅长的区域发行能力后，再线上沟通更细节的合作条款。
+    .c-store--comments.c-content
+      h2.l-mgn--t-20.l-mgn--b-10 用户评论
+      .m-store-comments(data-js-store-comments)
+        .m-store-comments--item.l-mgn--t-10.l-mgn--b-10
+          .l-columns.pos-relative
+            img.col.thumb.has-corner--50p.l-mgn--r-10(src=paths.img + "home-author-thumb-1.jpg")
+            .col.l-w--80p
+              p 兵天雪滴
+              p 两天前
+
+          .clearfix
+          .body.l-mgn--t-10.l-mgn--b-10.js-translate-body.js-comments-body
+            p.
+              水准很高的团队，虽然时间上有点纠结，比原计划周期晚了5天，不过最终品质还是非常满意的，给好评 不过最终品质还是非常满意的，给好评 
+      .l-columns.l-mgn--t-20
+        .col.l-w--50p.l-v--m
+          a.c-store--comments--read-all(href="store-comments.html") 阅读全部520条评价
+        .col.l-w--50p.txt--r.l-v--m
+          img.c-store--comments--stars.l-mgn--r-5(src=paths.img + 'ic-stars-4.png')
+          span 2091人评价
+
+
+    .c-menu.c-store--footer
+      .l-columns
+        .col.l-w--60p
+          .left
+            img(src=paths.img + "home-author-thumb-1.jpg", alt="")
+            p coco
+          .right
+            p 联系店主提交合作意向资料或获得更多产品信息
+        .col.l-w--40p
+          a.c-store--footer--btn(href="javascript:void(0);") 联系店主coco
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

@@ -321,7 +321,10 @@ $(document).ready(function () {
 
   $('[data-js-chat]').Chat();
 
+  $('[data-js-selected]').Selected();
+
   $('[data-js-more-menu]').MoreMenu();
+  $('[data-js-favorite]').Favorite();
 
   $('[data-js-tab-panel]').TabPanel();
 
@@ -341,6 +344,26 @@ $(document).ready(function () {
 // $(window).onload(function(){
 //   $('[data-js-sign-in]').SignIn();
 // })
+'use strict';
+
+$.fn.Favorite = function (opts) {
+
+  var container = $(this);
+  var favBtn = container.find('.js-fav');
+
+  events();
+
+  function events() {
+    toggleFavorite();
+  }
+
+  function toggleFavorite() {
+    favBtn.on('click', function () {
+      $(this).toggleClass('active');
+      $(this).find('.ic--fav').toggleClass('active');
+    });
+  }
+};
 'use strict';
 
 $.fn.forgetPsw = function (opts) {
@@ -1794,6 +1817,42 @@ $.fn.SelectFriends = function (opts) {
   }
 
   function submitDate() {}
+};
+'use strict';
+
+$.fn.Selected = function (opts) {
+
+  var sliderContainer = $(this).find('.js-categories-slider');
+  var favoriteIcons = $(this).find('.js-favorite');
+
+  events();
+
+  function events() {
+    slider();
+    // getData();
+    toggleFavorite();
+  }
+
+  function slider() {
+    sliderContainer.slick({
+      dots: false,
+      infinite: false,
+      slidesToShow: 5,
+      arrows: false
+    });
+  }
+  // function getData(){
+  //   var 
+  // }
+  function toggleFavorite() {
+    favoriteIcons.each(function () {
+      $(this).on('click touch', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).toggleClass('active');
+      });
+    });
+  }
 };
 "use strict";
 

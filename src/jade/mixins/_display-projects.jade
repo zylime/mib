@@ -55,6 +55,26 @@ mixin display-projects(data)
 
 
 
+mixin display-projects-selected(data)
+  .m-display-projects--selected
+    .l-columns
+      each item in data
+        - var klass = 'l-w--100p col-1 has-shadow';
+
+        a.col.m-display-projects--item(class=klass, href="selected-detail.html")
+          .ic--favorite.js-favorite
+          img.has-corner--5.l-w--100p(src=paths.img + item.image)
+          .c-content.bg--white
+            .col.left.l-v--m
+              .m-display-projects--selected--name!= item.title
+              .m-display-projects--selected--brief!=item.brief
+              .m-display-projects--selected--type!= item.type
+            .col.right.l-v--m
+              .m-display-projects--selected--author
+                img.has-corner--50p(src=paths.img + item.author_img)
+            
+            
+
 
 
 

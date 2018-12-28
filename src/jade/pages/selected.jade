@@ -1,0 +1,26 @@
+//- 精选首页
+extends ../partials/_template
+include ../mixins/_display-projects
+include ../mixins/_menu
+
+
+block content
+  .c-content--bottom.has-menu.c-selected(data-js-selected)
+    header.l-pad--t-20.txt--r.c-content
+      a.l-inl-b.txt--c(href="./search.html")
+        .ic--search.active
+        span 搜索
+    .c-content
+      h1 为你精选
+      .txt--persian-green 点击共享全球游戏产品代理动态
+    .c-selected--main.c-content
+      .c-categories.l-mgn--t-5.js-categories-slider
+        each item, index in selected_filter
+          - var _klass = index == 0 ? 'active' : '';
+            a.c-categories--btn(href="javascript:void(0);", class=_klass)!= item
+
+      .l-mgn--t-20
+        +display-projects-selected(selected_content)
+
+    +menu(2)
+
