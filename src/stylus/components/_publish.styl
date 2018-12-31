@@ -3,11 +3,13 @@
     width 100%
     font-size 16px
     line-height 20px
+    font-weight 300
   textarea
     width 100%
     font-size 16px
     line-height 20px
     border none
+    font-weight 300
   input
   textarea
     &::-webkit-input-placeholder
@@ -25,12 +27,13 @@
   .title
     font-size 16px
     line-height 20px
+    font-weight 500
   .light
     font-size 16px
     font-weight 300
     line-height 20px
   .note
-    font-size 16px
+    font-size 14px
     font-weight 300
     line-height 20px
   .ic--add-3.large
@@ -38,22 +41,36 @@
     height 25px
   &--categories
     .heading
-      margin-bottom 10px
       font-size 18px
-    ul
+    &--item
       border-bottom 1px solid $col-iron
-      margin-bottom 20px
+      padding-top 20px
       padding-bottom 20px
+      .heading
+        cursor pointer
+      &--content
+        display none
+      &.selected
+        .heading
+          color $col-bittersweet
+    ul
+      margin-top 10px
+      // margin-bottom 20px
+
       li
         list-style-type none
         display inline-block
-        margin 15px 20px 15px 0
+        margin 15px 10px 15px 0
         box-sizing border-box
+        cursor pointer
         span
           padding 8px 15px
           font-size 16px
           line-height 24px
           background $col-cornflower-blue
           border-radius 5px
+        &.selected
+          span
+            color $col-bittersweet
       
   

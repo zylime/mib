@@ -1,8 +1,8 @@
-//- 服务商品类型选择页改
+//- 类目
 extends ../partials/_template
 
 block content
-  .c-publish
+  .c-publish(data-js-publish)
     .c-header.l-columns.l-v--m.l-pad--20.pos-relative
       .c-header--title
         span.txt--black 类目
@@ -10,13 +10,17 @@ block content
         a.ic--back--black(href="#")
 
     .c-publish--categories.l-pad--20
+      input(type="hidden", name="type", value="")
       each item in publish_catgories
-        h3.heading!= item.name
-        if (item.options)
-          ul
-            each option in item.options
-              li
-                span!= option
+        .c-publish--categories--item.js-type
+          h3.heading.js-type-heading(data-category=item.data)!= item.name
+          - var _data = item.data
+          if (item.options)
+            .c-publish--categories--item--content(data-type-category=_data)
+              ul
+                each option in item.options
+                  li.js-type-option(data-type-option = option.data)
+                    span!= option.name
 
 
     

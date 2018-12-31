@@ -292,42 +292,119 @@
   "publish_catgories": [
     {
       "name": "游戏设计",
+      "data": "data1",
       "options": [
-        "美术设计", "美术制作", "美术整包", "游戏策划"
+        {
+          "name": "美术设计",
+          "data": "data11"
+        },
+        {
+          "name": "美术制作",
+          "data": "data12"
+        },
+        {
+          "name": "美术整包",
+          "data": "data13"
+        },
+        {
+          "name": "游戏策划",
+          "data": "data14"
+        }
       ]
     },
     {
       "name": "宣传素材",
+      "data": "data2",
       "options":[
-        "原画", "平面广告", "视频制作"
+        {
+          "name": "原画",
+          "data": "data21"
+        },
+        {
+          "name": "平面广告",
+          "data": "data22"
+        },
+        {
+          "name": "视频制作",
+          "data": "data23"
+        }
       ]
     },
     {
       "name": "音频制作",
+      "data": "data3",
       "options":[
-        "音乐", "音效", "配音", "主题曲"
+        {
+          "name": "音乐",
+          "data": "data31"
+        },
+        {
+          "name": "音效",
+          "data": "data32"
+        },
+        {
+          "name": "配音",
+          "data": "data33"
+        },
+        {
+          "name": "主题曲",
+          "data": "data34"
+        }
       ]
     },
     {
       "name": "本地化",
+      "data": "data4",
       "options":[
-        "翻译", "运营外包", "技术对接"
+        {
+          "name": "翻译",
+          "data": "data41"
+        },
+        {
+          "name": "运营外包",
+          "data": "data42"
+        },
+        {
+          "name": "技术对接",
+          "data": "data43"
+        }
       ]
     },
     {
       "name": "技术外包",
+      "data": "data5",
       "options":[
-        "APP开发", "网站开发", "运维相关"
+        {
+          "name": "APP开发",
+          "data": "data51"
+        },
+        {
+          "name": "网站开发",
+          "data": "data52"
+        },
+        {
+          "name": "运维相关",
+          "data": "data53"
+        }
       ]
     },
     {
       "name": "运营相关",
+      "data": "data6",
       "options":[
-        "客服外包", "测试外包"
+        {
+          "name": "客服外包",
+          "data": "data61"
+        },
+        {
+          "name": "测试外包",
+          "data": "data62"
+        }
       ]
     },
     {
-      "name": "其他"
+      "name": "其他",
+      "data": "data7"
     }
   ],
   "selected_content": [

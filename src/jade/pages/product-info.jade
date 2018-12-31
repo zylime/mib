@@ -12,7 +12,7 @@ block content
       .l-w--100p.border-bottom.l-pad--20
         input.l-w--100p(type="text", placeholder="标题： 一句话突出产品核心卖点和价值点（30字以内）")
       .l-w--100p.border-bottom.l-pad--20
-        textarea.l-w--100p(name="", maxlength="400",placeholder="详细描述产品的核心特色，目前的进展，以及您对商务合作预期（200字以内）")
+        textarea.l-w--100p(name="", maxlength="400",placeholder="详细描述产品的核心特色，目前的进展，以及您对商务合作预期（200字以内）", rows="5")
          
         .l-flex.c-product-info--form--media.js-media
           .item
@@ -22,10 +22,10 @@ block content
               .ic--add-3
               span 照片/视频
       .l-w--100p.border-bottom.l-pad--20
-        span 项目当前完成度
+        .title 项目当前完成度
         input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写百分比数字%")
       .l-w--100p.border-bottom.l-pad--20
-        span 上传游戏包下载链接（选填）
+        .title 上传游戏包下载链接（选填）
         
         input.l-w--100p.l-mgn--t-20(type="text", placeholder="请填写游戏包的下载链接")
       .l-w--100p.border-bottom.l-pad--20
@@ -33,10 +33,10 @@ block content
       .l-w--100p.border-bottom.l-pad--20
         textarea#comments(name="", placeholder="请填写您认为重要的其他备注信息")
       .l-w--100p.border-bottom.l-pad--20
-        span 包体大小
+        .title 包体大小
         input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写项目完整版本体大小的预估，单位为M或G")
       .l-w--100p.border-bottom.l-pad--20
-        span 目前语言版本有哪些？
+        .title 目前语言版本有哪些？
         input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写目前拥有的语言版本，中间用逗号隔开")
       .l-pad--20
         a.btn-type-3(href="#") 下一步

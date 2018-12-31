@@ -1841,6 +1841,7 @@ select {
 }
 .c-about-me p {
   font-size: 16px;
+  line-height: 24px;
 }
 .c-about-me textarea {
   height: 160px;
@@ -1849,6 +1850,8 @@ select {
   margin-top: 10px;
   padding: 10px;
   border: 1px solid #00a5a5;
+  font-size: 16px;
+  line-height: 24px;
 }
 .c-add-card label {
   display: block;
@@ -1875,18 +1878,18 @@ select {
 .c-business textarea.large {
   height: 80px;
 }
-.c-business .note {
+.c-business input {
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
   font-weight: 300;
-  margin-top: 10px;
 }
-.c-business .title {
-  font-size: 16px;
-  line-height: 20px;
-}
-.c-business input,
 .c-business textarea {
+  width: 100%;
   font-size: 16px;
   line-height: 20px;
+  border: none;
+  font-weight: 300;
 }
 .c-business input::-webkit-input-placeholder,
 .c-business textarea::-webkit-input-placeholder {
@@ -1907,6 +1910,21 @@ select {
 .c-business textarea:-ms-input-placeholder {
   color: #c5c9c9;
   font-weight: 300;
+}
+.c-business .title {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.c-business .light {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+}
+.c-business .note {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
 }
 .c-calendar--main--top {
   margin-bottom: 30px;
@@ -3039,10 +3057,14 @@ select {
   opacity: 0;
   z-index: 1;
 }
+.c-product-info--form .title {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+}
 .c-product-info--form textarea {
   border: none;
   font-size: inherit;
-  height: 60px;
   margin-bottom: 30px;
   width: 100%;
 }
@@ -3110,10 +3132,15 @@ select {
 }
 .c-product-info--form--media .item--content span {
   color: #00a5a5;
-  font-size: 12px;
+  font-size: 13px;
+  margin-top: 5px;
+  display: block;
+  font-weight: 500;
 }
 .c-product-info--form--media .item--content .ic--add-3 {
   margin: auto;
+  width: 25px;
+  height: 25px;
 }
 .c-product-info--form #comments {
   margin-bottom: 0;
@@ -3168,12 +3195,14 @@ select {
   width: 100%;
   font-size: 16px;
   line-height: 20px;
+  font-weight: 300;
 }
 .c-publish textarea {
   width: 100%;
   font-size: 16px;
   line-height: 20px;
   border: none;
+  font-weight: 300;
 }
 .c-publish input::-webkit-input-placeholder,
 .c-publish textarea::-webkit-input-placeholder {
@@ -3198,6 +3227,7 @@ select {
 .c-publish .title {
   font-size: 16px;
   line-height: 20px;
+  font-weight: 500;
 }
 .c-publish .light {
   font-size: 16px;
@@ -3205,7 +3235,7 @@ select {
   line-height: 20px;
 }
 .c-publish .note {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   line-height: 20px;
 }
@@ -3214,19 +3244,31 @@ select {
   height: 25px;
 }
 .c-publish--categories .heading {
-  margin-bottom: 10px;
   font-size: 18px;
 }
-.c-publish--categories ul {
+.c-publish--categories--item {
   border-bottom: 1px solid #dde0e3;
-  margin-bottom: 20px;
+  padding-top: 20px;
   padding-bottom: 20px;
+}
+.c-publish--categories--item .heading {
+  cursor: pointer;
+}
+.c-publish--categories--item--content {
+  display: none;
+}
+.c-publish--categories--item.selected .heading {
+  color: #fd6160;
+}
+.c-publish--categories ul {
+  margin-top: 10px;
 }
 .c-publish--categories ul li {
   list-style-type: none;
   display: inline-block;
-  margin: 15px 20px 15px 0;
+  margin: 15px 10px 15px 0;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .c-publish--categories ul li span {
   padding: 8px 15px;
@@ -3234,6 +3276,9 @@ select {
   line-height: 24px;
   background: #f2f9f8;
   border-radius: 5px;
+}
+.c-publish--categories ul li.selected span {
+  color: #fd6160;
 }
 .c-register .c-sign-in--form--rol {
   margin-top: 30px;
