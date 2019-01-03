@@ -1,0 +1,19 @@
+mixin publish-type()
+  .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+    .c-header--title
+      span.txt--black 类目
+    .col.c-header--back.l-w--50p
+      a.ic--back--black.js-close-type-popup(href="javascript:void(0);")
+
+  .c-publish--categories.l-pad--20
+    input(type="hidden", name="type", value="")
+    each item in publish_catgories
+      .c-publish--categories--item.js-type
+        h3.heading.js-type-heading(data-category=item.data)!= item.name
+        - var _data = item.data
+        if (item.options)
+          .c-publish--categories--item--content(data-type-category=_data)
+            ul
+              each option in item.options
+                li.js-type-option(data-type-option = option.data)
+                  span!= option.name

@@ -1,0 +1,31 @@
+mixin showOther()
+  .c-list.c-content
+    .c-list--item
+      .title.l-mgn--b-10 在该类别下提供什么具体服务
+      input(type="text", placeholder="请选择具体类型", value="全套美术设计和制作", disabled)
+      select(name="a")
+        option(value="") 请选择
+        option(value="1") 选项1
+        option(value="2") 选项2
+        
+
+    .c-list--item.l-columns
+      .title.l-mgn--b-10 您是个人供应商还是代表公司提供服务？
+      .note.l-mgn--b-20 此信息将会显示给用户，请您根据实际情况选择
+      .col.l-w--80p.l-v--t
+        p.light 我是个人供应商，我个人来为客户提供服务
+      .col.l-w--20p.l-v--t.l-pad--t-5
+        .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+        input(type="hidden", name="checkbox1", value="")
+      .l-mgn--t-10
+      .col.l-w--80p.l-v--t
+        p.light 我们是个团队，我和我的小伙伴一起提供服务
+      .col.l-w--20p.l-v--t.l-pad--t-5
+        .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+        input(type="hidden", name="checkbox2", value="")
+      .l-mgn--t-10
+      .col.l-w--80p.l-v--t
+        p.light 我代表公司，我负责管理一家供应商企业
+      .col.l-w--20p.l-v--t.l-pad--t-5
+        .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+        input(type="hidden", name="checkbox3", value="")

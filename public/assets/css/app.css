@@ -241,6 +241,9 @@ input::-moz-placeholder {
 input:-ms-input-placeholder {
   color: #8c8c8c;
 }
+.hide {
+  display: none;
+}
 .has-shadow {
   box-shadow: 1px 1px 10px rgba(130,130,130,0.3);
 }
@@ -3058,14 +3061,13 @@ select {
   z-index: 1;
 }
 .c-product-info--form .title {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 20px;
-  font-weight: 500;
+  font-weight: bold;
 }
 .c-product-info--form textarea {
   border: none;
   font-size: inherit;
-  margin-bottom: 30px;
   width: 100%;
 }
 .c-product-info--form input,
@@ -3073,6 +3075,7 @@ select {
 .c-product-info--form span {
   font-size: 16px;
   line-height: 20px;
+  font-weight: 300;
 }
 .c-product-info--form input::-webkit-input-placeholder,
 .c-product-info--form textarea::-webkit-input-placeholder {
@@ -3224,10 +3227,15 @@ select {
   color: #c5c9c9;
   font-weight: 300;
 }
+.c-publish select {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 300;
+}
 .c-publish .title {
   font-size: 16px;
   line-height: 20px;
-  font-weight: 500;
+  font-weight: bold;
 }
 .c-publish .light {
   font-size: 16px;
