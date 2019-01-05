@@ -27,6 +27,8 @@ $.fn.Publish = function(opts){
   function initPublish(){
     var url = location.href;
     var dataArray = [];
+    var option1 = false;
+    var option2 = false;
     // type selected
     if(url.indexOf('?') >=0 && url.indexOf('t2')){
       var data = location.search.replace('?', '').split('&');
@@ -36,21 +38,42 @@ $.fn.Publish = function(opts){
       selectedTypeLabel.html(decodeURIComponent(dataArray[1][1]));
       selectedTypeInput.val(dataArray[0][1]);
       selectedTypeLabel.removeClass('hide');
-      showContent(dataArray[2][1]);
-
-
+      if(dataArray.length > 3){
+        option1 = dataArray[3][1];
+        option2 = dataArray[4][1];
+      }
+      
+      showContent(dataArray[2][1], option1, option2);
     }
 
 
   }
-  function showContent(data){
+  function showContent(show, option1, option2){
     // console.log(data);
-    var show = data;
+    console.log(option1);
+    console.log(option2);
+    var show = show;
     if(show == '1'){
       $('.js-show-game').removeClass('hide');
     }
     else{
       $('.js-show-other').removeClass('hide');
+      switch(option1){
+        case 'input':
+          $('.js-option1-input').removeClass('hide');
+          break;
+        case 'select':
+          $('.js-option1-select').removeClass('hide');
+          break;
+      };
+      switch(option2){
+        case 'input':
+          $('.js-option2-input').removeClass('hide');
+          break;
+        case 'select':
+          $('.js-option2-select').removeClass('hide');
+          break;
+      }
     }
     $('.js-next').removeClass('hide');
 
@@ -58,20 +81,23 @@ $.fn.Publish = function(opts){
   function selectType(){
     type.find('.js-type-heading').on('click touch', function(){
       var data = $(this).attr('data-category');
+      var value = $(this).html();
+      var show = $(this).attr('data-show');
       if($('[data-type-category="' + data + '"]').length > 0){
         $('[data-type-category="' + data + '"]').stop().slideToggle();
       }
-      /* remove */
-      // else{
-      //   type.removeClass('selected');
-      //   container.find('.js-type-option').removeClass('selected');
-      //   $(this).parent().addClass('selected');
-      //   setVariable(data);
-      // }
+      else{
+        type.removeClass('selected');
+        container.find('.js-type-option').removeClass('selected');
+        $(this).parent().addClass('selected');
+        setVariable(data, value, show);
+      }
       
     });
     type.find('.js-type-option').on('click touch', function(e){
       var data = $(this).attr('data-type-option');
+      var option1 = $(this).attr('data-option1');
+      var option2 = $(this).attr('data-option2');
       var value = $(this).find('span').html();
       var show = $(this).attr('data-show');
 
@@ -79,17 +105,26 @@ $.fn.Publish = function(opts){
       container.find('.js-type-option').removeClass('selected');
       $(this).addClass('selected');
       $(this).parents('.js-type').addClass('selected');
-      setVariable(data, value, show);
+      // console.log(option1);
+      setVariable(data, value, show, option1, option2);
     })
 
   }
-  function setVariable(data, value, show){
-    // container.find('input[name="type"]').val(data);
+  function setVariable(data, value, show, option1, option2){
     var t2 = data;
     var val = value;
     var url = $('input[name="url"]').val();
+
+    if(option1 && option2){
+      var option1 = option1;
+      var option2 = option2;
+      url = url + '?t2=' + t2 + '&val=' + val + '&show=' + show + '&option1=' + option1 + '&option2=' + option2;
+    }
+    else{
+      url = url + '?t2=' + t2 + '&val=' + val + '&show=' + show;
+    }
+
     
-    url = url + '?t2=' + t2 + '&val=' + val + '&show=' + show;
     window.location.href = url;
 
   }

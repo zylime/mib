@@ -293,13 +293,7 @@
     {
       "name": "游戏产品授权",
       "data": "data0",
-      "options": [
-        {
-          "name":"选项1",
-          "data": "data01",
-          "show": "1"
-        }
-      ]
+      "show": "1"
     },
     {
       "name": "游戏设计",
@@ -308,22 +302,30 @@
         {
           "name": "美术设计",
           "data": "data11",
-          "show": "2"
+          "show": "2",
+          "option1": "input",
+          "option2": "select"
         },
         {
           "name": "美术制作",
           "data": "data12",
-          "show": "2"
+          "show": "2",
+          "option1": "input",
+          "option2": "select"
         },
         {
           "name": "美术整包",
           "data": "data13",
-          "show": "2"
+          "show": "2",
+          "option1": "input",
+          "option2": "select"
         },
         {
           "name": "游戏策划",
           "data": "data14",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         }
       ]
     },
@@ -334,17 +336,23 @@
         {
           "name": "原画",
           "data": "data21",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "平面广告",
           "data": "data22",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "视频制作",
           "data": "data23",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         }
       ]
     },
@@ -355,22 +363,30 @@
         {
           "name": "音乐",
           "data": "data31",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "音效",
           "data": "data32",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "配音",
           "data": "data33",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "主题曲",
           "data": "data34",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         }
       ]
     },
@@ -381,17 +397,23 @@
         {
           "name": "翻译",
           "data": "data41",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "运营外包",
           "data": "data42",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "技术对接",
           "data": "data43",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         }
       ]
     },
@@ -402,42 +424,58 @@
         {
           "name": "公司注册",
           "data": "data51",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "文网文",
           "data": "data52",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "云备案",
           "data": "data53",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "软著",
           "data": "data54",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "知识产权",
           "data": "data54",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "ICP证",
           "data": "data55",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "文化部备案",
           "data": "data56",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "版号",
           "data": "版号的申请与办理",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         }
       ]
     },
@@ -448,17 +486,23 @@
         {
           "name": "APP开发",
           "data": "data61",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "网站开发",
           "data": "data62",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "运维相关",
           "data": "data63",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         }
       ]
     },
@@ -469,12 +513,16 @@
         {
           "name": "客服外包",
           "data": "data71",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "测试外包",
           "data": "data72",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         }
       ]
     },
@@ -485,17 +533,23 @@
         {
           "name": "客服外包",
           "data": "data81",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name":"测试外包",
           "data": "data82",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         },
         {
           "name": "其他",
           "data": "data83",
-          "show": "2"
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
         }
       ]
     }

@@ -13,14 +13,17 @@ block content
     .c-publish--categories.l-pad--20
       input(type="hidden", name="url", value="./publish-2.html")
       each item in publish_catgories
+        - var _show = ''
+        if (item.show)
+          - _show = item.show
         .c-publish--categories--item.js-type
-          h3.heading.js-type-heading(data-category=item.data)!= item.name
+          h3.heading.js-type-heading(data-category=item.data, data-show = _show)!= item.name
           - var _data = item.data
           if (item.options)
             .c-publish--categories--item--content(data-type-category=_data)
               ul
                 each option in item.options
-                  li.js-type-option(data-type-option = option.data, data-show = option.show)
+                  li.js-type-option(data-type-option = option.data, data-show = option.show, data-option1 = option.option1, data-option2 = option.option2)
                     span!= option.name
 
 

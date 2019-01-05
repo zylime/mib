@@ -2,13 +2,21 @@ mixin showOther()
   .c-list.c-content
     .c-list--item
       .title.l-mgn--b-10 在该类别下提供什么具体服务
-      input(type="text", placeholder="请选择具体类型", value="全套美术设计和制作", disabled)
-      select(name="a")
+      input.js-option1-input.hide(type="text", placeholder="请选择具体类型", value="全套美术设计和制作", disabled)
+      select.js-option1-select.hide(name="a")
         option(value="") 请选择
         option(value="1") 选项1
         option(value="2") 选项2
         
-
+    .c-list--item
+      .title.l-mgn--b-10 请补充该品类下的其他关键词
+      input.js-option2-input.hide(type="text", placeholder="如果您有补充，请填写")
+      select.js-option2-select.hide(name="b")
+        option(value="") 请选择
+        option(value="2D") 2D
+        option(value="2.5D") 2.5D
+        option(value="3D") 3D
+        option(value="次世代") 次世代
     .c-list--item.l-columns
       .title.l-mgn--b-10 您是个人供应商还是代表公司提供服务？
       .note.l-mgn--b-20 此信息将会显示给用户，请您根据实际情况选择
