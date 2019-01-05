@@ -3560,7 +3560,8 @@ select {
   height: 140px;
 }
 .c-setting--top h1,
-.c-setting--top p {
+.c-setting--top p,
+.c-setting--top a {
   color: #fff;
 }
 .c-setting--top img {

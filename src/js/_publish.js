@@ -38,8 +38,11 @@ $.fn.Publish = function(opts){
       selectedTypeLabel.html(decodeURIComponent(dataArray[1][1]));
       selectedTypeInput.val(dataArray[0][1]);
       selectedTypeLabel.removeClass('hide');
-      if(dataArray.length > 3){
+      if(dataArray.length >= 4){
         option1 = dataArray[3][1];
+        
+      }
+      if(dataArray.length == 5){
         option2 = dataArray[4][1];
       }
       
@@ -50,7 +53,7 @@ $.fn.Publish = function(opts){
   }
   function showContent(show, option1, option2){
     // console.log(data);
-    console.log(option1);
+    console.log("option1: " + option1);
     console.log(option2);
     var show = show;
     if(show == '1'){
@@ -58,22 +61,27 @@ $.fn.Publish = function(opts){
     }
     else{
       $('.js-show-other').removeClass('hide');
-      switch(option1){
-        case 'input':
-          $('.js-option1-input').removeClass('hide');
-          break;
-        case 'select':
-          $('.js-option1-select').removeClass('hide');
-          break;
-      };
-      switch(option2){
-        case 'input':
-          $('.js-option2-input').removeClass('hide');
-          break;
-        case 'select':
-          $('.js-option2-select').removeClass('hide');
-          break;
+      if(option1){
+        switch(option1){
+          case 'input':
+            $('.js-option1-input').removeClass('hide');
+            break;
+          case 'select':
+            $('.js-option1-select').removeClass('hide');
+            break;
+        };
       }
+      if(option2){
+        switch(option2){
+          case 'input':
+            $('.js-option2-input').removeClass('hide');
+            break;
+          case 'select':
+            $('.js-option2-select').removeClass('hide');
+            break;
+        }
+      }
+      
     }
     $('.js-next').removeClass('hide');
 
