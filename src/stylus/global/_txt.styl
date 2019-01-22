@@ -17,8 +17,10 @@
     color $col-edwardapprox
   &--dove-gray
     color $col-dove-gray
-.txt--500
-  font-weight 500
+
+.txt--font--16
+  font-size 16px
+  line-height 24px
 .txt--h1
   font-size 24px
 .txt--c
@@ -27,3 +29,7 @@
   text-align right
 .txt--l
   text-align left
+
+for $x in 1..6
+  .txt--{$x}00
+    font-weight $x*100

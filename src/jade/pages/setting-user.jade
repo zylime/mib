@@ -1,5 +1,6 @@
 //- 编辑个人资料页
 extends ../partials/_template
+include ../mixins/_iso-country-list
 
 block content
   .c-setting--user(data-js-setting-user)
@@ -31,6 +32,12 @@ block content
           option(value="男") 男
           option(value="女") 女
       .c-list--item.l-pad--l-20.l-pad--r-20
+        p 生日
+        input.js-birthday(type="date", value="")
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        p 星座
+        p.js-astro
+      .c-list--item.l-pad--l-20.l-pad--r-20
         p 身份证
         input(type="text", name="", placeholder="输入身份证号码")
       .c-list--item.l-pad--l-20.l-pad--r-20
@@ -53,6 +60,9 @@ block content
           option(value="en") English
     h2.bg--cornflower-blue.l-pad--20 选填内容
     .c-list
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        p 所在城市
+        +iso-country-list()
       .c-list--item.l-pad--l-20.l-pad--r-20
         p 所在城市
         input(type="text", name="", placeholder="输入地点")

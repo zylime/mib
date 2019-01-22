@@ -42,6 +42,11 @@ $(document).ready(function(){
   $('[data-js-more-menu]').MoreMenu();
   $('[data-js-favorite]').Favorite();
 
+
+  $('[data-js-add-media]').AddMedia();
+  $('[data-js-checkbox]').Checkbox();
+  $('[data-js-radio-box]').RadioBox();
+
  
 
 

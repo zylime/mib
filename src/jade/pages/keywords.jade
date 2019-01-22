@@ -1,0 +1,65 @@
+//- 设定商品关键词和项目履历59
+extends ../partials/_template
+
+
+block content
+  .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+    .col.c-header--back.l-w--50p
+      a.ic--back--black(href="#")
+  
+  div(data-js-publish)
+    .c-content
+      h2 请设定商品的关键词、添加项目履历
+      p.l-mgn--t-20.txt--300.
+        商品关键词将在商品页面最突出的位置显示，每个关键词都在6-7个字之间、点击编辑
+
+    .c-list.c-list--form.c-keywords
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .title 关键词1:
+        input.l-mgn--t-10(type="text", name="", placeholder="请输入关键词")
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .title 关键词2
+        input.l-mgn--t-10(type="text", name="", placeholder="请输入关键词")
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .title 关键词3
+        input.l-mgn--t-10(type="text", name="", placeholder="请输入关键词")
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .title 关键词4
+        input.l-mgn--t-10(type="text", name="", placeholder="请输入关键词")
+    hr.hr
+    .c-content
+      h2.l-mgn--t-20 添加项目履历
+    .c-list.c-list--form.l-columns.js-project-experience
+      .c-list--item.l-pad--b-0
+        .col.l-w--100p.l-v--m.l-pad--l-20.l-pad--r-20
+          input(type="text", placeholder="项目名称")
+
+        hr.hr
+        .l-pad--t-20.l-pad--l-20.l-pad--r-20
+          textarea(name="", placeholder="一句话概括该项目的所取得的成绩", rows="1")
+        hr.hr
+        .l-pad--t-20.l-pad--l-20.l-pad--r-20.l-pad--b-20(data-js-add-media)
+          .l-flex.c-product-info--form--media.js-media
+            .item
+              input.input-file.js-input-file(type="file", name="", accept="image/*" capture="camera")
+              
+              .item--content.js-add-media
+                .ic--add-3
+                span 照片/视频
+    .l-pad--l-20
+      .ic--add-3.large.js-add
+    .l-mgn--t-20
+    hr.hr
+    .l-pad--t-20.l-pad--b-20.c-content
+      a.btn-type-3(href="javascript:void(0);") 下一步
+    
+
+    
+    
+
+
+
+        
+
+    
+

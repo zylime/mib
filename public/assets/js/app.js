@@ -87,6 +87,69 @@ $.fn.AddFriends2 = function (opts) {
 };
 'use strict';
 
+/*
+(data-js-add-media)
+  .l-flex.c-product-info--form--media.js-media
+    .item
+      input.input-file.js-input-file(type="file", name="", accept="image/*" capture="camera")
+      .item--content.js-add-media
+        .ic--add-3
+        span 照片/视频
+*/
+$.fn.AddMedia = function (opts) {
+
+  var container = $(this);
+  var mediaHtml = container.find('.js-media').html();
+  var maxMedia = 6;
+  events();
+
+  function events() {
+    addMedia();
+  }
+
+  function addMedia() {
+
+    updateMedia();
+    container.find('.js-media input[type="file"]').on('change', function () {
+      var file = this.files[0];
+      var _this = this;
+      var reader = new FileReader();
+      var replaceImg = $(this).parent().hasClass('uploaded');
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        if (!replaceImg) {
+          if (container.find('.js-media input[type="file"]').length < maxMedia) {
+            container.find('.js-media').append(mediaHtml);
+            addMedia();
+          }
+        }
+        $(_this).parent().addClass('uploaded');
+        $(_this).parent().find('.media-img').remove();
+        $(_this).parent().append('<img class="media-img" src="' + this.result + '" alt="" />');
+      };
+    });
+  }
+
+  function updateMedia() {
+    if (isIOSDevice) {
+      container.find('.js-media input[type="file"]').removeAttr("capture");
+    }
+  }
+
+  function isIOSDevice() {
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+    var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    if (isAndroid) {
+      return false;
+    }
+    if (isIOS) {
+      return true;
+    }
+  }
+};
+'use strict';
+
 $.fn.Calender = function (opts) {
 
   var _calendarContainer = $(this).find('.js-calendar-container');
@@ -169,6 +232,29 @@ $.fn.Chat = function (opts) {
         inputPopup.removeClass('active');
         $('.js-input-popup[data-popup="' + popup + '"]').addClass('active');
       }
+    });
+  }
+};
+'use strict';
+
+$.fn.Checkbox = function (opts) {
+
+  var container = $(this);
+  var checkbox = container.find('.js-checkbox');
+
+  events();
+
+  function events() {
+    initCheckbox();
+  }
+
+  function initCheckbox() {
+    checkbox.on('click touch', function () {
+      var _value;
+      $(this).toggleClass('active');
+      _value = $(this).hasClass('active') ? 'selected' : '';
+
+      $(this).find('input').val(_value);
     });
   }
 };
@@ -325,6 +411,10 @@ $(document).ready(function () {
 
   $('[data-js-more-menu]').MoreMenu();
   $('[data-js-favorite]').Favorite();
+
+  $('[data-js-add-media]').AddMedia();
+  $('[data-js-checkbox]').Checkbox();
+  $('[data-js-radio-box]').RadioBox();
 
   $('[data-js-tab-panel]').TabPanel();
 
@@ -1108,7 +1198,9 @@ $.fn.Publish = function (opts) {
   events();
 
   function events() {
-    initCheckbox();
+    if (checkbox.length > 0) {
+      initCheckbox();
+    }
 
     initPublish();
     if (projectExperience.length > 0) {
@@ -1244,6 +1336,33 @@ $.fn.Publish = function (opts) {
     var html = projectExperience.html();
     container.find('.js-add').on('click touch', function () {
       projectExperience.append(html);
+    });
+  }
+};
+'use strict';
+
+$.fn.RadioBox = function (opts) {
+
+  var container = $(this);
+  var checkbox = container.find('.js-checkbox');
+
+  events();
+
+  function events() {
+    initCheckbox();
+  }
+
+  function initCheckbox() {
+    checkbox.on('click touch', function () {
+      var _value;
+      checkbox.each(function () {
+        $(this).removeClass('active');
+        $(this).find('input').val('');
+      });
+      $(this).toggleClass('active');
+      // _value = $(this).hasClass('active') ? 'selected' : '';
+
+      $(this).find('input').val('selected');
     });
   }
 };
@@ -1990,11 +2109,16 @@ $.fn.SettingUser = function (opts) {
 
   var container = $(this);
   var fileInput = container.find('.js-input-file');
+  var DOBInput = container.find('.js-birthday');
+  var astroInput = container.find('.js-astro');
 
   events();
 
   function events() {
     updateUserPic();
+
+    // 星座
+    updateAstro();
   }
 
   function updateUserPic() {
@@ -2013,6 +2137,21 @@ $.fn.SettingUser = function (opts) {
     if (isIOS) {
       return true;
     }
+  }
+
+  function updateAstro() {
+    DOBInput.on('change', function () {
+      var DOB = new Date($(this).val().replace('-', '/'));
+      var month = DOB.getMonth() + 1;
+      var date = DOB.getDate();
+      astroInput.html(getAstro(month, date));
+    });
+  }
+
+  function getAstro(month, date) {
+    var AstroName = "摩羯座水瓶座双鱼座白羊座金牛座双子座巨蟹座狮子座处女座天秤座天蝎座射手座魔羯座";
+    var dateArr = [20, 19, 21, 21, 21, 22, 23, 23, 23, 23, 22, 22];
+    return AstroName.substr(month * 3 - (date < dateArr[month] ? 3 : 0), 3);
   }
 };
 'use strict';

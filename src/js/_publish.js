@@ -12,7 +12,10 @@ $.fn.Publish = function(opts){
   events();
 
   function events(){
-    initCheckbox();
+    if(checkbox.length > 0){
+      initCheckbox();
+    }
+    
 
     initPublish();
     if(projectExperience.length > 0){

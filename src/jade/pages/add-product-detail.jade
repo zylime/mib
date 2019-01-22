@@ -1,0 +1,33 @@
+//- 添加详情、照片和视频57
+extends ../partials/_template
+
+
+block content
+  .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+    .col.c-header--back.l-w--50p
+      a.ic--back--black(href="#")
+    .col.c-header--other.l-w--50p.txt--r
+      a(href="javascript:void(0);") 保存并退出
+  
+  div(data-js-publish)
+    .c-content.l-pad--b-20
+      h2 添加您商品的详细描述，照片和视频
+      p.txt--font--16.l-mgn--t-20.txt--300.
+        照片/视频，可以帮助客户更多了解您要提供的服务品质。您可以一次性上传多张照片或视频，也可以在发布商品前后分批上传完善。
+    hr.hr
+    .l-pad--20
+      textarea.l-w--100p.light.txt--font--16(name="", rows="5", max="1000", placeholder="详细描述您要提供的服务型商品的核心特色和价值、您公司的基本介绍、您的履历等让客户可以更加信任您的服务的相关信息（500个字符以内）")
+
+    .l-pad--t-20.l-pad--l-20.l-pad--r-20.l-pad--b-20(data-js-add-media)
+      .l-flex.c-product-info--form--media.js-media
+        .item
+          input.input-file.js-input-file(type="file", name="", accept="image/*" capture="camera")
+          
+          .item--content.js-add-media
+            .ic--add-3
+            span 照片/视频
+    .l-mgn--t-20
+    hr.hr
+    .l-pad--t-20.l-pad--b-20.c-content
+      a.btn-type-3(href="javascript:void(0);") 下一步
+    
