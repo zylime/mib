@@ -406,6 +406,7 @@ $(document).ready(function () {
   $('[data-js-product-info]').ProductInfo();
 
   $('[data-js-chat]').Chat();
+  $('[data-js-select-and-count]').SelectAndCount();
 
   $('[data-js-selected]').Selected();
 
@@ -1981,6 +1982,37 @@ $.fn.Search = function (opts) {
 
   function resetViewMore() {
     $('.js-history-view-more').attr('data-expanded', 'false').html('更多');
+  }
+};
+'use strict';
+
+$.fn.SelectAndCount = function (opts) {
+
+  var container = $(this);
+  var completeBtn = container.find('.js-complete');
+  var selections = container.find('.js-selection');
+
+  var btnLabel = completeBtn.html();
+
+  events();
+
+  function events() {
+    initSelections();
+  }
+  function initSelections() {
+    selections.on('click touch', function () {
+      $(this).toggleClass('active');
+      updateCompleteBtn();
+    });
+  }
+
+  function updateCompleteBtn() {
+    var num = container.find('.js-selection.active').length;
+    if (num !== 0) {
+      completeBtn.html(btnLabel + '(' + num + ')');
+    } else {
+      completeBtn.html(btnLabel);
+    }
   }
 };
 'use strict';

@@ -3548,6 +3548,21 @@ textarea.light:-ms-input-placeholder {
   font-weight: 300;
   font-size: 12px;
 }
+.c-select-country-language--item {
+  cursor: pointer;
+}
+.c-select-country-language--item.active .c-select-country-language--item--name:after {
+  content: "";
+  background: url("../img/ic-checked.png");
+  background-size: 100%;
+  bacground-position: center;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+}
 .c-selected-detail {
   padding-bottom: 120px;
   font-size: 14px;

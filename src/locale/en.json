@@ -569,6 +569,116 @@
       "image": "selected-4.jpg",
       "author_img": "selected-thumb-4.jpg"
     }
+  ],
+  "select_country": [
+    {
+      "name": "中国大陆",
+      "": "cn"
+    },
+    {
+      "name": "中国港澳台",
+      "data": "hktw"
+    },
+    {
+      "name": "日本",
+      "data": "jp"
+    },
+    {
+      "name": "韩国",
+      "data": "kr"
+    },
+    {
+      "name": "东南亚",
+      "data": "asean"
+    },
+    {
+      "name": "欧洲",
+      "data": "eu"
+    },
+    {
+      "name": "拉美",
+      "data": "LA"
+    },
+    {
+      "name": "中东",
+      "data": "ME"
+    },
+    {
+      "name": "非洲",
+      "data": "AF"
+    },
+    {
+      "name": "俄罗斯",
+      "data": "RU"
+    },
+    {
+      "name": "澳洲",
+      "data": "AU"
+    }
+  ],
+  "select_language": [
+    {
+      "name": "中文(简体)",
+      "data": "CN"
+    },
+    {
+      "name": "英文",
+      "data": "EN"
+    },
+    {
+      "name": "日本语",
+      "data": "JP"
+    },
+    {
+      "name": "西班牙文",
+      "data": "ES"
+    },
+    {
+      "name": "法文",
+      "data": "FR"
+    },
+    {
+      "name": "俄文",
+      "data": "RU"
+    },
+    {
+      "name": "葡萄牙文",
+      "data": "PT"
+    }
+  ],
+  "select_location": [
+    {
+      "name": "中国",
+      "data": "CN"
+    },
+    {
+      "name": "阿尔巴尼亚",
+      "data": "XX"
+    },
+    {
+      "name": "阿尔及利亚",
+      "data": "XX"
+    },
+    {
+      "name": "阿富汗",
+      "data": "XX"
+    },
+    {
+      "name": "阿根廷",
+      "data": "XX"
+    },
+    {
+      "name": "阿拉巴联合酋长国",
+      "data": "XX"
+    },
+    {
+      "name": "阿鲁巴",
+      "data": "XX"
+    },
+    {
+      "name": "阿曼",
+      "data": "XX"
+    }
   ]
   
 }

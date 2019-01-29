@@ -1,0 +1,18 @@
+//- 已上线区域
+extends ../partials/_template
+include ../mixins/_search-bar
+include ../mixins/_popup
+
+block content
+  .c-select-country-language(data-js-select-and-count)
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 已上线区域
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+      .col.l-w--50p
+        a(href="javascript:void(0)").js-complete.l-block.l-f--r 完成
+    .c-list
+      each item in select_country
+        .c-list--item.l-pad--l-20.l-pad--r-20.c-select-country-language--item.js-selection
+          .c-select-country-language--item--name(data-country=item.data)!= item.name

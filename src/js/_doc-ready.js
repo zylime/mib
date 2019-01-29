@@ -36,6 +36,7 @@ $(document).ready(function(){
   $('[data-js-product-info]').ProductInfo();
 
   $('[data-js-chat]').Chat();
+  $('[data-js-select-and-count]').SelectAndCount();
 
   $('[data-js-selected]').Selected();
 
