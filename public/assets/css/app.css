@@ -1024,6 +1024,14 @@ input:-ms-input-placeholder {
   width: 18px;
   height: 18px;
 }
+.ic--location {
+  background-image: url("../img/ic-location.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 10px;
+  height: 18px;
+}
 html,
 body {
   height: 100%;
@@ -2615,6 +2623,14 @@ textarea.light:-ms-input-placeholder {
 .c-location--category {
   background: #f2f9f8;
   padding: 10px 0 10px 20px;
+}
+.c-location--category span {
+  font-size: 12px;
+}
+.c-location .ic--location {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 .c-location .c-list--item {
   cursor: pointer;
