@@ -12,8 +12,15 @@ block content
         a.ic--back--black(href="#")
       .col.l-w--50p
         a(href="javascript:void(0)").js-complete.l-block.l-f--r 完成
-    .c-location--category 
+    .c-location--category
       span 全部
+    .c-list.js-selected.hide
+      .c-list--item.l-columns.l-pad--l-20.l-pad--r-20
+        .col.l-w--60p
+          .c-location--item--name
+        .col.l-w--40p.txt--r
+          span.txt--tiara 已选地区
+      hr.hr
     .c-list
       each item in select_location
         .c-list--item.l-pad--l-20.l-pad--r-20.c-location--item.js-selection

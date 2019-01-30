@@ -407,6 +407,7 @@ $(document).ready(function () {
 
   $('[data-js-chat]').Chat();
   $('[data-js-select-and-count]').SelectAndCount();
+  $('[data-js-location]').SelectLocation();
 
   $('[data-js-selected]').Selected();
 
@@ -2076,6 +2077,33 @@ $.fn.SelectFriends = function (opts) {
   }
 
   function submitDate() {}
+};
+'use strict';
+
+$.fn.SelectLocation = function (opts) {
+
+  var container = $(this);
+  var completeBtn = container.find('.js-complete');
+  var selections = container.find('.js-selection');
+  var selected = container.find('.js-selected');
+
+  var btnLabel = completeBtn.html();
+
+  events();
+
+  function events() {
+    initSelections();
+  }
+  function getLocation() {}
+  function initSelections() {
+    selections.on('click touch', function () {
+      var countryName = $(this).find('.c-location--item--name').html();
+      selections.removeClass('active');
+      $(this).toggleClass('active');
+      selected.find('.c-location--item--name').html(countryName);
+      selected.removeClass('hide');
+    });
+  }
 };
 'use strict';
 

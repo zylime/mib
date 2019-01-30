@@ -2612,6 +2612,25 @@ textarea.light:-ms-input-placeholder {
   transform: translate(-50%, -50%);
   margin-left: -15px;
 }
+.c-location--category {
+  background: #f2f9f8;
+  padding: 10px 0 10px 20px;
+}
+.c-location .c-list--item {
+  cursor: pointer;
+}
+.c-location .c-list--item.active .c-location--item--name:after {
+  content: "";
+  background: url("../img/ic-checked.png");
+  background-size: 100%;
+  bacground-position: center;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+}
 .c-menu {
   position: fixed;
   bottom: 0;

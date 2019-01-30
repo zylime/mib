@@ -1,0 +1,21 @@
+.c-location
+  &--category
+    background $col-cornflower-blue
+    padding 10px 0 10px 20px
+    
+  .c-list
+    &--item
+      cursor pointer
+      &.active
+        .c-location--item--name
+          &:after
+            content ""
+            background url(../img/ic-checked.png)
+            background-size 100%
+            bacground-position center
+            background-repeat no-repeat
+            width 10px
+            height 10px
+            display inline-block
+            float right
+            margin-top 10px

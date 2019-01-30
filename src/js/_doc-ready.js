@@ -37,8 +37,10 @@ $(document).ready(function(){
 
   $('[data-js-chat]').Chat();
   $('[data-js-select-and-count]').SelectAndCount();
+  $('[data-js-location]').SelectLocation();
 
   $('[data-js-selected]').Selected();
+
 
   $('[data-js-more-menu]').MoreMenu();
   $('[data-js-favorite]').Favorite();
