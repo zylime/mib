@@ -1,34 +1,52 @@
-//- 我想审核每一个约定申请页
+//- 了解客户的预订流程63
 extends ../partials/_template
 
-
 block content
-  .c-header.l-columns.l-v--m.l-pad--20.pos-relative.has-shadow
-    .col.c-header--back.l-w--50p
-      a.ic--back--black(href="#")
-
-  .c-content
-    h2.l-mgn--t-20 您确认要求??所有客房??都发送预定申请吗？
-    p.l-mgn--t-20.l-mgn--b-20.txt--300 请您勾选以确认您理解以下内容：
-  hr.hr
-  .l-columns.c-content
+  .c-guide
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black(href="#")
+      .col.l-w--50p.txt--r.l-v--m
+        a(href="javascript:void(0)") 保存并退出
+    .l-pad--20
+      h2 客户如果是在MIB平台预定您服务的
+      p.txt--300.l-mgn--t-20 符合您要求的客户无需发送预定申请即可直接下订单。
     hr.hr
-    .l-pad--t-20.l-pad--b-20
-      .col.l-w--80p.l-v--m
-        p.txt--font--16.txt--300 对每个预定订单，您仅有24小时的时间来回复预定申请，逾期您的订单将自动消失、您也会受到相应处罚。
-      .col.l-w--20p.l-v--m(data-js-checkbox)
-        .ic--checkbox-2.l-f--r.js-checkbox
-          input(type="hidden" name="")
-    .l-pad--b-20
-      .col.l-w--80p.l-v--m
-        p.txt--font--16.txt--300 如果无闪订、每个订单都审核，您的商品在搜索结果中的排名会降低，因此可能会影响到您的订单数量
-      .col.l-w--20p.l-v--m(data-js-checkbox)
-        .ic--checkbox-2.l-f--r.js-checkbox
-          input(type="hidden" name="")
-    hr.hr
+    .c-list
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .list-number 1
+        .c-list--item--content
+          p.txt--font--16 客户通过搜索找到您的商品页面
+          p.txt--font--16.txt--300.l-mgn--t-10 您的商品将会出现在搜索结果中，请记得定期更新您的商品动态
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .list-number 2
+        .c-list--item--content
+          p.txt--font--16 符合条件的客户可以直接闪订
+          p.txt--font--16.txt--300.l-mgn--t-10.l-mgn--b-5 符合您的要求的客户可以直接闪订您的服务。不符合要求的客户需要先发您预订申请、您确认后才可预购您的服务。
+          a.txt--persian-green.smaller(href="./63-1.html") 我想审核每一个预定申请
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .list-number 3
+        .c-list--item--content
+          p.txt--font--16 您将会受到预定的确认提醒
+          p.txt--font--16.txt--300.l-mgn--t-10 客户预定订单并提供相关的信息后，您将会收到先关的信息提醒。这些信息包括订单的详细需求、订单周期、产出预期等。
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .list-number 4
+        .c-list--item--content
+          p.txt--font--16 我们为您提供全程VIP服务保障
+          p.txt--font--16.txt--300.l-mgn--t-10 为保障您的收益，我们将为您提供全天候24小时的VIP服务保障，其中包括：24小时客服支持，供应商的收益保障计划、订单的职能管理和提醒服务、当万一遇到客户违反您的合作守则或其他问题时的纠纷辅助处理服务等。
 
 
-    .l-mgn--t-20
-      a.btn-type-2(href="javascript:void(0);") 保存
+
+  .c-menu.l-pad--20.no-shadow
+    a.btn-type-3(href="javascript:void(0)") 下一步
+
+
+
+
+
+
+
+
+        
 
     

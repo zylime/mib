@@ -3,18 +3,21 @@ extends ../partials/_template
 
 
 block content
-  .c-header.l-columns.l-v--m.l-pad--20.pos-relative.has-shadow
-    .col.c-header--back.l-w--50p
-      a.ic--back--black(href="#")
+  .c-guide
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black(href="#")
+      .col.l-w--50p.txt--r.l-v--m
+        a(href="javascript:void(0)") 保存并退出
 
-  .c-content
-    h2.l-mgn--t-20 请为您的商品起个名字
-    p.l-mgn--t-20.l-mgn--b-20.txt--300 为您的商品起个能突出其独特之处的标题，以便吸引更多客户的关注（50个字符以内）
-    textarea.txt--font--16.light.l-w--100p(name="", cols="30", rows="5", placeholder="添加标题")
+    .l-pad--20
+      h2 请为您的商品起个名字
+      p.txt--300.l-mgn--t-20 为您的商品起个能突出其独特之处的标题，以便吸引更多客户的关注（50个字符以内）
+      textarea.l-mgn--t-20.light.l-w--100p.no-border(name="", cols="30", rows="5", placeholder="添加标题")
 
 
 
-    .l-mgn--t-20
-      a.btn-type-3(href="javascript:void(0);") 下一步
+  .c-menu.l-pad--20.no-shadow
+    a.btn-type-3(href="javascript:void(0);") 下一步
 
     

@@ -1,0 +1,34 @@
+//- 我想审核每一个约定申请页
+extends ../partials/_template
+
+
+block content
+  .c-header.l-columns.l-v--m.l-pad--20.pos-relative.has-shadow
+    .col.c-header--back.l-w--50p
+      a.ic--back--black(href="#")
+
+  .c-content
+    h2.l-mgn--t-20 您确认要求所有客房都发送预定申请吗
+    p.l-mgn--t-20.l-mgn--b-20.txt--300 请您勾选以确认您理解以下内容：
+  hr.hr
+  .l-columns.c-content
+    hr.hr
+    .l-pad--t-20.l-pad--b-20
+      .col.l-w--80p.l-v--m
+        p.txt--font--16.txt--300 对每个预定订单，您仅有24小时的时间来回复预定申请，逾期您的订单将自动消失、您也会受到相应处罚。
+      .col.l-w--20p.l-v--m(data-js-checkbox)
+        .ic--checkbox-2.l-f--r.js-checkbox.active
+          input(type="hidden", name="", value="selected")
+    .l-pad--b-20
+      .col.l-w--80p.l-v--m
+        p.txt--font--16.txt--300 如果无闪订、每个订单都审核，您的商品在搜索结果中的排名会降低，因此可能会影响到您的订单数量
+      .col.l-w--20p.l-v--m(data-js-checkbox)
+        .ic--checkbox-2.l-f--r.js-checkbox.active
+          input(type="hidden", name="", value="selected")
+    hr.hr
+
+
+  .c-menu.l-pad--20.no-shadow
+    a.btn-type-2(href="javascript:void(0);") 保存
+
+    

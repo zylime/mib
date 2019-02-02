@@ -267,6 +267,12 @@ input:-ms-input-placeholder {
 .has-shadow {
   box-shadow: 1px 1px 10px rgba(130,130,130,0.3);
 }
+.no-shadow {
+  box-shadow: none !important;
+}
+.no-border {
+  border: none !important;
+}
 .hr {
   border: none;
   border-top: 1px solid #dde0e3;
@@ -290,6 +296,10 @@ input:-ms-input-placeholder {
 }
 .has-menu {
   padding-bottom: 78px !important;
+}
+.border-persian-green {
+  border: 1px solid #00a5a5;
+  box-shadow: 1px 1px 10px rgba(0,165,165,0.3);
 }
 .has-right-arrow--b {
   position: relative;
@@ -944,6 +954,10 @@ input:-ms-input-placeholder {
   width: 20px;
   height: 20px;
 }
+.ic--add-2.large {
+  width: 25px;
+  height: 25px;
+}
 .ic--add-3 {
   background-image: url("../img/ic-add-3.png");
   background-size: 100%;
@@ -1142,6 +1156,10 @@ textarea.light:-ms-input-placeholder {
 .txt--font--16 {
   font-size: 16px;
   line-height: 24px;
+}
+.txt--font--14 {
+  font-size: 14px;
+  line-height: 20px;
 }
 .txt--h1 {
   font-size: 24px;
@@ -1996,6 +2014,12 @@ textarea.light:-ms-input-placeholder {
   font-weight: 300;
   line-height: 20px;
 }
+.c-business .btn-preview {
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+}
 .c-calendar--main--top {
   margin-bottom: 30px;
 }
@@ -2519,6 +2543,49 @@ textarea.light:-ms-input-placeholder {
 }
 .c-group--management .c-list .title {
   font-size: 18px;
+}
+.c-guide {
+  padding-bottom: 100px;
+}
+.c-guide .smaller {
+  font-size: 12px;
+}
+.c-guide .title {
+  font-size: 18px;
+}
+.c-guide .list-number {
+  font-size: 12px;
+  color: #fff;
+  background: #00a5a5;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  border-radius: 50%;
+  float: left;
+  text-align: center;
+  margin-top: 5px;
+}
+.c-guide .c-list--item--content {
+  padding-left: 20px;
+}
+.c-guide .c-list--item {
+  padding: 30px 20px;
+}
+.c-guide li {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+.c-guide li:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #00a5a5;
+  border-radius: 50%;
+  display: inline-block;
+  left: 12px;
+  top: 7px;
+  margin-right: 10px;
 }
 .c-header {
   position: absolute;
