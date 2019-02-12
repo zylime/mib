@@ -11,20 +11,28 @@ block content
     form.l-columns.c-business--form
 
       .l-w--100p.border-bottom.l-pad--20
-        .title 项目开发所在国家
+        .col.l-w--70p.l-v--m
+          .title 项目开发所在国家/地区
+        .col.l-w--30p.txt--r.l-v--m
+          a(href="./select-location.html")
+            .has-right-arrow--b
         input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写国家名")
       .l-w--100p.border-bottom.l-pad--20
         .title 项目开发所在城市
         input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写城市名")
       .l-w--100p.border-bottom.l-pad--20
-        .title 已上线区域
-        textarea.l-w--100p.l-mgn--t-10(placeholder="请填写目前拥有的语言版本，中间用逗号隔开", rows="1")
+        .col.l-w--70p.l-v--m
+          .title 已上线区域
+        .col.l-w--30p.txt--r.l-v--m
+          a(href="./select-country.html")
+            .has-right-arrow--b
+        input.l-w--100p.l-mgn--t-10(placeholder="选择已上线区域", readonly)
 
       .l-w--100p.border-bottom.l-pad--20
         .title 可授权区域
-        textarea.l-w--100p.l-mgn--t-10(placeholder="提示信息", rows="1")
+        textarea.l-w--100p.l-mgn--t-10(placeholder="请填写开放授权的区域，中间用逗号隔开", rows="1")
       .l-w--100p.border-bottom.l-pad--20
-        .title 产品代理须知
+        .title 产品代理须知 (选填)
         .note.l-mgn--t-10 此信息对合作至关重要，请您谨慎选择并填写
         textarea.l-w--100p.l-mgn--t-20.large(placeholder="请填写产品代理的基础条件或您认为非常重要的合作条件（最多22个字符）")
         .txt--r

@@ -160,7 +160,7 @@
     {
       "icon": "ic--menu--me",
       "name": "我的",
-      "link": "#"
+      "link": "./wsetting.html"
     }
   ],
   "filter_menu": ["筛选条件", "筛选条件", "筛选条件", "筛选条件", "筛选条件"],
@@ -265,7 +265,7 @@
     {
       "title": "发布商品",
       "icon": "ic--setting--6",
-      "link": "./publish-1.html"
+      "link": "./publish-2.html"
     },
     {
       "title": "成为游戏开发者",
