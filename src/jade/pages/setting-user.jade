@@ -37,9 +37,7 @@ block content
       .c-list--item.l-pad--l-20.l-pad--r-20
         p 星座
         p.js-astro
-      .c-list--item.l-pad--l-20.l-pad--r-20
-        p 身份证
-        input(type="text", name="", placeholder="输入身份证号码")
+
       .c-list--item.l-pad--l-20.l-pad--r-20
         .col.l-w--80p.l-v--m
           p 邮箱
@@ -53,16 +51,22 @@ block content
         .col.l-w--20p.txt--r.l-v--m
           .txt--persian-green 验证
       .c-list--item.l-pad--l-20.l-pad--r-20
-        p 语言
-        select(name="language")
-          option(value="") 选择语言
-          option(value="cn") 中文
-          option(value="en") English
+        .col.l-w--70p.l-v--m
+          .title 语言
+        .col.l-w--30p.txt--r.l-v--m
+          a(href="./select-language.html")
+            .has-right-arrow--b
+        input.l-w--100p.l-mgn--t-10(type="text", readonly, placeholder="请选择语言")
     h2.bg--cornflower-blue.l-pad--20 选填内容
-    .c-list
+    .c-list.l-columns
       .c-list--item.l-pad--l-20.l-pad--r-20
-        p 所在城市
-        +iso-country-list()
+        .col.l-w--70p.l-v--m
+          .title 国家/地区
+        .col.l-w--30p.txt--r.l-v--m
+          a(href="./select-location.html")
+            .has-right-arrow--b
+        input.l-w--100p.l-mgn--t-10(type="text", readonly, placeholder="请选择国家/地区")
+        
       .c-list--item.l-pad--l-20.l-pad--r-20
         p 所在城市
         input(type="text", name="", placeholder="输入地点")
