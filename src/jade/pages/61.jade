@@ -1,0 +1,48 @@
+//- 61
+extends ../partials/_template
+
+block content
+  .c-guide
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black(href="./60.html")
+
+    .l-pad--20
+      h2 添加更多客户预订条件
+      p.l-mgn--t-20.txt--300 只有符合你要求的客户才能直接闪订，其他人则必须发送预定申请
+    .l-mgn--t-20
+    hr.hr
+    .l-columns.l-pad--20
+      .col.l-w--70p.l-v--m
+        p.txt--font--16.txt--300 政府签发的身份证件
+      .col.l-w--30p.txt--r.l-v--m
+        .c-switch-control.l-inl-b(data-js-switch-control)
+            .checkbox.js-checkbox.checked
+              input.subscription.js-subscription(name="", type="hidden", value="true")
+              .icon
+    hr.hr
+    .l-columns.l-pad--20
+      .col.l-w--70p.l-v--m
+        p.txt--font--16.txt--300 户的其他供应商的推荐
+      .col.l-w--30p.txt--r.l-v--m
+        .c-switch-control.l-inl-b(data-js-switch-control)
+            .checkbox.js-checkbox
+              input.subscription.js-subscription(name="", type="hidden")
+              .icon
+    hr.hr
+
+
+
+  .c-menu.l-pad--20.no-shadow
+    a.btn-type-2(href="javascript:void(0)") 完成
+
+
+
+
+
+
+
+
+        
+
+    

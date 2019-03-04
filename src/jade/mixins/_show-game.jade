@@ -5,15 +5,15 @@ mixin showGame()
       p.light 游戏产品授权
     .c-list--item
       .title.l-mgn--b-10 游戏类型
-      input(type="text", placeholder="请填写游戏类型，如属多个类型请中间用逗号隔开"
+      input(type="text", placeholder="请填写游戏类型，如属多个类型请中间用逗号隔开", name="gameType", required
       )
     .c-list--item
       .title.l-mgn--b-10 游戏名称
-      input(type="text", placeholder="请填写游戏名称"
+      input(type="text", placeholder="请填写游戏名称", name="gameName", required
       )
     .c-list--item
       .title.l-mgn--b-10 公司名称
-      input(type="text", placeholder="请填写您的公司名称"
+      input(type="text", placeholder="请填写您的公司名称", name="companyName", required
       )
     .c-list--item.l-columns
       .title.l-mgn--b-10 公司规模
@@ -33,8 +33,8 @@ mixin showGame()
       .col.l-w--80p.l-v--m
         p.light 小型公司，50-100人
       .col.l-w--20p.l-v--m
-        .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
-        input(type="hidden", name="checkbox3", value="")
+        .ic--checkbox-2.l-f--r.js-checkbox.active(data-checked='')
+        input(type="hidden", name="checkbox3", value="checked")
       .l-mgn--t-10
       .col.l-w--80p.l-v--m
         p.light 独立开发团队，<50人

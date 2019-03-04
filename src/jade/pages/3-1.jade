@@ -1,0 +1,16 @@
+//- 我的收藏3-1
+extends ../partials/_template
+include ../mixins/_display-projects
+include ../mixins/_menu
+include ../mixins/_search-bar
+
+block content
+  .c-content.c-content--bottom.has-menu.c-project-list(data-js-project-list)
+    +search-bar(0)
+
+
+    .l-mgn--t-20
+      +display-projects(list_display1, true)
+
+    +menu(0)
+

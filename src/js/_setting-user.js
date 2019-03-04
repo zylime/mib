@@ -35,7 +35,12 @@ $.fn.SettingUser = function(opts){
   }
 
   function updateAstro(){
+    DOBInput.datepicker({
+      changeMonth: true,
+      changeYear: true,
+    });
     DOBInput.on('change', function(){
+      // console.log('changed');
       var DOB = new Date($(this).val().replace('-', '/'));
       var month = DOB.getMonth() + 1;
       var date = DOB.getDate();

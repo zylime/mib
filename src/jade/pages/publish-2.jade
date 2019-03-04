@@ -9,21 +9,22 @@ block content
       a.ic--back--black.l-mgn--b-20(href="./setting.html")
     h2.l-pad--l-20.l-pad--r-20.l-pad--b-20 请选择你要发布商品的类型
     hr.hr
-    .c-list.c-content
-      a.c-list--item.has-right-arrow--b(href="./publish-4.html")
-        .title 商品类型
-      .light.l-mgn--b-20.hide.js-selected-type 美术设计
-      input(type="hidden", name="type", value="")
-    
-    hr.hr
-    .c-publish--game.js-show-game.hide
-      +showGame()
-    .c-publish--other.js-show-other.hide
-      +showOther()
-    .js-next.hide
-      hr.hr.l-mgn--t-20
-      .l-pad--20
-        a.btn-type-3(href="javascript:void(0)") 下一步
+    form
+      .c-list.c-content
+        a.c-list--item.has-right-arrow--b(href="./publish-4.html")
+          .title 商品类型
+        .light.l-mgn--b-20.hide.js-selected-type 美术设计
+        input(type="hidden", name="type", value="")
+      
+      hr.hr
+      .c-publish--game.js-show-game.hide
+        +showGame()
+      .c-publish--other.js-show-other.hide
+        +showOther()
+      .js-next.hide
+        hr.hr.l-mgn--t-20
+        .l-pad--20
+          button.btn-type-3.js-submit(href="javascript:void(0)") 下一步
 
 
     

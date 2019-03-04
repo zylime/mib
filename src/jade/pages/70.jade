@@ -1,0 +1,40 @@
+//- 商品管理70
+extends ../partials/_template
+include ../mixins/_menu
+include ../mixins/_display-product
+
+block content
+  .c-product-management.l-pad--b-60(data-js-product-management)
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 商品管理
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+    .l-pad--20.bg--cornflower-blue
+      h1.l-mgn--b-15 已发布商品
+      +display-product(products_publish, "publish")
+    .l-pad--20
+      h1.l-mgn--b-15 未发布商品
+      +display-product(products_unpublish, "unpublish")
+    .l-pad--20.bg--cornflower-blue
+      h1.l-mgn--b-15 已下架商品
+      +display-product(products_off, "off")
+      .l-mgn--t-20
+        a.btn-type-3(href="").
+          <span class="ic--plus"></span>发布新商品
+      
+
+  
+
+    
+
+    +menu(4)
+  .c-popup--cover.js-cover
+  .c-popup--product-management--more.js-product-management-more-popup
+    a.item.js-share(href="javascript:void(0)", data-display="publish") 分享
+    a.item.js-edit(href="javascript:void(0)", data-display="publish unpublish") 编辑
+    a.item.js-discontinue(href="javascript:void(0)", data-display="publish") 下架
+    a.item.js-publish(href="javascript:void(0)", data-display="off") 重新发布
+    a.item.js-delete(href="javascript:void(0)", data-display="publish unpublish off") 删除
+    a.item.js-cancel(href="javascript:void(0)", data-display="publish unpublish off") 取消
+  

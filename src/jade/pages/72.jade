@@ -1,0 +1,107 @@
+//- 商品管理70
+extends ../partials/_template
+include ../mixins/_menu
+
+
+block content
+  .c-product-management.l-pad--b-60(data-js-product-management)
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 提升商品点击率
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+    .c-product-management__optimization
+      .l-pad--20
+        .product-overview
+          img.l-w--100p(src=paths.img + 'store-image-1.jpg')
+          .product-overview__content
+            .title 次世代3D飞行东方幻游手游,电影及震撼画质自由空战
+            .l-w--100p.
+              <p class="txt--300">点击量：<span class="l-pad--r-10 txt--persian-green">128</span> 最后一次修改：<span class="txt--persian-green">56</span>天前<p>
+          .l-columns.l-pad--t-20.l-pad--b-20.product-overview__numbers
+            .col.l-w--50p
+              p 商品近7天点击率
+              .number 5%
+            .col.l-w--50p
+              p 低于同类商品点击率
+              .number.
+                <i class="ic--number-down"></i>34%
+        .product-assets
+          h1.h1.
+            图片&视频<span><i class="txt--persian-green">「</i>最佳尺寸960*960以上<i class="txt--persian-green">」</i></span>
+          .edit
+            a.ic--arrow--r--s--green(href="") 修改
+          .product-assets__content
+            .l-flex
+              .flex-item
+                span 我的
+                img.l-w--100p(src=paths.img + "product-asset-1.jpg", alt="")
+              .flex-item
+                span 我的
+                img.l-w--100p(src=paths.img + "product-asset-1.jpg", alt="")
+              .flex-item
+                span 我的
+                img.l-w--100p(src=paths.img + "product-asset-1.jpg", alt="")
+              .flex-item
+                span 我的
+                img.l-w--100p(src=paths.img + "product-asset-1.jpg", alt="")
+              .flex-item
+                span 我的
+                img.l-w--100p(src=paths.img + "product-asset-1.jpg", alt="")
+              .flex-item
+                span 我的
+                img.l-w--100p(src=paths.img + "product-asset-1.jpg", alt="")
+      hr.hr
+      .l-pad--20
+        .product-heading
+          h1.h1.
+            标题<span><i class="txt--persian-green">「</i>建议突出卖点和内容价值点<i class="txt--persian-green">」</i></span>
+          .edit
+            a.ic--arrow--r--s--green(href="") 修改
+          .l-mgn--t-30
+            .product-heading__item
+              .mark.bg--burnt-sienna 我的
+              p 中国水墨风格/国产武侠原画，超高精度，包满意
+            .product-heading__item
+              .mark.bg--persian-green 范例
+              p 中国水墨风格/国产武侠原画，超高精度，包满意
+            .product-heading__item
+              .mark.bg--persian-green 范例
+              p 中国水墨风格/国产武侠原画，超高精度，包满意
+      hr.hr
+      .l-pad--20
+        .product-price
+          h1.h1.
+            价格<span><i class="txt--persian-green">「</i>修改价格可提升竞争力<i class="txt--persian-green">」</i></span>
+          .edit
+            a.ic--arrow--r--s--green(href="") 修改
+          .l-mgn--t-30
+            .product-price__item
+              .mark.bg--burnt-sienna 我的定价
+              p 50000/套
+            .product-price__item
+              .mark.bg--persian-green 建议价格
+              p 30000-40000/套
+            .product-price__item
+              .mark.bg--persian-green 同类商品平均价格
+              p 32500/套
+      hr.hr
+      .l-pad--20
+        .product-description
+          h1.h1.
+            价格<span><i class="txt--persian-green">「</i>修改价格可提升竞争力<i class="txt--persian-green">」</i></span>
+          .edit
+            a.ic--arrow--r--s--green(href="") 修改
+          .l-mgn--t-30
+            .product-description__item
+              .mark.bg--burnt-sienna 我的
+              p 《九州天空城3D》由中国著名游戏公司祖龙娱乐匠心巨制，是一款东方幻想次世代唯美飞行MMO手游。游戏以九州系列精致宏大的世界观为蓝本，描述了一个跨越三种族的史诗般动人传说。依靠祖龙娱乐的全明星研发团队，游戏将呈现电影级的高清远景、无缝连接大地图、360度全景展现等次世代画面，为玩家呈现一个全景无死角超清的九州世界。
+            .product-description__item
+              .mark.bg--persian-green 范例
+              p 《九州天空城3D》由中国著名游戏公司祖龙娱乐匠心巨制，是一款东方幻想次世代唯美飞行MMO手游。游戏以九州系列精致宏大的世界观为蓝本，描述了一个跨越三种族的史诗般动人传说。依靠祖龙娱乐的全明星研发团队，游戏将呈现电影级的高清远景、无缝连接大地图、360度全景展现等次世代画面，为玩家呈现一个全景无死角超清的九州世界。
+
+    
+
+    +menu(4)
+
+  

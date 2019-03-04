@@ -1,0 +1,42 @@
+//- 通知48
+extends ../partials/_template
+include ../mixins/_menu
+
+block content
+  .c-notification
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 通知
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="./account-setting.html")
+     .l-pad--20
+      a.c-notification--item.l-columns(href="#")
+        .col.l-w--80p.l-v--t
+          .title 您获得价值588元的礼包1个！点击领取
+          p 点击查看详情
+          .sender 来自平台客服
+        .col.l-w--20p.l-v--t.txt--r
+          .time 昨天 15:43
+          .ic.ic--notification--gift.l-f--r
+
+      a.c-notification--item.l-columns(href="#")
+        .col.l-w--80p.l-v--t
+          .title 感谢您的使用，您已经成功升级
+          p 点击了解详情
+          .sender 来自平台客服
+        .col.l-w--20p.l-v--t.txt--r
+          .time 昨天 15:43
+          .ic.ic--notification--vip.l-f--r
+
+      a.c-notification--item.l-columns(href="#")
+        .col.l-w--80p.l-v--t
+          .title 资源市场打折促销：买1000减50
+          p 点击了解详情
+          .sender 来自平台客服
+        .col.l-w--20p.l-v--t.txt--r
+          .time 18/01/23
+          .ic.ic--notification--discount.l-f--r
+
+    
+
+    +menu(4)

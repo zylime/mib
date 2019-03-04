@@ -1,0 +1,43 @@
+mixin display-product(data, status)
+  //- status: publish, unpublish, off 
+  
+  - var data = data;
+  - var status = status;
+  each item in data
+    .m-display-product
+      .l-columns.m-display-product__top
+        .col.l-w--25p.l-v--m
+          img.l-w--100p(src=paths.img + item.image, alt=item.name)
+        .col.l-w--75p.l-v--m.l-pad--l-10
+          .title!= item.title
+          .l-w--100p
+            .name.l-f--l!=item.name
+            a.l-f--r.js-more.l-pad--l-10(href="javascript:void(0);", data-status=status) ...
+      if status === "publish"
+        .m-display-product__bottom.m-display-product__publish
+          .txt--cinnabar 7日点击率
+          div.
+            点击率#{item.clickRate}, 比同类商品<span class="txt--persian-green">#{item.comparison}</span>
+          a.btn-type-2(href="./72.html") 去提升
+
+      else if status === "unpublish"
+        .m-display-product__bottom.m-display-product__unpublish
+          p
+            strong 请继续完成商品发布
+          p 您目前的进度是#{item.progress}%
+          .c-progress-bar(data-js-progress-bar)
+            .c-progress-bar__background
+              .c-progress-bar__current.js-progress-bar
+            .c-progress-bar__number.js-progress-number(data-number=item.progress) #{item.progress}%
+      else if status === "off"
+        .m-display-product__bottom.m-display-product__off
+          .has-right-arrow--b
+            .ic.ic--timer-2
+            .m-display-product__off__content
+              p
+                strong 重新发布该项目
+              p 该商品尚未发布，请立即重新发布
+
+
+
+

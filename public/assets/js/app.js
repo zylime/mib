@@ -401,6 +401,8 @@ $(document).ready(function () {
 
   $('[data-js-setting-user]').SettingUser();
 
+  $('[data-js-product-management]').ProductManagement();
+
   $('[data-js-publish]').Publish();
 
   $('[data-js-product-info]').ProductInfo();
@@ -424,12 +426,27 @@ $(document).ready(function () {
     text: true
   });
 
+  $('[data-js-progress-bar]').ProgressBar();
   $('[data-js-search]').Search();
 
   // lightbox on store
   lightbox.option({
     'resizeDuration': 200,
     'wrapAround': true
+  });
+
+  $('.js-ui-datepicker').datepicker({
+    changeMonth: true,
+    changeYear: true,
+    showButtonPanel: true,
+    dateFormat: 'yy-mm',
+    onClose: function onClose(dataText, inst) {
+      var month = $('#ui-datepicker-div .ui-datepicker-month :selected').val();
+      var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+      $(this).datepicker('setDate', new Date(year, month, 1));
+    }
+  }).click(function () {
+    $('.ui-datepicker-calendar').hide();
   });
 });
 
@@ -1152,6 +1169,88 @@ $.fn.ProductInfo = function (opts) {
 };
 'use strict';
 
+$.fn.ProductManagement = function (opts) {
+
+  var container = $(this);
+  var moreBtn = $(this).find('.js-more');
+  var morePopup = $('.js-product-management-more-popup');
+  var popupCover = $('.js-cover');
+
+  events();
+
+  function events() {
+
+    moreBtn.each(function () {
+      $(this).on('click touch', function () {
+        var status = $(this).attr('data-status');
+        openPopup(status);
+      });
+    });
+
+    popupCover.on('click touch', function () {
+      closePopup();
+    });
+
+    morePopup.find('.js-cancel').on('click touch', function () {
+      closePopup();
+    });
+  }
+
+  function openPopup(status) {
+    morePopup.find('a.item').each(function () {
+      if ($(this).attr('data-display').indexOf(status) >= 0) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+    morePopup.show();
+    popupCover.show();
+    stopBodyScrolling(true);
+  }
+
+  function closePopup() {
+    morePopup.hide();
+    popupCover.hide();
+    stopBodyScrolling(false);
+  }
+
+  function stopBodyScrolling(bool) {
+    if (bool === true) {
+      $('html, body').css('overflow', 'hidden');
+      document.body.addEventListener('touchmove', freezeVp, false);
+    } else {
+      $('html, body').css('overflow', 'initial');
+      document.body.removeEventListener('touchmove', freezeVp, false);
+    }
+  }
+
+  var freezeVp = function freezeVp(e) {
+    e.preventDefault();
+  };
+};
+'use strict';
+
+$.fn.ProgressBar = function (opts) {
+
+  var container = $(this);
+  var progressBar = $(this).find('.js-progress-bar');
+  var progressNumber = $(this).find('.js-progress-number');
+
+  events();
+
+  function events() {
+    container.each(function () {
+      var num = $(this).find('.js-progress-number').attr('data-number');
+      console.log(num);
+      $(this).find('.js-progress-bar').css({
+        width: num + '%'
+      });
+    });
+  }
+};
+'use strict';
+
 $.fn.ProjectList = function (opts) {
 
   var sliderContainer = $(this).find('.js-categories-slider');
@@ -1196,6 +1295,8 @@ $.fn.Publish = function (opts) {
   var type = container.find('.js-type');
   var selectedTypeLabel = container.find('.js-selected-type');
   var selectedTypeInput = container.find('input[name="type"]');
+  var submitBtn = container.find('.js-submit');
+  var form = container.find('form');
 
   events();
 
@@ -1212,6 +1313,21 @@ $.fn.Publish = function (opts) {
     if (type.length > 0) {
       selectType();
     }
+
+    submitBtn.on('click touch', function () {
+      form.validate({
+        rules: {
+          gameType: 'required',
+          gameName: 'required',
+          companyName: 'required'
+        },
+        messages: {
+          gameType: '不能为空',
+          gameName: '不能为空',
+          companyName: '不能为空'
+        }
+      });
+    });
   }
   function initPublish() {
     var url = location.href;
@@ -2200,7 +2316,12 @@ $.fn.SettingUser = function (opts) {
   }
 
   function updateAstro() {
+    DOBInput.datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
     DOBInput.on('change', function () {
+      // console.log('changed');
       var DOB = new Date($(this).val().replace('-', '/'));
       var month = DOB.getMonth() + 1;
       var date = DOB.getDate();

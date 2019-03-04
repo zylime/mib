@@ -6,8 +6,8 @@ $.fn.Publish = function(opts){
   var type = container.find('.js-type');
   var selectedTypeLabel = container.find('.js-selected-type');
   var selectedTypeInput = container.find('input[name="type"]');
-
- 
+  var submitBtn = container.find('.js-submit');
+  var form = container.find('form');
   
   events();
 
@@ -25,7 +25,21 @@ $.fn.Publish = function(opts){
     if(type.length > 0){
       selectType();
     }
-    
+
+    submitBtn.on('click touch', function(){
+      form.validate({
+        rules:{
+          gameType:'required',
+          gameName: 'required',
+          companyName: 'required'
+        },
+        messages:{
+          gameType: '不能为空',
+          gameName: '不能为空',
+          companyName: '不能为空'
+        }
+      });
+    });
   }
   function initPublish(){
     var url = location.href;

@@ -1,0 +1,116 @@
+//- 收入结算73
+extends ../partials/_template
+include ../mixins/_menu
+
+
+block content
+  .c-product-management.l-pad--b-60
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 收入结算
+      .col.c-header--back.l-w--50p
+        a.ic--back--black(href="#")
+    .c-product-management__account
+      .l-pad--20
+        h1.h1.l-mgn--b-20 整体情况
+        .account-overview
+          .account-overview__top
+            .number.
+              <span>¥</span>769,356 <span class="txt--persian-green">-65%</span>
+            .l-columns
+              .col.l-w--50p.txt--l
+                span.txt--200 四月收入
+              .col.l-w--50p.txt--r
+                a.ic--arrow--r--s--black(href="") 查看更多
+          .account-overview__bottom.l-flex
+            .flex-item
+              .number.
+                8910 <span class="txt--persian-green">-65%</span>
+              span.txt--200 30天浏览量
+            .flex-item
+              .number.
+                2500 <span class="txt--cinnabar">+5%</span>
+              span.txt--200 30天成交量
+            .flex-item
+              .number.
+                2156 <span class="txt--cinnabar">+6%</span>
+              span.txt--200 进行中的订单
+            .flex-item
+              .number.
+                36.5% <span class="txt--persian-green">-15%</span>
+              span.txt--200 总评分
+            .flex-item
+              .add
+        .account-data.l-mgn--t-40
+          h1.h1.l-mgn--b-20 结算情况
+          .l-w--100p.l-mgn--b-10
+            span 结算状态：
+            select
+              option(value="all") 全部
+              option(value="") 未申请
+              option(value="") 初审审核
+              option(value="") 等待打款
+              option(value="") 已打款
+              option(value="") 结算失败
+              option(value="") 复核审核
+          .l-w--100p.l-mgn--b-10
+            span 结算周期：
+            input.js-ui-datepicker.has-border.has-corner--5.l-pad--5(type="text", value="", placeholder="开始日期")
+            span -
+            input.js-ui-datepicker.has-border.has-corner--5.l-pad--5(type="text", value="", placeholder="结束日期")
+          .account-data__table
+            table
+              tr
+                th 月份
+                th 业务类型
+                th 销售总额
+                th 开发者分成
+                th 税费
+                th 实收金额
+                th 结算状态
+                th 结算状态
+              tr
+                td 2018/05
+                td 游戏中心
+                td 7,892,819.0
+                td 3455694.9
+                td 383966.1
+                td 383966.1
+                td 未申请
+                td 
+                  a.download-pdf.txt--persian-green(href="#") 结账单 
+                  a.download-excel.txt--persian-green(href="#") 对账明细
+              tr
+                td 2018/05
+                td 游戏中心
+                td 7,892,819.0
+                td 3455694.9
+                td 383966.1
+                td 383966.1
+                td.txt--cinnabar 等待打款
+                td 
+                  a.download-pdf.txt--persian-green(href="#") 结账单 
+                  a.download-excel.txt--persian-green(href="#") 对账明细
+              tr
+                td 2018/05
+                td 游戏中心
+                td 7,892,819.0
+                td 3455694.9
+                td 383966.1
+                td 383966.1
+                td.txt--persian-green 已结算
+                td 
+                  a.download-pdf.txt--persian-green(href="#") 结账单 
+                  a.download-excel.txt--persian-green(href="#") 对账明细
+
+
+
+
+
+
+
+    
+
+    +menu(4)
+
+  

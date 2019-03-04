@@ -1,0 +1,40 @@
+//- 请了解您商品服务的交付流程67
+extends ../partials/_template
+
+
+block content
+  .c-guide
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black(href="#")
+      .col.l-w--50p.txt--r.l-v--m
+        a(href="javascript:void(0)") 保存并退出
+    
+    .l-pad--20
+      h2 请了解您商品服务的交付流程
+      p.txt--300.l-mgn--t-20 请认真阅读以下列出的服务和交付步骤，在整个服务过程中，平台将提供智能工具帮您大幅提高协作效率
+
+    .c-guide--ol-list
+      ul
+        - each item, index in guide_payment_list
+          li
+            - var klass;
+            if(index == 0)
+              - klass = 'l-pad--b-5'
+            else if (index == guide_payment_list.length -1)
+              - klass = 'l-pad--t-5'
+            else
+              - klass = 'l-pad--t-5 l-pad--b-5';
+            div(class=klass)
+              .box
+                - var step = '第'+(index + 1)+'部:'
+                .num.title!=step
+                .box--content
+                  .title!= item.title
+                  p!= item.description
+
+
+    .c-menu.l-pad--20.no-shadow
+      a.btn-type-3(href="javascript:void(0);") 下一步
+
+    

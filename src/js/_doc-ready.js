@@ -31,6 +31,8 @@ $(document).ready(function(){
 
   $('[data-js-setting-user]').SettingUser();
 
+  $('[data-js-product-management]').ProductManagement();
+
   $('[data-js-publish]').Publish();
 
   $('[data-js-product-info]').ProductInfo();
@@ -61,13 +63,28 @@ $(document).ready(function(){
     text: true
   });
 
+  $('[data-js-progress-bar]').ProgressBar();
   $('[data-js-search]').Search();
   
   // lightbox on store
   lightbox.option({
     'resizeDuration': 200,
     'wrapAround': true
-  })
+  });
+
+  $('.js-ui-datepicker').datepicker({
+    changeMonth: true,
+    changeYear: true,
+    showButtonPanel:true,
+    dateFormat: 'yy-mm',
+    onClose: function(dataText, inst){
+      var month = $('#ui-datepicker-div .ui-datepicker-month :selected').val();
+      var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+      $(this).datepicker('setDate', new Date(year, month, 1));
+    }
+  }).click(function(){
+    $('.ui-datepicker-calendar').hide();
+  });
 });
 
 // $(window).onload(function(){

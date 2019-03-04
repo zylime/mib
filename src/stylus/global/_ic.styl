@@ -505,6 +505,25 @@
       &:after
         transform rotate(135deg)
         top 10px
+    &--r--s--black
+      position relative
+      width 7px
+      height 20px
+      &:before
+      &:after
+        content ""
+        width 7px
+        height 2px
+        position absolute
+        background $col-black
+        right 0
+        top 6px
+        display block
+      &:before
+        transform rotate(45deg)
+      &:after
+        transform rotate(135deg)
+        top 10px
   
   &--add-2
     background-image url(../img/ic-add-2.png)
@@ -524,6 +543,20 @@
     width 20px
     height 20px
   &--setting
+    &--fav
+      background-image url(../img/ic-setting-fav.png)
+      background-size 100%
+      background-repeat no-repeat
+      background-position center
+      width 24px
+      height 24px
+    &--contact
+      background-image url(../img/ic-setting-contact.png)
+      background-size 100%
+      background-repeat no-repeat
+      background-position center
+      width 24px
+      height 24px
     &--1
       background-image url(../img/ic-setting-1.png)
       background-size 100%
@@ -594,9 +627,60 @@
     background-position center
     width 10px
     height 18px
-    
-
-
+  &--notification
+    &--gift
+      background-image url(../img/ic-notification-gift.png)
+      background-size 100%
+      background-repeat no-repeat
+      background-position center
+      width 38px
+      height 38px
+    &--discount
+      background-image url(../img/ic-notification-discount.png)
+      background-size 100%
+      background-repeat no-repeat
+      background-position center
+      width 38px
+      height 38px
+    &--vip
+      background-image url(../img/ic-notification-vip.png)
+      background-size 100%
+      background-repeat no-repeat
+      background-position center
+      width 38px
+      height 38px
+  &--timer-2
+    background-image url(../img/ic-timer-2.png)
+    background-size 100%
+    background-repeat no-repeat
+    background-position center
+    width 20px
+    height 20px
+  &--plus
+    position relative
+    width 18px
+    height 18px
+    &:before
+    &:after
+      content ""
+      width 18px
+      height 2px
+      background $col-white
+      display block
+      position absolute
+      top calc(50% - 1px)
+      left 0
+    &:after
+      transform rotate(90deg)
+  &--number-down
+    background-image url(../img/ic-number-down.png)
+    background-size 100%
+    background-repeat no-repeat
+    background-position center
+    width 12px
+    height 18px
+    display inline-block
+    vertical-align middle
   
 
       

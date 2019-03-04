@@ -1,0 +1,35 @@
+//- 我的收藏3
+extends ../partials/_template
+include ../mixins/_display-projects
+include ../mixins/_menu
+include ../mixins/_search-bar
+
+block content
+  .c-content.c-content--bottom.has-menu.c-project-list
+    h1.l-pad--t-20 我的收藏
+  
+
+    .m-display-projects
+      .l-columns
+        a.col.m-display-projects--item.l-w--100p.col-1.l-mgn--b-20.l-mgn--t-20(href="./3-1.html")
+          .ic--favorite.js-favorite.active
+          img.has-corner--5.l-w--100p.has-shadow(src=paths.img+"list-thumb-1.jpg")
+          p.txt--font--16.l-pad--l-5.l-pad--r-5.l-mgn--t-5.
+            <strong class="l-mgn--r-10">美术设计</strong> 3个商品
+        hr.hr
+        a.col.m-display-projects--item.l-w--100p.col-1.l-mgn--b-20.l-mgn--t-20(href="./3-1.html")
+          .ic--favorite.js-favorite.active
+          img.has-corner--5.l-w--100p.has-shadow(src=paths.img+"home-thumb-5.jpg")
+          p.txt--font--16.l-pad--l-5.l-pad--r-5.l-mgn--t-5.
+            <strong class="l-mgn--r-10">翻译</strong> 6个商品
+        hr.hr
+        a.col.m-display-projects--item.l-w--100p.col-1.l-mgn--b-20.l-mgn--t-20(href="./3-1.html")
+          .ic--favorite.js-favorite.active
+          img.has-corner--5.l-w--100p.has-shadow(src=paths.img+"home-thumb-6.jpg")
+          p.txt--font--16.l-pad--l-5.l-pad--r-5.l-mgn--t-5.
+            <strong class="l-mgn--r-10">原画</strong> 9个商品
+        hr.hr
+
+
+    +menu(0)
+
