@@ -3,7 +3,7 @@ mixin showOther()
     .c-list--item
       .title.l-mgn--b-10 在该类别下提供什么具体服务
       input.js-option1-input.hide(type="text", placeholder="请选择具体类型", value="全套美术设计和制作", disabled)
-      select.js-option1-select.hide(name="a")
+      select.js-option1-select.hide(name="typeOptions")
         option(value="") 请选择
         option(value="1") 选项1
         option(value="2") 选项2
@@ -11,7 +11,7 @@ mixin showOther()
     .c-list--item
       .title.l-mgn--b-10 请补充该品类下的其他关键词
       input.js-option2-input.hide(type="text", placeholder="如果您有补充，请填写")
-      select.js-option2-select.hide(name="b")
+      select.js-option2-select.hide(name="keywordsOptions")
         option(value="") 请选择
         option(value="2D") 2D
         option(value="2.5D") 2.5D
@@ -24,16 +24,16 @@ mixin showOther()
         p.light 我是个人供应商，我个人来为客户提供服务
       .col.l-w--20p.l-v--t.l-pad--t-5
         .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
-        input(type="hidden", name="checkbox1", value="")
+        input(type="hidden", name="teamCheckbox1", value="")
       .l-mgn--t-10
       .col.l-w--80p.l-v--t
         p.light 我们是个团队，我和我的小伙伴一起提供服务
       .col.l-w--20p.l-v--t.l-pad--t-5
-        .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
-        input(type="hidden", name="checkbox2", value="")
+        .ic--checkbox-2.l-f--r.js-checkbox.active(data-checked='checked')
+        input(type="hidden", name="teamCheckbox2", value="checked")
       .l-mgn--t-10
       .col.l-w--80p.l-v--t
         p.light 我代表公司，我负责管理一家供应商企业
       .col.l-w--20p.l-v--t.l-pad--t-5
         .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
-        input(type="hidden", name="checkbox3", value="")
+        input(type="hidden", name="teamCheckbox3", value="")

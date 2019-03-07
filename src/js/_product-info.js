@@ -1,6 +1,8 @@
 $.fn.ProductInfo = function(opts){
 
   var container = $(this);
+  var submitBtn = container.find('.js-submit');
+  var form = container.find('form');
  
 
  
@@ -10,6 +12,7 @@ $.fn.ProductInfo = function(opts){
 
   function events(){
     addMedia();
+    formValidation();
   }
 
   function addMedia(){
@@ -35,6 +38,33 @@ $.fn.ProductInfo = function(opts){
 
       }
 
+    })
+  }
+
+  function formValidation(){
+    submitBtn.on('click touch', function(){
+      form.validate({
+        rules:{
+          productTitle:'required',
+          productDescription: 'required',
+          productProgress: 'required',
+          productSize: 'required',
+          productLanguage: 'required',
+        },
+        messages:{
+          productTitle: '不能为空',
+          productDescription: '不能为空',
+          productProgress: '不能为空',
+          productSize: '不能为空',
+          productLanguage: '不能为空'
+
+        },
+        submitHandler: function(e){
+          // 临时代码，
+          window.location.href='./business.html';
+
+        }
+      });
     })
   }
 

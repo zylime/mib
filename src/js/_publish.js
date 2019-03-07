@@ -26,20 +26,7 @@ $.fn.Publish = function(opts){
       selectType();
     }
 
-    submitBtn.on('click touch', function(){
-      form.validate({
-        rules:{
-          gameType:'required',
-          gameName: 'required',
-          companyName: 'required'
-        },
-        messages:{
-          gameType: '不能为空',
-          gameName: '不能为空',
-          companyName: '不能为空'
-        }
-      });
-    });
+    
   }
   function initPublish(){
     var url = location.href;
@@ -69,9 +56,8 @@ $.fn.Publish = function(opts){
 
   }
   function showContent(show, option1, option2){
-    // console.log(data);
-    console.log("option1: " + option1);
-    console.log(option2);
+    // console.log("option1: " + option1);
+    // console.log(option2);
     var show = show;
     if(show == '1'){
       $('.js-show-game').removeClass('hide');
@@ -101,7 +87,51 @@ $.fn.Publish = function(opts){
       
     }
     $('.js-next').removeClass('hide');
+    formVerification();
 
+  }
+  function formVerification(){
+    if(!$('.js-show-game').hasClass('hide')){
+      submitBtn.unbind('click touch').on('click touch', function(){
+        form.validate({
+          rules:{
+            gameType:'required',
+            gameName: 'required',
+            companyName: 'required'
+          },
+          messages:{
+            gameType: '不能为空',
+            gameName: '不能为空',
+            companyName: '不能为空'
+          },
+          submitHandler: function(e){
+            // 临时代码，
+            window.location.href='/product-info.html'
+
+          }
+        });
+      });
+    }
+    else{
+      submitBtn.unbind('click touch').on('click touch', function(){
+        form.validate({
+          rules:{
+            typeOptions:'required',
+            keywordsOptions: 'required'
+          },
+          messages:{
+            typeOptions: '不能为空',
+            keywordsOptions: '不能为空',
+          },
+          submitHandler: function(e){
+            // 临时代码，
+            window.location.href='/product-info.html';
+
+          }
+        });
+      });
+    }
+    
   }
   function selectType(){
     type.find('.js-type-heading').on('click touch', function(){

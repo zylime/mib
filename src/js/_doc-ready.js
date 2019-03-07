@@ -46,6 +46,7 @@ $(document).ready(function(){
 
   $('[data-js-more-menu]').MoreMenu();
   $('[data-js-favorite]').Favorite();
+  $('[data-js-business]').Business();
 
 
   $('[data-js-add-media]').AddMedia();

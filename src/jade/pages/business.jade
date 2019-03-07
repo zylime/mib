@@ -2,35 +2,35 @@
 extends ../partials/_template
 
 block content
-  .c-business
+  .c-business(data-js-business)
     .c-header.l-columns.l-v--m.l-pad--20.pos-relative
       .col.c-header--back.l-w--50p
-        a.ic--back--black(href="#")
+        a.ic--back--black(href="./product-info.html")
     .l-pad--20.border-bottom
       h2 添加商务合作信息
     form.l-columns.c-business--form
 
       .l-w--100p.border-bottom.l-pad--20
-        .col.l-w--70p.l-v--m
-          .title 项目开发所在国家/地区
-        .col.l-w--30p.txt--r.l-v--m
-          a(href="./select-location.html")
+        a(href="./select-location.html")
+          .col.l-w--70p.l-v--m
+            .title 项目开发所在国家/地区
+          .col.l-w--30p.txt--r.l-v--m
             .has-right-arrow--b
-        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写国家名")
+        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写国家名", name="locationCountry", readonly, value="中国")
       .l-w--100p.border-bottom.l-pad--20
         .title 项目开发所在城市
-        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写城市名")
+        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写城市名", name="locationCity")
       .l-w--100p.border-bottom.l-pad--20
-        .col.l-w--70p.l-v--m
-          .title 已上线区域
-        .col.l-w--30p.txt--r.l-v--m
-          a(href="./select-country.html")
-            .has-right-arrow--b
-        input.l-w--100p.l-mgn--t-10(placeholder="选择已上线区域", readonly)
+        a(href="./select-country.html")
+          .col.l-w--70p.l-v--m
+            .title 已上线区域
+          .col.l-w--30p.txt--r.l-v--m
+              .has-right-arrow--b
+        input.l-w--100p.l-mgn--t-10(placeholder="选择已上线区域", readonly, name="launchLocation", value="中国")
 
       .l-w--100p.border-bottom.l-pad--20
         .title 可授权区域
-        textarea.l-w--100p.l-mgn--t-10(placeholder="请填写开放授权的区域，中间用逗号隔开", rows="1")
+        textarea.l-w--100p.l-mgn--t-10(placeholder="请填写开放授权的区域，中间用逗号隔开", rows="1", name="authorization")
       .l-w--100p.border-bottom.l-pad--20
         .title 产品代理须知 (选填)
         .note.l-mgn--t-10 此信息对合作至关重要，请您谨慎选择并填写
@@ -38,7 +38,7 @@ block content
         .txt--r
           a.btn-preview.btn-type-2(href="javascript:void(0)") 预览
       .l-pad--20
-        a.btn-type-3(href="#") 确认发布
+        button.btn-type-3.js-submit 确认发布
 
 
 

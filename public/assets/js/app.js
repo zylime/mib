@@ -150,6 +150,43 @@ $.fn.AddMedia = function (opts) {
 };
 'use strict';
 
+$.fn.Business = function (opts) {
+
+  var container = $(this);
+  var submitBtn = container.find('.js-submit');
+  var form = container.find('form');
+
+  events();
+
+  function events() {
+    formValidation();
+  }
+  function formValidation() {
+    submitBtn.on('click touch', function () {
+      form.validate({
+        rules: {
+          locationCountry: 'required',
+          locationCity: 'required',
+          launchLocation: 'required',
+          authorization: 'required'
+        },
+        messages: {
+          locationCountry: '不能为空',
+          locationCity: '不能为空',
+          launchLocation: '不能为空',
+          authorization: '不能为空'
+
+        },
+        submitHandler: function submitHandler(e) {
+          // 临时代码，
+          e.preventDefault();
+        }
+      });
+    });
+  }
+};
+'use strict';
+
 $.fn.Calender = function (opts) {
 
   var _calendarContainer = $(this).find('.js-calendar-container');
@@ -415,6 +452,7 @@ $(document).ready(function () {
 
   $('[data-js-more-menu]').MoreMenu();
   $('[data-js-favorite]').Favorite();
+  $('[data-js-business]').Business();
 
   $('[data-js-add-media]').AddMedia();
   $('[data-js-checkbox]').Checkbox();
@@ -1117,6 +1155,8 @@ $.fn.PrePay = function (opts) {
 $.fn.ProductInfo = function (opts) {
 
   var container = $(this);
+  var submitBtn = container.find('.js-submit');
+  var form = container.find('form');
 
   var mediaHtml = container.find('.js-media').html();
   var maxMedia = 6;
@@ -1124,6 +1164,7 @@ $.fn.ProductInfo = function (opts) {
 
   function events() {
     addMedia();
+    formValidation();
   }
 
   function addMedia() {
@@ -1146,6 +1187,32 @@ $.fn.ProductInfo = function (opts) {
         $(_this).parent().find('.media-img').remove();
         $(_this).parent().append('<img class="media-img" src="' + this.result + '" alt="" />');
       };
+    });
+  }
+
+  function formValidation() {
+    submitBtn.on('click touch', function () {
+      form.validate({
+        rules: {
+          productTitle: 'required',
+          productDescription: 'required',
+          productProgress: 'required',
+          productSize: 'required',
+          productLanguage: 'required'
+        },
+        messages: {
+          productTitle: '不能为空',
+          productDescription: '不能为空',
+          productProgress: '不能为空',
+          productSize: '不能为空',
+          productLanguage: '不能为空'
+
+        },
+        submitHandler: function submitHandler(e) {
+          // 临时代码，
+          window.location.href = './business.html';
+        }
+      });
     });
   }
 
@@ -1313,21 +1380,6 @@ $.fn.Publish = function (opts) {
     if (type.length > 0) {
       selectType();
     }
-
-    submitBtn.on('click touch', function () {
-      form.validate({
-        rules: {
-          gameType: 'required',
-          gameName: 'required',
-          companyName: 'required'
-        },
-        messages: {
-          gameType: '不能为空',
-          gameName: '不能为空',
-          companyName: '不能为空'
-        }
-      });
-    });
   }
   function initPublish() {
     var url = location.href;
@@ -1354,9 +1406,8 @@ $.fn.Publish = function (opts) {
     }
   }
   function showContent(show, option1, option2) {
-    // console.log(data);
-    console.log("option1: " + option1);
-    console.log(option2);
+    // console.log("option1: " + option1);
+    // console.log(option2);
     var show = show;
     if (show == '1') {
       $('.js-show-game').removeClass('hide');
@@ -1384,6 +1435,46 @@ $.fn.Publish = function (opts) {
       }
     }
     $('.js-next').removeClass('hide');
+    formVerification();
+  }
+  function formVerification() {
+    if (!$('.js-show-game').hasClass('hide')) {
+      submitBtn.unbind('click touch').on('click touch', function () {
+        form.validate({
+          rules: {
+            gameType: 'required',
+            gameName: 'required',
+            companyName: 'required'
+          },
+          messages: {
+            gameType: '不能为空',
+            gameName: '不能为空',
+            companyName: '不能为空'
+          },
+          submitHandler: function submitHandler(e) {
+            // 临时代码，
+            window.location.href = '/product-info.html';
+          }
+        });
+      });
+    } else {
+      submitBtn.unbind('click touch').on('click touch', function () {
+        form.validate({
+          rules: {
+            typeOptions: 'required',
+            keywordsOptions: 'required'
+          },
+          messages: {
+            typeOptions: '不能为空',
+            keywordsOptions: '不能为空'
+          },
+          submitHandler: function submitHandler(e) {
+            // 临时代码，
+            window.location.href = '/product-info.html';
+          }
+        });
+      });
+    }
   }
   function selectType() {
     type.find('.js-type-heading').on('click touch', function () {

@@ -2123,6 +2123,12 @@ textarea.light:-ms-input-placeholder {
   color: #c5c9c9;
   font-weight: 300;
 }
+.c-business input.error,
+.c-business textarea.error {
+  display: block;
+  border: 1px solid #f00;
+  border-radius: 5px;
+}
 .c-business .title {
   font-size: 16px;
   line-height: 20px;
@@ -3528,6 +3534,12 @@ textarea.light:-ms-input-placeholder {
   color: #c5c9c9;
   font-weight: 300;
 }
+.c-product-info--form textarea.error,
+.c-product-info--form input.error {
+  border: 1px solid #f00;
+  border-radius: 5px;
+  display: block;
+}
 .c-product-info--form--media {
   display: flex;
   flex-wrap: wrap;
@@ -3940,6 +3952,13 @@ textarea.light:-ms-input-placeholder {
   font-size: 16px;
   line-height: 20px;
   font-weight: 300;
+}
+.c-publish input.error,
+.c-publish textarea.error,
+.c-publish select.error {
+  border: 1px solid #f00;
+  border-radius: 5px;
+  display: block;
 }
 .c-publish .title {
   font-size: 16px;

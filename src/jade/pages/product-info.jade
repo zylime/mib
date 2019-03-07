@@ -7,12 +7,12 @@ block content
       .c-header--title
         span.txt--black.txt--600 添加产品信息
       .col.c-header--back.l-w--50p
-        a.ic--back--black(href="#")
+        a.ic--back--black(href="./publish-2.html")
     form.l-columns.c-product-info--form
       .l-w--100p.border-bottom.l-pad--20
-        textarea.l-w--100p(name="", maxlength="60", placeholder="标题： 一句话突出产品核心卖点和价值点（30字以内）")
+        textarea.l-w--100p(name="productTitle", maxlength="60", placeholder="标题： 一句话突出产品核心卖点和价值点（30字以内）")
       .l-w--100p.border-bottom.l-pad--20
-        textarea.l-w--100p.l-mgn--b-30(name="", maxlength="400",placeholder="详细描述产品的核心特色，目前的进展，以及您对商务合作预期（200字以内）", rows="5")
+        textarea.l-w--100p.l-mgn--b-30(name="productDescription", maxlength="400",placeholder="详细描述产品的核心特色，目前的进展，以及您对商务合作预期（200字以内）", rows="5")
          
         .l-flex.c-product-info--form--media.js-media
           .item
@@ -23,7 +23,7 @@ block content
               span 照片/视频
       .l-w--100p.border-bottom.l-pad--20
         .title 项目当前完成度
-        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写百分比数字%")
+        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写百分比数字%", name="productProgress")
       .l-w--100p.border-bottom.l-pad--20
         .title 上传游戏包下载链接（选填）
         
@@ -34,16 +34,16 @@ block content
         textarea#comments(name="", placeholder="请填写您认为重要的其他备注信息")
       .l-w--100p.border-bottom.l-pad--20
         .title 包体大小
-        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写项目完整版本体大小的预估，单位为M或G")
+        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写项目完整版本体大小的预估，单位为M或G", name="productSize")
       .l-w--100p.border-bottom.l-pad--20
         .col.l-w--70p.l-v--m
           .title 目前语言版本有哪些？
         .col.l-w--30p.txt--r.l-v--m
-          a(href="./select-country.html")
+          a(href="./select-language.html")
             .has-right-arrow--b
-        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请选择目前语言版本", readonly)
+        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请选择目前语言版本", name="productLanguage", value="简体中文", readonly)
       .l-pad--20
-        a.btn-type-3(href="#") 下一步
+        button.btn-type-3.js-submit 下一步
 
 
 
