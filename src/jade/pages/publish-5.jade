@@ -1,75 +1,75 @@
-//- 游戏类型&公司信息添加页
-extends ../partials/_template
+//- //- 游戏类型&公司信息添加页
+//- extends ../partials/_template
 
-block content
-  .c-publish(data-js-publish)
-    .l-pad--20
-      a.ic--back--black.l-mgn--b-20(href="setting.html")
-    h2.l-pad--l-20.l-pad--r-20.l-pad--b-20 请选择你要发布商品的类型
-    hr.hr
-    .c-list.c-content
-      .c-list--item
-        .title.l-mgn--b-10 产品类型
-        p.light 游戏产品授权
-      .c-list--item
-        .title.l-mgn--b-10 游戏名称
-        input(type="text", placeholder="请填写游戏名称"
-        )
-      .c-list--item
-        .title.l-mgn--b-10 游戏类型
-        input(type="text", placeholder="请填写游戏类型，如属多个类型请中间用逗号隔开"
-        )
-      .c-list--item
-        .title.l-mgn--b-10 公司名称
-        input(type="text", placeholder="请填写您的公司名称"
-        )
-      .c-list--item.l-columns
-        .title.l-mgn--b-10 公司规模
-        .note.l-mgn--b-20.l-mgn--t-10 此信息将会显示给用户，请您根据实际情况选择
-        .col.l-w--80p.l-v--m
-          p.light 大型公司，人员500+
-        .col.l-w--20p.l-v--m
-          .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
-          input(type="hidden", name="checkbox1", value="")
-        .l-mgn--t-10
-        .col.l-w--80p.l-v--m
-          p.light 大中型公司，人员100+
-        .col.l-w--20p.l-v--m
-          .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
-          input(type="hidden", name="checkbox2", value="")
-        .l-mgn--t-10
-        .col.l-w--80p.l-v--m
-          p.light 小型公司，50-100人
-        .col.l-w--20p.l-v--m
-          .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
-          input(type="hidden", name="checkbox3", value="")
-        .l-mgn--t-10
-        .col.l-w--80p.l-v--m
-          p.light 独立开发团队，<50人
-        .col.l-w--20p.l-v--m
-          .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
-          input(type="hidden", name="checkbox4", value="")
-        .l-mgn--t-10
-    hr.hr.l-mgn--b-40
-    h2.l-pad--l-20.l-pad--r-20.l-pad--b-20 团队项目履历（选填）
-    hr.hr
-    .c-list.l-columns.js-project-experience
-      .c-list--item.l-pad--b-0
-        .l-pad--l-20.l-pad--r-20.l-pad--b-20
-          .col.l-w--100p.l-v--m
-            input(type="text", placeholder="项目名称")
+//- block content
+//-   .c-publish(data-js-publish)
+//-     .l-pad--20
+//-       a.ic--back--black.l-mgn--b-20(href="setting.html")
+//-     h2.l-pad--l-20.l-pad--r-20.l-pad--b-20 请选择你要发布商品的类型
+//-     hr.hr
+//-     .c-list.c-content
+//-       .c-list--item
+//-         .title.l-mgn--b-10 产品类型
+//-         p.light 游戏产品授权
+//-       .c-list--item
+//-         .title.l-mgn--b-10 游戏名称
+//-         input(type="text", placeholder="请填写游戏名称"
+//-         )
+//-       .c-list--item
+//-         .title.l-mgn--b-10 游戏类型
+//-         input(type="text", placeholder="请填写游戏类型，如属多个类型请中间用逗号隔开"
+//-         )
+//-       .c-list--item
+//-         .title.l-mgn--b-10 公司名称
+//-         input(type="text", placeholder="请填写您的公司名称"
+//-         )
+//-       .c-list--item.l-columns
+//-         .title.l-mgn--b-10 公司规模
+//-         .note.l-mgn--b-20.l-mgn--t-10 此信息将会显示给用户，请您根据实际情况选择
+//-         .col.l-w--80p.l-v--m
+//-           p.light 大型公司，人员500+
+//-         .col.l-w--20p.l-v--m
+//-           .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+//-           input(type="hidden", name="checkbox1", value="")
+//-         .l-mgn--t-10
+//-         .col.l-w--80p.l-v--m
+//-           p.light 大中型公司，人员100+
+//-         .col.l-w--20p.l-v--m
+//-           .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+//-           input(type="hidden", name="checkbox2", value="")
+//-         .l-mgn--t-10
+//-         .col.l-w--80p.l-v--m
+//-           p.light 小型公司，50-100人
+//-         .col.l-w--20p.l-v--m
+//-           .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+//-           input(type="hidden", name="checkbox3", value="")
+//-         .l-mgn--t-10
+//-         .col.l-w--80p.l-v--m
+//-           p.light 独立开发团队，<50人
+//-         .col.l-w--20p.l-v--m
+//-           .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+//-           input(type="hidden", name="checkbox4", value="")
+//-         .l-mgn--t-10
+//-     hr.hr.l-mgn--b-40
+//-     h2.l-pad--l-20.l-pad--r-20.l-pad--b-20 团队项目履历（选填）
+//-     hr.hr
+//-     .c-list.l-columns.js-project-experience
+//-       .c-list--item.l-pad--b-0
+//-         .l-pad--l-20.l-pad--r-20.l-pad--b-20
+//-           .col.l-w--100p.l-v--m
+//-             input(type="text", placeholder="项目名称")
 
-        hr.hr
-        .l-pad--t-20.l-pad--l-20.l-pad--r-20.l-pad--b-20
-          textarea(name="", placeholder="一句话概括该项目的所取得的成绩", rows="1")
-        //- hr.hr
-    hr.hr
-    .l-pad--l-20.l-mgn--t-20
+//-         hr.hr
+//-         .l-pad--t-20.l-pad--l-20.l-pad--r-20.l-pad--b-20
+//-           textarea(name="", placeholder="一句话概括该项目的所取得的成绩", rows="1")
+//-         //- hr.hr
+//-     hr.hr
+//-     .l-pad--l-20.l-mgn--t-20
 
-      .ic--add-3.large.js-add
-    hr.hr.l-mgn--t-20
-    .l-pad--20
-      a.btn-type-3(href="javascript:void(0)") 下一步
+//-       .ic--add-3.large.js-add
+//-     hr.hr.l-mgn--t-20
+//-     .l-pad--20
+//-       a.btn-type-3(href="javascript:void(0)") 下一步
     
             
 

@@ -5,8 +5,24 @@ mixin showGame()
       p.light 游戏产品授权
     .c-list--item
       .title.l-mgn--b-10 游戏类型
-      input(type="text", placeholder="请填写游戏类型，如属多个类型请中间用逗号隔开", name="gameType", required
-      )
+      select(name="gameType")
+        option(value="") 选择游戏类型
+        option(value="RPG") 角色扮演
+        option(value="RPG") 修仙
+        option(value="RPG") 动作
+        option(value="RPG") 策略
+        option(value="RPG") 模拟
+        option(value="RPG") 益智
+        option(value="RPG") 街机
+        option(value="RPG") 卡牌
+        option(value="RPG") 体育
+        option(value="RPG") 竞速
+        option(value="RPG") 音乐
+        option(value="RPG") 单机
+        option(value="RPG") 文字
+        option(value="RPG") 桌面和棋类
+      //- input(type="text", placeholder="请填写游戏类型，如属多个类型请中间用逗号隔开", name="gameType", required
+      //- )
     .c-list--item
       .title.l-mgn--b-10 游戏名称
       input(type="text", placeholder="请填写游戏名称", name="gameName", required
