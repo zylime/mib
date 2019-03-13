@@ -291,6 +291,9 @@ input:-ms-input-placeholder {
 .has-border {
   border: 1px solid #dde0e3;
 }
+.has-border--bottom {
+  border-bottom: 1px solid #dde0e3;
+}
 .hr {
   border: none;
   border-top: 1px solid #dde0e3;
@@ -2782,6 +2785,90 @@ textarea.light:-ms-input-placeholder {
   font-size: 16px;
   line-height: 24px;
 }
+.c-guide__add-product #period_number-error {
+  display: none !important;
+}
+.c-guide__add-product__item {
+  font-size: 16px;
+}
+.c-guide__add-product__item .note {
+  font-size: 13px;
+  font-weight: 200;
+  padding-left: 10px;
+}
+.c-guide__add-product__item .title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+}
+.c-guide__add-product__item .input {
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-guide__add-product__item input,
+.c-guide__add-product__item select {
+  font-size: inherit;
+}
+.c-guide__add-product__item input.error,
+.c-guide__add-product__item select.error {
+  border: 1px solid #f00;
+  display: inline-block;
+  border-radius: 5px;
+  margin-top: 0;
+}
+.c-guide__add-product__item select {
+  background-color: #f2f9f8;
+  padding: 2px 0;
+}
+.c-guide__add-product__item input::-webkit-input-placeholder {
+  font-weight: 300;
+}
+.c-guide__add-product__item input:-moz-placeholder {
+  font-weight: 300;
+}
+.c-guide__add-product__item input::-moz-placeholder {
+  font-weight: 300;
+}
+.c-guide__add-product__item input:-ms-input-placeholder {
+  font-weight: 300;
+}
+.c-guide__add-product__item input[type="checkbox"],
+.c-guide__add-product__item input[type="radio"] {
+  opacity: 0;
+}
+.c-guide__add-product__item__period .ic--checkbox-2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-guide__add-product__item__period__detail {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+.c-guide__add-product__item__period__detail input {
+  width: 70px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.c-guide__add-product__item__period__detail p {
+  font-weight: 300;
+  font-size: 16px;
+}
+.c-guide__add-product__item--price input {
+  width: 50px;
+}
+.c-guide__add-product__item .radio-group__item {
+  padding-right: 20px;
+}
+.c-guide__add-product__item .radio-group__item label,
+.c-guide__add-product__item .radio-group__item .ic--checkbox-2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-guide__add-product__item .radio-group__item label {
+  font-weight: 200;
+  padding-right: 5px;
+}
 .c-header {
   position: absolute;
   width: 100%;
@@ -3123,6 +3210,7 @@ textarea.light:-ms-input-placeholder {
 .c-notification--item .time {
   margin-bottom: 10px;
   font-size: 12px;
+  margin-top: 5px;
 }
 .c-order-detail {
   padding: 20px 20px 70px 20px;
@@ -3709,11 +3797,9 @@ textarea.light:-ms-input-placeholder {
   vertical-align: top;
   width: calc(100% - 50px);
 }
-.c-product-management__optimization .product-price {
-  padding: 15px;
-}
 .c-product-management__optimization .product-price__item {
   margin: 10px 0;
+  padding-left: 15px;
 }
 .c-product-management__optimization .product-price__item .mark {
   width: 60px;
@@ -3741,6 +3827,10 @@ textarea.light:-ms-input-placeholder {
   vertical-align: top;
   width: calc(100% - 35px);
   padding-left: 15px;
+}
+.c-product-management__account select {
+  text-align: center;
+  text-align-last: center;
 }
 .c-product-management__account .account-overview {
   box-shadow: 1px 1px 30px #dde0e3;
@@ -3828,6 +3918,9 @@ textarea.light:-ms-input-placeholder {
 .c-product-management__account .account-data__table table .download-excel {
   font-size: 12px;
   display: block;
+}
+.c-product-management__edit .h1 {
+  width: 100%;
 }
 .c-product-management__edit p {
   font-size: 16px;
@@ -4829,8 +4922,9 @@ textarea.light:-ms-input-placeholder {
   margin-bottom: 20px;
 }
 .m-display-product .title {
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 5px;
 }
 .m-display-product__top {
   padding: 0 0 15px 0;
@@ -4845,7 +4939,7 @@ textarea.light:-ms-input-placeholder {
   border-top: 1px solid #dde0e3;
   padding: 15px 0 0 0;
   position: relative;
-  font-size: 11px;
+  font-size: 13px;
 }
 .m-display-product__bottom > div {
   display: inline-block;
@@ -4854,11 +4948,14 @@ textarea.light:-ms-input-placeholder {
 .m-display-product__bottom .btn-type-2 {
   position: relative;
   right: 0;
-  height: 24px;
-  line-height: 24px;
+  height: 32px;
+  line-height: 32px;
   width: 100%;
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 10px;
+}
+.m-display-product__bottom.m-display-product__publish {
+  text-align: center;
 }
 .m-display-product__unpublish p strong {
   font-size: 16px;

@@ -27,10 +27,10 @@ block content
               - klass = 'l-pad--t-5 l-pad--b-5';
             div(class=klass)
               .box
-                - var step = '第'+(index + 1)+'部:'
+                - var step = '第'+(index + 1)+'步:'
                 .num.title!=step
                 .box--content
-                  .title!= item.title
+                  .title.txt--500!= item.title
                   p!= item.description
 
 

@@ -42,6 +42,7 @@ $(document).ready(function(){
   $('[data-js-location]').SelectLocation();
 
   $('[data-js-selected]').Selected();
+  $('[data-js-add-product]').AddProduct();
 
 
   $('[data-js-more-menu]').MoreMenu();

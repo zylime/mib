@@ -12,7 +12,7 @@ mixin display-product(data, status)
           .title!= item.title
           .l-w--100p
             .name.l-f--l!=item.name
-            a.l-f--r.js-more.l-pad--l-10(href="javascript:void(0);", data-status=status) ...
+            a.l-f--r.js-more.l-pad--l-10.l-pad--r-10(href="javascript:void(0);", data-status=status) ...
       if status === "publish"
         .m-display-product__bottom.m-display-product__publish
           .txt--cinnabar 7日点击率

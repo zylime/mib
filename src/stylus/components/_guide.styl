@@ -82,3 +82,73 @@
         .title
           font-size 16px
           line-height 24px
+  &__add-product
+    #period_number-error
+      display none !important
+
+    &__item
+      font-size 16px
+      .note
+        font-size 13px
+        font-weight 200
+        padding-left 10px
+      .title
+        display inline-block
+        vertical-align middle
+        font-size 16px
+      .input
+        display inline-block
+        vertical-align middle
+      input
+      select
+        font-size inherit
+        &.error
+          border 1px solid red
+          display inline-block
+          border-radius 5px
+          margin-top 0
+      select
+        background-color $col-cornflower-blue
+        padding 2px 0
+
+      input
+        &::-webkit-input-placeholder
+          font-weight 300
+        &:-moz-placeholder
+          font-weight 300
+        &::-moz-placeholder
+          font-weight 300
+        &:-ms-input-placeholder
+          font-weight 300
+      input[type="checkbox"]
+      input[type="radio"]
+        opacity 0
+      &__period
+        .ic--checkbox-2
+          display inline-block
+          vertical-align middle
+        &__detail
+          display inline-block
+          vertical-align middle
+          padding-left 10px
+          input
+            width 70px
+            font-size 16px
+            margin-right 10px
+          p
+            font-weight 300
+            font-size 16px
+      &--price
+        input
+          width 50px
+      .radio-group
+        &__item
+          padding-right 20px
+          label
+          .ic--checkbox-2
+            display inline-block
+            vertical-align middle
+          label
+            font-weight 200
+            padding-right 5px
+         
