@@ -1280,13 +1280,17 @@ textarea.light:-ms-input-placeholder {
 .txt--cinnabar {
   color: #ee4746 !important;
 }
+.txt--font--18 {
+  font-size: 18px !important;
+  line-height: 26px !important;
+}
 .txt--font--16 {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 16px !important;
+  line-height: 24px !important;
 }
 .txt--font--14 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 14px !important;
+  line-height: 20px !important;
 }
 .txt--h1 {
   font-size: 24px;
@@ -2869,6 +2873,42 @@ textarea.light:-ms-input-placeholder {
   font-weight: 200;
   padding-right: 5px;
 }
+.c-guide__refund-setting .item {
+  margin: 20px auto;
+}
+.c-guide__refund-setting .bullet,
+.c-guide__refund-setting .content {
+  display: inline-block;
+  vertical-align: top;
+}
+.c-guide__refund-setting .bullet {
+  width: 25px;
+  padding-top: 2px;
+}
+.c-guide__refund-setting .bullet span {
+  width: 15px;
+  height: 15px;
+  font-size: 11px;
+  line-height: 15px;
+  background-color: #00a5a5;
+  color: #fff;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+}
+.c-guide__refund-setting .content {
+  width: calc(100% - 25px);
+}
+.c-guide__refund-setting .content input {
+  width: 50px;
+  border-bottom: 1px solid #acacac;
+  text-align: center;
+  color: #c5c9c9;
+}
+.c-guide__refund-setting input[type="checkbox"] {
+  opacity: 0;
+}
 .c-header {
   position: absolute;
   width: 100%;
@@ -3708,6 +3748,12 @@ textarea.light:-ms-input-placeholder {
   padding-right: 10px;
   font-size: 12px;
   color: #00a5a5;
+}
+.c-product-management .banner {
+  background-image: url("../img/bg-banner-green.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .c-product-management__optimization .mark {
   font-size: 12px;
