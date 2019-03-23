@@ -466,9 +466,9 @@ input:-ms-input-placeholder {
 .ic--back {
   background-image: url("../img/ic-left.png");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 7px;
   display: block;
-  width: 7px;
+  width: 25px;
   height: 25px;
   background-position: center;
 }
@@ -476,9 +476,9 @@ input:-ms-input-placeholder {
   background-image: url("../img/ic-left-b.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: 7px;
   display: block;
-  width: 7px;
+  width: 25px;
   height: 25px;
 }
 .ic--close--white {

@@ -3,7 +3,7 @@ extends ../partials/_template
 include ../mixins/_store-comments
 block content
   .c-store--popup--comments.c-process.l-pad--20
-    a.ic--back--black.l-mgn--b-20(href="store.html")
+    a.ic--back--black.l-mgn--b-20.js-go-back(href="javascript:void(0)")
     h2.l-mgn--b-15 120条评价
     img.l-mgn--b-15(src=paths.img + "ic-stars-4.png", alt="4星" width="115")
     ul.l-columns

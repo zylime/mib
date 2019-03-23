@@ -40,6 +40,9 @@ $(document).ready(function(){
   $('[data-js-chat]').Chat();
   $('[data-js-select-and-count]').SelectAndCount();
   $('[data-js-location]').SelectLocation();
+  $('[data-js-get-location]').GetLocation();
+  $('[data-js-select-country]').SelectCountry();
+  $('[data-js-get-country]').GetCountry();
 
   $('[data-js-selected]').Selected();
   $('[data-js-add-product]').AddProduct();
@@ -56,7 +59,8 @@ $(document).ready(function(){
 
  
 
-
+  $('[data-js-get-language]').GetLanguage();
+  $('[data-js-select-language]').SelectLanguage();
 
 
   $('[data-js-tab-panel]').TabPanel();
@@ -67,6 +71,12 @@ $(document).ready(function(){
 
   $('[data-js-progress-bar]').ProgressBar();
   $('[data-js-search]').Search();
+
+  // 返回上一页
+  $('.js-go-back').on('click touch', function(e){
+    e.preventDefault();
+    window.history.go(-1);
+  })
   
   // lightbox on store
   lightbox.option({

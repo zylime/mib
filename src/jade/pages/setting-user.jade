@@ -5,7 +5,7 @@ include ../mixins/_iso-country-list
 block content
   .c-setting--user(data-js-setting-user)
     .l-pad--20
-      a.ic--back--black.l-mgn--b-20(href="setting.html")
+      a.ic--back--black.l-mgn--b-20.js-go-back(href="javascript:void(0)")
     .c-setting--user--thumb
       .c-setting--user--thumb--img
         img(src=paths.img + "setting-user-thumb.jpg", alt="")
@@ -53,23 +53,24 @@ block content
         .col.l-w--20p.txt--r.l-v--m
           .txt--persian-green 验证
       .c-list--item.l-pad--l-20.l-pad--r-20
-        a(href="./select-language.html")
-          .col.l-w--70p.l-v--m
-            .title 语言
-          .col.l-w--30p.txt--r.l-v--m
-            
-            .has-right-arrow--b
-        input.l-w--100p.l-mgn--t-10(type="text", readonly, placeholder="请选择语言")
+        div(data-js-get-language)
+          a(href="./select-language.html")
+            .col.l-w--70p.l-v--m
+              .title 语言
+            .col.l-w--30p.txt--r.l-v--m
+              .has-right-arrow--b
+            input.l-w--100p.l-mgn--t-10(type="text", readonly, placeholder="请选择语言")
     h2.bg--cornflower-blue.l-pad--20 选填内容
     .c-list.l-columns
       .c-list--item.l-pad--l-20.l-pad--r-20
-        a(href="./select-location.html")
-          .col.l-w--70p.l-v--m
-            .title 国家/地区
-          .col.l-w--30p.txt--r.l-v--m
-            
-            .has-right-arrow--b
-        input.l-w--100p.l-mgn--t-10(type="text", readonly, placeholder="请选择国家/地区")
+        div(data-js-get-location)
+          a(href="./select-location.html")
+            .col.l-w--70p.l-v--m
+              .title 国家/地区
+            .col.l-w--30p.txt--r.l-v--m
+              
+              .has-right-arrow--b
+            input.l-w--100p.l-mgn--t-10(type="text", readonly, placeholder="请选择国家/地区")
         
       .c-list--item.l-pad--l-20.l-pad--r-20
         p 所在城市

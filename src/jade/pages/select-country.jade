@@ -4,12 +4,12 @@ include ../mixins/_search-bar
 include ../mixins/_popup
 
 block content
-  .c-select-country-language(data-js-select-and-count)
+  .c-select-country-language(data-js-select-and-count data-js-select-country)
     .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
       .c-header--title
         span.txt--black 已上线区域
       .col.c-header--back.l-w--50p
-        a.ic--back--black(href="#")
+        a.ic--back--black.js-go-back(href="javascript:void(0)")
       .col.l-w--50p
         a(href="javascript:void(0)").js-complete.l-block.l-f--r 完成
     .c-list

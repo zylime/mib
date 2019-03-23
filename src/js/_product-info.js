@@ -61,7 +61,7 @@ $.fn.ProductInfo = function(opts){
         },
         submitHandler: function(e){
           // 临时代码，
-          window.location.href='./business.html';
+          
 
         }
       });

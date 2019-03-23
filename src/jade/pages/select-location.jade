@@ -9,7 +9,7 @@ block content
       .c-header--title
         span.txt--black 地区选择
       .col.c-header--back.l-w--50p
-        a.ic--back--black(href="#")
+        a.ic--back--black.js-go-back(href="javascript:void(0);")
       .col.l-w--50p
         a(href="javascript:void(0)").js-complete.l-block.l-f--r 完成
     .c-location--category 
@@ -30,4 +30,4 @@ block content
     .c-list
       each item in select_location
         .c-list--item.l-pad--l-20.l-pad--r-20.c-location--item.js-selection
-          .c-location--item--name(data-country=item.data)!= item.name
+          .c-location--item--name(data-location=item.name)!= item.name

@@ -4,10 +4,10 @@ include ../mixins/_search-bar
 include ../mixins/_popup
 
 block content
-  .c-select-country-language(data-js-select-and-count)
+  .c-select-country-language(data-js-select-and-count, data-js-select-language)
     .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
       .col.c-header--back.l-w--50p
-        a.ic--back--black(href="#")
+        a.ic--back--black.js-go-back(href="javascript:void(0);")
       .col.l-w--50p
         a(href="javascript:void(0)").js-complete.l-block.l-f--r 完成
     h1.l-mgn--t-20.l-pad--l-20.l-mgn--b-20 语言
@@ -15,4 +15,4 @@ block content
     .c-list
       each item in select_language
         .c-list--item.l-pad--l-20.l-pad--r-20.c-select-country-language--item.js-selection
-          .c-select-country-language--item--name(data-language=item.data)!= item.name
+          .c-select-country-language--item--name(data-language=item.name)!= item.name

@@ -35,13 +35,19 @@ $.fn.SettingUser = function(opts){
   }
 
   function updateAstro(){
+    var today = new Date();
+    var year = today.getFullYear();
+    year = "1950:" + year;
+
+    // console.log(currentYear);
     DOBInput.datepicker({
       changeMonth: true,
       changeYear: true,
+      yearRange: year
     });
+
     DOBInput.on('change', function(){
-      // console.log('changed');
-      var DOB = new Date($(this).val().replace('-', '/'));
+      var DOB = new Date($(this).val());
       var month = DOB.getMonth() + 1;
       var date = DOB.getDate();
       astroInput.html(getAstro(month, date));

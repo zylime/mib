@@ -34,7 +34,7 @@ $.fn.Publish = function(opts){
     var option1 = false;
     var option2 = false;
     // type selected
-    if(url.indexOf('?') >=0 && url.indexOf('t2')){
+    if(url.indexOf('?') >=0 && url.indexOf('t2') >=0){
       var data = location.search.replace('?', '').split('&');
       for(var i = 0; i <data.length; i++){
         dataArray.push(data[i].split('='));
@@ -125,7 +125,7 @@ $.fn.Publish = function(opts){
           },
           submitHandler: function(e){
             // 临时代码，
-            window.location.href='/product-info.html';
+            window.location.href='/add-product-detail.html'; //window.location.href='./business.html';
 
           }
         });

@@ -1,4 +1,4 @@
-$.fn.SelectLocation = function(opts){
+$.fn.SelectCountry = function(opts){
 
   var container = $(this);
   var completeBtn = container.find('.js-complete');
@@ -13,7 +13,6 @@ $.fn.SelectLocation = function(opts){
 
   function events(){
     var queryString;
-
     selections.on('click touch', function(){
       var countryName = $(this).find('.c-location--item--name').html();
       selections.removeClass('active');
@@ -21,20 +20,15 @@ $.fn.SelectLocation = function(opts){
       selected.find('.c-location--item--name').html(countryName);
       selected.removeClass('hide');
 
-      var locString = $(this).find('[data-location]').attr('data-location');
-      
+      var locString = selected.find('[data-country]').attr('data-country');
       queryString = 'loc=' + locString;
-      console.log(queryString);
 
     })
 
     completeBtn.on('click touch', function(){
       // 这里返回之前页面并且需要有参数
       window.location.href="./setting-user.html?" + queryString;
-    });
-
-    // 默认选中国
-    selections.find('[data-location="中国"]').click();
+    })
     
     
   }

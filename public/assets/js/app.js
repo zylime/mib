@@ -359,7 +359,6 @@ $.fn.Checkbox = function (opts) {
       var _value;
       $(this).toggleClass('active');
       _value = $(this).hasClass('active') ? 'selected' : '';
-
       $(this).find('input').val(_value);
     });
   }
@@ -516,6 +515,9 @@ $(document).ready(function () {
   $('[data-js-chat]').Chat();
   $('[data-js-select-and-count]').SelectAndCount();
   $('[data-js-location]').SelectLocation();
+  $('[data-js-get-location]').GetLocation();
+  $('[data-js-select-country]').SelectCountry();
+  $('[data-js-get-country]').GetCountry();
 
   $('[data-js-selected]').Selected();
   $('[data-js-add-product]').AddProduct();
@@ -528,6 +530,9 @@ $(document).ready(function () {
   $('[data-js-checkbox]').Checkbox();
   $('[data-js-radio-box]').RadioBox();
 
+  $('[data-js-get-language]').GetLanguage();
+  $('[data-js-select-language]').SelectLanguage();
+
   $('[data-js-tab-panel]').TabPanel();
 
   $('[data-js-collapse]').Collapse({
@@ -536,6 +541,12 @@ $(document).ready(function () {
 
   $('[data-js-progress-bar]').ProgressBar();
   $('[data-js-search]').Search();
+
+  // 返回上一页
+  $('.js-go-back').on('click touch', function (e) {
+    e.preventDefault();
+    window.history.go(-1);
+  });
 
   // lightbox on store
   lightbox.option({
@@ -775,6 +786,69 @@ $.fn.forgetPsw = function (opts) {
     var ele = ele;
     ele.show();
     $('.js-popup-cover').show();
+  }
+};
+'use strict';
+
+$.fn.GetCountry = function (opts) {
+
+  var container = $(this);
+
+  events();
+
+  function events() {
+    if (location.search.indexOf('loc') > 0) {
+      var queryString = getQueryString('country');
+      container.find('input').val(queryString);
+    }
+  }
+
+  function getQueryString(key) {
+    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+    var result = window.location.search.substr(1).match(reg);
+    return result ? decodeURIComponent(result[2]) : null;
+  }
+};
+'use strict';
+
+$.fn.GetLanguage = function (opts) {
+
+  var container = $(this);
+
+  events();
+
+  function events() {
+
+    if (location.search.indexOf('lang') > 0) {
+      var queryString = getQueryString('lang');
+      container.find('input').val(queryString);
+    }
+  }
+  function getQueryString(key) {
+    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+    var result = window.location.search.substr(1).match(reg);
+    return result ? decodeURIComponent(result[2]) : null;
+  }
+};
+'use strict';
+
+$.fn.GetLocation = function (opts) {
+
+  var container = $(this);
+
+  events();
+
+  function events() {
+    if (location.search.indexOf('loc') > 0) {
+      var queryString = getQueryString('loc');
+      container.find('input').val(queryString);
+    }
+  }
+
+  function getQueryString(key) {
+    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+    var result = window.location.search.substr(1).match(reg);
+    return result ? decodeURIComponent(result[2]) : null;
   }
 };
 'use strict';
@@ -1280,7 +1354,8 @@ $.fn.ProductInfo = function (opts) {
         },
         submitHandler: function submitHandler(e) {
           // 临时代码，
-          window.location.href = './business.html';
+
+
         }
       });
     });
@@ -1457,7 +1532,7 @@ $.fn.Publish = function (opts) {
     var option1 = false;
     var option2 = false;
     // type selected
-    if (url.indexOf('?') >= 0 && url.indexOf('t2')) {
+    if (url.indexOf('?') >= 0 && url.indexOf('t2') >= 0) {
       var data = location.search.replace('?', '').split('&');
       for (var i = 0; i < data.length; i++) {
         dataArray.push(data[i].split('='));
@@ -1540,7 +1615,7 @@ $.fn.Publish = function (opts) {
           },
           submitHandler: function submitHandler(e) {
             // 临时代码，
-            window.location.href = '/product-info.html';
+            window.location.href = '/add-product-detail.html'; //window.location.href='./business.html';
           }
         });
       });
@@ -2295,6 +2370,39 @@ $.fn.SelectAndCount = function (opts) {
 };
 'use strict';
 
+$.fn.SelectCountry = function (opts) {
+
+  var container = $(this);
+  var completeBtn = container.find('.js-complete');
+  var selections = container.find('.js-selection');
+  var selected = container.find('.js-selected');
+
+  var btnLabel = completeBtn.html();
+
+  events();
+
+  function events() {
+    var queryString;
+    selections.on('click touch', function () {
+      var countryName = $(this).find('.c-location--item--name').html();
+      selections.removeClass('active');
+      $(this).toggleClass('active');
+      selected.find('.c-location--item--name').html(countryName);
+      selected.removeClass('hide');
+
+      var locString = selected.find('[data-country]').attr('data-country');
+      queryString = 'loc=' + locString;
+    });
+
+    completeBtn.on('click touch', function () {
+      // 这里返回之前页面并且需要有参数
+      window.location.href = "./setting-user.html?" + queryString;
+    });
+  }
+  function getLocation() {}
+};
+'use strict';
+
 $.fn.SelectFriends = function (opts) {
 
   var container = $(this);
@@ -2357,6 +2465,38 @@ $.fn.SelectFriends = function (opts) {
 };
 'use strict';
 
+$.fn.SelectLanguage = function (opts) {
+
+  var container = $(this);
+  var completeBtn = $(this).find('.js-complete');
+
+  var selections = container.find('.js-selection');
+
+  events();
+
+  function events() {
+    var queryString;
+    selections.on('click touch', function () {
+      var langString;
+
+      container.find('.js-selection.active').each(function () {
+        if (langString === undefined) {
+          langString = $(this).find('[data-language]').attr('data-language');
+        } else {
+          langString += ', ' + $(this).find('[data-language]').attr('data-language');
+        }
+      });
+      // console.log(encodeURIComponent(langString));
+      queryString = 'lang=' + langString;
+    });
+    completeBtn.on('click touch', function () {
+      // 这里返回之前页面并且需要有参数
+      window.location.href = "./setting-user.html?" + queryString;
+    });
+  }
+};
+'use strict';
+
 $.fn.SelectLocation = function (opts) {
 
   var container = $(this);
@@ -2369,18 +2509,30 @@ $.fn.SelectLocation = function (opts) {
   events();
 
   function events() {
-    initSelections();
-  }
-  function getLocation() {}
-  function initSelections() {
+    var queryString;
+
     selections.on('click touch', function () {
       var countryName = $(this).find('.c-location--item--name').html();
       selections.removeClass('active');
       $(this).toggleClass('active');
       selected.find('.c-location--item--name').html(countryName);
       selected.removeClass('hide');
+
+      var locString = $(this).find('[data-location]').attr('data-location');
+
+      queryString = 'loc=' + locString;
+      console.log(queryString);
     });
+
+    completeBtn.on('click touch', function () {
+      // 这里返回之前页面并且需要有参数
+      window.location.href = "./setting-user.html?" + queryString;
+    });
+
+    // 默认选中国
+    selections.find('[data-location="中国"]').click();
   }
+  function getLocation() {}
 };
 'use strict';
 
@@ -2477,13 +2629,19 @@ $.fn.SettingUser = function (opts) {
   }
 
   function updateAstro() {
+    var today = new Date();
+    var year = today.getFullYear();
+    year = "1950:" + year;
+
+    // console.log(currentYear);
     DOBInput.datepicker({
       changeMonth: true,
-      changeYear: true
+      changeYear: true,
+      yearRange: year
     });
+
     DOBInput.on('change', function () {
-      // console.log('changed');
-      var DOB = new Date($(this).val().replace('-', '/'));
+      var DOB = new Date($(this).val());
       var month = DOB.getMonth() + 1;
       var date = DOB.getDate();
       astroInput.html(getAstro(month, date));

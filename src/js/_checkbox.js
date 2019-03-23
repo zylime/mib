@@ -18,7 +18,6 @@ $.fn.Checkbox = function(opts){
       var _value;
       $(this).toggleClass('active');
       _value = $(this).hasClass('active') ? 'selected' : '';
-
       $(this).find('input').val(_value);
      
     })
