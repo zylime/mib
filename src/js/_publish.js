@@ -49,15 +49,14 @@ $.fn.Publish = function(opts){
       if(dataArray.length == 5){
         option2 = dataArray[4][1];
       }
-      
+
       showContent(dataArray[2][1], option1, option2);
     }
 
 
   }
   function showContent(show, option1, option2){
-    // console.log("option1: " + option1);
-    // console.log(option2);
+
     var show = show;
     if(show == '1'){
       $('.js-show-game').removeClass('hide');
@@ -65,14 +64,15 @@ $.fn.Publish = function(opts){
     else{
       $('.js-show-other').removeClass('hide');
       if(option1){
-        switch(option1){
-          case 'input':
-            $('.js-option1-input').removeClass('hide');
-            break;
-          case 'select':
-            $('.js-option1-select').removeClass('hide');
-            break;
-        };
+        $('[data-show="'+option1+'"]').removeClass('hide');
+        // switch(option1){
+        //   case 'input':
+        //     $('.js-option1-input').removeClass('hide');
+        //     break;
+        //   case 'select':
+        //     $('.js-option1-select').removeClass('hide');
+        //     break;
+        // };
       }
       if(option2){
         switch(option2){
@@ -151,7 +151,7 @@ $.fn.Publish = function(opts){
     });
     type.find('.js-type-option').on('click touch', function(e){
       var data = $(this).attr('data-type-option');
-      var option1 = $(this).attr('data-option1');
+      var option1 = $(this).attr('data-type-option');
       var option2 = $(this).attr('data-option2');
       var value = $(this).find('span').html();
       var show = $(this).attr('data-show');

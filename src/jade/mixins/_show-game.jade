@@ -2,9 +2,6 @@ mixin showGame()
   .c-list.c-content
     .c-list--item
       .title.l-mgn--b-10 产品类型
-      p.light 游戏产品授权
-    .c-list--item
-      .title.l-mgn--b-10 游戏类型
       select(name="gameType")
         option(value="") 选择游戏类型
         option(value="RPG") 角色扮演
@@ -21,10 +18,15 @@ mixin showGame()
         option(value="RPG") 单机
         option(value="RPG") 文字
         option(value="RPG") 桌面和棋类
-      //- input(type="text", placeholder="请填写游戏类型，如属多个类型请中间用逗号隔开", name="gameType", required
-      //- )
+      //- p.light 游戏产品授权
+    .c-list--item
+      .title.l-mgn--b-10 游戏类型补充
+      
+      input(type="text", placeholder="请填写游戏类型，如属多个类型请中间用逗号隔开", name="gameType", required
+      )
     .c-list--item
       .title.l-mgn--b-10 游戏名称
+      
       input(type="text", placeholder="请填写游戏名称", name="gameName", required
       )
     .c-list--item

@@ -2,17 +2,98 @@ mixin showOther()
   .c-list.c-content
     .c-list--item
       .title.l-mgn--b-10 在该类别下提供什么具体服务
-      input.js-option1-input.hide(type="text", placeholder="请选择具体类型", value="全套美术设计和制作", disabled)
-      select.js-option1-select.hide(name="typeOptions")
+      input.js-option1-input.hide(type="text", value="全套美术设计和制作", disabled, data-show="美术整包")
+      input.js-option1-input.hide(type="text", value="策划相关的业务外包", disabled, data-show="游戏策划")
+      select.js-option1-select.hide(name="typeOptions", data-show="data11")
         option(value="") 请选择
-        option(value="1") 选项1
-        option(value="2") 选项2
+        option(value="UI") UI
+        option(value="角色") 角色
+        option(value="场景") 场景
+      select.js-option1-select.hide(name="typeOptions", data-show="data12")
+        option(value="") 请选择
+        option(value="角色") 角色
+        option(value="场景") 场景
+      select.js-option1-select.hide(name="typeOptions", data-show="data21")
+        option(value="") 请选择
+        option(value="主宣图") 主宣图
+        option(value="角色插画") 角色插画
+        option(value="") 角色立绘
+        option(value="") 场景概念图
+      select.js-option1-select.hide(name="typeOptions", data-show="data22")
+        option(value="") 请选择
+        option(value="主KV") 主KV
+        option(value="角色插画") 广告图
+        option(value="") 网站设计
+        option(value="") H5设计
+      select.js-option1-select.hide(name="typeOptions", data-show="data23")
+        option(value="") 请选择
+        option(value="") CG
+        option(value="") 视频剪辑
+        option(value="") 广告片
+        option(value="") 引擎视频
+      select.js-option1-select.hide(name="typeOptions", data-show="data31")
+        option(value="") 请选择
+        option(value="") 场景音乐
+        option(value="") 交互式音乐
+      select.js-option1-select.hide(name="typeOptions", data-show="data32")
+        option(value="") 请选择
+        option(value="") 系统音
+        option(value="") UI音
+        option(value="") 动作音
+        option(value="") 环境音
+        option(value="") 技能音
+      select.js-option1-select.hide(name="typeOptions", data-show="data33")
+        option(value="") 请选择
+        option(value="") 有内容配音
+        option(value="") 无内容配音
+      select.js-option1-select.hide(name="typeOptions", data-show="data34")
+        option(value="") 请选择
+        option(value="") 作词
+        option(value="") 作曲
+        option(value="") 演唱
+      select.js-option1-select.hide(name="typeOptions", data-show="data41")
+        option(value="") 请选择
+        each item in select_language
+          option(value!=item.data)!=item.data
+      select.js-option1-select.hide(name="typeOptions", data-show="data42")
+        option(value="") 请选择
+        option(value="") 商务
+        option(value="") 产品运营
+        option(value="") 运维
+      select.js-option1-select.hide(name="typeOptions", data-show="技术对接")
+        option(value="") 请选择
+        option(value="") 渠道SDK
+        option(value="") 技术匹配
+      input.js-option1-input.hide(type="text", value="公司注册相关的代理业务", disabled, data-show="data51")
+      input.js-option1-input.hide(type="text", value="文网文的申请与办理", disabled, data-show="data52")
+      input.js-option1-input.hide(type="text", value="云备案的申请与办理", disabled, data-show="data53")
+      input.js-option1-input.hide(type="text", value="软著的申请与办理", disabled, data-show="data54")
+      input.js-option1-input.hide(type="text", value="知识产权的申请与办理", disabled, data-show="data55")
+      input.js-option1-input.hide(type="text", value="ICP证的申请与办理", disabled, data-show="data56")
+      input.js-option1-input.hide(type="text", value="文化部备案的申请与办理", disabled, data-show="data57")
+      input.js-option1-input.hide(type="text", value="版号的申请与办理", disabled, data-show="data58")
+      input.js-option1-input.hide(type="text", value="APP和网站的全套外包", disabled, data-show="data61")
+      select.js-option1-select.hide(name="typeOptions", data-show="data62")
+        option(value="") 请选择
+        option(value="") 前端
+        option(value="") 后端
+      select.js-option1-select.hide(name="typeOptions", data-show="data63")
+        option(value="") 请选择
+        option(value="") 前端
+        option(value="") 后端
+
+      input.js-option1-input.hide(type="text", value="运维相关的技术外包", disabled, data-show="data64")
+      input.js-option1-input.hide(type="text", value="客服相关的业务外包", disabled, data-show="data71")
+      input.js-option1-input.hide(type="text", value="测试相关的业务外包", disabled, data-show="data72")
+      input.js-option1-input.hide(type="text", value="其他类型", disabled, data-show="data73")
+
         
     .c-list--item
       .title.l-mgn--b-10 请补充该品类下的其他关键词
       input.js-option2-input.hide(type="text", placeholder="如果您有补充，请填写")
       select.js-option2-select.hide(name="keywordsOptions")
         option(value="") 请选择
+        option(value="像素风") 像素风
         option(value="2D") 2D
         option(value="2.5D") 2.5D
         option(value="3D") 3D

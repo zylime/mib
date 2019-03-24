@@ -36,12 +36,13 @@ block content
         .title 包体大小
         input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写项目完整版本体大小的预估，单位为M或G", name="productSize")
       .l-w--100p.border-bottom.l-pad--20
-        .col.l-w--70p.l-v--m
-          .title 目前语言版本有哪些？
-        .col.l-w--30p.txt--r.l-v--m
+        div(data-js-get-language)
           a(href="./select-language.html")
-            .has-right-arrow--b
-        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请选择目前语言版本", name="productLanguage", value="简体中文", readonly)
+            .col.l-w--70p.l-v--m
+              .title 目前语言版本有哪些？
+            .col.l-w--30p.txt--r.l-v--m
+              .has-right-arrow--b
+            input.l-w--100p.l-mgn--t-10(type="text", placeholder="请选择目前语言版本", name="productLanguage", value="简体中文", readonly)
       .l-pad--20
         button.btn-type-3.js-submit 下一步
 

@@ -8,7 +8,7 @@ $.fn.GetCountry = function(opts){
   events();
 
   function events(){
-    if(location.search.indexOf('loc')>0){
+    if(location.search.indexOf('country')>0){
       var queryString = getQueryString('country');
       container.find('input').val(queryString);
     }

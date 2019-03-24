@@ -335,7 +335,7 @@
           "data": "data14",
           "show": "2",
           "option1": "input",
-          "option2": "select"
+          "option2": "input"
         }
       ]
     },
@@ -494,22 +494,29 @@
       "data": "data6",
       "options":[
         {
-          "name": "APP开发",
+          "name": "整包",
           "data": "data61",
           "show": "2",
           "option1": "select",
           "option2": "input"
         },
         {
-          "name": "网站开发",
+          "name": "APP开发",
           "data": "data62",
           "show": "2",
           "option1": "select",
           "option2": "input"
         },
         {
-          "name": "运维相关",
+          "name": "网站开发",
           "data": "data63",
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
+        },
+        {
+          "name": "运维相关",
+          "data": "data64",
           "show": "2",
           "option1": "input",
           "option2": "input"
@@ -517,9 +524,9 @@
       ]
     },
     {
-      "name": "运营相关",
+      "name": "其他",
       "data": "data7",
-      "options":[
+      "options": [
         {
           "name": "客服外包",
           "data": "data71",
@@ -533,16 +540,10 @@
           "show": "2",
           "option1": "input",
           "option2": "input"
-        }
-      ]
-    },
-    {
-      "name": "其他",
-      "data": "data8",
-      "options": [
+        },
         {
           "name": "其他",
-          "data": "data83",
+          "data": "data73",
           "show": "2",
           "option1": "input",
           "option2": "input"

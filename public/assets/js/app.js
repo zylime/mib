@@ -797,7 +797,7 @@ $.fn.GetCountry = function (opts) {
   events();
 
   function events() {
-    if (location.search.indexOf('loc') > 0) {
+    if (location.search.indexOf('country') > 0) {
       var queryString = getQueryString('country');
       container.find('input').val(queryString);
     }
@@ -1551,22 +1551,22 @@ $.fn.Publish = function (opts) {
     }
   }
   function showContent(show, option1, option2) {
-    // console.log("option1: " + option1);
-    // console.log(option2);
+
     var show = show;
     if (show == '1') {
       $('.js-show-game').removeClass('hide');
     } else {
       $('.js-show-other').removeClass('hide');
       if (option1) {
-        switch (option1) {
-          case 'input':
-            $('.js-option1-input').removeClass('hide');
-            break;
-          case 'select':
-            $('.js-option1-select').removeClass('hide');
-            break;
-        };
+        $('[data-show="' + option1 + '"]').removeClass('hide');
+        // switch(option1){
+        //   case 'input':
+        //     $('.js-option1-input').removeClass('hide');
+        //     break;
+        //   case 'select':
+        //     $('.js-option1-select').removeClass('hide');
+        //     break;
+        // };
       }
       if (option2) {
         switch (option2) {
@@ -1637,7 +1637,7 @@ $.fn.Publish = function (opts) {
     });
     type.find('.js-type-option').on('click touch', function (e) {
       var data = $(this).attr('data-type-option');
-      var option1 = $(this).attr('data-option1');
+      var option1 = $(this).attr('data-type-option');
       var option2 = $(this).attr('data-option2');
       var value = $(this).find('span').html();
       var show = $(this).attr('data-show');
@@ -2384,16 +2384,18 @@ $.fn.SelectCountry = function (opts) {
   function events() {
     var queryString;
     selections.on('click touch', function () {
-      var countryName = $(this).find('.c-location--item--name').html();
-      selections.removeClass('active');
-      $(this).toggleClass('active');
-      selected.find('.c-location--item--name').html(countryName);
-      selected.removeClass('hide');
+      var countryString;
 
-      var locString = selected.find('[data-country]').attr('data-country');
-      queryString = 'loc=' + locString;
+      container.find('.js-selection.active').each(function () {
+        if (countryString === undefined) {
+          countryString = $(this).find('[data-country]').attr('data-country');
+        } else {
+          countryString += ', ' + $(this).find('[data-country]').attr('data-country');
+        }
+      });
+      // console.log(encodeURIComponent(langString));
+      queryString = 'country=' + countryString;
     });
-
     completeBtn.on('click touch', function () {
       // 这里返回之前页面并且需要有参数
       window.location.href = "./setting-user.html?" + queryString;

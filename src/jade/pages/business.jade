@@ -9,24 +9,21 @@ block content
     .l-pad--20.border-bottom
       h2 添加商务合作信息
     form.l-columns.c-business--form
-
       .l-w--100p.border-bottom.l-pad--20
-        a(href="./select-location.html")
-          .col.l-w--70p.l-v--m
-            .title 项目开发所在国家/地区
-          .col.l-w--30p.txt--r.l-v--m
-            .has-right-arrow--b
-        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写国家名", name="locationCountry", readonly, value="中国")
+        .col.l-w--100p.l-v--m
+          .title 项目开发所在国家/地区
+        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写国家名", name="locationCountry")
       .l-w--100p.border-bottom.l-pad--20
         .title 项目开发所在城市
         input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写城市名", name="locationCity")
       .l-w--100p.border-bottom.l-pad--20
-        a(href="./select-country.html")
-          .col.l-w--70p.l-v--m
-            .title 已上线区域
-          .col.l-w--30p.txt--r.l-v--m
-              .has-right-arrow--b
-        input.l-w--100p.l-mgn--t-10(placeholder="选择已上线区域", readonly, name="launchLocation", value="中国")
+        div(data-js-get-country)
+          a(href="./select-country.html")
+            .col.l-w--70p.l-v--m
+              .title 已上线区域
+            .col.l-w--30p.txt--r.l-v--m
+                .has-right-arrow--b
+            input.l-w--100p.l-mgn--t-10(placeholder="选择已上线区域", readonly, name="launchLocation", value="")
 
       .l-w--100p.border-bottom.l-pad--20
         .title 可授权区域
