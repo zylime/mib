@@ -554,18 +554,26 @@ $(document).ready(function () {
     'wrapAround': true
   });
 
+  var today = new Date();
+  var yearRange = today.getFullYear();
+  yearRange = "1950:" + yearRange;
   $('.js-ui-datepicker').datepicker({
     changeMonth: true,
     changeYear: true,
-    showButtonPanel: true,
     dateFormat: 'yy-mm',
-    onClose: function onClose(dataText, inst) {
-      var month = $('#ui-datepicker-div .ui-datepicker-month :selected').val();
-      var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
-      $(this).datepicker('setDate', new Date(year, month, 1));
+    yearRange: yearRange,
+    showButtonPanel: true,
+    currentText: "当月",
+    onChangeMonthYear: function onChangeMonthYear(year, month, inst) {
+      $(this).val($.datepicker.formatDate('M yy', new Date(year, month - 1, 1)));
+    },
+    onClose: function onClose(dateText, inst) {
+      var month = $(".ui-datepicker-month :selected").val();
+      var year = $(".ui-datepicker-year :selected").val();
+      $(this).val($.datepicker.formatDate('M yy', new Date(year, month, 1)));
     }
-  }).click(function () {
-    $('.ui-datepicker-calendar').hide();
+  }).focus(function () {
+    $(".ui-datepicker-calendar").hide();
   });
 });
 

@@ -17,6 +17,7 @@ footer {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "PingFang SC", "Helvetica Neue", Helvetica, "Microsoft YaHei";
 }
 h1,
 h2,
@@ -1186,6 +1187,7 @@ footer {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "PingFang SC", "Helvetica Neue", Helvetica, "Microsoft YaHei";
 }
 h1,
 h2,
@@ -2809,10 +2811,12 @@ textarea.light:-ms-input-placeholder {
   display: inline-block;
   vertical-align: middle;
 }
+.c-guide__add-product__item textarea,
 .c-guide__add-product__item input,
 .c-guide__add-product__item select {
   font-size: inherit;
 }
+.c-guide__add-product__item textarea.error,
 .c-guide__add-product__item input.error,
 .c-guide__add-product__item select.error {
   border: 1px solid #f00;
@@ -2822,7 +2826,12 @@ textarea.light:-ms-input-placeholder {
 }
 .c-guide__add-product__item select {
   background-color: #f2f9f8;
-  padding: 2px 0;
+  padding: 2px 0 2px 5%;
+  text-align: center;
+  text-align-last: center;
+}
+.c-guide__add-product__item textarea {
+  height: 24px;
 }
 .c-guide__add-product__item input::-webkit-input-placeholder {
   font-weight: 300;
@@ -2904,7 +2913,7 @@ textarea.light:-ms-input-placeholder {
   width: 50px;
   border-bottom: 1px solid #acacac;
   text-align: center;
-  color: #c5c9c9;
+  color: #000;
 }
 .c-guide__refund-setting input[type="checkbox"] {
   opacity: 0;
@@ -3972,10 +3981,10 @@ textarea.light:-ms-input-placeholder {
   font-size: 16px;
 }
 .c-product-management__edit .preview-button {
-  background-color: #f2f9f8;
-  padding: 5px 12px;
+  background-color: #00a5a5;
+  padding: 5px 18px;
   font-size: 14px;
-  color: #000;
+  color: #fff;
   font-weight: 300;
   border-radius: 5px;
   display: inline-block;

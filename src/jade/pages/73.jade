@@ -4,6 +4,10 @@ include ../mixins/_menu
 
 
 block content
+  style(type='text/css').
+    .ui-datepicker-calendar {
+      display: none;
+    }
   .c-product-management.l-pad--b-60
     .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
       .c-header--title
@@ -104,12 +108,6 @@ block content
                   a.download-excel.txt--persian-green(href="#") 对账明细
 
 
-
-
-
-
-
-    
 
     +menu(4)
 
