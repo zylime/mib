@@ -2810,6 +2810,7 @@ textarea.light:-ms-input-placeholder {
 .c-guide__add-product__item .input {
   display: inline-block;
   vertical-align: middle;
+  width: calc(100% - 80px);
 }
 .c-guide__add-product__item textarea,
 .c-guide__add-product__item input,
@@ -2857,18 +2858,18 @@ textarea.light:-ms-input-placeholder {
   display: inline-block;
   vertical-align: middle;
   padding-left: 10px;
+  width: calc(100% - 30px);
 }
 .c-guide__add-product__item__period__detail input {
   width: 70px;
   font-size: 16px;
-  margin-right: 10px;
 }
 .c-guide__add-product__item__period__detail p {
   font-weight: 300;
   font-size: 16px;
 }
 .c-guide__add-product__item--price input {
-  width: 50px;
+  width: 60px;
 }
 .c-guide__add-product__item .radio-group__item {
   padding-right: 20px;

@@ -24,19 +24,21 @@ block content
                 input(type="text", placeholder="输入商品名称", maxlength="30", name="productName", required)
           .c-guide__add-product__item.c-guide__add-product__item--price.l-w--100p.has-border--bottom.l-pad--l-20.l-pad--r-20.l-pad--b-5.l-mgn--b-20
             .title 定价：
-            .input
-              span ¥
-              input(type="number", value="", placeholder="0.00", name="price")
-              select(name="price_unit")
-                option(value="piece") /个
-                option(value="set") /套
-                option(value="day") /天
-                option(value="person") /天/人
-                option(value="month") /月
-                option(value="year") /年
-                option(value="sentence") /句
-                option(value="kw") /千字
-              span.note (点击更换单位)
+            .input.l-columns
+              .col.l-w--30p.l-v--m
+                span ¥
+                input(type="number", value="", placeholder="0.00", name="price")
+              .col.l-w--70p.l-v--m
+                select(name="price_unit")
+                  option(value="piece") /个
+                  option(value="set") /套
+                  option(value="day") /天
+                  option(value="person") /天/人
+                  option(value="month") /月
+                  option(value="year") /年
+                  option(value="sentence") /句
+                  option(value="kw") /千字
+                span.note (点击更换单位)
           .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-pad--b-5.l-mgn--b-20
             .title 是否接受议价：
             .input
@@ -57,15 +59,16 @@ block content
               .c-guide__add-product__item__period
                 .ic--checkbox-2.js-radio-btn(data-detail="period")
                   input(type="radio", name="period", value="yes")
-                .c-guide__add-product__item__period__detail
-                  input(type="number", name="period_number", value="", placeholder="输入数量")
-                  select(name="time_unit", readonly)
-                    option(value="day") /天
-                    option(value="workday") /工作日
-                    option(value="week") /周
-                    option(value="month") /月
-                    option(value="year") /年
-                  span.note (点击更换单位)
+                .c-guide__add-product__item__period__detail.l-columns
+                  input.col.l-w--30p.l-v--m(type="number", name="period_number", value="", placeholder="输入数量")
+                  .col.l-w--70p.l-v--m
+                    select(name="time_unit", readonly)
+                      option(value="day") /天
+                      option(value="workday") /工作日
+                      option(value="week") /周
+                      option(value="month") /月
+                      option(value="year") /年
+                    span.note (点击更换单位)
             .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.has-border--bottom.l-mgn--b-20.l-pad--b-5.l-mgn--t-20
               .c-guide__add-product__item__period
                 .ic--checkbox-2.active.js-radio-btn(data-detail="false")
