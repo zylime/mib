@@ -1511,6 +1511,7 @@ $.fn.Publish = function (opts) {
 
   var container = $(this);
   var checkbox = container.find('.js-checkbox');
+  var multiCheckbox = container.find('.js-checkbox-multiple');
   var projectExperience = container.find('.js-project-experience');
   var type = container.find('.js-type');
   var selectedTypeLabel = container.find('.js-selected-type');
@@ -1523,6 +1524,10 @@ $.fn.Publish = function (opts) {
   function events() {
     if (checkbox.length > 0) {
       initCheckbox();
+    }
+
+    if (multiCheckbox.length > 0) {
+      initMultiCheckbox();
     }
 
     initPublish();
@@ -1566,6 +1571,7 @@ $.fn.Publish = function (opts) {
     } else {
       $('.js-show-other').removeClass('hide');
       if (option1) {
+        console.log(option1);
         $('[data-show="' + option1 + '"]').removeClass('hide');
         // switch(option1){
         //   case 'input':
@@ -1682,6 +1688,19 @@ $.fn.Publish = function (opts) {
         $(this).addClass('active');
         $(this).attr('data-checked', 'checked');
         $(this).next().val('checked');
+      });
+    });
+  }
+
+  function initMultiCheckbox() {
+    multiCheckbox.each(function () {
+      $(this).on('click touch', function () {
+        var toggleVal = $(this).attr('data-checked') == 'checked' ? '' : 'checked';
+        var inputVal = toggleVal == 'checked' ? true : false;
+
+        $(this).toggleClass('active');
+        $(this).attr('data-checked', toggleVal);
+        $(this).find('input').prop('checked', inputVal);
       });
     });
   }

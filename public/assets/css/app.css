@@ -252,6 +252,7 @@ button {
   border-radius: 5px;
   text-align: center;
   display: block;
+  font-size: initial;
 }
 button.btn-type-3 {
   width: 100%;
@@ -2093,6 +2094,9 @@ textarea.light:-ms-input-placeholder {
 .c-add-card .btn-type-2 {
   font-size: 12px;
 }
+.c-business .btn-type-3 {
+  font-size: 16px;
+}
 .c-business textarea {
   border: none;
 }
@@ -2154,9 +2158,11 @@ textarea.light:-ms-input-placeholder {
   line-height: 20px;
 }
 .c-business .btn-preview {
-  width: 120px;
-  height: 40px;
-  line-height: 40px;
+  padding: 5px 18px;
+  font-weight: 300;
+  font-size: 14px;
+  height: auto;
+  line-height: initial;
   display: inline-block;
 }
 .c-calendar--main--top {
@@ -4124,6 +4130,9 @@ textarea.light:-ms-input-placeholder {
   font-weight: 300;
   line-height: 20px;
 }
+.c-publish .strong input {
+  font-weight: bold;
+}
 .c-publish .ic--add-3.large {
   width: 25px;
   height: 25px;
@@ -4164,6 +4173,13 @@ textarea.light:-ms-input-placeholder {
 }
 .c-publish--categories ul li.selected span {
   color: #fd6160;
+}
+.c-publish--other .checkbox-group .checkbox-item {
+  display: inline-block;
+  margin: 5px 20px 5px 0;
+}
+.c-publish--other .checkbox-group .checkbox-item label {
+  margin-right: 5px;
 }
 .c-register .c-sign-in--form--rol {
   margin-top: 30px;

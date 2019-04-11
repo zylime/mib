@@ -1,9 +1,9 @@
 mixin showOther()
   .c-list.c-content
-    .c-list--item
+    .c-list--item.strong
       .title.l-mgn--b-10 在该类别下提供什么具体服务
-      input.js-option1-input.hide(type="text", value="全套美术设计和制作", disabled, data-show="美术整包")
-      input.js-option1-input.hide(type="text", value="策划相关的业务外包", disabled, data-show="游戏策划")
+      input.js-option1-input.hide(type="text", value="全套美术设计和制作", disabled, data-show="data13")
+      input.js-option1-input.hide(type="text", value="策划相关的业务外包", disabled, data-show="data14")
       select.js-option1-select.hide(name="typeOptions", data-show="data11")
         option(value="") 请选择
         option(value="UI") UI
@@ -53,17 +53,24 @@ mixin showOther()
         option(value="") 演唱
       select.js-option1-select.hide(name="typeOptions", data-show="data41")
         option(value="") 请选择
-        each item in select_language
-          option(value!=item.data)!=item.data
+        option(value="") 文字翻译
+        option(value="") 外语配音
+        //- option(value="") 请选择
+        //- each item in select_language
+        //-   option(value!=item.data)!=item.data
       select.js-option1-select.hide(name="typeOptions", data-show="data42")
         option(value="") 请选择
         option(value="") 商务
         option(value="") 产品运营
         option(value="") 运维
-      select.js-option1-select.hide(name="typeOptions", data-show="技术对接")
+      select.js-option1-select.hide(name="typeOptions", data-show="data43")
         option(value="") 请选择
         option(value="") 渠道SDK
         option(value="") 技术匹配
+      select.js-option1-select.hide(name="typeOptions", data-show="data44")
+        option(value="") 请选择
+        option(value="") 文化部备案
+        option(value="") 版本申请
       input.js-option1-input.hide(type="text", value="公司注册相关的代理业务", disabled, data-show="data51")
       input.js-option1-input.hide(type="text", value="文网文的申请与办理", disabled, data-show="data52")
       input.js-option1-input.hide(type="text", value="云备案的申请与办理", disabled, data-show="data53")
@@ -91,13 +98,28 @@ mixin showOther()
     .c-list--item
       .title.l-mgn--b-10 请补充该品类下的其他关键词
       input.js-option2-input.hide(type="text", placeholder="如果您有补充，请填写")
-      select.js-option2-select.hide(name="keywordsOptions")
-        option(value="") 请选择
-        option(value="像素风") 像素风
-        option(value="2D") 2D
-        option(value="2.5D") 2.5D
-        option(value="3D") 3D
-        option(value="次世代") 次世代
+      .checkbox-group.js-option2-select.hide
+        .checkbox-item
+          label 像素风
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="checkbox1", value="")
+        .checkbox-item
+          label 2D
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="checkbox1", value="")
+        .checkbox-item
+          label 2.5D
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="checkbox1", value="")
+        .checkbox-item
+          label 3D
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="checkbox1", value="")
+        .checkbox-item
+          label 次世代
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="checkbox1", value="")
+  
     .c-list--item.l-columns
       .title.l-mgn--b-10 您是个人供应商还是代表公司提供服务？
       .note.l-mgn--b-20 此信息将会显示给用户，请您根据实际情况选择

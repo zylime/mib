@@ -405,7 +405,7 @@
       "data": "data4",
       "options":[
         {
-          "name": "翻译",
+          "name": "翻译配音",
           "data": "data41",
           "show": "2",
           "option1": "select",
@@ -414,6 +414,13 @@
         {
           "name": "运营外包",
           "data": "data42",
+          "show": "2",
+          "option1": "select",
+          "option2": "input"
+        },
+        {
+          "name": "资质申请",
+          "data": "data44",
           "show": "2",
           "option1": "select",
           "option2": "input"
@@ -461,28 +468,28 @@
         },
         {
           "name": "知识产权",
-          "data": "data54",
-          "show": "2",
-          "option1": "input",
-          "option2": "input"
-        },
-        {
-          "name": "ICP证",
           "data": "data55",
           "show": "2",
           "option1": "input",
           "option2": "input"
         },
         {
-          "name": "文化部备案",
+          "name": "ICP证",
           "data": "data56",
           "show": "2",
           "option1": "input",
           "option2": "input"
         },
         {
-          "name": "版号",
+          "name": "文化部备案",
           "data": "data57",
+          "show": "2",
+          "option1": "input",
+          "option2": "input"
+        },
+        {
+          "name": "版号",
+          "data": "data58",
           "show": "2",
           "option1": "input",
           "option2": "input"
