@@ -1,76 +1,243 @@
 mixin showOther()
   .c-list.c-content
-    .c-list--item.strong
+    .c-list--item
       .title.l-mgn--b-10 在该类别下提供什么具体服务
       input.js-option1-input.hide(type="text", value="全套美术设计和制作", disabled, data-show="data13")
       input.js-option1-input.hide(type="text", value="策划相关的业务外包", disabled, data-show="data14")
-      select.js-option1-select.hide(name="typeOptions", data-show="data11")
-        option(value="") 请选择
-        option(value="UI") UI
-        option(value="角色") 角色
-        option(value="场景") 场景
-      select.js-option1-select.hide(name="typeOptions", data-show="data12")
-        option(value="") 请选择
-        option(value="角色") 角色
-        option(value="场景") 场景
-      select.js-option1-select.hide(name="typeOptions", data-show="data21")
-        option(value="") 请选择
-        option(value="主宣图") 主宣图
-        option(value="角色插画") 角色插画
-        option(value="") 角色立绘
-        option(value="") 场景概念图
-      select.js-option1-select.hide(name="typeOptions", data-show="data22")
-        option(value="") 请选择
-        option(value="主KV") 主KV
-        option(value="角色插画") 广告图
-        option(value="") 网站设计
-        option(value="") H5设计
-      select.js-option1-select.hide(name="typeOptions", data-show="data23")
-        option(value="") 请选择
-        option(value="") CG
-        option(value="") 视频剪辑
-        option(value="") 广告片
-        option(value="") 引擎视频
-      select.js-option1-select.hide(name="typeOptions", data-show="data31")
-        option(value="") 请选择
-        option(value="") 场景音乐
-        option(value="") 交互式音乐
-      select.js-option1-select.hide(name="typeOptions", data-show="data32")
-        option(value="") 请选择
-        option(value="") 系统音
-        option(value="") UI音
-        option(value="") 动作音
-        option(value="") 环境音
-        option(value="") 技能音
-      select.js-option1-select.hide(name="typeOptions", data-show="data33")
-        option(value="") 请选择
-        option(value="") 有内容配音
-        option(value="") 无内容配音
-      select.js-option1-select.hide(name="typeOptions", data-show="data34")
-        option(value="") 请选择
-        option(value="") 作词
-        option(value="") 作曲
-        option(value="") 演唱
-      select.js-option1-select.hide(name="typeOptions", data-show="data41")
-        option(value="") 请选择
-        option(value="") 文字翻译
-        option(value="") 外语配音
-        //- option(value="") 请选择
-        //- each item in select_language
-        //-   option(value!=item.data)!=item.data
-      select.js-option1-select.hide(name="typeOptions", data-show="data42")
-        option(value="") 请选择
-        option(value="") 商务
-        option(value="") 产品运营
-        option(value="") 运维
-      select.js-option1-select.hide(name="typeOptions", data-show="data43")
-        option(value="") 请选择
-        option(value="") 渠道SDK
-        option(value="") 技术匹配
-      select.js-option1-select.hide(name="typeOptions", data-show="data44")
-        option(value="") 请选择
-        option(value="") 文化部备案
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data11")
+      //-   option(value="") 请选择
+      //-   option(value="UI") UI
+      //-   option(value="角色") 角色
+      //-   option(value="场景") 场景
+      .checkbox-group.js-option1-select.hide(data-show="data11")
+        .checkbox-item
+          label UI
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 角色
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 场景
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data12")
+      //-   option(value="") 请选择
+      //-   option(value="角色") 角色
+      //-   option(value="场景") 场景
+      .checkbox-group.js-option1-select.hide(data-show="data12")
+        .checkbox-item
+          label 角色
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 场景
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data21")
+      //-   option(value="") 请选择
+      //-   option(value="主宣图") 主宣图
+      //-   option(value="角色插画") 角色插画
+      //-   option(value="") 角色立绘
+      //-   option(value="") 场景概念图
+      .checkbox-group.js-option1-select.hide(data-show="data21")
+        .checkbox-item
+          label 主宣图
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 角色插画
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 角色立绘
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 场景概念图
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data22")
+      //-   option(value="") 请选择
+      //-   option(value="主KV") 主KV
+      //-   option(value="角色插画") 广告图
+      //-   option(value="") 网站设计
+      //-   option(value="") H5设计
+      .checkbox-group.js-option1-select.hide(data-show="data22")
+        .checkbox-item
+          label 主KV
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 广告图
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 网站设计
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label H5设计
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data23")
+      //-   option(value="") 请选择
+      //-   option(value="") CG
+      //-   option(value="") 视频剪辑
+      //-   option(value="") 广告片
+      //-   option(value="") 引擎视频
+      .checkbox-group.js-option1-select.hide(data-show="data23")
+        .checkbox-item
+          label CG
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 视频剪辑
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 广告片
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 引擎视频
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data31")
+      //-   option(value="") 请选择
+      //-   option(value="") 场景音乐
+      //-   option(value="") 交互式音乐
+      .checkbox-group.js-option1-select.hide(data-show="data31")
+        .checkbox-item
+          label 场景音乐
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 交互式音乐
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data32")
+      //-   option(value="") 请选择
+      //-   option(value="") 系统音
+      //-   option(value="") UI音
+      //-   option(value="") 动作音
+      //-   option(value="") 环境音
+      //-   option(value="") 技能音
+      .checkbox-group.js-option1-select.hide(data-show="data32")
+        .checkbox-item
+          label 系统音
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label UI音
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 动作音
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 环境音
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 技能音
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data33")
+      //-   option(value="") 请选择
+      //-   option(value="") 有内容配音
+      //-   option(value="") 无内容配音
+      .checkbox-group.js-option1-select.hide(data-show="data33")
+        .checkbox-item
+          label 有内容配音
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 无内容配音
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data34")
+      //-   option(value="") 请选择
+      //-   option(value="") 作词
+      //-   option(value="") 作曲
+      //-   option(value="") 演唱
+      .checkbox-group.js-option1-select.hide(data-show="data34")
+        .checkbox-item
+          label 作词
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 作曲
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 演唱
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data41")
+      //-   option(value="") 请选择
+      //-   option(value="") 文字翻译
+      //-   option(value="") 外语配音
+      .checkbox-group.js-option1-select.hide(data-show="data41")
+        .checkbox-item
+          label 文字翻译
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 外语配音
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data42")
+      //-   option(value="") 请选择
+      //-   option(value="") 商务
+      //-   option(value="") 产品运营
+      //-   option(value="") 运维
+      .checkbox-group.js-option1-select.hide(data-show="data42")
+        .checkbox-item
+          label 商务
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 产品运营
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 运维
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data43")
+      //-   option(value="") 请选择
+      //-   option(value="") 渠道SDK
+      //-   option(value="") 技术匹配
+      .checkbox-group.js-option1-select.hide(data-show="data43")
+        .checkbox-item
+          label 渠道SDK
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 技术匹配
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data44")
+      //-   option(value="") 请选择
+      //-   option(value="") 文化部备案
         option(value="") 版本申请
+      .checkbox-group.js-option1-select.hide(data-show="data44")
+        .checkbox-item
+          label 文化部备案
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 版本申请
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
       input.js-option1-input.hide(type="text", value="公司注册相关的代理业务", disabled, data-show="data51")
       input.js-option1-input.hide(type="text", value="文网文的申请与办理", disabled, data-show="data52")
       input.js-option1-input.hide(type="text", value="云备案的申请与办理", disabled, data-show="data53")
@@ -80,14 +247,32 @@ mixin showOther()
       input.js-option1-input.hide(type="text", value="文化部备案的申请与办理", disabled, data-show="data57")
       input.js-option1-input.hide(type="text", value="版号的申请与办理", disabled, data-show="data58")
       input.js-option1-input.hide(type="text", value="APP和网站的全套外包", disabled, data-show="data61")
-      select.js-option1-select.hide(name="typeOptions", data-show="data62")
-        option(value="") 请选择
-        option(value="") 前端
-        option(value="") 后端
-      select.js-option1-select.hide(name="typeOptions", data-show="data63")
-        option(value="") 请选择
-        option(value="") 前端
-        option(value="") 后端
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data62")
+      //-   option(value="") 请选择
+      //-   option(value="") 前端
+      //-   option(value="") 后端
+      .checkbox-group.js-option1-select.hide(data-show="data62")
+        .checkbox-item
+          label 前端
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 后端
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+      //- select.js-option1-select.hide(name="typeOptions", data-show="data63")
+      //-   option(value="") 请选择
+      //-   option(value="") 前端
+      //-   option(value="") 后端
+      .checkbox-group.js-option1-select.hide(data-show="data63")
+        .checkbox-item
+          label 前端
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
+        .checkbox-item
+          label 后端
+          .ic--checkbox-2.l-f--r.js-checkbox-multiple(data-checked='')
+            input(type="hidden", name="", value="")
 
       input.js-option1-input.hide(type="text", value="运维相关的技术外包", disabled, data-show="data64")
       input.js-option1-input.hide(type="text", value="客服相关的业务外包", disabled, data-show="data71")

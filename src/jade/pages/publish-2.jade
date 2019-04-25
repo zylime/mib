@@ -5,9 +5,12 @@ include ../mixins/_show-other
 
 block content
   .c-publish(data-js-publish)
-    .l-pad--20
-      a.ic--back--black.l-mgn--b-20.js-go-back(href="javascript:void(0)")
-    h2.l-pad--l-20.l-pad--r-20.l-pad--b-20 请选择你要发布商品的类型
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black.js-go-back(href="javascript:void(0)")
+      .col.l-w--50p.txt--r.l-v--m
+        a(href="javascript:void(0)") 保存并退出
+    h2.l-pad--20 请选择你要发布商品的类型
     hr.hr
     form
       .c-list.c-content

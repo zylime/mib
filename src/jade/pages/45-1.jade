@@ -1,0 +1,22 @@
+//- 我的店主用户45-1
+extends ../partials/_template
+include ../mixins/_menu
+
+block content
+  .c-setting.has-menu
+    .c-setting--top.l-pad--20
+      .l-columns
+        .col.l-w--80p.l-v--m
+          h1 Lina
+          a(href="./user.html") 查看并编辑个人资料
+        .col.l-w--20p.l-v--m
+          a(href="./user.html")
+            img.l-w--100p.has-corner--50p(src=paths.img + "user-thumb.jpg", alt="Lina")
+    .c-list.l-pad--l-20.l-pad--r-20.l-columns
+      each item in setting_list_2
+        a.c-list--item(href=item.link)
+          .col.l-w--70p.l-v--m
+            .title!= item.title
+          .col.l-w--30p.l-v--m.txt--r
+            .l-inl-b.l-v--m(class=item.icon)
+  +menu(4)

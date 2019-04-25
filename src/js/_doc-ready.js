@@ -61,6 +61,7 @@ $(document).ready(function(){
 
   $('[data-js-get-language]').GetLanguage();
   $('[data-js-select-language]').SelectLanguage();
+  $('[data-js-select-language-single]').SelectLanguageSingle();
 
 
   $('[data-js-tab-panel]').TabPanel();

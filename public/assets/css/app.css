@@ -1092,6 +1092,22 @@ input:-ms-input-placeholder {
   width: 24px;
   height: 24px;
 }
+.ic--setting--9 {
+  background-image: url("../img/ic-setting-9.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+.ic--setting--10 {
+  background-image: url("../img/ic-setting-10.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
 .ic--edit {
   background-image: url("../img/ic-edit.png");
   background-size: 100%;
@@ -2804,7 +2820,7 @@ textarea.light:-ms-input-placeholder {
   font-size: 16px;
 }
 .c-guide__add-product__item .note {
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 200;
   padding-left: 10px;
 }
@@ -2836,9 +2852,11 @@ textarea.light:-ms-input-placeholder {
   padding: 2px 0 2px 5%;
   text-align: center;
   text-align-last: center;
+  font-size: 12px;
 }
 .c-guide__add-product__item textarea {
   height: 24px;
+  border: none;
 }
 .c-guide__add-product__item input::-webkit-input-placeholder {
   font-weight: 300;
@@ -2875,10 +2893,17 @@ textarea.light:-ms-input-placeholder {
   font-size: 16px;
 }
 .c-guide__add-product__item--price input {
-  width: 60px;
+  width: 90px;
+}
+.c-guide__add-product__item--price .left {
+  width: 110px;
+}
+.c-guide__add-product__item--price .right {
+  width: calc(100% - 110px);
 }
 .c-guide__add-product__item .radio-group__item {
   padding-right: 20px;
+  margin-bottom: 10px;
 }
 .c-guide__add-product__item .radio-group__item label,
 .c-guide__add-product__item .radio-group__item .ic--checkbox-2 {
@@ -4085,22 +4110,22 @@ textarea.light:-ms-input-placeholder {
 }
 .c-publish input::-webkit-input-placeholder,
 .c-publish textarea::-webkit-input-placeholder {
-  color: #c5c9c9;
+  color: #000;
   font-weight: 300;
 }
 .c-publish input:-moz-placeholder,
 .c-publish textarea:-moz-placeholder {
-  color: #c5c9c9;
+  color: #000;
   font-weight: 300;
 }
 .c-publish input::-moz-placeholder,
 .c-publish textarea::-moz-placeholder {
-  color: #c5c9c9;
+  color: #000;
   font-weight: 300;
 }
 .c-publish input:-ms-input-placeholder,
 .c-publish textarea:-ms-input-placeholder {
-  color: #c5c9c9;
+  color: #000;
   font-weight: 300;
 }
 .c-publish select {
