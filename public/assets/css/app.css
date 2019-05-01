@@ -3642,6 +3642,40 @@ textarea.light:-ms-input-placeholder {
 .c-price-detail--section ul li:nth-last-of-type(1):after {
   display: none;
 }
+.c-price-detail--section ul li .left,
+.c-price-detail--section ul li .right {
+  display: inline-block;
+  vertical-align: top;
+}
+.c-price-detail--section ul li .right {
+  max-width: calc(100% - 60px);
+}
+.c-price-detail--section--product {
+  border: none;
+  border-radius: 0;
+  margin: 20px 0;
+  padding: 0;
+}
+.c-price-detail--section--product--item {
+  padding: 20px;
+  margin-bottom: 40px;
+}
+.c-price-detail--section--product--item .left,
+.c-price-detail--section--product--item .right {
+  display: inline-block;
+}
+.c-price-detail--section--product--item .comments {
+  background-color: #faf9f9;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 300;
+}
+.c-price-detail--section--terms {
+  border: none;
+  border-radius: 0;
+  margin: 20px 0;
+  padding: 0;
+}
 .c-process h2 {
   font-size: 28px;
 }

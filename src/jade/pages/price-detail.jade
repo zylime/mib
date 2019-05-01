@@ -4,45 +4,39 @@ extends ../partials/_template
 block content
   .c-price-detail.l-pad--20
     a.ic--back--black.l-mgn--b-20.js-go-back(href="javascript:void(0)")
-    h2.l-mgn--b-10 价格明细
-    p.smaller 高性价比，高品质服务
-    .c-price-detail--section
-      h4 主宣图
-      p.
-        韩国顶级画师<span class="txt--persian-green">2500/天</span>，周期<span class="txt--persian-green">30天</span>
-      p.
-        中国顶级画师<span class="txt--persian-green">2500/天</span>，周期<span class="txt--persian-green">45天</span>
-      p.
-        中国高级画师<span class="txt--persian-green">1000/天</span>，周期<span class="txt--persian-green">30天</span>
-      br
-      h4 角色宣传插画
-      p.
-        韩国顶级画师<span class="txt--persian-green">1000/天</span>，周期<span class="txt--persian-green">30天</span>
-      p.
-        中国顶级画师<span class="txt--persian-green">800/天</span>，周期<span class="txt--persian-green">30天</span>
-      p.
-        中国高级画师<span class="txt--persian-green">600/天</span>，周期<span class="txt--persian-green">25天</span>
+    h3.l-mgn--b-10 价格明细
+    p 高性价比，高品质服务
+    .c-price-detail--section.c-price-detail--section--product
+      each item in price_detail
+        .c-price-detail--section--product--item.has-shadow
+          .l-mgn--b-10
+            .left
+              strong 商品名称：
+            .right
+              strong!=item.title
+          .l-mgn--b-10
+            .left
+              strong 商品单价：
+            .right
+              .txt--bittersweet!=item.price
+          .l-mgn--b-10
+            .left
+              strong 项目周期：
+            .right
+              .txt--persian-green!=item.duration
+          .l-mgn--b-10
+            .left
+              strong 是否接受议价：
+            .right
+              .txt--persian-green!=item.bargain
+          .l-mgn--b-10
+            .l-mgn--b-10
+              strong 其他补充说明：
+            .comments!=item.comments
+
+  .c-menu.l-pad--20.no-shadow
+    a.btn-type-3(href="./9-2.html") 下一步
     
-    h3 交付流程    
-    .c-price-detail--section.c-price-detail--section--process
-      ul
-        li.
-          <strong>第1步：</strong>提交详细需求
-        li.
-          <strong>第2步：</strong>下单并完成款项支付
-        li.
-          <strong>第3步：</strong>制作启动，在约定的时间内完成样稿设计并在平台上提交给您
-        li.
-          <strong>第4步：</strong>请在<span class="txt--persian-green">2个工作日</span>内返回修改意见
-        li.
-          <strong>第5步：</strong>请在<span class="txt--persian-green">5个工作日</span>内反馈改好的设计样稿并在平台上提交给您
-        li.
-          <strong>第6步：</strong>针对样稿返回修改意见，循环第<span class="txt--persian-green">3-5步</span>最终确认终稿
-    
-    h3 退订政策
-    .c-price-detail--section.c-price-detail--section--terms
-      p.
-        距离项目启动时间<span class="txt--bittersweet">至少5天</span>取消预订才可全额退款  (服务费除外）。距离启动日期<span class="txt--bittersweet">5议案内</span>取消预订，扣除预<span class="txt--bittersweet">付款的30%</span>，剩余的款项全额退还。尚未入驻，且在预订确认后<span class="txt--bittersweet">48小时内</span>取消的预订，将退还服务费。
 
 
 

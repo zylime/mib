@@ -1,17 +1,40 @@
-//- 退订
+//- 退订政策9-3
 extends ../partials/_template
 
 block content
-  .c-process.l-pad--20
-    a.ic--back--black.l-mgn--b-20.js-go-back(href="javascript:void(0)")
-    h2.l-mgn--b-10 退订政策
-    p.smaller 灵活
-    br
-    p.
-      距离项目启动时间<span class="txt--persian-green">至少5天</span>取消预订才可全额退款（服务费除外）。距离启动日期<span class="txt--persian-green">5议案内</span>取消预订，<span class="txt--persian-green">扣除预付款的30%</span>，剩余的款项全额退还。尚未入驻，且在预定确认后<span class="txt--persian-green">48小时内</span>取消的预订，将退换服务费。
+  .c-price-detail
+    .l-pad--20
+      a.ic--back--black.js-go-back(href="javascript:void(0)")
+    .l-pad--l-20.l-pad--r-20
+      h3.l-mgn--b-10 退订政策
+      p 灵活退订，为您提供权益保障：
 
+    .c-price-detail--section.c-price-detail--section--terms
+      .c-guide__refund-setting
+        hr.hr
+        .l-pad--l-20.l-pad--r-20
+          .item
+            .bullet
+              span 1
+            .content.
+              距离项目启动时间至少<input type="number" value="3" disabled class="txt--persian-green">天 取消预订可全额退款(服务费除外)；在该时间内、但项目尚未启动前取消预订扣除预付款的<input type="number" value="30" class="txt--persian-green">%，服务费不退。
+          .item
+            .bullet
+              span 2
+            .content 项目启动后不接受退款。
+          .item
+            .bullet
+              span 3
+            .content.
+              下单并付款完成后<input type="number" value="48">小时内取消的预订，服务费可全额退还。
+          .item
+            .bullet
+              span 4
+            .content 因服务质量问题导致的客户退款，根据实际情况另行商议。
+        hr.hr
 
-
+    
+ 
 
 
 
