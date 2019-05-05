@@ -38,13 +38,13 @@ $.fn.ProductManagement = function(opts){
     })
     morePopup.show();
     popupCover.show();
-    stopBodyScrolling(true);
+    // stopBodyScrolling(true);
   }
 
   function closePopup(){
     morePopup.hide();
     popupCover.hide();
-    stopBodyScrolling(false);
+    // stopBodyScrolling(false);
   }
 
   function stopBodyScrolling(bool){
