@@ -25,6 +25,7 @@ $.fn.Publish = function(opts){
     initPublish();
     if(projectExperience.length > 0){
       addProjectExperience();
+      removeProjectExperience();
     }
 
     if(type.length > 0){
@@ -226,7 +227,16 @@ $.fn.Publish = function(opts){
   function addProjectExperience(){
     var html = projectExperience.html();
     container.find('.js-add').on('click touch', function(){
-      projectExperience.append(html);
+      if(container.find('.js-add').length<10){
+        projectExperience.append(html);
+      }
+      
+    })
+  }
+
+  function removeProjectExperience(){
+    container.find('.js-remove-btn').on('click touch', function(){
+      $(this).parents('.c-list--item').remove();
     })
   }
 

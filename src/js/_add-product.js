@@ -14,14 +14,22 @@ $.fn.AddProduct = function(opts){
     initAll();
     
     addNewProductBtn.on('click touch', function(){
-      $(productHtml).appendTo(container.find('.js-product-container'));
-      initAll();
+      if($('.c-guide__add-product').length<10){
+        $(productHtml).appendTo(container.find('.js-product-container'));
+        initAll();
+      }
+      else{
+        addNewProductBtn.hide();
+      }
+      
     })
+    
     
   }
   function initAll(){
     radioToggle();
     checkboxToggle();
+    removeItem();
     submitBtn.on('click touch', function(){
       $('input[name="period"][value="yes"]').each(function(){
         // 周期预估 输入数量 true
@@ -70,6 +78,14 @@ $.fn.AddProduct = function(opts){
       $(this).toggleClass('active');
  
 
+    })
+  }
+
+  function removeItem(){
+    container.find('.js-remove-btn').on('click touch', function(){
+      $(this).parents('.c-guide__add-product').remove();
+      console.log('aaa');
+      addNewProductBtn.show();
     })
   }
 

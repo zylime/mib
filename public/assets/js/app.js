@@ -165,13 +165,18 @@ $.fn.AddProduct = function (opts) {
     initAll();
 
     addNewProductBtn.on('click touch', function () {
-      $(productHtml).appendTo(container.find('.js-product-container'));
-      initAll();
+      if ($('.c-guide__add-product').length < 10) {
+        $(productHtml).appendTo(container.find('.js-product-container'));
+        initAll();
+      } else {
+        addNewProductBtn.hide();
+      }
     });
   }
   function initAll() {
     radioToggle();
     checkboxToggle();
+    removeItem();
     submitBtn.on('click touch', function () {
       $('input[name="period"][value="yes"]').each(function () {
         // 周期预估 输入数量 true
@@ -214,6 +219,14 @@ $.fn.AddProduct = function (opts) {
   function checkboxToggle() {
     container.find('.js-checkbox').on('click touch', function () {
       $(this).toggleClass('active');
+    });
+  }
+
+  function removeItem() {
+    container.find('.js-remove-btn').on('click touch', function () {
+      $(this).parents('.c-guide__add-product').remove();
+      console.log('aaa');
+      addNewProductBtn.show();
     });
   }
 };
@@ -1534,6 +1547,7 @@ $.fn.Publish = function (opts) {
     initPublish();
     if (projectExperience.length > 0) {
       addProjectExperience();
+      removeProjectExperience();
     }
 
     if (type.length > 0) {
@@ -1717,7 +1731,15 @@ $.fn.Publish = function (opts) {
   function addProjectExperience() {
     var html = projectExperience.html();
     container.find('.js-add').on('click touch', function () {
-      projectExperience.append(html);
+      if (container.find('.js-add').length < 10) {
+        projectExperience.append(html);
+      }
+    });
+  }
+
+  function removeProjectExperience() {
+    container.find('.js-remove-btn').on('click touch', function () {
+      $(this).parents('.c-list--item').remove();
     });
   }
 };
