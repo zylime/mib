@@ -2852,11 +2852,22 @@ textarea.light:-ms-input-placeholder {
   padding: 2px 0 2px 5%;
   text-align: center;
   text-align-last: center;
-  font-size: 12px;
 }
 .c-guide__add-product__item textarea {
   height: 24px;
   border: none;
+}
+.c-guide__add-product__item textarea:-ms-input-placeholder,
+.c-guide__add-product__item input:-ms-input-placeholder {
+  color: #dde0e3;
+}
+.c-guide__add-product__item textarea::-ms-input-placeholder,
+.c-guide__add-product__item input::-ms-input-placeholder {
+  color: #dde0e3;
+}
+.c-guide__add-product__item textarea::placeholder,
+.c-guide__add-product__item input::placeholder {
+  color: #dde0e3;
 }
 .c-guide__add-product__item input::-webkit-input-placeholder {
   font-weight: 300;
@@ -2915,7 +2926,7 @@ textarea.light:-ms-input-placeholder {
   padding-right: 5px;
 }
 .c-guide__refund-setting .item {
-  margin: 20px auto;
+  margin: 30px auto;
 }
 .c-guide__refund-setting .bullet,
 .c-guide__refund-setting .content {

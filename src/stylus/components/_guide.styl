@@ -114,11 +114,19 @@
         padding 2px 0 2px 5%
         text-align center
         text-align-last center
-        font-size 12px
-        
+        // font-size 12px
+
       textarea
         height 24px
         border none
+      textarea
+      input
+        &:-ms-input-placeholder
+          color $col-iron
+        &::-ms-input-placeholder
+          color $col-iron
+        &::placeholder
+          color $col-iron
       input
         &::-webkit-input-placeholder
           font-weight 300
@@ -168,7 +176,7 @@
          
   &__refund-setting
     .item
-      margin 20px auto
+      margin 30px auto
     .bullet
     .content
       display inline-block
