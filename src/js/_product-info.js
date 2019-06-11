@@ -13,6 +13,7 @@ $.fn.ProductInfo = function(opts){
   function events(){
     addMedia();
     formValidation();
+    removeMedia();
   }
 
   function addMedia(){
@@ -75,6 +76,12 @@ $.fn.ProductInfo = function(opts){
       container.find('.js-media input[type="file"]').removeAttr("capture");
     }
     
+  }
+
+  function removeMedia(){
+    container.on('click touch','.js-remove-media', function(){
+      $(this).parent('.item.uploaded').remove();
+    })
   }
 
   function isIOSDevice(){

@@ -172,6 +172,10 @@ $.fn.AddProduct = function (opts) {
         addNewProductBtn.hide();
       }
     });
+
+    $(document).on('click touch', '.js-collapse-btn', function () {
+      $(this).parent('.collapse').toggleClass('active');
+    });
   }
   function initAll() {
     radioToggle();
@@ -224,8 +228,7 @@ $.fn.AddProduct = function (opts) {
 
   function removeItem() {
     container.find('.js-remove-btn').on('click touch', function () {
-      $(this).parents('.c-guide__add-product').remove();
-      console.log('aaa');
+      $(this).parents('.c-guide__add-product__list').remove();
       addNewProductBtn.show();
     });
   }
@@ -1331,6 +1334,7 @@ $.fn.ProductInfo = function (opts) {
   function events() {
     addMedia();
     formValidation();
+    removeMedia();
   }
 
   function addMedia() {
@@ -1387,6 +1391,12 @@ $.fn.ProductInfo = function (opts) {
     if (isIOSDevice) {
       container.find('.js-media input[type="file"]').removeAttr("capture");
     }
+  }
+
+  function removeMedia() {
+    container.on('click touch', '.js-remove-media', function () {
+      $(this).parent('.item.uploaded').remove();
+    });
   }
 
   function isIOSDevice() {

@@ -2813,8 +2813,37 @@ textarea.light:-ms-input-placeholder {
   font-size: 16px;
   line-height: 24px;
 }
+.c-guide__add-product {
+  padding-top: 20px;
+}
 .c-guide__add-product #period_number-error {
   display: none !important;
+}
+.c-guide__add-product__list .collapse i:after {
+  content: "+";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: #00a5a5;
+  color: #fff;
+  line-height: 17px;
+  font-size: 14px;
+  text-align: center;
+  font-style: initial;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.c-guide__add-product__list .collapse .c-guide__add-product {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.8s;
+}
+.c-guide__add-product__list .collapse.active i:after {
+  content: "-";
+}
+.c-guide__add-product__list .collapse.active .c-guide__add-product {
+  max-height: 1000px;
+  padding-bottom: 20px;
 }
 .c-guide__add-product__item {
   font-size: 16px;
@@ -2956,7 +2985,8 @@ textarea.light:-ms-input-placeholder {
   width: 50px;
   border-bottom: 1px solid #acacac;
   text-align: center;
-  color: #000;
+  color: #00a5a5;
+  background: none;
 }
 .c-guide__refund-setting input[type="checkbox"] {
   opacity: 0;
@@ -3764,12 +3794,31 @@ textarea.light:-ms-input-placeholder {
   width: 100px;
   height: 100px;
   position: relative;
-  margin: 0 20px 20px 0;
+  margin: 0 10px 20px 0;
+}
+.c-product-info--form--media .item .remove-media {
+  display: none;
+  width: 14px;
+  height: 14px;
+  background-color: #00a5a5;
+  border: 1px solid #00a5a5;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  color: #fff;
+  font-size: 11px;
+  line-height: 11px;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 2;
 }
 .c-product-info--form--media .item.uploaded {
-  overflow: hidden;
   background: #fff;
   border: 1px solid #dde0e3;
+}
+.c-product-info--form--media .item.uploaded .remove-media {
+  display: block;
 }
 .c-product-info--form--media .item.uploaded img {
   position: absolute;
@@ -4145,6 +4194,7 @@ textarea.light:-ms-input-placeholder {
   font-size: 16px;
   line-height: 20px;
   font-weight: 300;
+  background: none;
 }
 .c-publish textarea {
   width: 100%;
@@ -4535,15 +4585,29 @@ textarea.light:-ms-input-placeholder {
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  height: 140px;
 }
 .c-setting--top h1,
-.c-setting--top p,
-.c-setting--top a {
+.c-setting--top p {
   color: #fff;
+}
+.c-setting--top a {
+  color: #bfefef;
 }
 .c-setting--top img {
   border: 2px solid #fff;
+}
+.c-setting .model {
+  padding: 5px 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #0a7e7e;
+  margin-right: -20px;
+  margin-bottom: 15px;
+  width: 90px;
+  float: right;
+}
+.c-setting .model span {
+  color: #fff;
 }
 .c-setting .c-list .title {
   font-size: 18px;
@@ -5127,6 +5191,10 @@ textarea.light:-ms-input-placeholder {
 }
 .m-display-projects--item {
   margin-bottom: 20px;
+}
+.m-display-projects--item img.l-w--100p {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .m-display-projects--item--name {
   text-overflow: ellipsis;

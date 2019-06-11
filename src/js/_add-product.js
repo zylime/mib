@@ -23,6 +23,10 @@ $.fn.AddProduct = function(opts){
       }
       
     })
+
+    $(document).on('click touch', '.js-collapse-btn', function(){
+      $(this).parent('.collapse').toggleClass('active');
+    })
     
     
   }
@@ -83,8 +87,7 @@ $.fn.AddProduct = function(opts){
 
   function removeItem(){
     container.find('.js-remove-btn').on('click touch', function(){
-      $(this).parents('.c-guide__add-product').remove();
-      console.log('aaa');
+      $(this).parents('.c-guide__add-product__list').remove();
       addNewProductBtn.show();
     })
   }

@@ -83,9 +83,36 @@
           font-size 16px
           line-height 24px
   &__add-product
+    padding-top 20px
     #period_number-error
       display none !important
-
+    &__list
+      .collapse
+        i:after
+          content "+"
+          width 20px
+          height 20px
+          display inline-block
+          background-color $col-persian-green
+          color $col-white
+          line-height 17px
+          font-size 14px
+          text-align center
+          font-style initial
+          border-radius 50%
+          box-sizing border-box
+        .c-guide__add-product
+          max-height 0
+          overflow hidden
+          transition .8s
+          
+        &.active
+          i:after
+            content "-"
+          .c-guide__add-product
+            max-height 1000px
+            padding-bottom 20px
+          
     &__item
       font-size 16px
       .note
@@ -201,6 +228,7 @@
         width 50px
         border-bottom 1px solid $col-silver-chalice
         text-align center
-        color $col-black
+        color $col-persian-green
+        background none
     input[type="checkbox"]
       opacity 0
