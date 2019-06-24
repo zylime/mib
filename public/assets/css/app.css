@@ -1299,6 +1299,9 @@ textarea.light:-ms-input-placeholder {
 .txt--cinnabar {
   color: #ee4746 !important;
 }
+.txt--iron {
+  color: #dde0e3 !important;
+}
 .txt--font--18 {
   font-size: 18px !important;
   line-height: 26px !important;
