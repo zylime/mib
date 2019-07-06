@@ -1,0 +1,47 @@
+//- 产品信息添加
+extends ../partials/_template
+
+block content
+  .c-product-info(data-js-product-info)
+    .c-header.l-columns.has-shadow.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black.txt--600 添加产品信息
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black.js-go-back(href="javascript:void(0)")
+      .col.l-w--50p.txt--r.l-v--m
+        a(href="javascript:void(0)") 保存并退出
+    form.l-columns.c-product-info--form
+    
+      .l-w--100p.border-bottom.l-pad--20
+        .title 项目当前完成度
+        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写百分比数字%", name="productProgress")
+      .l-w--100p.border-bottom.l-pad--20
+        .title 上传游戏包下载链接（选填）
+        
+        input.l-w--100p.l-mgn--t-20(type="text", placeholder="请填写游戏包的下载链接")
+      .l-w--100p.border-bottom.l-pad--20
+        input.l-w--100p(type="text", placeholder="请填写下载游戏包的密码")
+      .l-w--100p.border-bottom.l-pad--20
+        textarea#comments(name="", placeholder="请填写您认为重要的其他备注信息")
+      .l-w--100p.border-bottom.l-pad--20
+        .title 包体大小
+        input.l-w--100p.l-mgn--t-10(type="text", placeholder="请填写项目完整版本体大小的预估，单位为M或G", name="productSize")
+      .l-w--100p.border-bottom.l-pad--20
+        div(data-js-get-language)
+          a(href="./select-language.html")
+            .col.l-w--70p.l-v--m
+              .title 目前语言版本有哪些？
+            .col.l-w--30p.txt--r.l-v--m
+              .has-right-arrow--b
+            input.l-w--100p.l-mgn--t-10(type="text", placeholder="请选择目前语言版本", name="productLanguage", value="简体中文", readonly)
+      .l-pad--20
+        button.btn-type-3.js-submit 下一步
+
+
+
+
+
+
+        
+
+    
