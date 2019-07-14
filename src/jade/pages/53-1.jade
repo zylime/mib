@@ -1,0 +1,68 @@
+//- 商品一句话标题添加
+extends ../partials/_template
+
+
+block content
+  .c-publish(data-js-company-info)
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black.js-go-back(href="javascript:void(0)")
+      .col.l-w--50p.txt--r.l-v--m
+        a(href="javascript:void(0)") 保存并退出
+    h2.l-pad--20 添加公司信息
+    hr.hr
+    form
+      .c-list--item.l-pad--l-20.l-pad--r-20
+        .title.l-mgn--b-10 公司名称
+        input(type="text", placeholder="请填写您的公司名称", name="companyName", required
+        )
+      .c-list--item.l-columns.l-pad--l-20.l-pad--r-20
+        .title.l-mgn--b-10 公司规模
+        .note.l-mgn--b-20.l-mgn--t-10 此信息将会显示给用户，请您根据实际情况选择
+        .col.l-w--80p.l-v--m
+          p.light 大型公司，人员500+
+        .col.l-w--20p.l-v--m
+          .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+          input(type="hidden", name="checkbox1", value="")
+        .l-mgn--t-10
+        .col.l-w--80p.l-v--m
+          p.light 大中型公司，人员100+
+        .col.l-w--20p.l-v--m
+          .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+          input(type="hidden", name="checkbox2", value="")
+        .l-mgn--t-10
+        .col.l-w--80p.l-v--m
+          p.light 小型公司，50-100人
+        .col.l-w--20p.l-v--m
+          .ic--checkbox-2.l-f--r.js-checkbox.active(data-checked='')
+          input(type="hidden", name="checkbox3", value="checked")
+        .l-mgn--t-10
+        .col.l-w--80p.l-v--m
+          p.light 独立开发团队，<50人
+        .col.l-w--20p.l-v--m
+          .ic--checkbox-2.l-f--r.js-checkbox(data-checked='')
+          input(type="hidden", name="checkbox4", value="")
+        .l-mgn--t-10
+      hr.hr.l-mgn--b-40
+      h2.l-pad--l-20.l-pad--r-20.l-pad--b-20 团队项目履历（选填）
+      hr.hr
+      .c-list.l-columns.js-project-experience
+        .c-list--item.l-pad--b-0
+          .l-pad--l-20.l-pad--r-20.l-pad--b-20
+            .col.l-w--80p
+                input(type="text", placeholder="项目名称")
+              .col.l-w--20p
+                .ic--bin.l-f--r.js-remove-btn
+          hr.hr
+          .l-pad--t-20.l-pad--l-20.l-pad--r-20.l-pad--b-20
+            textarea(name="", placeholder="一句话概括该项目的所取得的成绩", rows="1")
+          //- hr.hr
+    hr.hr
+    .l-pad--l-20.l-mgn--t-20
+      .ic--add-3.large.js-add
+
+
+    .l-pad--20.no-shadow
+      a.btn-type-3(href="./keywords.html") 下一步
+
+    

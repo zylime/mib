@@ -4208,23 +4208,35 @@ textarea.light:-ms-input-placeholder {
 }
 .c-publish input::-webkit-input-placeholder,
 .c-publish textarea::-webkit-input-placeholder {
-  color: #000;
   font-weight: 300;
 }
 .c-publish input:-moz-placeholder,
 .c-publish textarea:-moz-placeholder {
-  color: #000;
   font-weight: 300;
 }
 .c-publish input::-moz-placeholder,
 .c-publish textarea::-moz-placeholder {
-  color: #000;
   font-weight: 300;
 }
 .c-publish input:-ms-input-placeholder,
 .c-publish textarea:-ms-input-placeholder {
-  color: #000;
   font-weight: 300;
+}
+.c-publish input.placeholder-black::-webkit-input-placeholder,
+.c-publish textarea.placeholder-black::-webkit-input-placeholder {
+  color: #000;
+}
+.c-publish input.placeholder-black:-moz-placeholder,
+.c-publish textarea.placeholder-black:-moz-placeholder {
+  color: #000;
+}
+.c-publish input.placeholder-black::-moz-placeholder,
+.c-publish textarea.placeholder-black::-moz-placeholder {
+  color: #000;
+}
+.c-publish input.placeholder-black:-ms-input-placeholder,
+.c-publish textarea.placeholder-black:-ms-input-placeholder {
+  color: #000;
 }
 .c-publish select {
   font-size: 16px;

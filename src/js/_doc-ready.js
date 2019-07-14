@@ -34,6 +34,7 @@ $(document).ready(function(){
   $('[data-js-product-management]').ProductManagement();
 
   $('[data-js-publish]').Publish();
+  $('[data-js-company-info]').CompanyInfo();
 
   $('[data-js-product-info]').ProductInfo();
 
