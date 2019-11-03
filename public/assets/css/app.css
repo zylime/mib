@@ -779,6 +779,14 @@ input:-ms-input-placeholder {
   background-position: center;
   background-repeat: no-repeat;
 }
+.ic--bin--dark {
+  background-image: url("../img/ic-bin-2.png");
+  background-size: 100%;
+  width: 18px;
+  height: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .ic--share-to {
   background-size: 100%;
   width: 24px;
@@ -1012,6 +1020,14 @@ input:-ms-input-placeholder {
   width: 20px;
   height: 20px;
 }
+.ic--add-4 {
+  background-image: url("../img/ic-add-4.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+}
 .ic--setting--fav {
   background-image: url("../img/ic-setting-fav.png");
   background-size: 100%;
@@ -1113,8 +1129,16 @@ input:-ms-input-placeholder {
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
+}
+.ic--edit--green {
+  background-image: url("../img/ic-edit-2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 14px;
+  height: 14px;
 }
 .ic--location {
   background-image: url("../img/ic-location.png");
@@ -1325,6 +1349,9 @@ textarea.light:-ms-input-placeholder {
 }
 .txt--l {
   text-align: left;
+}
+.txt--b {
+  font-weight: bold;
 }
 .txt--100 {
   font-weight: 100;
@@ -2864,7 +2891,7 @@ textarea.light:-ms-input-placeholder {
 .c-guide__add-product__item .input {
   display: inline-block;
   vertical-align: middle;
-  width: calc(100% - 80px);
+  width: calc(100% - 70px);
 }
 .c-guide__add-product__item textarea,
 .c-guide__add-product__item input,
@@ -2956,6 +2983,64 @@ textarea.light:-ms-input-placeholder {
 .c-guide__add-product__item .radio-group__item label {
   font-weight: 200;
   padding-right: 5px;
+}
+.c-guide__add-product__general .input-wrapper {
+  padding: 5px;
+}
+.c-guide__add-product__general .media-wrapper {
+  position: relative;
+}
+.c-guide__add-product__general .media-wrapper input.input-file {
+  left: 0;
+  top: 0;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.c-guide__add-product__general__line1 .input-wrapper {
+  width: calc(100% - 60px);
+  margin: 0 10px;
+}
+.c-guide__add-product__general__line1 .input-wrapper input {
+  width: calc(100% - 50px);
+}
+.c-guide__add-product__general__line2 .input-wrapper {
+  margin: 0 10px 0 30px;
+  width: calc(100% - 130px);
+}
+.c-guide__add-product__general__line2 .input-wrapper input {
+  width: calc(100% - 50px);
+}
+.c-guide__add-product__general__line2 .btn-type-2 {
+  width: 90px;
+  height: 34px;
+  line-height: 34px;
+}
+.c-guide__add-product__sales input[type="radio"] {
+  opacity: 0;
+}
+.c-guide__add-product__sales__line3 input {
+  width: 50px;
+}
+.c-guide__add-product__support .description {
+  width: calc(100% - 50px);
+  display: inline-block;
+  vertical-align: top;
+}
+.c-guide__add-product__support .ic--checkbox-2 {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+}
+.c-guide__add-product__support input[type="radio"] {
+  opacity: 0;
+}
+.c-guide__add-product__support .radio-group__item {
+  margin-bottom: 10px;
+}
+.c-guide__add-product__support .radio-group__item input[type="number"] {
+  width: 40px;
 }
 .c-guide__refund-setting .item {
   margin: 30px auto;

@@ -1,0 +1,115 @@
+//- 商品定价设置66
+extends ../partials/_template
+
+
+block content
+  .c-guide(data-js-add-product)
+    form
+      .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+        .col.c-header--back.l-w--50p.l-v--m
+          a.ic--back--black.js-go-back(href="javascript:void(0)")
+        .col.l-w--50p.txt--r.l-v--m
+          a(href="javascript:void(0)") 保存并退出
+      
+      .l-pad--20
+        h2 请为您的商品设置有竞争力的定价
+        p.txt--300.l-mgn--t-20 请添加具有竞争力的商品定价，以确保您的订单优势
+      .js-product-container
+        .c-guide__add-product__list
+          .collapse.active
+            .l-pad--l-20.l-pad--r-20.js-collapse-btn
+              i.l-v--m
+              span.l-v--m.l-mgn--l-5 点击编辑商品定价
+            .c-guide__add-product.l-columns
+              .c-guide__add-product__item.l-w--100p.has-border--bottom.l-pad--l-20.l-pad--r-20.l-pad--b-5.l-mgn--b-25
+                .col.l-w--30p.l-v--m
+                  .title 商品名称：
+                .col.l-w--60p.l-v--m
+                  .input
+                    input(type="text", placeholder="输入商品名称", maxlength="30", name="productName", required)
+                .col.l-w--10p
+                  .ic--bin.l-f--r.js-remove-btn
+              .c-guide__add-product__item.c-guide__add-product__item--price.l-w--100p.has-border--bottom.l-pad--l-20.l-pad--r-20.l-pad--b-5.l-mgn--b-25
+                .title 定价：
+                .input.l-columns
+                  .col.left.l-v--m
+                    span.l-mgn--r-5 ¥
+                    input(type="number", value="", placeholder="0.00", name="price")
+                  .col.right.l-v--m
+                    select(name="price_unit")
+                      option(value="piece") /个
+                      option(value="set") /套
+                      option(value="day") /天/人
+                      option(value="month") /月/人
+                      option(value="sentence") /句
+                      option(value="kw") /千字
+              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-mgn--b-25.l-columns
+                .col.l-w--40p
+                  .title 是否接受议价：
+                .col.l-w--60p
+                  .input.l-w--100p
+                    .radio-group.l-columns.js-radio-group
+                      .radio-group__item.col.l-w--50p.l-mgn--b-0
+                        label 可议价
+                        .ic--checkbox-2.js-radio-btn
+                          input(type="radio", name="bargain", value="yes")
+
+                      .radio-group__item.col.l-w--50p.l-mgn--b-0
+                        label 不讲价
+                        .ic--checkbox-2.js-radio-btn.active
+                          input(type="radio", name="bargain", value="no", checked)
+              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-mgn--b-25
+                .title 周期预估:
+              .js-radio-group
+                .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.has-border--bottom.l-pad--b-5
+                  .c-guide__add-product__item__period
+                    .ic--checkbox-2.js-radio-btn(data-detail="period")
+                      input(type="radio", name="period", value="yes")
+                    .c-guide__add-product__item__period__detail.l-columns
+                      input.col.l-w--30p.l-v--m(type="number", name="period_number", value="", placeholder="输入数量")
+                      .col.l-w--70p.l-v--m
+                        select(name="time_unit", readonly)
+                          option(value="day") /天
+                          option(value="workday") /工作日
+                          option(value="week") /周
+                          option(value="month") /月
+                          option(value="year") /年
+                        //- span.note (点击更换单位)
+                .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.has-border--bottom.l-mgn--b-25.l-pad--b-25.l-mgn--t-25
+                  .c-guide__add-product__item__period
+                    .ic--checkbox-2.active.js-radio-btn(data-detail="false")
+                      input(type="radio", name="period", value="no", checked)
+                    .c-guide__add-product__item__period__detail
+                      p 依项目具体需求确定
+              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.has-border--bottom.l-pad--b-5
+                .title.l-mgn--b-10 其他补充说明
+                textarea.l-w--100p.l-mgn--t-10(name="", rows="1", placeholder="请填写商品定价相关的其他补充说明")
+              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.has-border--bottom.l-columns.l-mgn--t-25.l-pad--b-25
+                .col.l-w--30p.l-v--t.title 折扣设置:
+                .col.l-w--70p.l-v--t
+                  .radio-group.l-columns
+                    .radio-group__item.col.l-w--50p
+                      label 会员折扣
+                      .ic--checkbox-2.js-checkbox
+                        input(type="checkbox", name="discount", value="discount_membership")
+                    .radio-group__item.col.l-w--50p
+                      label 平台活动
+                      .ic--checkbox-2.js-checkbox
+                        input(type="checkbox", name="discount", value="discount_sales")
+                    .radio-group__item.col.l-w--50p
+                      label 节日促销
+                      .ic--checkbox-2.js-checkbox
+                        input(type="checkbox", name="discount", value="discount_holiday")
+                    .radio-group__item.col.l-w--50p
+                      label 特殊优惠
+                      .ic--checkbox-2.js-checkbox
+                        input(type="checkbox", name="discount", value="discount_special")
+
+         
+      .js-add-new-product.l-pad--l-20.l-pad--r-20
+        .ic--add-2.l-inl-b.l-mgn--r-10.l-v--m
+        span.txt--persian-green.l-v--m.txt--font--16 添加其他产品
+      .c-menu.l-pad--20.no-shadow
+        button.btn-type-2.js-submit 下一步
+
+    
