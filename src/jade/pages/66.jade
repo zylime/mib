@@ -11,38 +11,41 @@ block content
         .col.l-w--50p.txt--r.l-v--m
           a(href="javascript:void(0)") 保存并退出
       
-      .l-pad--20
+      .l-pad--l-20.l-pad--r-20.l-pad--t-20
         h2 请为您的商品设置有竞争力的定价
-        p.txt--300.l-mgn--t-20 请添加具有竞争力的商品定价，以确保您的订单优势
+        p.txt--300.l-mgn--t-30 请添加具有竞争力的商品定价，以确保您的订单优势
         .l-mgn--t-20.l-mgn--b-20
           img.l-v--m.l-mgn--r-10(src=paths.img+"ic-location-2.png", alt="", width="18")
           span.txt--font--18.txt--b 添加商品类型、名称和定价
-        .c-guide__add-product__general
-          .c-guide__add-product__general__line1.l-mgn--b-10
-            img.l-inl-b.l-v--m(src=paths.img + "ic-check-2.png", alt="", width="20")
-            .input-wrapper.has-border.l-inl-b.has-corner--5
-              span.l-inl-b.l-v--m.l-mgn--r-5.txt--b 类别1: 
-              input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="请填写该类别的关键词")
-            .ic--add-2.l-v--m.l-inl-b
-          .c-guide__add-product__general__line2.l-mgn--b-15(data-js-add-media)
-            .input-wrapper.has-border.l-inl-b.has-corner--5
-              span.l-inl-b.l-v--m.l-mgn--r-5.txt--b 备注: 
-              input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="补充说明")
-            .js-media.media-wrapper.btn-type-2.l-inl-b.l-v--m
-              span.txt--white 上传照片
-              input.input-file.js-input-file(type="file", name="", accept="image/*" capture="camera")
-          .c-guide__add-product__general__line3.l-mgn--b-10.l-mgn--l-30
-            span.l-inl-b.l-v--m.l-mgn--r-10 中文→英文/日文/韩文
-            .ic--edit.l-inl-b.l-v--m.l-mgn--r-10
-            .ic--bin--dark.l-inl-b.l-v--m
-          .c-guide__add-product__general__line3.l-mgn--b-10.l-mgn--l-30
-            span.l-inl-b.l-v--m.l-mgn--r-10 简体中文→繁体中文
-            .ic--edit.l-inl-b.l-v--m.l-mgn--r-10
-            .ic--bin--dark.l-inl-b.l-v--m
-          .c-guide__add-product__general__line4.l-mgn--b-10.l-mgn--l-30
-            a(href="./66-1.html")
-              span.txt--persian-green.l-inl-b.l-v--m.l-mgn--r-10 点击添加该品类下的商品
-              .ic--add-4.l-inl-b.l-v--m
+          p.l-mgn--t-5.txt--b 请选设定商品分类，并根据类别设定商品的定价
+        .js-category-container
+          .c-guide__add-product__general.js-category-item
+            .c-guide__add-product__general__line1.l-mgn--b-15
+              img.l-inl-b.l-v--m(src=paths.img + "ic-check-2.png", alt="", width="20")
+              .input-wrapper.has-border.l-inl-b.has-corner--5
+                span.l-inl-b.l-v--m.l-mgn--r-5.txt--b 类别1: 
+                input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="请填写该类别的关键词")
+              .ic--add-2.l-v--m.l-inl-b.js-add-category
+              .ic--mutiply.large.l-v--m.l-inl-b.js-remove-category.hide
+            .c-guide__add-product__general__line2.l-mgn--b-15(data-js-add-media)
+              .input-wrapper.has-border.l-inl-b.has-corner--5
+                span.l-inl-b.l-v--m.l-mgn--r-5.txt--b 备注: 
+                input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="补充说明")
+              .js-media.media-wrapper.btn-type-2.l-inl-b.l-v--m
+                span.txt--white.txt--font--14 上传照片
+                input.input-file.js-input-file(type="file", name="", accept="image/*" capture="camera")
+            .c-guide__add-product__general__line3.l-mgn--b-10.l-mgn--l-30
+              span.l-inl-b.l-v--m.l-mgn--r-10 中文→英文/日文/韩文
+              .ic--edit.l-inl-b.l-v--m.l-mgn--r-10
+              .ic--bin--dark.l-inl-b.l-v--m
+            .c-guide__add-product__general__line3.l-mgn--b-10.l-mgn--l-30
+              span.l-inl-b.l-v--m.l-mgn--r-10 简体中文→繁体中文
+              .ic--edit.l-inl-b.l-v--m.l-mgn--r-10
+              .ic--bin--dark.l-inl-b.l-v--m
+            .c-guide__add-product__general__line4.l-mgn--b-10.l-mgn--l-30
+              a(href="./66-1.html")
+                span.txt--persian-green.l-inl-b.l-v--m.l-mgn--r-10 点击添加该品类下的商品
+                .ic--add-4.l-inl-b.l-v--m
       hr.hr
       
         
@@ -66,12 +69,13 @@ block content
                 input(type="radio", name="period", value="no", checked)
               .c-guide__add-product__item__period__detail
                 span.txt--b 满减优惠
-              .c-guide__add-product__sales__line3.l-mgn--t-10
-                .l-columns
+              .c-guide__add-product__sales__line3.js-promt-container.l-mgn--t-10
+                .l-columns.js-promt-item
                   .col.l-w--40p.l-v--t.l-mgn--b-10.
                     满<input type="number" placeholder="¥0.00" class="l-mgn--l-10 l-mgn--r-10 has-border--bottom txt--font--14">
                   .col.l-w--60p.l-mgn--b-10.
-                    享有<input type="number" placeholder="0" class="l-mgn--l-10 l-mgn--r-10 has-border--bottom txt--font--14">折 <a href="javascript:void(0)" class="ic--add-2 l-inl-b l-mgn--l-10 l-v--m"></a>
+                    享有<input type="number" placeholder="0" class="l-mgn--l-10 l-mgn--r-10 has-border--bottom txt--font--14">折 <a href="javascript:void(0)" class="ic--add-2 l-inl-b l-mgn--l-10 l-v--m l-f--r js-add-promt"></a>
+                    <a href="javascript:void(0)" class="ic--mutiply large l-inl-b l-mgn--l-10 l-v--m l-f--r js-remove-promt hide"></a>
                   .col.l-w--40p.l-mgn--b-10
                   .col.l-w--60p.l-mgn--b-10.
                     减额<input type="number" placeholder="¥0.00" class="l-mgn--l-10 has-border--bottom txt--font--14">
@@ -89,24 +93,55 @@ block content
         .js-radio-group
           .radio-group
             .radio-group__item
-              .ic--checkbox-2.js-radio-btn
+              .ic--checkbox-2.js-radio-btn.active
                 input(type="radio", name="", value="")
-              .description 提供正规发票
-            .radio-group__item
+              .description 提供正规发票，不需要额外承担发票费用，
+              .c-guide__add-product__support__invoice.js-invoice-radio-group
+                .c-guide__add-product__support__invoice__type.l-mgn--t-10
+                  span.l-pad--r-10 发票类型:
+                  .invoice_type.l-inl-b.active.js-invoice-radio-btn
+                    span 电子发票
+                  .invoice_type.l-inl-b.js-invoice-radio-btn
+                    span 纸质发票
+                .c-guide__add-product__support__invoice__content.l-mgn--t-10
+                  span.l-pad--r-10 发票的内容类：
+                  input.has-border--bottom(type="text" placeholder="请输入发票内容类别")
+
+            .radio-group__item.l-mgn--t-20
               .ic--checkbox-2.js-radio-btn
                 input(type="radio", name="", value="")
               .description.
-                不提供发票，发票费用需要您另行承担 <input type="number" placeholder="0" value="5" class="has-border--bottom txt--c txt--persian-green"> %
-            .radio-group__item
+                商家可提供发票，但需要您另行承担 <input type="number" placeholder="0" value="6" class="has-border--bottom txt--c txt--persian-green"> %的发票费用，
+              .c-guide__add-product__support__invoice.js-invoice-radio-group
+                .c-guide__add-product__support__invoice__type.l-mgn--t-10
+                  span.l-pad--r-10 发票类型:
+                  .invoice_type.l-inl-b.active.js-invoice-radio-btn
+                    span 电子发票
+                  .invoice_type.l-inl-b.js-invoice-radio-btn
+                    span 纸质发票
+                .c-guide__add-product__support__invoice__content.l-mgn--t-10
+                  span.l-pad--r-10 发票的内容类：
+                  input.has-border--bottom(type="text" placeholder="请输入发票内容类别")
+
+            .radio-group__item.l-mgn--t-20
               .ic--checkbox-2.js-radio-btn
                 input(type="radio", name="", value="")
               .description.
-                店铺不提供发票、需要平台提供，发票费用需要您另行承担 <input type="number" placeholder="0" value="5" class="has-border--bottom txt--c txt--persian-green"> %
-            .radio-group__item
+                店铺不提供发票、需要平台提供，发票费用需要您另行承担 6%
+              .c-guide__add-product__support__invoice.js-invoice-radio-group
+                .c-guide__add-product__support__invoice__type.l-mgn--t-10
+                  span.l-pad--r-10 发票类型:
+                  .invoice_type.l-inl-b.active.js-invoice-radio-btn
+                    span 电子发票
+
+                .c-guide__add-product__support__invoice__content.l-mgn--t-10
+                  span.l-pad--r-10 发票的内容类：
+                  input.has-border--bottom(type="text" placeholder="请输入发票内容类别")
+            .radio-group__item.l-mgn--t-20
               .ic--checkbox-2.js-radio-btn
                 input(type="radio", name="", value="")
               .description.
-                <input type="number" placeholder="0" value="2" class="has-border--bottom txt--c txt--persian-green"> 个月的质量保证期
+                <input type="number" placeholder="0" value="1" class="has-border--bottom txt--c txt--persian-green"> 个月的质量保证期
       .c-menu.l-pad--20.no-shadow
         button.btn-type-3.js-submit 下一步
 
