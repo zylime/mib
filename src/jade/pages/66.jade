@@ -27,13 +27,15 @@ block content
                 input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="请填写该类别的关键词")
               .ic--add-2.l-v--m.l-inl-b.js-add-category
               .ic--mutiply.large.l-v--m.l-inl-b.js-remove-category.hide
-            .c-guide__add-product__general__line2.l-mgn--b-15(data-js-add-media)
-              .input-wrapper.has-border.l-inl-b.has-corner--5
-                span.l-inl-b.l-v--m.l-mgn--r-5.txt--b 备注: 
-                input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="补充说明")
-              .js-media.media-wrapper.btn-type-2.l-inl-b.l-v--m
-                span.txt--white.txt--font--14 上传照片
-                input.input-file.js-input-file(type="file", name="", accept="image/*" capture="camera")
+            div(data-js-add-media)
+              .c-guide__add-product__general__line2.l-mgn--b-15(data-js-add-media)
+                .input-wrapper.has-border.l-inl-b.has-corner--5
+                  span.l-inl-b.l-v--m.l-mgn--r-5.txt--b 备注: 
+                  input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="补充说明")
+                .js-media-one.media-wrapper.btn-type-2.l-inl-b.l-v--m
+                  span.txt--white.txt--font--14 上传照片
+                  input.input-file.js-input-file(type="file", name="", accept="image/*" capture="camera")
+              .js-media-display.c-guide__add-product__thumb.hide
             .c-guide__add-product__general__line3.l-mgn--b-10.l-mgn--l-30
               span.l-inl-b.l-v--m.l-mgn--r-10 中文→英文/日文/韩文
               .ic--edit.l-inl-b.l-v--m.l-mgn--r-10

@@ -1,0 +1,37 @@
+//- 详细需求页 10
+extends ../partials/_template
+
+block content
+  .c-requirement
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black.js-go-back(href="javascript:void(0)")
+      .col.l-w--50p.txt--r.l-v--m
+        a(href="javascript:void(0)") 保存
+    .l-pad--l-10.l-pad--r-10
+      h3.l-mgn--b-10 提交详细需求
+      p 清晰明确的需求核对是交付满意、沟通高效的基础保证
+    .hr.l-mgn--t-20.l-mgn--b-20
+    .l-pad--l-10.l-pad--r-10
+      .txt--font--16.txt--b.l-mgn--b-10 项目名称
+      input.l-w--100p(type="text", placeholder="请填写项目名称")
+    .hr.l-mgn--b-20.l-mgn--t-15
+    .l-pad--l-10.l-pad--r-10
+      .txt--font--16.txt--b.l-mgn--b-10 项目所属分类
+      input.l-w--100p(type="text", placeholder="请填写项目类型，中间用逗号隔开")
+    .hr.l-mgn--b-20.l-mgn--t-15
+      .txt--font--16.txt--b.l-mgn--b-10 翻译语种
+    .hr.l-mgn--b-20.l-mgn--t-15
+      .txt--font--16.txt--b.l-mgn--b-10 翻译的源文字总字数（/字）
+      input.l-w--100p(type="text", placeholder="请填写要翻译的总文字量")
+    .hr.l-mgn--b-20.l-mgn--t-15
+      div 点击
+        a.txt--persian-green(href="javascript:void(0);") 上传翻译文件
+          input.upload-file.js-upload-file(type="file", name="")
+
+
+
+
+  .c-menu.l-pad--20.no-shadow
+    a.btn-type-3(href="./9-2.html") 下一步
+    

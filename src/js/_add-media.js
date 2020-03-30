@@ -11,6 +11,7 @@ $.fn.AddMedia = function(opts){
 
   var container = $(this);
   var mediaHtml = container.find('.js-media').html();
+  var mediaOneHtml = container.find('.js-media-one').html();
   var maxMedia = 6;
   events();
 
@@ -42,6 +43,30 @@ $.fn.AddMedia = function(opts){
       }
 
     })
+    // 商品类型页面上传单张图片
+    container.find('.js-media-one input[type="file"]').on('change', function(){
+      clearDisplay();
+      var file = this.files[0];
+      var _this = this;
+      var reader = new FileReader();
+      reader.readAsDataURL(file); 
+     
+      reader.onload = function(){
+        container.find('.js-media-display').append('<div class="ic--mutiply remove-btn"></div><img class="media-img" src="' + this.result + '" alt="" />'); 
+        container.find('.js-media-display').removeClass('hide');
+      }
+    })
+
+    container.on('click','.remove-btn',function(){
+      clearDisplay();
+    })
+
+  }
+
+
+
+  function clearDisplay(){
+    container.find('.js-media-display').addClass('hide').html('');
   }
 
 
@@ -49,6 +74,7 @@ $.fn.AddMedia = function(opts){
   function updateMedia(){
     if(isIOSDevice){
       container.find('.js-media input[type="file"]').removeAttr("capture");
+      container.find('.js-media-one input[type="file"]').removeAttr("capture");
     }
     
   }

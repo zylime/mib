@@ -745,27 +745,57 @@
       "link": "#"
     }
   ],
+
   "price_detail":[
     {
-      "title":"游戏美术设计角色时装外包",
-      "price":"¥2500/天/人",
-      "duration":"1个月",
-      "bargain":"可议价",
-      "comments":"请先提交需求，如需求比较特殊、价格可能会与以上价格有差异。"
+      "image":"price-detail-thumb.jpg",
+      "category":"S",
+      "description":"全球顶级母语翻译+母语审校，资深项目经理全程管控...",
+      "products":[
+        {
+          "name":"中文→英文/日文/韩文",
+          "discount_price":"520.00",
+          "price":"720.00",
+          "unit":"/千字源文字"
+        },
+        {
+          "name":"中文→英文/日文/韩文",
+          "discount_price":"520.00",
+          "price":"720.00",
+          "unit":"/千字源文字"
+        },
+        {
+          "name":"中文→英文/日文/韩文",
+          "discount_price":"520.00",
+          "price":"720.00",
+          "unit":"/千字源文字"
+        }
+      ]
     },
     {
-      "title":"法语母语配音",
-      "price":"¥350/句",
-      "duration":"依项目具体需求而定",
-      "bargain":"不讲价",
-      "comments":"为了保证为您提供最好的服务，请详细填写您的具体需求。"
-    },
-    {
-      "title":"韩国顶级画师原画外包",
-      "price":"¥ 650000/套",
-      "duration":"2个月",
-      "bargain":"不讲价",
-      "comments":"因为语言和跨国沟通障碍，为提高效率、请在最开始梳理清楚需求，过程中不接受反复修改。"
+      "image":"price-detail-thumb-2.jpg",
+      "category":"S",
+      "description":"全球顶级母语翻译+母语审校，资深项目经理全程管控...",
+      "products":[
+        {
+          "name":"中文→英文/日文/韩文",
+          "discount_price":"520.00",
+          "price":"720.00",
+          "unit":"/千字源文字"
+        },
+        {
+          "name":"中文→英文/日文/韩文",
+          "discount_price":"520.00",
+          "price":"720.00",
+          "unit":"/千字源文字"
+        },
+        {
+          "name":"中文→英文/日文/韩文",
+          "discount_price":"520.00",
+          "price":"720.00",
+          "unit":"/千字源文字"
+        }
+      ]
     }
   ],
   "faq":[

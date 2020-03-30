@@ -1,41 +1,42 @@
-//- 价格明细
-extends ../partials/_template
+//- 价格明细 旧版
 
-block content
-  .c-price-detail.l-pad--20
-    a.ic--back--black.l-mgn--b-20.js-go-back(href="javascript:void(0)")
-    h3.l-mgn--b-10 价格明细
-    p 高性价比，高品质服务
-    .c-price-detail--section.c-price-detail--section--product
-      each item in price_detail
-        .c-price-detail--section--product--item.has-shadow
-          .l-mgn--b-10
-            .left
-              strong 商品名称：
-            .right
-              strong!=item.title
-          .l-mgn--b-10
-            .left
-              strong 商品单价：
-            .right
-              .txt--bittersweet!=item.price
-          .l-mgn--b-10
-            .left
-              strong 项目周期：
-            .right
-              .txt--persian-green!=item.duration
-          .l-mgn--b-10
-            .left
-              strong 是否接受议价：
-            .right
-              .txt--persian-green!=item.bargain
-          .l-mgn--b-10
-            .l-mgn--b-10
-              strong 其他补充说明：
-            .comments!=item.comments
+//- extends ../partials/_template
 
-  .c-menu.l-pad--20.no-shadow
-    a.btn-type-3(href="./9-2.html") 下一步
+//- block content
+//-   .c-price-detail.l-pad--20
+//-     a.ic--back--black.l-mgn--b-20.js-go-back(href="javascript:void(0)")
+//-     h3.l-mgn--b-10 价格明细
+//-     p 高性价比，高品质服务
+//-     .c-price-detail--section.c-price-detail--section--product
+//-       each item in price_detail
+//-         .c-price-detail--section--product--item.has-shadow
+//-           .l-mgn--b-10
+//-             .left
+//-               strong 商品名称：
+//-             .right
+//-               strong!=item.title
+//-           .l-mgn--b-10
+//-             .left
+//-               strong 商品单价：
+//-             .right
+//-               .txt--bittersweet!=item.price
+//-           .l-mgn--b-10
+//-             .left
+//-               strong 项目周期：
+//-             .right
+//-               .txt--persian-green!=item.duration
+//-           .l-mgn--b-10
+//-             .left
+//-               strong 是否接受议价：
+//-             .right
+//-               .txt--persian-green!=item.bargain
+//-           .l-mgn--b-10
+//-             .l-mgn--b-10
+//-               strong 其他补充说明：
+//-             .comments!=item.comments
+
+//-   .c-menu.l-pad--20.no-shadow
+//-     a.btn-type-3(href="./9-2.html") 下一步
     
 
 
