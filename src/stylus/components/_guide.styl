@@ -94,8 +94,13 @@
       position relative
       .remove-btn
         position absolute
-        top 0
-        right 0
+        top -3px
+        right -3px
+        border 1px solid $col-white
+        border-radius 50%
+        .ic--mutiply
+          width 20px
+          height 20px
       img
         width 100%
         height auto
@@ -128,6 +133,15 @@
           
     &__item
       font-size 16px
+      &.display-date
+        .icon
+          display none
+        &.active
+          .icon
+            display inline-block
+            vertical-align middle
+      .date-picker-input
+        min-width 200px
       .note
         font-size 10px
         font-weight 200

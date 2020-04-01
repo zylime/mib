@@ -548,6 +548,85 @@ $.fn.CompanyInfo = function (opts) {
 };
 'use strict';
 
+$.fn.datePickerRange = function (opts) {
+
+    var container = $(this);
+    var datePicker = container.find('.js-ui-datepicker-range');
+
+    events();
+
+    function events() {
+
+        rangePicker();
+    }
+
+    function rangePicker() {
+        var selectedRange;
+        var defaultVal = $(datePicker).val();
+        datePicker.datepicker({
+            dateFormat: 'yy/mm/dd',
+            numberOfMonths: 1,
+            onSelect: function onSelect(selectedDate) {
+                if (!$(this).data().datepicker.first) {
+                    $(this).data().datepicker.inline = true;
+                    $(this).data().datepicker.first = selectedDate;
+                } else {
+                    if (selectedDate > $(this).data().datepicker.first) {
+                        $(this).val($(this).data().datepicker.first + " - " + selectedDate);
+                    } else {
+                        $(this).val(selectedDate + " - " + $(this).data().datepicker.first);
+                    }
+                    $(this).data().datepicker.inline = false;
+                    selectedRange = $(this).val();
+                }
+            },
+            onClose: function onClose() {
+                $('.js-date-display').html(selectedRange);
+                // $(this).val(defaultVal);
+                $('.display-date').addClass('active');
+                delete $(this).data().datepicker.first;
+                $(this).data().datepicker.inline = false;
+            }
+        });
+    }
+};
+'use strict';
+
+$.fn.datePicker = function (opts) {
+
+  var container = $(this);
+
+  events();
+
+  function events() {
+    YYMMPicker();
+  }
+  function YYMMPicker() {
+    var today = new Date();
+    var yearRange = today.getFullYear();
+    yearRange = "1950:" + yearRange;
+    $('.js-ui-datepicker-yymm').datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'yy-mm',
+      yearRange: yearRange,
+      showButtonPanel: true,
+      currentText: "当月",
+      onChangeMonthYear: function onChangeMonthYear(year, month, inst) {
+        $(this).val($.datepicker.formatDate('M yy', new Date(year, month - 1, 1)));
+      },
+      onClose: function onClose(dateText, inst) {
+        var month = $(".ui-datepicker-month :selected").val();
+        var year = $(".ui-datepicker-year :selected").val();
+        $(this).val($.datepicker.formatDate('M yy', new Date(year, month, 1)));
+      }
+    }).focus(function () {
+      $(".ui-datepicker-calendar").hide();
+    });
+  }
+};
+'use strict';
+
 $.fn.DeleteFriends = function (opts) {
 
   var container = $(this);
@@ -680,6 +759,9 @@ $(document).ready(function () {
   $('[data-js-progress-bar]').ProgressBar();
   $('[data-js-search]').Search();
 
+  $('[data-js-datepicker]').datePicker();
+  $('[data-js-datepickerRange]').datePickerRange();
+
   // 返回上一页
   $('.js-go-back').on('click touch', function (e) {
     e.preventDefault();
@@ -690,28 +772,6 @@ $(document).ready(function () {
   lightbox.option({
     'resizeDuration': 200,
     'wrapAround': true
-  });
-
-  var today = new Date();
-  var yearRange = today.getFullYear();
-  yearRange = "1950:" + yearRange;
-  $('.js-ui-datepicker').datepicker({
-    changeMonth: true,
-    changeYear: true,
-    dateFormat: 'yy-mm',
-    yearRange: yearRange,
-    showButtonPanel: true,
-    currentText: "当月",
-    onChangeMonthYear: function onChangeMonthYear(year, month, inst) {
-      $(this).val($.datepicker.formatDate('M yy', new Date(year, month - 1, 1)));
-    },
-    onClose: function onClose(dateText, inst) {
-      var month = $(".ui-datepicker-month :selected").val();
-      var year = $(".ui-datepicker-year :selected").val();
-      $(this).val($.datepicker.formatDate('M yy', new Date(year, month, 1)));
-    }
-  }).focus(function () {
-    $(".ui-datepicker-calendar").hide();
   });
 });
 

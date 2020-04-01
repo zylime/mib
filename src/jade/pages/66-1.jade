@@ -50,12 +50,14 @@ block content
                       option(value="kw") /千字
                     span.note (点击更换单位)
 
-              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-mgn--b-20
-                a(href="javascript:void(0)")
-                  .ic--edit--green.l-inl-b.l-v--m.l-mgn--r-5
-                  span.txt--persian-green.l-inl-b.l-v--m.txt--font--14 点击设置折扣价的有效周期
-              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-mgn--b-25
-                span.l-inl-b.l-v--m.txt--font--14 有效期已设置：2019.6.8-2019.6.30
+              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-mgn--b-20(data-js-datepickerRange)
+                .ic--edit--green.l-inl-b.l-v--m.l-mgn--r-5
+                input.txt--persian-green.txt--font--14.date-picker-input.js-ui-datepicker-range(value="点击设置折扣价的有效周期", type="text")
+              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-mgn--b-25.display-date.
+                <div class="icon"><div class="ic--checkbox-3 active"></div></div>
+                <div class="l-inl-b l-v--m txt--font--14">有效期已设置：<span class="js-date-display"></span></div>
+
+              
               hr.hr
               .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-mgn--b-20.l-mgn--t-20
                 .title 周期预估:
@@ -90,4 +92,6 @@ block content
       .c-menu.l-pad--20.no-shadow
         button.btn-type-3.js-submit 确认添加
 
-    
+
+
+
