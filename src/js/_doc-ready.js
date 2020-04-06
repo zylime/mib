@@ -77,6 +77,8 @@ $(document).ready(function(){
   $('[data-js-datepicker]').datePicker();
   $('[data-js-datepickerRange]').datePickerRange();
 
+  $('[data-js-spinner]').Spinner();
+
   // 返回上一页
   $('.js-go-back').on('click touch', function(e){
     e.preventDefault();

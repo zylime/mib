@@ -202,6 +202,7 @@ $.fn.AddProduct = function (opts) {
     $(document).on('click touch', '.js-collapse-btn', function () {
       $(this).parent('.collapse').toggleClass('active');
     });
+
     // +-额外优惠
     $(document).on('click touch', '.js-add-promt', function () {
       addPromt();
@@ -216,6 +217,12 @@ $.fn.AddProduct = function (opts) {
     });
     $(document).on('click touch', '.js-remove-category', function () {
       $(this).parents('.js-category-item').remove();
+      updateCategoryIndex();
+    });
+
+    // 删除语言
+    $(document).on('click touch', '.js-remove-lang', function () {
+      $(this).parents('.js-lang-item').remove();
     });
   }
   function initAll() {
@@ -293,6 +300,14 @@ $.fn.AddProduct = function (opts) {
     $(categoryContainer).find('.js-remove-category').removeClass('hide');
     $(categoryContainer).find('.js-add-category').addClass('hide');
     $(categoryHtml).appendTo(categoryContainer);
+
+    updateCategoryIndex();
+  }
+  function updateCategoryIndex() {
+    $('.js-category-item').each(function (i) {
+      $(this).attr('data-category-index', i + 1);
+      $(this).find('.js-category-index').html(i + 1);
+    });
   }
 };
 'use strict';
@@ -761,6 +776,8 @@ $(document).ready(function () {
 
   $('[data-js-datepicker]').datePicker();
   $('[data-js-datepickerRange]').datePickerRange();
+
+  $('[data-js-spinner]').Spinner();
 
   // 返回上一页
   $('.js-go-back').on('click touch', function (e) {
@@ -3105,6 +3122,39 @@ $.fn.SignIn = function (opts) {
     //     console.log(error);
     //   }
     // })
+  }
+};
+'use strict';
+
+$.fn.Spinner = function (opts) {
+
+  var container = $(this);
+  var upBtn = container.find('.js-spinner-up');
+  var downBtn = container.find('.js-spinner-down');
+  var inputBox = container.find('.js-spinner-input');
+  var max = 999;
+  var min = 0;
+
+  events();
+
+  function events() {
+    var spinnerNum = 0;
+    upBtn.on('click touch', function () {
+      if (spinnerNum < max) {
+        spinnerNum++;
+      }
+      updateNum(spinnerNum);
+    });
+
+    downBtn.on('click touch', function () {
+      if (spinnerNum > min) {
+        spinnerNum--;
+      }
+      updateNum(spinnerNum);
+    });
+  }
+  function updateNum(num) {
+    inputBox.val(num);
   }
 };
 'use strict';

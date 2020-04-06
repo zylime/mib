@@ -1,0 +1,52 @@
+//- 预定详情选择页13-3
+extends ../partials/_template
+
+block content
+  .c-reservation.has-sticky-btn
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black.js-go-back(href="javascript:void(0)")
+
+    .c-reservation__order-detail
+      .c-reservation__order-detail__top
+        img(src=paths.img+"product-image-6.jpg", alt="")
+        .c-reservation__order-detail__top__content
+          .txt--font--16.l-mgn--b-10
+            <b>限时特惠</b> <span class="txt--bittersweet l-mgn--l-5 l-mgn--r-5">¥520.00</span> <span class="txt--cross txt--iron txt--font--12">¥720</span>
+          .txt--font--12 已选 S级中文 → 英文
+          .txt--font--12 单位：/千字源文字
+      .c-reservation__order-detail__section
+        .title 类别
+        each item in p13_3.level
+          .style-top.select-style-2!= item.name
+          .style-bottom!= item.description
+
+      .hr
+
+      .c-reservation__order-detail__section
+        .title 详细分类
+        - var klass
+        each item in p13_3.category
+          if item.select
+            - klass = 'select-style-1'
+          else
+            - klass = ''
+          .language-list(class=klass)!=item.name
+    
+      .hr
+      .c-reservation__order-detail__section.l-columns
+        .l-w--50p.col
+          .title 数量
+        .l-w--50p.col.txt--r
+          .c-spinner(data-js-spinner)
+            .c-spinner__up.js-spinner-up
+            input.js-spinner-input(type="text", value="0")
+            .c-spinner__down.js-spinner-down
+      .hr
+
+    .c-menu.l-pad--20.no-shadow
+      a.btn-type-2(href="javascript:void(0)") 确定
+
+
+
+    

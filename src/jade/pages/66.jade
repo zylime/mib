@@ -19,11 +19,12 @@ block content
           span.txt--font--18.txt--b 添加商品类型、名称和定价
           p.l-mgn--t-5.txt--b 请选设定商品分类，并根据类别设定商品的定价
         .js-category-container
-          .c-guide__add-product__general.js-category-item
+          .c-guide__add-product__general.js-category-item(data-category-index=1)
             .c-guide__add-product__general__line1.l-mgn--b-15
               img.l-inl-b.l-v--m(src=paths.img + "ic-check-2.png", alt="", width="20")
               .input-wrapper.has-border.l-inl-b.has-corner--5
-                span.l-inl-b.l-v--m.l-mgn--r-5.txt--b 类别1: 
+                span.l-inl-b.l-v--m.l-mgn--r-5.txt--b.
+                  类别<span class="js-category-index">1</span>: 
                 input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="请填写该类别的关键词")
               .ic--add-2.l-v--m.l-inl-b.js-add-category
               .ic--mutiply.large.l-v--m.l-inl-b.js-remove-category.hide
@@ -36,14 +37,16 @@ block content
                   span.txt--white.txt--font--14 上传照片
                   input.input-file.js-input-file(type="file", name="", accept="image/*" capture="camera")
               .js-media-display.c-guide__add-product__thumb.hide
-            .c-guide__add-product__general__line3.l-mgn--b-10.l-mgn--l-30
-              span.l-inl-b.l-v--m.l-mgn--r-10 中文→英文/日文/韩文
-              .ic--edit.l-inl-b.l-v--m.l-mgn--r-10
-              .ic--bin--dark.l-inl-b.l-v--m
-            .c-guide__add-product__general__line3.l-mgn--b-10.l-mgn--l-30
-              span.l-inl-b.l-v--m.l-mgn--r-10 简体中文→繁体中文
-              .ic--edit.l-inl-b.l-v--m.l-mgn--r-10
-              .ic--bin--dark.l-inl-b.l-v--m
+            .c-guide__add-product__general__line3.l-mgn--b-10.l-mgn--l-30.js-lang-item
+              a.l-mgn--r-10(href="./66-1.html")
+                span.l-inl-b.l-v--m.l-mgn--r-10 中文→英文/日文/韩文
+                .ic--edit.l-inl-b.l-v--m
+              .ic--bin--dark.l-inl-b.l-v--m.js-remove-lang
+            .c-guide__add-product__general__line3.l-mgn--b-10.l-mgn--l-30.js-lang-item
+              a.l-mgn--r-10(href="./66-1.html")
+                span.l-inl-b.l-v--m.l-mgn--r-10 简体中文→繁体中文
+                .ic--edit.l-inl-b.l-v--m
+              .ic--bin--dark.l-inl-b.l-v--m.js-remove-lang
             .c-guide__add-product__general__line4.l-mgn--b-10.l-mgn--l-30
               a(href="./66-1.html")
                 span.txt--persian-green.l-inl-b.l-v--m.l-mgn--r-10 点击添加该品类下的商品
@@ -62,7 +65,7 @@ block content
                 input(type="radio", name="period", value="yes")
               .c-guide__add-product__item__period__detail
                 span.l-inl-b.l-v--m.l-mgn--r-10.txt--b 总价的额外折扣:
-                input.l-w--20p.l-v--m.l-mgn--r-10.has-border--bottom.txt--font--14(type="number", name="period_number", value="", placeholder="0")
+                input.l-w--20p.l-v--m.l-mgn--r-10.has-border--bottom.txt--font--14.txt--c(type="number", name="period_number", value="", placeholder="0")
                 span.l-inl-b.l-v--m 折
 
           .c-guide__add-product__item.l-w--100p.l-mgn--b-25.l-mgn--t-25
@@ -74,13 +77,13 @@ block content
               .c-guide__add-product__sales__line3.js-promt-container.l-mgn--t-10
                 .l-columns.js-promt-item
                   .col.l-w--40p.l-v--t.l-mgn--b-10.
-                    满<input type="number" placeholder="¥0.00" class="l-mgn--l-10 l-mgn--r-10 has-border--bottom txt--font--14">
+                    满<input type="number" placeholder="¥0.00" class="l-mgn--l-10 l-mgn--r-10 has-border--bottom txt--font--14 txt--c">
                   .col.l-w--60p.l-mgn--b-10.
-                    享有<input type="number" placeholder="0" class="l-mgn--l-10 l-mgn--r-10 has-border--bottom txt--font--14">折 <a href="javascript:void(0)" class="ic--add-2 l-inl-b l-mgn--l-10 l-v--m l-f--r js-add-promt"></a>
+                    享有<input type="number" placeholder="0" class="l-mgn--l-10 l-mgn--r-10 has-border--bottom txt--font--14 txt--c">折 <a href="javascript:void(0)" class="ic--add-2 l-inl-b l-mgn--l-10 l-v--m l-f--r js-add-promt"></a>
                     <a href="javascript:void(0)" class="ic--mutiply large l-inl-b l-mgn--l-10 l-v--m l-f--r js-remove-promt hide"></a>
                   .col.l-w--40p.l-mgn--b-10
                   .col.l-w--60p.l-mgn--b-10.
-                    减额<input type="number" placeholder="¥0.00" class="l-mgn--l-10 has-border--bottom txt--font--14">
+                    减额<input type="number" placeholder="¥0.00" class="l-mgn--l-10 has-border--bottom txt--font--14 txt--c">
           .c-guide__add-product__item.l-w--100p.l-mgn--b-20(data-js-datepickerRange)
             .ic--edit--green.l-inl-b.l-v--m.l-mgn--r-5
             input.txt--persian-green.txt--font--14.date-picker-input.js-ui-datepicker-range(value="点击设置折扣价的有效周期", type="text")

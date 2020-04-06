@@ -320,6 +320,9 @@ input:-ms-input-placeholder {
 .has-menu {
   padding-bottom: 78px !important;
 }
+.has-sticky-btn {
+  padding-bottom: 90px !important;
+}
 .border-persian-green {
   border: 1px solid #00a5a5;
   box-shadow: 1px 1px 10px rgba(0,165,165,0.3);
@@ -1152,6 +1155,14 @@ input:-ms-input-placeholder {
   width: 10px;
   height: 18px;
 }
+.ic--location--2 {
+  background-image: url("../img/ic-location-2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 12px;
+  height: 20px;
+}
 .ic--notification--gift {
   background-image: url("../img/ic-notification-gift.png");
   background-size: 100%;
@@ -1236,6 +1247,22 @@ input:-ms-input-placeholder {
   background-position: center;
   width: 20px;
   height: 40px;
+}
+.ic--transalte--green {
+  background-image: url("../img/ic-translate-green.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 40px;
+}
+.ic--delete {
+  background-image: url("../img/ic-delete.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
 }
 html,
 body {
@@ -2981,6 +3008,7 @@ textarea.light:-ms-input-placeholder {
   padding: 2px 0 2px 5%;
   text-align: center;
   text-align-last: center;
+  font-size: 12px;
 }
 .c-guide__add-product__item textarea {
   height: 24px;
@@ -3120,9 +3148,11 @@ textarea.light:-ms-input-placeholder {
 }
 .c-guide__add-product__support__invoice {
   padding-left: 28px;
+  font-size: 12px;
 }
 .c-guide__add-product__support__invoice input[type="text"] {
   width: calc(100% - 130px);
+  font-size: 12px;
 }
 .c-guide__add-product__support__invoice .invoice_type {
   background-color: #f0f0f0;
@@ -4584,6 +4614,123 @@ textarea.light:-ms-input-placeholder {
 .c-register .c-sign-in--other {
   margin-top: 80px;
 }
+.c-requirement__edit__item {
+  padding: 0 20px;
+  margin: 20px 0 30px 0;
+}
+.c-requirement__edit__item .input-wrapper {
+  padding: 10px;
+}
+.c-requirement__edit__item .input-wrapper span {
+  margin-right: 5px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.c-requirement__edit__item .datepicker-wrapper {
+  padding-left: 28px;
+  margin: 10px 0;
+}
+.c-requirement__edit__item .datepicker-wrapper .icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-requirement__edit__item .datepicker-wrapper__item {
+  margin: 10px 0;
+}
+.c-requirement__edit__item .datepicker-wrapper__item .input-number {
+  text-align: center;
+  width: 100px;
+}
+.c-requirement__edit__item .datepicker-wrapper .date-picker-input {
+  width: 200px;
+}
+.c-requirement__edit__item__note {
+  margin-top: 20px;
+}
+.c-requirement__edit__item__note textarea {
+  border: none;
+  background: #edf9f9;
+  width: 100%;
+  border-radius: 4px;
+  line-height: 22px;
+  padding: 15px 20px;
+  height: 100px;
+  font-size: 14px;
+}
+.c-reservation__link {
+  display: block;
+  position: relative;
+  margin: 20px;
+}
+.c-reservation__link img {
+  width: 100%;
+}
+.c-reservation__link span {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  color: #fff;
+}
+.c-reservation__order-detail {
+  padding: 0 20px;
+}
+.c-reservation__order-detail__top img {
+  width: 120px;
+  vertical-align: middle;
+}
+.c-reservation__order-detail__top__content {
+  width: calc(100% - 120px);
+  padding: 0 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-reservation__order-detail__section {
+  margin: 20px 0;
+}
+.c-reservation__order-detail__section .title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.c-reservation__order-detail__section .select-style-1,
+.c-reservation__order-detail__section .select-style-2 {
+  background-color: #edf9f9;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.c-reservation__order-detail__section .select-style-1 {
+  color: #00a5a5;
+}
+.c-reservation__order-detail__section .select-style-2 {
+  color: #000;
+}
+.c-reservation__order-detail__section .style-top {
+  margin: 5px 0;
+}
+.c-reservation__order-detail__section .style-bottom {
+  font-size: 12px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+.c-reservation__order-detail__section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.c-reservation__order-detail__section li {
+  list-style-type: none;
+  width: 21%;
+  vertical-align: middle;
+  text-align: left;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.c-reservation__order-detail__section .language-list {
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 2px 0;
+}
 .c-rules {
   position: relative;
   height: 100%;
@@ -5083,6 +5230,28 @@ textarea.light:-ms-input-placeholder {
 }
 .slick-list {
   padding: 0;
+}
+.c-spinner__up {
+  background: url("../img/ic-spinner-up.png");
+}
+.c-spinner__down {
+  background: url("../img/ic-spinner-down.png");
+}
+.c-spinner__up,
+.c-spinner__down {
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-spinner input {
+  width: 70px;
+  font-size: 15px;
+  text-align: center;
+  padding: 0 10px;
 }
 .c-store {
   margin-bottom: 90px;

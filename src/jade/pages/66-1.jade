@@ -3,7 +3,7 @@ extends ../partials/_template
 
 
 block content
-  .c-guide(data-js-add-product)
+  .c-guide.has-sticky-btn(data-js-add-product)
     form
       .c-header.l-columns.l-v--m.l-pad--20.pos-relative
         .col.c-header--back.l-w--50p.l-v--m
@@ -24,7 +24,7 @@ block content
                 .input.l-columns
                   .col.left.l-v--m
                     span.l-mgn--r-5 ¥
-                    input(type="number", value="", placeholder="0.00", name="price", class="has-border--bottom")
+                    input.txt--c(type="number", value="", placeholder="0.00", name="price", class="has-border--bottom")
                   .col.right.l-v--m
                     select(name="price_unit")
                       option(value="piece") /个
@@ -33,13 +33,13 @@ block content
                       option(value="month") /月/人
                       option(value="sentence") /句
                       option(value="kw") /千字
-                    span.note (点击更换单位)
+                    //- span.note (点击更换单位)
               .c-guide__add-product__item.c-guide__add-product__item--price.l-w--100p.l-pad--l-20.l-pad--r-20.l-pad--b-5.l-mgn--b-25
                 .title 折后价：
                 .input.l-columns
                   .col.left.l-v--m
                     span.l-mgn--r-5 ¥
-                    input(type="number", value="", placeholder="0.00", name="price", class="has-border--bottom")
+                    input.txt--c(type="number", value="", placeholder="0.00", name="price", class="has-border--bottom")
                   .col.right.l-v--m
                     select(name="price_unit")
                       option(value="piece") /个
@@ -48,7 +48,7 @@ block content
                       option(value="month") /月/人
                       option(value="sentence") /句
                       option(value="kw") /千字
-                    span.note (点击更换单位)
+                    //- span.note (点击更换单位)
 
               .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-mgn--b-20(data-js-datepickerRange)
                 .ic--edit--green.l-inl-b.l-v--m.l-mgn--r-5
@@ -82,7 +82,7 @@ block content
                       input(type="radio", name="period", value="no", checked)
                     .c-guide__add-product__item__period__detail
                       p 依项目具体需求确定
-              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.has-border--bottom.l-pad--b-5
+              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-pad--b-5
                 .title.l-mgn--b-10 其他补充说明
                 textarea.l-w--100p.l-mgn--t-10(name="", rows="1", placeholder="请填写商品定价相关的其他补充说明")
               

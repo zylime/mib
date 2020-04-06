@@ -10,7 +10,7 @@ $.fn.AddProduct = function(opts){
   var categoryHtml = container.find('.js-category-container').html();
   var productHtml = container.find('.js-product-container').html();
 
-  
+
   events();
 
   function events(){
@@ -30,6 +30,7 @@ $.fn.AddProduct = function(opts){
     $(document).on('click touch', '.js-collapse-btn', function(){
       $(this).parent('.collapse').toggleClass('active');
     })
+
     // +-额外优惠
     $(document).on('click touch','.js-add-promt', function(){
       addPromt();
@@ -44,6 +45,12 @@ $.fn.AddProduct = function(opts){
     })
     $(document).on('click touch','.js-remove-category', function(){
       $(this).parents('.js-category-item').remove();
+      updateCategoryIndex();
+    })
+
+    // 删除语言
+    $(document).on('click touch','.js-remove-lang', function(){
+      $(this).parents('.js-lang-item').remove();
     })
     
     
@@ -129,6 +136,15 @@ $.fn.AddProduct = function(opts){
     $(categoryContainer).find('.js-remove-category').removeClass('hide');
     $(categoryContainer).find('.js-add-category').addClass('hide');
     $(categoryHtml).appendTo(categoryContainer);
+
+
+    updateCategoryIndex();
+  }
+  function updateCategoryIndex(){
+    $('.js-category-item').each(function(i){
+      $(this).attr('data-category-index',i+1);
+      $(this).find('.js-category-index').html(i+1);
+    })
   }
 
  
