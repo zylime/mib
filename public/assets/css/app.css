@@ -1415,8 +1415,11 @@ textarea.light:-ms-input-placeholder {
 .txt--cross {
   text-decoration: line-through;
 }
-.txt--underline {
+.txt--underline--grey {
   border-bottom: 1px solid #dde0e3;
+}
+.txt--underline {
+  text-decoration: underline;
 }
 .txt--100 {
   font-weight: 100;
@@ -4701,6 +4704,33 @@ textarea.light:-ms-input-placeholder {
 }
 .c-requirement__edit__item[data-status=toStart] .status-group .status-text {
   color: #b8bebe;
+}
+.c-requirement .upload-file-btn {
+  position: relative;
+}
+.c-requirement .upload-file-btn .upload-file-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.c-requirement .radio-group--1 .radio-item {
+  margin: 10px 0;
+}
+.c-requirement .radio-group--1 .radio-item .radio-icon,
+.c-requirement .radio-group--1 .radio-item .radio-label {
+  display: inline-block;
+  vertical-align: top;
+}
+.c-requirement .radio-group--1 .radio-item .radio-label {
+  width: calc(100% - 30px);
+  margin-left: 10px;
+}
+.c-requirement .radio-group--1 .radio-item .radio-icon {
+  width: 20px;
+  padding-top: 2px;
 }
 .c-reservation__link {
   display: block;

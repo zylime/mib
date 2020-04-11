@@ -55,6 +55,7 @@ $(document).ready(function(){
 
 
   $('[data-js-add-media]').AddMedia();
+  $('[data-js-upload-file]').UploadFile();
   $('[data-js-checkbox]').Checkbox();
   $('[data-js-radio-box]').RadioBox();
 

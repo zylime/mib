@@ -1,3 +1,4 @@
+// 上传图片
 /*
 (data-js-add-media)
   .l-flex.c-product-info--form--media.js-media

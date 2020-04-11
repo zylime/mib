@@ -2,38 +2,114 @@
 extends ../partials/_template
 
 block content
-  .c-requirement
+  .c-requirement.has-sticky-btn
     .c-header.l-columns.l-v--m.l-pad--20.pos-relative
       .col.c-header--back.l-w--50p.l-v--m
         a.ic--back--black.js-go-back(href="javascript:void(0)")
       .col.l-w--50p.txt--r.l-v--m
         a(href="javascript:void(0)") 保存
     .l-pad--l-10.l-pad--r-10
-      h3.l-mgn--b-10 提交详细需求
+      .l-columns
+        h2.l-mgn--b-10.l-w--80p.col.l-v--m 提交详细需求
+        .l-w--20p.col.l-v--m
+            .l-f--r
+              a.l-f--r(href="javascript:void(0)")
+                .ic--transalte--green
       p 清晰明确的需求核对是交付满意、沟通高效的基础保证
     .hr.l-mgn--t-20.l-mgn--b-20
     .l-pad--l-10.l-pad--r-10
-      .txt--font--16.txt--b.l-mgn--b-10 项目名称
-      input.l-w--100p(type="text", placeholder="请填写项目名称")
+      .txt--font--16.txt--b.l-mgn--b-15 项目名称
+      input.l-w--100p.txt--font--14(type="text", placeholder="请填写项目名称")
     .hr.l-mgn--b-20.l-mgn--t-15
     .l-pad--l-10.l-pad--r-10
-      .txt--font--16.txt--b.l-mgn--b-10 项目所属分类
-      input.l-w--100p(type="text", placeholder="请填写项目类型，中间用逗号隔开")
+      .txt--font--16.txt--b.l-mgn--b-15 项目所属分类
+      input.l-w--100p.txt--font--14(type="text", placeholder="请填写项目类型，中间用逗号隔开")
     .hr.l-mgn--b-20.l-mgn--t-15
-      .txt--font--16.txt--b.l-mgn--b-10 翻译语种
+    .l-pad--l-10.l-pad--r-10
+      .txt--font--16.txt--b.l-mgn--b-15 翻译语种
     .hr.l-mgn--b-20.l-mgn--t-15
-      .txt--font--16.txt--b.l-mgn--b-10 翻译的源文字总字数（/字）
-      input.l-w--100p(type="text", placeholder="请填写要翻译的总文字量")
+    .l-pad--l-10.l-pad--r-10
+      .txt--font--16.txt--b.l-mgn--b-15 翻译的源文字总字数（/字）
+      input.l-w--100p.txt--font--14(type="text", placeholder="请填写要翻译的总文字量")
     .hr.l-mgn--b-20.l-mgn--t-15
+    .l-pad--l-10.l-pad--r-10(data-js-upload-file)
       div 点击
-        a.txt--persian-green(href="javascript:void(0);") 上传翻译文件
-          input.upload-file.js-upload-file(type="file", name="")
+        a.txt--persian-green.upload-file-btn.js-upload-file-btn.txt--underline(href="javascript:void(0);") 上传翻译文件
+          input.upload-file-input.js-upload-file(type="file", name="")
+      div.display-file.js-display-file
     .hr.l-mgn--b-20.l-mgn--t-15
-      .txt--font--16.txt--b.l-mgn--b-10 翻译内容覆盖的专业领域
+    .l-pad--l-10.l-pad--r-10
+      .txt--font--16.txt--b.l-mgn--b-15 翻译内容覆盖的专业领域
+      input.l-w--100p.txt--font--14(type="text", placeholder="请填写相关领域的关键词，中间用逗号隔开")
+    .hr.l-mgn--b-20.l-mgn--t-15
+    .l-pad--l-10.l-pad--r-10
+      .txt--font--16.txt--b.l-mgn--b-15 期望完成周期
+      .datepicker-wrapper(data-js-datepickerRange)
+        .datepicker-wrapper__item
+          input.txt--persian-green.txt--font--14.date-picker-input.js-ui-datepicker-range.l-w--60p(value="点击设置期望完成周期", type="text")
+    .hr.l-mgn--b-20.l-mgn--t-15
+    .l-pad--l-10.l-pad--r-10
+      .txt--font--16.txt--b.l-mgn--b-15 是否有翻译测试需求？
+      .radio-group--1(data-js-radio-box)
+        .radio-item
+          .radio-icon
+            .ic--checkbox-2.js-checkbox
+              input(type="hidden" name="", value="")
+          .radio-label.txt--font--14 无
+        .radio-item(data-js-upload-file)
+          .radio-icon
+            .ic--checkbox-2.js-checkbox.active
+              input(type="hidden" name="", value="checked")
+          .radio-label.txt--font--14 有，点击
+            a.txt--persian-green.upload-file-btn.js-upload-file-btn.txt--underline(href="javascript:void(0);") 上传文件
+              input.upload-file-input.js-upload-file(type="file", name="")
+            div.display-file.js-display-file
+    .hr.l-mgn--b-20.l-mgn--t-15
+    .l-pad--l-10.l-pad--r-10
+      .txt--font--16.txt--b.l-mgn--b-15 请勾选对翻译质量的要求（可多选）
 
-
+      .l-columns(data-js-checkbox)
+        .col.l-w--80p.l-v--m
+          p.txt--font--12 翻译的原始文件不要做任何修改，保持原状，因为源文档往往和游戏程序直接匹配，任何修改均会造成程序导入出错。
+        .col.l-w--20p.l-v--m
+          .ic--checkbox-2.l-mgn--auto.js-checkbox.active
+            input(type="hidden" name="", value="checked")
+        .l-pad--b-20
+          .col.l-w--80p.l-v--m
+            p.txt--font--12 所有字符、标点符号、代码、数字、英文字母均不做翻译，只做源文字的文字翻译。
+          .col.l-w--20p.l-v--m
+            .ic--checkbox-2.l-mgn--auto.js-checkbox
+              input(type="hidden" name="")
+        .l-pad--b-20
+          .col.l-w--80p.l-v--m
+            p.txt--font--12 字符、代码和标点符号，请务必严格遵守源文档中字符与汉字的间隔标准做直接输出，不要做任何修改。
+          .col.l-w--20p.l-v--m
+            .ic--checkbox-2.l-mgn--auto.js-checkbox
+              input(type="hidden" name="")
+        .l-pad--b-20
+          .col.l-w--80p.l-v--m
+            p.txt--font--12 注意译文与源文的长度尽量相当，因为文字长度会影响到UI设计、长度相当会减少很多游戏开发和设计的工作量。
+          .col.l-w--20p.l-v--m
+            .ic--checkbox-2.l-mgn--auto.js-checkbox
+              input(type="hidden" name="")
+        .l-pad--b-20
+          .col.l-w--80p.l-v--m
+            p.txt--font--12 请务必注意专业领域翻译用语的精准性。
+          .col.l-w--20p.l-v--m
+            .ic--checkbox-2.l-mgn--auto.js-checkbox
+              input(type="hidden" name="")
+        .l-pad--b-20
+          .col.l-w--80p.l-v--m
+            p.txt--font--12 忠实原文、译文精准；语句通顺，全文流畅。
+          .col.l-w--20p.l-v--m
+            .ic--checkbox-2.l-mgn--auto.js-checkbox
+              input(type="hidden" name="")
+    .hr.l-mgn--t-20.l-mgn--b-20
+    .l-pad--l-10.l-pad--r-10.l-pad--b-20
+      .txt--font--16.txt--b.l-mgn--b-15 其他要求
+      input.l-w--100p.txt--font--14(type="text", placeholder="如有其他要求请填写")
 
 
   .c-menu.l-pad--20.no-shadow
-    a.btn-type-3(href="./9-2.html") 下一步
+    a.btn-type-3(href="./10-1.html") 下一步
     
