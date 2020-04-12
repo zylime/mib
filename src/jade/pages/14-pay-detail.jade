@@ -1,0 +1,118 @@
+//- 付款明细14
+extends ../partials/_template
+
+block content
+  .c-pay-detail
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black.js-go-back(href="javascript:void(0)")
+    .l-pad--l-20.l-pad--r-20.l-mgn--b-20
+      h2.l-mgn--b-10.l-w--80p.col.l-v--m 付款明细
+      .c-pay-detail__sum
+        .dot
+        h3 订单总金额：
+      .hr.l-mgn--t-20.l-mgn--b-20
+      p 订单支付阶段：
+      ul.c-pay-detail__stage-list
+        li.style-1
+          .icon
+          .l-columns.content-container
+            .l-w--25p.col.txt--b 第1阶段：
+            .l-w--30p.col 测试期
+            .l-w--15p.col.txt--r (0%)
+            .l-w--30p.col.txt--r ¥0.00
+        li.style-2
+          .icon
+          .l-columns.content-container
+            .l-w--25p.col.txt--b 第2阶段：
+            .l-w--30p.col 首付款阶段
+            .l-w--15p.col.txt--r (30%)
+            .l-w--30p.col.txt--r ¥24570.00
+        li.style-3
+          .icon
+          .l-columns.content-container
+            .l-w--25p.col.txt--b 第2阶段：
+            .l-w--30p.col 第二笔付款
+            .l-w--15p.col.txt--r (30%)
+            .l-w--30p.col.txt--r ¥24570.00
+        li.style-3
+          .icon
+          .l-columns.content-container
+            .l-w--25p.col.txt--b 尾款阶段：
+            .l-w--30p.col 尾款支付
+            .l-w--15p.col.txt--r (40%)
+            .l-w--30p.col.txt--r ¥32760.00
+      .hr.l-mgn--t-20.l-mgn--b-20
+      .txt--r.txt--bittersweet CNY
+        span.txt--font--20.txt--bittersweet.txt--b.l-mgn--l-10 ¥24570.00
+    .break-bar
+    .c-pay-detail__store
+      .c-pay-detail__store__head
+        .l-w--100p.l-mgn--b-10
+          .ic--store
+          .store-name.has-right-arrow.has-right-arrow--porcelain 美声音频制作小屋
+        .product-image
+          img.l-w--100p(src=paths.img+"product-image-239x239.jpg", alt="")
+        .product-description
+          .txt--b.l-mgn--b-10 次世代3D飞行东方幻想游戏
+          .txt--font--12.l-mgn--b-5 已选：S级/意大利语/阿拉伯
+          .txt--font--12.l-mgn--b-10 单位：千字/源文字
+          .l-columns
+            .l-w--50p.col.price ¥ 520
+              span.txt--cross.txt--silver-sand.l-mgn--l-10 ¥ 720.00
+            .l-w--50p.col.txt--font--12.txt--silver-sand.txt--r x150
+      .hr.l-mgn--t-20.l-mgn--b-20
+      .c-pay-detail__store__section.l-columns
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b.l-v--m 数量
+          .col.l-w--50p.txt--r.l-v--m
+            .c-spinner(data-js-spinner)
+              .c-spinner__up.js-spinner-up
+              input.js-spinner-input(type="text", value="0")
+              .c-spinner__down.js-spinner-down
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 备注：
+          .col.l-w--50p.txt--r
+            a.has-right-arrow--b(href="javascript:void(0)") 订单的详情需求补充
+        .hr.l-mgn--t-20.l-mgn--b-20
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 发票：
+          .col.l-w--50p.txt--r
+            a.has-right-arrow--b(href="javascript:void(0)") 不开发票
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 礼券：
+          .col.l-w--50p.txt--r
+            a.has-right-arrow--b(href="javascript:void(0)") 无可用
+    .break-bar
+    .c-pay-detail__store
+      .c-pay-detail__store__section.l-columns
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 商品金额总计：
+          .col.l-w--50p.txt--r ¥78000.00
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 礼券冲抵：
+          .col.l-w--50p.txt--r 0.00
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 店铺其他优惠：
+          .col.l-w--50p.txt--r 0.00
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 平台活动优惠：
+          .col.l-w--50p.txt--r 0.00
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 服务费5%：
+          .col.l-w--50p.txt--r ¥3900.00
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 增值税5%：
+          .col.l-w--50p.txt--r ¥0.00
+        .hr.l-mgn--t-20.l-mgn--b-20
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b.txt--font--18 实付总额：
+          .col.l-w--50p.txt--r.txt--b ¥78000.00
+          .col.l-w--100p.txt--r.txt--bittersweet 已优惠 ¥3000.00
+        .hr.l-mgn--t-20.l-mgn--b-20
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b.txt--font--18 实付总额：
+          .col.l-w--50p.txt--r.txt--font--18 CNY 
+            span.txt--b.txt--font--20 ¥24570.00
+
+

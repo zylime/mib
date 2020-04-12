@@ -1264,6 +1264,14 @@ input:-ms-input-placeholder {
   width: 20px;
   height: 20px;
 }
+.ic--store {
+  background-image: url("../img/ic-store.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+}
 html,
 body {
   height: 100%;
@@ -1380,6 +1388,13 @@ textarea.light:-ms-input-placeholder {
 }
 .txt--iron {
   color: #dde0e3 !important;
+}
+.txt--silver-sand {
+  color: #c5c9c9 !important;
+}
+.txt--font--20 {
+  font-size: 20px !important;
+  line-height: 28px !important;
 }
 .txt--font--18 {
   font-size: 18px !important;
@@ -3600,6 +3615,103 @@ textarea.light:-ms-input-placeholder {
   color: #00a5a5;
   font-size: 11px;
   line-height: 14px;
+}
+.c-pay-detail__sum .dot,
+.c-pay-detail__sum h3 {
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-pay-detail__sum .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00a5a5;
+  margin-right: 10px;
+}
+.c-pay-detail__stage-list li {
+  position: relative;
+  list-style-type: none;
+  margin: 20px 0;
+}
+.c-pay-detail__stage-list li .content-container,
+.c-pay-detail__stage-list li .icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-pay-detail__stage-list li .content-container {
+  width: calc(100% - 30px);
+  margin-left: 10px;
+  padding: 5px 10px;
+}
+.c-pay-detail__stage-list li .icon {
+  background-image: url("../img/ic-group-1.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+.c-pay-detail__stage-list li:before {
+  content: "";
+  width: 2px;
+  height: 22px;
+  background: #dde0e3;
+  display: block;
+  position: absolute;
+  bottom: 29px;
+  left: 9px;
+}
+.c-pay-detail__stage-list li.style-1 .icon {
+  background-position: 0 0;
+}
+.c-pay-detail__stage-list li.style-1 .content-container {
+  background-color: #edf9f9;
+}
+.c-pay-detail__stage-list li.style-2 .icon {
+  background-position: -20px 0;
+}
+.c-pay-detail__stage-list li.style-2 .content-container {
+  background-color: #edf9f9;
+}
+.c-pay-detail__stage-list li.style-2:before {
+  background: #00a5a5;
+}
+.c-pay-detail__stage-list li.style-3 .icon {
+  background-position: -40px 0;
+}
+.c-pay-detail__stage-list li:nth-of-type(1):before {
+  display: none;
+}
+.c-pay-detail .break-bar {
+  background: #edf0f3;
+  height: 8px;
+  width: 100%;
+}
+.c-pay-detail__store {
+  padding: 20px;
+}
+.c-pay-detail__store__head .ic--store,
+.c-pay-detail__store__head .store-name,
+.c-pay-detail__store__head .product-image,
+.c-pay-detail__store__head .product-description {
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-pay-detail__store__head .store-name {
+  margin-left: 10px;
+  padding-right: 20px;
+}
+.c-pay-detail__store__head .product-image {
+  width: 100px;
+}
+.c-pay-detail__store__head .product-description {
+  width: calc(100% - 110px);
+  margin-left: 10px;
+}
+.c-pay-detail__store__section__item {
+  margin: 20px 0;
+}
+.c-pay-detail__store__section__item .has-right-arrow--b {
+  padding-right: 20px;
 }
 .c-pay-success {
   text-align: center;

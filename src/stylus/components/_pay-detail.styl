@@ -1,0 +1,86 @@
+.c-pay-detail
+  &__sum
+    .dot
+    h3
+      display inline-block
+      vertical-align middle
+    .dot
+      width 6px
+      height 6px
+      border-radius 50%
+      background $col-persian-green
+      margin-right 10px
+  &__stage-list
+    li
+      position relative
+      list-style-type none
+      margin 20px 0
+      .content-container
+      .icon
+        display inline-block
+        vertical-align middle
+      .content-container
+        width calc(100% - 30px)
+        margin-left 10px
+        padding 5px 10px
+      .icon
+        background-image url(../img/ic-group-1.png)
+        background-size auto 100%
+        background-repeat no-repeat
+        width 20px
+        height 20px
+      &:before
+        content ""
+        width 2px
+        height 22px
+        background $col-iron
+        display block
+        position absolute
+        bottom 29px
+        left 9px
+      &.style-1
+        .icon
+          background-position 0 0
+        .content-container
+          background-color $col-cornflower-blue
+          
+      &.style-2
+        .icon
+          background-position -20px 0
+        .content-container
+          background-color $col-cornflower-blue
+        &:before
+          background $col-persian-green
+      &.style-3
+        .icon
+          background-position -40px 0
+      
+      &:nth-of-type(1)
+        &:before
+          display none
+  .break-bar
+    background $col-athens-gray
+    height 8px
+    width 100%
+  &__store
+    padding 20px
+    &__head
+      .ic--store
+      .store-name
+      .product-image
+      .product-description
+        display inline-block
+        vertical-align middle
+      .store-name
+        margin-left 10px
+        padding-right 20px
+      .product-image
+        width 100px
+      .product-description
+        width calc(100% - 110px)
+        margin-left 10px
+    &__section
+      &__item
+        margin 20px 0
+        .has-right-arrow--b
+          padding-right 20px
