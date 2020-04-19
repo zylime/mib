@@ -1,0 +1,120 @@
+.c-invoice
+  background $col-athens-gray
+  .section
+    background $col-white
+    padding 20px
+    margin-top 10px
+    h3
+      font-size 18px
+      margin-bottom 20px
+  .input-wrapper
+    background $col-wild-sand
+    border-radius 25px
+    padding 10px
+    position relative
+    .txt--bittersweet
+    .close
+    input
+      display inline-block
+      vertical-align middle
+    .txt--bittersweet
+      width 20px
+      text-align center
+    .close
+      background $col-silver
+      width 14px
+      height 14px
+      border-radius 50%
+      position relative
+      margin-left 5px
+      &:before
+      &:after
+        content ""
+        background $col-white
+        width 8px
+        height 1px
+        position absolute
+        top 50%
+        left 3px
+      &:before
+        transform rotate(-45deg) 
+      &:after
+        transform rotate(45deg) 
+    input
+      background transparent
+      font-size 14px
+      width calc(100% - 40px)
+  &__head
+    padding-top 0 !important
+    margin-top 0 !important
+    padding-bottom 1px !important
+    &__type
+      .type
+        border 1px solid $col-iron
+        border-radius 25px
+        padding 5px 0
+        display inline-block
+        vertical-align middle
+        margin-right 10px
+        width 80px
+        text-align center
+        font-weight bold
+        &.active
+          border 1px solid $col-persian-green
+          color $col-persian-green
+          background $col-cornflower-blue
+      .type-input
+        display none
+        margin-top 20px
+        &.active
+          display block
+    
+    &__saved
+      margin-top 10px
+      &__item
+        border 1px solid $col-iron
+        padding 2px 10px
+        border-radius 20px
+        margin 0 5px 10px 0        
+        display inline-block
+        vertical-align middle
+        span
+          color $col-edward
+          font-size 12px
+          display inline-block
+          vertical-align middle
+        .remove
+          display inline-block
+          vertical-align middle
+          width 14px
+          height 14px
+          position relative
+
+          &:before
+          &:after
+            content ""
+            background $col-edward
+            width 10px
+            height 1px
+            position absolute
+            top 6px
+            left 2px
+          &:before
+            transform rotate(-45deg) 
+          &:after
+            transform rotate(45deg) 
+  &__bottom
+    .invoice-btn
+      background $col-wild-sand
+      padding 10px 20px
+      display inline-block
+      vertical-align middle
+      margin 0 10px 10px 0
+      border-radius 20px
+      border 1px solid $col-white
+      &.active
+        border 1px solid $col-persian-green
+        color $col-persian-green
+        background $col-cornflower-blue
+      
+    

@@ -52,6 +52,12 @@ $.fn.AddProduct = function(opts){
     $(document).on('click touch','.js-remove-lang', function(){
       $(this).parents('.js-lang-item').remove();
     })
+
+    // 折后价max设置
+    $('.js-discount-price').on('click', function(){
+      var max = $('.js-price').val();
+      $(this).attr('max', max);
+    })
     
     
   }

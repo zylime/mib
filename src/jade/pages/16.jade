@@ -2,56 +2,130 @@
 extends ../partials/_template
 
 block content
-  form.c-order-detail.c-prepay.c-process(data-js-prepay)
-    .ic--back--black.l-mgn--b-20.js-go-back
-    h2.l-mgn--b-10 检查并支付
-    .c-order-detail--item.l-columns
-      .col.l-w--70p.l-v--t
-        .project-title 中国水墨风/国产武侠原画，超高精度
-      .col.l-w--30p.l-v--t
-        img.l-w--100p(src=paths.img + 'order-detail-thumb.jpg', alt="产品图片")
-    .c-
-    a.c-order-detail--item.l-columns.has-right-arrow--b(href="payment-mathod.html")
-      .col.l-w--100p
-        .ic--alipay.l-inl-b.l-v--m.l-mgn--r-10
-        .title.l-inl-b.l-v--m 支付宝
+  .c-pay-detail.bg--athens-gray
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 确认订单
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black.js-go-back(href="javascript:void(0)")
+    .break-bar
+    .section
+      .image-container
+        img(src=paths.img+'pay-detail--location.png', alt="")
+      .c-pay-detail__info
+        p.txt--b Lina
+          span 18611691535
+        p.txt--font--12 中国，北京，北京市天禾互动有限公司
+    .break-bar
+    .section.c-pay-detail__pay-method
+      .l-columns
+        .l-w--50p.col 支付方式
+        .l-w--50p.col.txt--r
+          a.has-right-arrow--b.l-pad--r-15(href="javascript:void(0)")
+            .ic--pay--wechat
+            span 微信方式
+    .break-bar
+    .c-pay-detail__store
+      .c-pay-detail__store__head
+        .l-w--100p.l-mgn--b-10
+          .ic--store
+          .store-name.has-right-arrow.has-right-arrow--porcelain 美声音频制作小屋
+        .product-image
+          img.l-w--100p(src=paths.img+"product-image-239x239.jpg", alt="")
+        .product-description
+          .txt--b.l-mgn--b-10 次世代3D飞行东方幻想游戏
+          .txt--font--12.l-mgn--b-5 已选：S级/意大利语/阿拉伯
+          .txt--font--12.l-mgn--b-10 单位：千字/源文字
+          .l-columns
+            .l-w--50p.col.price ¥ 520
+              span.txt--cross.txt--silver-sand.l-mgn--l-10 ¥ 720.00
+            .l-w--50p.col.txt--font--12.txt--silver-sand.txt--r x150
+      .hr.l-mgn--t-20.l-mgn--b-20
+      .c-pay-detail__store__section.l-columns
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b.l-v--m 数量
+          .col.l-w--50p.txt--r.l-v--m
+            .c-spinner.disabled(data-js-spinner)
+              .c-spinner__down.js-spinner-down
+              input.js-spinner-input(type="text", value="120")
+              .c-spinner__up.js-spinner-up
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 备注：
+          .col.l-w--50p.txt--r
+            a.has-right-arrow--b.txt--silver-sand(href="javascript:void(0)") 订单的详情需求补充
+        .hr.l-mgn--t-20.l-mgn--b-20
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 发票：
+          .col.l-w--50p.txt--r
+            a.has-right-arrow--b(href="javascript:void(0)") 不开发票
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 礼券：
+          .col.l-w--50p.txt--r
+            a.has-right-arrow--b(href="javascript:void(0)") 无可用
+    .break-bar
+    .c-pay-detail__store
+      .c-pay-detail__store__section.l-columns
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 商品金额总计：
+          .col.l-w--50p.txt--r ¥78000.00
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 礼券冲抵：
+          .col.l-w--50p.txt--r 0.00
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 店铺其他优惠：
+          .col.l-w--50p.txt--r 0.00
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 平台活动优惠：
+          .col.l-w--50p.txt--r 0.00
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 服务费5%：
+          .col.l-w--50p.txt--r ¥3900.00
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b 增值税5%：
+          .col.l-w--50p.txt--r ¥0.00
+        .hr.l-mgn--t-20.l-mgn--b-20
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b.txt--font--16 实付总额：
+          .col.l-w--50p.txt--r.txt--b ¥78000.00
+          .col.l-w--100p.txt--r.txt--bittersweet 已优惠 ¥3000.00
+        .hr.l-mgn--t-20.l-mgn--b-20
+        .c-pay-detail__store__section__item
+          .col.l-w--50p.txt--b.txt--font--16 本次支付：
+          .col.l-w--50p.txt--r.txt--font--14 CNY 
+            span.txt--b.txt--font--16 ¥24570.00
+          .l-w--100p
+            span.txt--font--12.l-mgn--r-10.l-v--m (30%, 第2阶段：首付款阶段)
+            .ic--question-mark
+    .break-bar
+    .section.c-pay-detail__refund
+      .txt--font--18.txt--b 退订政策
+      ul
+        li
+          .dot 1
+          p.
+            距离项目启动时间至少<b>3天</b>取消预定可全额退款(服务费除外)；在该时间内、但项目尚未启动前取消预定扣除预付款的30%，服务费不退。
+        li
+          .dot 2
+          p 项目启动后不接受退款。
+        li
+          .dot 3
+          p.
+            下单并付款完成后<b>48小时</b>内取消的预定，服务费可全额退还。
+        li
+          .dot 4
+          p 因服务质量问题导致的客户退款，根据实际情况另行商议。
+      .hr.l-mgn--t-20.l-mgn--b-20
+      p.
+        我同意<a href="" class="txt--persian-green txt--underline">商铺合作守则，退订政策</a>，我也同意支付已预订定单的如下金额。
 
-    .c-order-detail--item.l-columns
-      .col.l-w--50p.l-mgn--b-15.title.
-        <span>¥2500/天</span><i class="ic--mutiply"></i><span>30天</span>
-      .col.l-w--50p.txt--r.l-mgn--b-15.title.js-price(data-price='60000') ¥60000.00
-      .col.l-w--50p.l-mgn--b-15.
-        首付款 <span class="txt--burnt-sienna">30%</span>
-      .col.l-w--50p.txt--r.l-mgn--b-15.title.js-price(data-price='2000') ¥2000.00
-      .col.l-w--50p.l-mgn--b-15.
-        服务费 <span class="txt--burnt-sienna">5%</span>
-      .col.l-w--50p.txt--r.l-mgn--b-15.title.js-price(data-price='2000') ¥2000.00
-      .col.l-w--50p.l-mgn--b-15.
-        增值税 <span class="txt--burnt-sienna">6%</span>
-      .col.l-w--50p.txt--r.l-mgn--b-15.title.js-price(data-price='2000') ¥2000.00
-      .col.l-w--100p.txt--r
-        a.txt--persian-green(href="gift-card.html") 添加礼金券     
-    .c-order-detail--item.l-columns
-      .col.l-w--50p.title.
-        总额 (CNY)  
-      .col.l-w--50p.txt--r
-        span.txt--persian-green.total.js-total(data-price) ¥26000.00
-
-    .c-order-detail--item.l-columns
-      .col.l-w--100p.title.l-mgn--b-10 退订政策
-      .col.l-w--100p
-        p.
-          距离项目启动时间至少5天取消预订才可全额退款（服务费除外）。距离启动日期5议案内取消预订，扣除预付款的30%，剩余的款项全额退还。尚未入驻，且在预订确认后48小时内取消的预订，将退还服务费。 
-    .c-order-detail--item.l-columns
-      .col.l-w--100p
-        input(type="hidden", name="refoundAgreement", value="")
-        .ic--checkbox-2.l-f--l.l-mgn--b-30.l-mgn--t-5.l-mgn--r-5.js-checkbox(data-checked='')
-        p.
-          我同意<a class="txt--persian-green" href="rules.html">商铺合作守则，退订政策</a>，我也同意支付已预订定单的如下金额。
-        
-    .c-order-detail--item.l-columns
-      .col.l-w--100p
-        a.btn-type-3(href="pay-success.html") 确认预定 ¥26000.00
+    .c-pay-detail__submit-order
+      .border
+        .left
+          .ic--cart
+          span.l-mgn--l-5.txt--font--12 实付：
+          span.txt--bittersweet ¥
+          span.txt--bittersweet.txt--font--18.txt--b 24570.00
+        a.right(href="javascript:void(0)") 提交订单
 
         
 

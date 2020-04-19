@@ -7,7 +7,7 @@ $(document).ready(function(){
   $('[data-js-sign-in-by-mobile]').SignInByMobile();
   $('[data-js-sign-in-by-mobile]').MobileVerification();
   $('[data-js-register]').Register();
-  $('[data-js-order-detail]').OrderDetail();
+  // $('[data-js-order-detail]').OrderDetail(); --removed
   $('[data-js-prepay]').PrePay();
   $('[data-js-payment-method]').PaymentMethod();
   $('[data-js-home]').Home();
@@ -37,6 +37,7 @@ $(document).ready(function(){
   $('[data-js-company-info]').CompanyInfo();
 
   $('[data-js-product-info]').ProductInfo();
+  $('[data-js-invoice]').Invoice();
 
   $('[data-js-chat]').Chat();
   $('[data-js-select-and-count]').SelectAndCount();
@@ -52,6 +53,7 @@ $(document).ready(function(){
   $('[data-js-more-menu]').MoreMenu();
   $('[data-js-favorite]').Favorite();
   $('[data-js-business]').Business();
+  $('[data-edit-stage]').EditStage();
 
 
   $('[data-js-add-media]').AddMedia();
@@ -76,7 +78,7 @@ $(document).ready(function(){
   $('[data-js-search]').Search();
 
   $('[data-js-datepicker]').datePicker();
-  $('[data-js-datepickerRange]').datePickerRange();
+  $('[data-js-datepickerRange]').DatePickerRange();
 
   $('[data-js-spinner]').Spinner();
 

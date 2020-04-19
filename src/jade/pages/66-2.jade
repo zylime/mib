@@ -1,0 +1,64 @@
+//- 公司发票信息添加页66-2
+extends ../partials/_template
+
+
+block content
+  .c-invoice.has-sticky-btn(data-js-invoice)
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .c-header--title
+        span.txt--black 发票
+      .col.c-header--back.l-w--50p
+        a.ic--back--black.js-go-back(href="javascript:void(0)")
+      .col.c-header--other.l-w--50p.txt--r
+        a.txt--persian-green(href="javascript:void(0);") 发票须知
+
+    .section.c-invoice__head
+      h3.txt--b 发票抬头
+      .c-invoice__head__type.l-mgn--b-10.js-invoice-type
+        .type(data-tab=1) 个人
+        .type.active(data-tab=2) 单位
+        .type-input(data-tab-panel=1)
+          
+        .type-input.active(data-tab-panel=2)
+          .input-wrapper.l-mgn--b-10
+            .txt--bittersweet *
+            input(type="text" placeholder="请填写单位名称")
+            .close.js-clear
+          .input-wrapper.l-mgn--b-10
+            .txt--bittersweet *
+            input(type="text" placeholder="请填写纳税人识别号")
+          
+          .c-invoice__head__saved
+            .c-invoice__head__saved__item
+              span 爱奇艺科技有限公司
+              .remove.js-delete
+            .c-invoice__head__saved__item
+              span 时空隧道科技有限公司
+              .remove.js-delete
+            .c-invoice__head__saved__item
+              span 时空隧道(天津)科技有限公司
+              .remove.js-delete
+
+    .section.c-invoice__phone
+      h3.txt--b 收票人手机号
+      .input-wrapper
+        .txt--bittersweet *
+        input(type="number" placeholder="请输入收票人手机号")
+    .section.c-invoice__bottom
+      .txt--silver-sand 发票类型
+      .l-mgn--b-10.l-mgn--t-10
+        .invoice-btn.js-invoice-btn 电子发票
+      .txt--silver-sand 发票内容
+      .l-mgn--b-10.l-mgn--t-10
+        .invoice-btn.js-invoice-btn 培训服务
+        .invoice-btn.js-invoice-btn 技术外包服务
+
+
+    .c-menu.l-pad--20.no-shadow
+      button.btn-type-2.js-submit 确认
+
+
+      
+
+
+

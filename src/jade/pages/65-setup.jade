@@ -21,19 +21,19 @@ block content
       .l-w--100p.l-mgn--t-20
         .ic--location--2.l-inl-b.l-v--m.l-mgn--r-5
         span.txt--b.txt--font--16 设定项目的阶段划分和付款
-    .c-requirement__edit__item
+    .c-requirement__edit__item(data-stage=1)
       .l-w--100p
         img.l-inl-b.l-v--m.l-mgn--r-5(src=paths.img + "ic-check-2.png", alt="", width="20")
         .input-wrapper.has-border.l-inl-b.has-corner--5
-          span 第一阶段: 
-          input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="测试期")
+          span 第1阶段: 
+          input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="测试期", disabled)
         .ic--add-2.l-inl-b.l-v--m.l-mgn--l-10.js-add-category
         .ic--delete.l-v--m.l-inl-b.l-mgn--l-5.l-mgn--r-5.js-remove-category
       .datepicker-wrapper(data-js-datepickerRange)
         .datepicker-wrapper__item
           .icon.ic--edit--green.l-mgn--r-5
           input.txt--persian-green.txt--font--14.date-picker-input.js-ui-datepicker-range(value="点击设置折扣价的有效周期", type="text")
-        .datepicker-wrapper__item.display-date.
+        .datepicker-wrapper__item.display-date
           <div class="icon"><div class="ic--checkbox-3 active"></div></div>
           <div class="l-inl-b l-v--m txt--font--14">有效期已设置：<span class="js-date-display"></span></div>
         .datepicker-wrapper__item.l-mgn--t-15
@@ -41,14 +41,14 @@ block content
           input.border-bottom.input-number(type="text", value="0.00")
           span %
       .c-requirement__edit__item__note
-        textarea(name="") 阶段产出：按时按量地完成测试期的测试任务，测试审核通过后确认合作、进入下一阶段。
+        textarea(name="", disabled) 阶段产出：按时按量地完成测试期的测试任务，测试审核通过后确认合作、进入下一阶段。
     .hr
-    .c-requirement__edit__item
+    .c-requirement__edit__item(data-stage=9)
       .l-w--100p
         img.l-inl-b.l-v--m.l-mgn--r-5(src=paths.img + "ic-check-2.png", alt="", width="20")
         .input-wrapper.has-border.l-inl-b.has-corner--5
           span 尾款阶段: 
-          input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="测试期")
+          input.txt--font--14.l-inl-b.l-v--m(type="text", placeholder="测试期", disabled)
         .ic--add-2.l-inl-b.l-v--m.l-mgn--l-10.js-add-category
         .ic--delete.l-v--m.l-inl-b.l-mgn--l-5.l-mgn--r-5.js-remove-category
       .datepicker-wrapper(data-js-datepickerRange)
@@ -63,7 +63,7 @@ block content
           input.border-bottom.input-number(type="text", value="0.00")
           span %
       .c-requirement__edit__item__note
-        textarea(name="") 阶段产出：该阶段完成总任务的剩余的40%工作量，在固定周期内保质保量地完成该任务，提交产出文档、并通过审核后该阶段结束。
+        textarea(name="", disabled) 阶段产出：该阶段完成总任务的剩余的40%工作量，在固定周期内保质保量地完成该任务，提交产出文档、并通过审核后该阶段结束。
     .hr
 
 

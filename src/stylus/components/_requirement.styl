@@ -1,8 +1,33 @@
 .c-requirement
+  .template
+    display none
   &__edit
     &__item
       padding 0 20px
       margin 20px 0 30px 0
+      .top
+        img
+          display inline-block
+          vertical-align middle
+          margin-right 5px
+          width 20px
+        .input-wrapper
+          border 1px solid $col-iron
+          border-radius 5px
+          display inline-block
+          input
+            font-size 14px
+            display inline-block
+            vertical-align middle
+        .ic--add-2
+          display inline-block
+          vertical-align middle
+          margin-left 10px
+        .ic--delete
+          display inline-block
+          vertical-align middle
+          margin-left 5px
+          margin-right 5px
       .input-wrapper
         padding 10px
         span
@@ -17,16 +42,36 @@
         .icon
           display inline-block
           vertical-align middle
+          margin-right 5px
         &__item
           margin 10px 0
+          .stage-name
+            color $col-persian-green
+            font-size 14px
           .input-number
             text-align center
             width 100px
             background none
+            border-bottom 1px solid $col-iron
+          .date
+            display inline-block
+            vertical-align middle
+            font-size 14
+          .name
+            font-size 16px
+            font-weight bold
+ 
+            
         .date-picker-input
           width 200px
+          font-size 14px
+        .display-date
+          display none
+          &.active
+            display block
       &__note
         margin-top 20px
+        .textarea
         textarea
           border none
           background $col-cornflower-blue
@@ -34,8 +79,9 @@
           border-radius 4px
           line-height 22px
           padding 15px 20px
-          height 100px
+          // height 100px
           font-size 14px
+          max-height 100px
       .status-group
         text-align center
         display inline-block

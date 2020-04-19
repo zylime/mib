@@ -7,54 +7,58 @@ block content
     h3.l-mgn--b-10 价格明细
     p 高性价比，高品质服务
     .c-price-detail__container
-      each item in price_detail
-        .c-price-detail__item.l-columns
-          .c-price-detail__item__top.l-w--100p
-            .l-w--40p.col.l-pad--r-10.l-v--m
-              img.l-w--100p(src=paths.img+item.image)
-            .l-w--60p.c-price-detail__item__top__content.col.l-pad--l-5.l-v--m
-              p.txt--font--18 类别：#{item.category}级
-              p.txt--font--12!= item.description
-          .c-price-detail__item__bottom
-            each product in item.products
-              section.l-mgn--b-15
-                .l-w--100p.l-mgn--b-10
-                  p.txt--b 商品名：
-                  .box-white
-                    span.txt--persian-green!= product.name
-                .l-w--100p.l-mgn--b-10
-                  .l-w--50p.col.l-pad--r-10
-                    p 折后价：
-                    .box-white.l-inl-b ¥ #{product.discount_price}
-                  .l-w--50p.col
-                    p.unit 单位：
-                    .box-white.l-inl-b!=product.unit
-                .l-w--100p.l-mgn--b-10
-                  .l-w--50p.col
-                    p 原价：
-                    .box-white.l-inl-b.txt--cross ¥ #{product.price}
+    each item in price_detail
+      .c-price-detail__item.l-columns
+        .c-price-detail__item__top.l-w--100p
+          .l-w--40p.col.l-pad--r-10.l-v--m
+            img.l-w--100p(src=paths.img+item.image)
+          .l-w--60p.c-price-detail__item__top__content.col.l-pad--l-5.l-v--m
+            p.txt--font--18 类别：#{item.category}级
+            p.txt--font--12!= item.description
+        .c-price-detail__item__bottom
+          each product in item.products
+            section.l-mgn--b-15
+              .l-w--100p.l-mgn--b-10
+                p.txt--b 商品名：
+                .box-white
+                  span.txt--persian-green!= product.name
+              .l-w--100p.l-mgn--b-10
+                .l-w--50p.col.l-pad--r-10
+                  p 折后价：
+                  .box-white.l-inl-b ¥ #{product.discount_price}
+                .l-w--50p.col.txt--r
+                  p.unit 单位：
+                  .box-white.l-inl-b!=product.unit
+              .l-w--100p.l-mgn--b-10
+                .l-w--50p.col
+                  p 原价：
+                  .box-white.l-inl-b.txt--cross ¥ #{product.price}
     .hr.l-mgn--t-20.l-mgn--b-20
     .c-price-detail__promo
       h3.l-mgn--b-15 店铺额外优惠：
       .c-price-detail__promo__item
         .icon
           .ic--include__y
-        p.c-price-detail__promo__item__content 总价的额外折扣：<span>¥0.00</span>折
+        p.c-price-detail__promo__item__content.
+          总价的额外折扣：<span class="border-bottom l-pad--l-20 l-pad--r-20">0.00</span>折
       .c-price-detail__promo__item
         .icon
           .ic--include__y
         .c-price-detail__promo__item__content 
           p 满减优惠
           ul
-            li 满<span>¥100000.00</span>享有<span>9</span>折
-            li 满<span>¥100000.00</span>享有<span>9</span>折
-            li 满<span>¥100000.00</span>享有<span>9</span>折
+            li.
+              满<span class="border-bottom l-pad--l-20 l-pad--r-20">¥100000.00</span>享有<span class="border-bottom l-pad--l-20 l-pad--r-20">9</span>折
+            li.
+              满<span class="border-bottom l-pad--l-20 l-pad--r-20">¥100000.00</span>享有<span class="border-bottom l-pad--l-20 l-pad--r-20">9</span>折
+            li.
+              满<span class="border-bottom l-pad--l-20 l-pad--r-20">¥100000.00</span>享有<span class="border-bottom l-pad--l-20 l-pad--r-20">9</span>折
       .c-price-detail__promo__item
         .icon
           .ic--checkbox-3.active
         p.c-price-detail__promo__item__content 额外优惠有效期：2019.6.8-2019.6.30
     .hr.l-mgn--t-20.l-mgn--b-20
-    h3.l-mgn--b-15 售后服务
+    h3.l-mgn--b-15 售后服务:
     .c-price-detail__promo__item
       .icon
         .ic--include__y
@@ -62,11 +66,12 @@ block content
     .c-price-detail__promo__item
       .icon
         .ic--include__n
-      p.c-price-detail__promo__item__content 不提供发票，发票费用需要您另行承担5%
+      p.c-price-detail__promo__item__content 不提供发票，发票费用需要您另行承担<b class="l-pad--l-10 l-pad--r-10">5</b>%
     .c-price-detail__promo__item
       .icon
         .ic--include__n
-      p.c-price-detail__promo__item__content 店铺不提供发票、需要平台提供，发票费用需要您另行承担6%
+      p.c-price-detail__promo__item__content.
+        店铺不提供发票、需要平台提供，发票费用需要您另行承担<b class="l-pad--l-10 l-pad--r-10">6</b>%
     .c-price-detail__promo__item
       .icon
         .ic--include__y

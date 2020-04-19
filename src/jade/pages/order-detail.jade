@@ -1,67 +1,68 @@
-//- 预定详情
-extends ../partials/_template
+//- removed 20200418
+//- //- 预定详情
+//- extends ../partials/_template
 
-block content
-  form.c-order-detail.c-process(data-js-order-detail)
-    a.ic--back--black.l-mgn--b-20.js-go-back(href="javascript:void(0)")
-    h2.l-mgn--b-10 预定详情
-    p.smaller 店铺老板：优米
-    ul
+//- block content
+//-   form.c-order-detail.c-process(data-js-order-detail)
+//-     a.ic--back--black.l-mgn--b-20.js-go-back(href="javascript:void(0)")
+//-     h2.l-mgn--b-10 预定详情
+//-     p.smaller 店铺老板：优米
+//-     ul
       
-      li.c-order-detail--item.l-columns
-        .col.l-w--70p.l-v--t
-          .project-title 中国水墨风/国产武侠原画，超高精度
-        .col.l-w--30p.l-v--t
-          img.l-w--100p(src=paths.img + 'order-detail-thumb.jpg', alt="产品图片")
-      li.c-order-detail--item.l-columns
-        .col.l-w--40p
-          .title  日期
-        .col.l-w--60p.txt--r
-          //- input.c-datepicker.js-datepicker.txt--persian-green(placeholder="选择时间", required)
-          input.c-datepicker.txt--persian-green(required, type="hidden", value="9月1日 - 9月30日")
-          a.txt--persian-green(href="javascript:void(0);") 9月1日 - 9月30日
-      li.c-order-detail--item.l-columns
-        .col.l-w--60p
-          .title  工作人员
-        .col.l-w--40p.txt--r
-          span.txt--persian-green 1位
-      li.c-order-detail--item.l-columns.js-user-info
-        .col.l-w--70p
-          .title  预定人信息
-          p.l-mgn--t-15 李娜 1300000000000000
-        .col.l-w--30p.txt--r
-          span.txt--persian-green.js-btn 更改
-        input.user-name(type="text", name="userName", value="李娜")
-        input.user-id(type="text", name="userId", value="130123199001010000")
-      li.c-order-detail--item.l-columns
-        .col.l-w--70p
-          .title  预定须知
-        .col.l-w--30p
-          .ic--checkbox.l-f--r.js-order-detail-checkbox(data-value="")
-          input(type="hidden", name="rules", value="")
-        .col.l-w--100p.l-mgn--t-20
-          p.
-            1. 提交需求并下单后，中途不允许做大腹的设计更改，否则视为二次设计。<br/>
-            2. 本店不接受超出服务购买内容的需求。<br/>
-            3. 本店不接受试稿竞标的交易方式。<br/>
-            4. 本店不接受全额退款。<br/>
-            5. 请尊重设计师的创意成果，注意沟通语言。
-      li.c-order-detail--item.c-list--item.has-right-arrow.has-right-arrow--porcelain
-        a.l-columns(href="gift-card.html")
-          .col.l-w--70p
-            .title 礼金券
-          .col.l-w--30p
-      li.c-order-detail--item.l-columns
-        .col.l-w--100p
-          .title 给卖家留言（必填）
-        .col.l-w--100p.l-mgn--t-20
-          textarea.l-w--100p(placeholder = "你好！感谢你的信任，我们会努力完成需求。合作愉快：）", required)
-    .c-menu.c-store--footer
-      p 美术整包
-      p.price 30000-50000/张
+//-       li.c-order-detail--item.l-columns
+//-         .col.l-w--70p.l-v--t
+//-           .project-title 中国水墨风/国产武侠原画，超高精度
+//-         .col.l-w--30p.l-v--t
+//-           img.l-w--100p(src=paths.img + 'order-detail-thumb.jpg', alt="产品图片")
+//-       li.c-order-detail--item.l-columns
+//-         .col.l-w--40p
+//-           .title  日期
+//-         .col.l-w--60p.txt--r
+//-           //- input.c-datepicker.js-datepicker.txt--persian-green(placeholder="选择时间", required)
+//-           input.c-datepicker.txt--persian-green(required, type="hidden", value="9月1日 - 9月30日")
+//-           a.txt--persian-green(href="javascript:void(0);") 9月1日 - 9月30日
+//-       li.c-order-detail--item.l-columns
+//-         .col.l-w--60p
+//-           .title  工作人员
+//-         .col.l-w--40p.txt--r
+//-           span.txt--persian-green 1位
+//-       li.c-order-detail--item.l-columns.js-user-info
+//-         .col.l-w--70p
+//-           .title  预定人信息
+//-           p.l-mgn--t-15 李娜 1300000000000000
+//-         .col.l-w--30p.txt--r
+//-           span.txt--persian-green.js-btn 更改
+//-         input.user-name(type="text", name="userName", value="李娜")
+//-         input.user-id(type="text", name="userId", value="130123199001010000")
+//-       li.c-order-detail--item.l-columns
+//-         .col.l-w--70p
+//-           .title  预定须知
+//-         .col.l-w--30p
+//-           .ic--checkbox.l-f--r.js-order-detail-checkbox(data-value="")
+//-           input(type="hidden", name="rules", value="")
+//-         .col.l-w--100p.l-mgn--t-20
+//-           p.
+//-             1. 提交需求并下单后，中途不允许做大腹的设计更改，否则视为二次设计。<br/>
+//-             2. 本店不接受超出服务购买内容的需求。<br/>
+//-             3. 本店不接受试稿竞标的交易方式。<br/>
+//-             4. 本店不接受全额退款。<br/>
+//-             5. 请尊重设计师的创意成果，注意沟通语言。
+//-       li.c-order-detail--item.c-list--item.has-right-arrow.has-right-arrow--porcelain
+//-         a.l-columns(href="gift-card.html")
+//-           .col.l-w--70p
+//-             .title 礼金券
+//-           .col.l-w--30p
+//-       li.c-order-detail--item.l-columns
+//-         .col.l-w--100p
+//-           .title 给卖家留言（必填）
+//-         .col.l-w--100p.l-mgn--t-20
+//-           textarea.l-w--100p(placeholder = "你好！感谢你的信任，我们会努力完成需求。合作愉快：）", required)
+//-     .c-menu.c-store--footer
+//-       p 美术整包
+//-       p.price 30000-50000/张
       
-      a.link(href="pay-detail.html") 价格详情
-      a.c-store--footer--btn(href="rules.html") 下一步
+//-       a.link(href="pay-detail.html") 价格详情
+//-       a.c-store--footer--btn(href="rules.html") 下一步
         
 
     

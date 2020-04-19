@@ -14,6 +14,16 @@ $.fn.Spinner = function(opts){
   events();
 
   function events(){
+    if(!container.hasClass('disabled')){
+      initSpinner();
+    }
+    else{
+      inputBox.attr('readonly','readonly');
+    }
+   
+  
+  }
+  function initSpinner(){
     var spinnerNum = 0
     upBtn.on('click touch', function(){
       if(spinnerNum<max){
@@ -28,7 +38,6 @@ $.fn.Spinner = function(opts){
       }
       updateNum(spinnerNum);
     })
-  
   }
   function updateNum(num){
     inputBox.val(num);

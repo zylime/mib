@@ -1,0 +1,97 @@
+//- 阶段&付款14-1
+extends ../partials/_template
+
+block content
+  .c-requirement.c-requirement__edit.l-pad--b-90
+    .c-header.l-columns.l-v--m.l-pad--20.pos-relative
+      .col.c-header--back.l-w--50p.l-v--m
+        a.ic--back--black.js-go-back(href="javascript:void(0)")
+      .col.l-w--50p.txt--r.l-v--m
+        a(href="javascript:void(0)") 保存
+    .l-pad--l-20.l-pad--r-20.l-mgn--b-20
+      .l-columns
+        h2.l-mgn--b-10.l-w--80p.col.l-v--m 合作阶段&付款
+        .l-w--20p.col.l-v--m
+          .l-f--r
+            a.l-f--r(href="javascript:void(0)")
+              .ic--transalte--green
+      p 清晰明确的需求核对是交付满意、沟通高效的基础保证
+      
+
+      .l-w--100p.l-mgn--t-20
+        .ic--location--2.l-inl-b.l-v--m.l-mgn--r-5
+        span.txt--b.txt--font--16 设定项目的阶段划分和付款
+
+    //- data-status为Done表示已完成状态
+    .c-requirement__edit__item(data-status="done", data-stage=0)
+      .l-w--100p
+        img.l-inl-b.l-v--m.l-mgn--r-5(src=paths.img + "ic-check-2.png", alt="", width="20")
+        .input-wrapper.has-border.l-inl-b.has-corner--5
+          span 第1阶段: 
+          input.txt--font--14.l-inl-b.l-v--m(type="text", value="测试期", disabled)
+        .status-group
+          .status-icon
+          .status-text 已完成
+      .datepicker-wrapper
+        .datepicker-wrapper__item.display-date.
+          <div class="icon"><div class="ic--checkbox-3 active"></div></div>
+          <div class="l-inl-b l-v--m txt--font--14">有效期已设置：2019/10/1 - 2020/1/1</div>
+        .datepicker-wrapper__item.l-mgn--t-15
+          span.txt--b.txt--font--16 首付付款比例：
+          input.border-bottom.input-number(type="text", value="30", disabled)
+          span %
+      .c-requirement__edit__item__note
+        textarea(name="", disabled) 阶段产出：按时按量地完成测试期的测试任务，测试审核通过后确认合作、进入下一阶段。
+    .hr
+    //- data-status为inProgress表示进行中状态
+    .c-requirement__edit__item(data-status="inProgress", data-stage=1)
+      .l-w--100p
+        img.l-inl-b.l-v--m.l-mgn--r-5(src=paths.img + "ic-check-2.png", alt="", width="20")
+        .input-wrapper.has-border.l-inl-b.has-corner--5
+          span 第2阶段: 
+          input.txt--font--14.l-inl-b.l-v--m(type="text", value="首付款阶段", disabled)
+        .status-group
+          .status-icon
+          .status-text 未完成
+      .datepicker-wrapper
+        .datepicker-wrapper__item.display-date.
+          <div class="icon"><div class="ic--checkbox-3 active"></div></div>
+          <div class="l-inl-b l-v--m txt--font--14">有效期已设置：2019/10/1 - 2020/1/1</div>
+        .datepicker-wrapper__item.l-mgn--t-15
+          span.txt--b.txt--font--16 付款比例：
+          input.border-bottom.input-number(type="text", value="40",disabled)
+          span %
+      .c-requirement__edit__item__note
+        textarea(name="", disabled) 阶段产出：该阶段完成总任务的剩余的40%工作量，在固定周期内保质保量地完成该任务，提交产出文档、并通过审核后该阶段结束。
+    .hr
+
+    //- data-status为toStart表示未开始
+    .c-requirement__edit__item(data-status="toStart")
+      .l-w--100p
+        img.l-inl-b.l-v--m.l-mgn--r-5(src=paths.img + "ic-check-2.png", alt="", width="20")
+        .input-wrapper.has-border.l-inl-b.has-corner--5
+          span 第3阶段: 
+          input.txt--font--14.l-inl-b.l-v--m(type="text", value="首付款阶段", disabled)
+        .status-group
+          .status-icon
+          .status-text 未开始
+      .datepicker-wrapper
+        .datepicker-wrapper__item.display-date.
+          <div class="icon"><div class="ic--checkbox-3 active"></div></div>
+          <div class="l-inl-b l-v--m txt--font--14">有效期已设置：2019/10/1 - 2020/1/1</div>
+        .datepicker-wrapper__item.l-mgn--t-15
+          span.txt--b.txt--font--16 付款比例：
+          input.border-bottom.input-number(type="text", value="30", disabled)
+          span %
+      .c-requirement__edit__item__note
+        textarea(name="", disabled) 阶段产出：该阶段完成总任务的剩余的40%工作量，在固定周期内保质保量地完成该任务，提交产出文档、并通过审核后该阶段结束。
+    .hr
+
+
+
+
+
+
+  .c-menu.l-pad--20.no-shadow
+    a.btn-type-3(href="javascript:void(0);") 提交修改
+    

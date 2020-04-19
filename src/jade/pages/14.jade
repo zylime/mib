@@ -1,8 +1,8 @@
-//- 阶段&付款14
+//- 需求阶段设定页 14
 extends ../partials/_template
 
 block content
-  .c-requirement.c-requirement__edit.l-pad--b-90
+  .c-requirement.c-requirement__edit.has-sticky-btn
     .c-header.l-columns.l-v--m.l-pad--20.pos-relative
       .col.c-header--back.l-w--50p.l-v--m
         a.ic--back--black.js-go-back(href="javascript:void(0)")
@@ -21,71 +21,79 @@ block content
       .l-w--100p.l-mgn--t-20
         .ic--location--2.l-inl-b.l-v--m.l-mgn--r-5
         span.txt--b.txt--font--16 设定项目的阶段划分和付款
+    div(data-edit-stage)
+      //- 添加阶段模板html
+      .template
+        .c-requirement__edit__item.js-stage-item
+          .top
+            img(src=paths.img + "ic-check-2.png")
+            .input-wrapper
+              span 第n阶段: 
+              input.stage-name(type="text", placeholder="测试期", disabled)
+            .ic--add-2.js-add-stage
+            .ic--delete.js-remove-stage
+          .datepicker-wrapper(data-js-datepickerRange)
+            .datepicker-wrapper__item
+              .icon.ic--edit--green
+              input.date-picker-input.js-ui-datepicker-range(value="点击设置折扣价的有效周期", type="text")
+            .datepicker-wrapper__item.display-date
+              <div class="icon"><div class="ic--checkbox-3 active"></div></div>
+              <div class="date">有效期已设置：<span class="js-date-display"></span></div>
+            .datepicker-wrapper__item.l-mgn--t-15
+              span.name 付款比例：
+              input.input-number(type="number", value="0", min="1", max="100")
+              span %
+          .c-requirement__edit__item__note
+            .textarea.
+              阶段产出：该阶段完成总任务的额外<span class="input-number"></span>%工作量，在固定周期内保质保量地完成该任务，提交产出文档，并通过审核后该阶段结束。
 
-    //- data-status为Done表示已完成状态
-    .c-requirement__edit__item(data-status="done")
-      .l-w--100p
-        img.l-inl-b.l-v--m.l-mgn--r-5(src=paths.img + "ic-check-2.png", alt="", width="20")
-        .input-wrapper.has-border.l-inl-b.has-corner--5
-          span 第一阶段: 
-          input.txt--font--14.l-inl-b.l-v--m(type="text", value="测试期", disabled)
-        .status-group
-          .status-icon
-          .status-text 已完成
-      .datepicker-wrapper
-        .datepicker-wrapper__item.display-date.
-          <div class="icon"><div class="ic--checkbox-3 active"></div></div>
-          <div class="l-inl-b l-v--m txt--font--14">有效期已设置：2019/10/1 - 2020/1/1</div>
-        .datepicker-wrapper__item.l-mgn--t-15
-          span.txt--b.txt--font--16 首付付款比例：
-          input.border-bottom.input-number(type="text", value="30", disabled)
-          span %
-      .c-requirement__edit__item__note
-        textarea(name="", disabled) 阶段产出：按时按量地完成测试期的测试任务，测试审核通过后确认合作、进入下一阶段。
-    .hr
-    //- data-status为inProgress表示进行中状态
-    .c-requirement__edit__item(data-status="inProgress")
-      .l-w--100p
-        img.l-inl-b.l-v--m.l-mgn--r-5(src=paths.img + "ic-check-2.png", alt="", width="20")
-        .input-wrapper.has-border.l-inl-b.has-corner--5
-          span 第2阶段: 
-          input.txt--font--14.l-inl-b.l-v--m(type="text", value="首付款阶段", disabled)
-        .status-group
-          .status-icon
-          .status-text 未完成
-      .datepicker-wrapper
-        .datepicker-wrapper__item.display-date.
-          <div class="icon"><div class="ic--checkbox-3 active"></div></div>
-          <div class="l-inl-b l-v--m txt--font--14">有效期已设置：2019/10/1 - 2020/1/1</div>
-        .datepicker-wrapper__item.l-mgn--t-15
-          span.txt--b.txt--font--16 付款比例：
-          input.border-bottom.input-number(type="text", value="40",disabled)
-          span %
-      .c-requirement__edit__item__note
-        textarea(name="", disabled) 阶段产出：该阶段完成总任务的剩余的40%工作量，在固定周期内保质保量地完成该任务，提交产出文档、并通过审核后该阶段结束。
-    .hr
-
-    //- data-status为toStart表示未开始
-    .c-requirement__edit__item(data-status="toStart")
-      .l-w--100p
-        img.l-inl-b.l-v--m.l-mgn--r-5(src=paths.img + "ic-check-2.png", alt="", width="20")
-        .input-wrapper.has-border.l-inl-b.has-corner--5
-          span 第3阶段: 
-          input.txt--font--14.l-inl-b.l-v--m(type="text", value="首付款阶段", disabled)
-        .status-group
-          .status-icon
-          .status-text 未开始
-      .datepicker-wrapper
-        .datepicker-wrapper__item.display-date.
-          <div class="icon"><div class="ic--checkbox-3 active"></div></div>
-          <div class="l-inl-b l-v--m txt--font--14">有效期已设置：2019/10/1 - 2020/1/1</div>
-        .datepicker-wrapper__item.l-mgn--t-15
-          span.txt--b.txt--font--16 付款比例：
-          input.border-bottom.input-number(type="text", value="30", disabled)
-          span %
-      .c-requirement__edit__item__note
-        textarea(name="", disabled) 阶段产出：该阶段完成总任务的剩余的40%工作量，在固定周期内保质保量地完成该任务，提交产出文档、并通过审核后该阶段结束。
-    .hr
+        //- 第一阶段
+      .c-requirement__edit__item.js-stage-item(data-stage=0)
+        .top
+          img(src=paths.img + "ic-check-2.png", alt="", width="20")
+          .input-wrapper
+            span 第1阶段: 
+            input.stage-name(type="text", value="测试期", disabled)
+          .ic--add-2.js-add-stage
+          .ic--delete.js-remove-stage
+        .datepicker-wrapper(data-js-datepickerRange)
+          .datepicker-wrapper__item
+            .icon.ic--edit--green
+            input.txt--persian-green.date-picker-input.js-ui-datepicker-range(value="点击设置折扣价的有效周期", type="text")
+          .datepicker-wrapper__item.display-date.active.
+            <div class="icon"><div class="ic--checkbox-3 active"></div></div>
+            <div class="date">有效期已设置：<span class="js-date-display">2020/04/09 - 2020/04/17</span></div>
+          .datepicker-wrapper__item.l-mgn--t-15
+            span.txt--b.txt--font--16 首付付款比例：
+            input.input-number(type="text", value="0.00")
+            span %
+        .c-requirement__edit__item__note
+          .textarea.
+            阶段产出：按时按量地完成测试期的测试任务，测试审核通过后确认合作、进入下一阶段。
+      .hr
+      .c-requirement__edit__item.js-stage-item(data-stage=9)
+        .top
+          img(src=paths.img + "ic-check-2.png", alt="", width="20")
+          .input-wrapper
+            span 尾款阶段: 
+            input(type="text", disabled, value="尾款")
+          //- .ic--add-2.js-add-category
+          .ic--delete.js-remove-category
+        .datepicker-wrapper(data-js-datepickerRange)
+          .datepicker-wrapper__item
+            .icon.ic--edit--green
+            input.txt--persian-green.date-picker-input.js-ui-datepicker-range(value="点击设置折扣价的有效周期", type="text")
+          .datepicker-wrapper__item.display-date.active.
+            <div class="icon"><div class="ic--checkbox-3 active"></div></div>
+            <div class="date">有效期已设置：<span class="js-date-display">2020/04/09 - 2020/04/17</span></div>
+          .datepicker-wrapper__item.l-mgn--t-15
+            span.txt--b.txt--font--16 尾款付款比例：
+            input.input-number(type="text", value="30")
+            span %
+        .c-requirement__edit__item__note
+          .textarea.
+            阶段产出：该阶段完成总任务的额外<span class="input-number">30</span>%工作量，在固定周期内保质保量地完成该任务，提交产出文档，并通过审核后该阶段结束。
+      .hr
 
 
 
@@ -93,5 +101,5 @@ block content
 
 
   .c-menu.l-pad--20.no-shadow
-    a.btn-type-3(href="javascript:void(0);") 提交修改
+    a.btn-type-3(href="javascript:void(0);") 提交给店主
     
