@@ -37,11 +37,12 @@ $.fn.DatePickerRange = function(opts){
           }
       },
       onClose:function(){
-          $('.js-date-display').html(selectedRange);
+          $(this).parents('.datepicker-wrapper').find('.js-date-display').html(selectedRange);
+
           // $(this).val(defaultVal);
 
           // $('.display-date').addClass('active');
-          $('.display-date').addClass('active').removeClass('hide');
+          $(this).parents('.datepicker-wrapper').find('.display-date').addClass('active').removeClass('hide');
           delete $(this).data().datepicker.first;
           $(this).data().datepicker.inline = false;
       }

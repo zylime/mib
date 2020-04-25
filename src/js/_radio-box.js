@@ -16,7 +16,7 @@ $.fn.RadioBox = function(opts){
   function initCheckbox(){
     checkbox.on('click touch', function(){
       var _value;
-      checkbox.each(function(){
+      $(this).parents('[data-js-radio-box]').find('.js-checkbox').each(function(){
         $(this).removeClass('active');
         $(this).find('input').val('');
       })

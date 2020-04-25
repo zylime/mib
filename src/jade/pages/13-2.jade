@@ -12,27 +12,30 @@ block content
         img(src=paths.img+"product-image-6.jpg", alt="")
         .c-reservation__order-detail__top__content
           .txt--font--16.l-mgn--b-10
-            <b>限时特惠</b> <span class="txt--bittersweet l-mgn--l-5 l-mgn--r-5">¥520.00</span> <span class="txt--cross txt--iron txt--font--12">¥720</span>
+            <b>限时特惠</b> <span class="txt--bittersweet l-mgn--l-5 l-mgn--r-5 txt--b">¥520.00</span> <span class="txt--cross txt--iron txt--font--14">¥720</span>
           .txt--font--12 选择 分类
           .txt--font--12 单位：/句
       .c-reservation__order-detail__section
         .title 类别
-        .style-top.select-style-1 超高品质：
-        .style-bottom.txt--persian-green 制作人级
-        .style-top.select-style-2 高品质：
-        .style-bottom 资深专业级
+        div(data-js-radio-box)
+          .js-checkbox.active
+            .style-top 超高品质：
+            .style-bottom 制作人级
+          .js-checkbox
+            .style-top 高品质：
+            .style-bottom 资深专业级
 
       .hr
 
       .c-reservation__order-detail__section
         .title 详细分类
-        ul
+        ul(data-js-radio-box)
           - var klass
           each item in p13_2.category
             if item.select
-              - klass = 'select-style-1'
+              - klass = 'active js-checkbox'
             else
-              - klass = ''
+              - klass = 'js-checkbox'
             li(class=klass)!=item.name
     
       .hr

@@ -57,6 +57,7 @@ $.fn.EditStage = function(opts){
       }
     })
     syncInput();
+      $('[data-js-datepickerRange]').DatePickerRange();
   }
 
   

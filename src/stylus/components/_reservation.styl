@@ -40,9 +40,15 @@
         color $col-persian-green
       .select-style-2
         color $col-black
-
+      
       .style-top
         margin 5px 0
+        padding 5px 10px
+      .js-checkbox.active
+        .style-top
+          background-color $col-cornflower-blue
+          border-radius 4px
+          color $col-persian-green
       .style-bottom
         font-size 12px
         margin-bottom 10px
@@ -53,11 +59,17 @@
         justify-content space-between
       li
         list-style-type none
-        width 21%
+        width 50%
         vertical-align middle
         text-align left
         margin-bottom 20px
         text-align center
+        padding 5px 10px
+        &.active
+          background-color $col-cornflower-blue
+          border-radius 4px
+          color $col-persian-green
+       
       .language-list
         padding 5px 10px
         font-size 12px

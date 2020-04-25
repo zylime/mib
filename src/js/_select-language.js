@@ -27,7 +27,8 @@ $.fn.SelectLanguage = function(opts){
     })
     completeBtn.on('click touch', function(){
       // 这里返回之前页面并且需要有参数
-      window.location.href="./setting-user.html?" + queryString;
+      // window.location.href="./setting-user.html?" + queryString;
+      window.history.go(-1);
     })
     
   }

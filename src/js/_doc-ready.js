@@ -48,6 +48,7 @@ $(document).ready(function(){
 
   $('[data-js-selected]').Selected();
   $('[data-js-add-product]').AddProduct();
+  $('[data-js-reservation]').Reservation();
 
 
   $('[data-js-more-menu]').MoreMenu();

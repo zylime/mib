@@ -50,12 +50,13 @@ block content
                       option(value="kw") /千字
                     //- span.note (点击更换单位)
 
-              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-mgn--b-20(data-js-datepickerRange)
-                .ic--edit--green.l-inl-b.l-v--m.l-mgn--r-5
-                input.txt--persian-green.txt--font--14.date-picker-input.js-ui-datepicker-range(value="点击设置折扣价的有效周期", type="text")
-              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-mgn--b-25.display-date.
-                <div class="icon"><div class="ic--checkbox-3 active"></div></div>
-                <div class="l-inl-b l-v--m txt--font--14">有效期已设置：<span class="js-date-display"></span></div>
+              .c-guide__add-product__item.l-w--100p.l-pad--l-20.l-pad--r-20.l-mgn--b-20.datepicker-wrapper(data-js-datepickerRange)
+                .datepicker-wrapper__item
+                  .icon.ic--edit--green
+                  input.date-picker-input.js-ui-datepicker-range(value="点击设置折扣价的有效周期", type="text")
+                .datepicker-wrapper__item.display-date
+                  <div class="icon"><div class="ic--checkbox-3 active"></div></div>
+                  <div class="date">有效期已设置：<span class="js-date-display"></span></div>
 
               
               hr.hr

@@ -1462,7 +1462,7 @@ textarea.light:-ms-input-placeholder {
   text-align: right;
 }
 .txt--l {
-  text-align: left;
+  text-align: left !important;
 }
 .txt--b {
   font-weight: bold;
@@ -2668,6 +2668,47 @@ textarea.light:-ms-input-placeholder {
 .date-picker-wrapper .month-wrapper table {
   margin: auto;
   float: none;
+}
+.datepicker-wrapper {
+  padding-left: 28px;
+  margin: 10px 0;
+}
+.datepicker-wrapper .icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.datepicker-wrapper__item {
+  margin: 10px 0;
+}
+.datepicker-wrapper__item .stage-name {
+  color: #00a5a5;
+  font-size: 14px;
+}
+.datepicker-wrapper__item .input-number {
+  text-align: center;
+  width: 100px;
+  background: none;
+  border-bottom: 1px solid #dde0e3;
+}
+.datepicker-wrapper__item .date {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.datepicker-wrapper__item .name {
+  font-size: 16px;
+  font-weight: bold;
+}
+.datepicker-wrapper .date-picker-input {
+  width: 200px;
+  font-size: 14px;
+}
+.datepicker-wrapper .display-date {
+  display: none;
+}
+.datepicker-wrapper .display-date.active {
+  display: block;
 }
 .c-find-psw--header {
   background: #00a5a5;
@@ -5061,7 +5102,7 @@ textarea.light:-ms-input-placeholder {
 .c-requirement__edit__item .datepicker-wrapper__item .date {
   display: inline-block;
   vertical-align: middle;
-  font-size: 14;
+  font-size: 14px;
 }
 .c-requirement__edit__item .datepicker-wrapper__item .name {
   font-size: 16px;
@@ -5131,6 +5172,48 @@ textarea.light:-ms-input-placeholder {
 }
 .c-requirement__edit__item[data-status=toStart] .status-group .status-text {
   color: #b8bebe;
+}
+.c-requirement__edit .check-container {
+  width: 40px;
+  height: 26px;
+  border-radius: 20px;
+  background: #dde0e3;
+  position: relative;
+  float: right;
+}
+.c-requirement__edit .check-container input {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.c-requirement__edit .check-container .check-container__indicator {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #dde0e3;
+  position: absolute;
+  left: 1px;
+  top: 0;
+  background: #fff;
+  box-shadow: 1px 0px 3px #dde0e3;
+  transition: all 0.3s;
+  text-align: center;
+}
+.c-requirement__edit .check-container .check-container__indicator img {
+  opacity: 0;
+  width: 50%;
+  transition: opacity 0.5s;
+}
+.c-requirement__edit .check-container.active {
+  background: #00a5a5;
+}
+.c-requirement__edit .check-container.active .check-container__indicator {
+  border: 1px solid #00a5a5;
+  left: 14px;
+}
+.c-requirement__edit .check-container.active .check-container__indicator img {
+  opacity: 1;
 }
 .c-requirement .upload-file-btn {
   position: relative;
@@ -5209,6 +5292,12 @@ textarea.light:-ms-input-placeholder {
 }
 .c-reservation__order-detail__section .style-top {
   margin: 5px 0;
+  padding: 5px 10px;
+}
+.c-reservation__order-detail__section .js-checkbox.active .style-top {
+  background-color: #edf9f9;
+  border-radius: 4px;
+  color: #00a5a5;
 }
 .c-reservation__order-detail__section .style-bottom {
   font-size: 12px;
@@ -5222,11 +5311,17 @@ textarea.light:-ms-input-placeholder {
 }
 .c-reservation__order-detail__section li {
   list-style-type: none;
-  width: 21%;
+  width: 50%;
   vertical-align: middle;
   text-align: left;
   margin-bottom: 20px;
   text-align: center;
+  padding: 5px 10px;
+}
+.c-reservation__order-detail__section li.active {
+  background-color: #edf9f9;
+  border-radius: 4px;
+  color: #00a5a5;
 }
 .c-reservation__order-detail__section .language-list {
   padding: 5px 10px;

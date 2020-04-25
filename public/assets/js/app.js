@@ -603,11 +603,12 @@ $.fn.DatePickerRange = function (opts) {
                 }
             },
             onClose: function onClose() {
-                $('.js-date-display').html(selectedRange);
+                $(this).parents('.datepicker-wrapper').find('.js-date-display').html(selectedRange);
+
                 // $(this).val(defaultVal);
 
                 // $('.display-date').addClass('active');
-                $('.display-date').addClass('active').removeClass('hide');
+                $(this).parents('.datepicker-wrapper').find('.display-date').addClass('active').removeClass('hide');
                 delete $(this).data().datepicker.first;
                 $(this).data().datepicker.inline = false;
             }
@@ -762,6 +763,7 @@ $(document).ready(function () {
 
   $('[data-js-selected]').Selected();
   $('[data-js-add-product]').AddProduct();
+  $('[data-js-reservation]').Reservation();
 
   $('[data-js-more-menu]').MoreMenu();
   $('[data-js-favorite]').Favorite();
@@ -857,6 +859,7 @@ $.fn.EditStage = function (opts) {
       }
     });
     syncInput();
+    $('[data-js-datepickerRange]').DatePickerRange();
   }
 };
 'use strict';
@@ -2067,7 +2070,7 @@ $.fn.RadioBox = function (opts) {
   function initCheckbox() {
     checkbox.on('click touch', function () {
       var _value;
-      checkbox.each(function () {
+      $(this).parents('[data-js-radio-box]').find('.js-checkbox').each(function () {
         $(this).removeClass('active');
         $(this).find('input').val('');
       });
@@ -2464,6 +2467,25 @@ $.fn.Register = function (opts) {
     setTimeout(function () {
       window.location.href = './index.html';
     }, 5000);
+  }
+};
+'use strict';
+
+$.fn.Reservation = function (opts) {
+
+  var container = $(this);
+
+  events();
+
+  function events() {
+    $('.js-checkbox').on('click touch', function () {
+      setTimeout(function () {
+        var level = $('.js-checkbox.active.level .style-top').html();
+        var lang = $('.js-checkbox.active.language-list').html();
+        $('.js-level').html(level);
+        $('.js-lang').html(lang);
+      });
+    });
   }
 };
 // $.fn.resetPsw = function(opts){
@@ -2890,7 +2912,8 @@ $.fn.SelectLanguage = function (opts) {
     });
     completeBtn.on('click touch', function () {
       // 这里返回之前页面并且需要有参数
-      window.location.href = "./setting-user.html?" + queryString;
+      // window.location.href="./setting-user.html?" + queryString;
+      window.history.go(-1);
     });
   }
 };

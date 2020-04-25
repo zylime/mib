@@ -32,13 +32,16 @@ block content
         .status-group
           .status-icon
           .status-text 已完成
-      .datepicker-wrapper
-        .datepicker-wrapper__item.display-date.
+      .datepicker-wrapper(data-js-datepickerRange)
+        .datepicker-wrapper__item
+          .icon.ic--edit--green
+          input.date-picker-input.js-ui-datepicker-range(value="点击设置折扣价的有效周期", type="text")
+        .datepicker-wrapper__item.display-date
           <div class="icon"><div class="ic--checkbox-3 active"></div></div>
-          <div class="l-inl-b l-v--m txt--font--14">有效期已设置：2019/10/1 - 2020/1/1</div>
+          <div class="date">有效期已设置：<span class="js-date-display"></span></div>
         .datepicker-wrapper__item.l-mgn--t-15
-          span.txt--b.txt--font--16 首付付款比例：
-          input.border-bottom.input-number(type="text", value="30", disabled)
+          span.name 付款比例：
+          input.input-number(type="number", value="0", min="1", max="100")
           span %
       .c-requirement__edit__item__note
         textarea(name="", disabled) 阶段产出：按时按量地完成测试期的测试任务，测试审核通过后确认合作、进入下一阶段。
@@ -53,13 +56,16 @@ block content
         .status-group
           .status-icon
           .status-text 未完成
-      .datepicker-wrapper
-        .datepicker-wrapper__item.display-date.
+      .datepicker-wrapper(data-js-datepickerRange)
+        .datepicker-wrapper__item
+          .icon.ic--edit--green
+          input.date-picker-input.js-ui-datepicker-range(value="点击设置折扣价的有效周期", type="text")
+        .datepicker-wrapper__item.display-date
           <div class="icon"><div class="ic--checkbox-3 active"></div></div>
-          <div class="l-inl-b l-v--m txt--font--14">有效期已设置：2019/10/1 - 2020/1/1</div>
+          <div class="date">有效期已设置：<span class="js-date-display"></span></div>
         .datepicker-wrapper__item.l-mgn--t-15
-          span.txt--b.txt--font--16 付款比例：
-          input.border-bottom.input-number(type="text", value="40",disabled)
+          span.name 付款比例：
+          input.input-number(type="number", value="0", min="1", max="100")
           span %
       .c-requirement__edit__item__note
         textarea(name="", disabled) 阶段产出：该阶段完成总任务的剩余的40%工作量，在固定周期内保质保量地完成该任务，提交产出文档、并通过审核后该阶段结束。
@@ -75,13 +81,16 @@ block content
         .status-group
           .status-icon
           .status-text 未开始
-      .datepicker-wrapper
-        .datepicker-wrapper__item.display-date.
+      .datepicker-wrapper(data-js-datepickerRange)
+        .datepicker-wrapper__item
+          .icon.ic--edit--green
+          input.date-picker-input.js-ui-datepicker-range(value="点击设置折扣价的有效周期", type="text")
+        .datepicker-wrapper__item.display-date
           <div class="icon"><div class="ic--checkbox-3 active"></div></div>
-          <div class="l-inl-b l-v--m txt--font--14">有效期已设置：2019/10/1 - 2020/1/1</div>
+          <div class="date">有效期已设置：<span class="js-date-display"></span></div>
         .datepicker-wrapper__item.l-mgn--t-15
-          span.txt--b.txt--font--16 付款比例：
-          input.border-bottom.input-number(type="text", value="30", disabled)
+          span.name 付款比例：
+          input.input-number(type="number", value="0", min="1", max="100")
           span %
       .c-requirement__edit__item__note
         textarea(name="", disabled) 阶段产出：该阶段完成总任务的剩余的40%工作量，在固定周期内保质保量地完成该任务，提交产出文档、并通过审核后该阶段结束。

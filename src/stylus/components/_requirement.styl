@@ -56,7 +56,7 @@
           .date
             display inline-block
             vertical-align middle
-            font-size 14
+            font-size 14px
           .name
             font-size 16px
             font-weight bold
@@ -119,6 +119,41 @@
             background-position -42px 0
           .status-text
             color $col-silver-sand
+    .check-container
+      width 40px
+      height 26px
+      border-radius 20px
+      background $col-iron
+      position relative
+      float right
+      input
+        opacity 0
+        position absolute
+        width 100%
+        height 100%
+      .check-container__indicator
+        width 26px
+        height 26px
+        border-radius 50%
+        border 1px solid $col-iron
+        position absolute
+        left 1px
+        top 0
+        background $col-white
+        box-shadow 1px 0px 3px $col-iron
+        transition all 0.3s
+        text-align center
+        img
+          opacity 0
+          width 50%
+          transition opacity .5s
+      &.active
+        background $col-persian-green
+        .check-container__indicator
+          border 1px solid $col-persian-green
+          left 14px
+          img
+            opacity 1
             
            
   .upload-file-btn
